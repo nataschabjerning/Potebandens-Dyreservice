@@ -1,0 +1,113 @@
+.page-services {
+    .page-content {
+        .services {
+            .container {
+                text-align: center;
+                .all-services {
+                    #confirmation {
+                        position: fixed;
+                        top: 0; left: 0; bottom: 0; right: 0;
+                        margin: auto;
+                        display:none;
+                        border-radius: 25px;
+                        border: 4px solid rgb(255, 0, 0);
+                        height: 200px;
+                        width: 800px;
+                        .content {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 20px;
+                            background-color:rgba(170, 0, 0, .6);
+                            h2 {
+                                font-size: 2rem;
+                                font-weight: 900;
+                            }
+                            .buttons {
+                                button {
+                                    // background-color: white;
+                                    font-size: 1.2rem;
+                                    font-weight: 600;
+                                    padding: 1rem 3rem;
+                                    border-radius: 5px;
+                                }
+                                button:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    h3 {
+
+                    }
+                    p {
+
+                    }
+                    .form {
+                        h3 {
+
+                        }
+                        form {
+                            .label {
+                                label {
+
+                                }
+                                input {
+
+                                }
+                            }
+                            .button {
+                                button {
+                                    padding: .5rem;
+                                    border: none;
+                                    border-radius: 10px;
+                                    color: white;
+                                    font-weight: 600;
+                                    background-color: green;
+                                    width: fit-content;
+                                }
+                            }
+                        }
+                    }
+                    table {
+                        tr {
+                            th {
+
+                            }
+                            td {
+
+                            }
+                            .buttons {
+                                display: flex;
+                                gap: 1rem;
+                                .update {
+                                    button {
+                                        background-color: rgb(253, 156, 29);
+                                        padding: .5rem;
+                                        border-radius: 10px;
+                                        color: white;
+                                        font-weight: 600;
+                                        cursor: pointer;
+                                    }
+                                }
+                                .delete {
+                                    button {
+                                        background-color: rgb(221, 0, 0);
+                                        padding: .5rem;
+                                        border-radius: 10px;
+                                        color: white;
+                                        font-weight: 600;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

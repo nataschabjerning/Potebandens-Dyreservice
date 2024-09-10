@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.active-menu-item {
+    color: black;
+}
+
+.subhero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(217, 168, 0, 1) 0%,
+        rgba(217, 168, 0, .3) 5%,
+        rgba(217, 168, 0, .1) 10%,
+        rgba(217, 168, 0, 0) 15%),
+        url('../../../Images/-Sub-Hero/background-paw.png'
+    );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    
+    .page-title {
+        width: 100%;
+        font-size: 2.5rem;
+        color: #fff;
+        text-align: center;
+        @media (max-height: 700px) {
+            font-size: 2rem;
+        }
+        h1, h3 {
+            text-shadow: 2px 2px 4px rgb(22, 22, 22);
+        }
+    }
+}
+
+.block {
+    padding: 6rem 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (max-height: 700px) {
+        max-width: 900px;
+    }
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}

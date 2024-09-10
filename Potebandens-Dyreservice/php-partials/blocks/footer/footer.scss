@@ -1,0 +1,41 @@
+.footer {
+    background-color: #d9a800;
+    padding: 2rem;
+    .container {
+        .logo {
+            margin: 0 auto;
+            .company {
+                margin: 0 auto 2rem;
+            }
+        }
+        hr {
+            border: 1px solid #243a94;
+        }
+        .contact-info {
+            color: #fff;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-evenly;
+            .contact-methods {
+                .phone {
+                    margin-bottom: 1rem;
+                }
+                .email {
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .week-hours {
+
+            }
+            .adress {
+
+            }
+        }
+    }
+}

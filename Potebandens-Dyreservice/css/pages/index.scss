@@ -1,0 +1,39 @@
+.page-index {
+    .hero {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(217, 168, 0, 1) 0%,
+            rgba(217, 168, 0, .3) 5%,
+            rgba(217, 168, 0, .1) 10%,
+            rgba(217, 168, 0, 0) 15%,
+            rgba(71, 143, 84, 0) 80%,
+            rgba(71, 143, 84, .5) 90%,
+            rgba(71, 143, 84, 1) 100%),
+            url('../../../Images/-Sub-Hero/hero\ img.jpg'
+        );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 60vh;
+        .page-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            font-size: 3rem;
+            color: #2225c2;
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(32, 32, 32);
+            @media (max-height: 700px) {
+                font-size: 2.5rem;
+            }
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+    
+    .page-content {
+        
+    }
+}

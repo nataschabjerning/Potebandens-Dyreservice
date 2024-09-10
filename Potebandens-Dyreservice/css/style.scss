@@ -1,0 +1,30 @@
+/* General
+------------------------------------------------------*/
+
+@import 'abstract/general.scss';
+
+/* Components
+------------------------------------------------------*/
+
+@import 'components/logo.scss';
+
+/* Blocks
+------------------------------------------------------*/
+
+@import '../php-partials/blocks/footer/footer.scss';
+@import '../php-partials/blocks/header/header.scss';
+@import '../php-partials/blocks/info/info.scss';
+@import '../php-partials/blocks/sendemail/sendemail.scss';
+@import '../php-partials/blocks/service-slider/service-slider.scss';
+@import '../php-partials/blocks/db_services/db_services.scss';
+
+/* Pages
+------------------------------------------------------*/
+
+@import 'pages/about.scss';
+@import 'pages/admin-services.scss';
+@import 'pages/admin.scss';
+@import 'pages/contact.scss';
+@import 'pages/index.scss';
+@import 'pages/login.scss';
+@import 'pages/services.scss';
