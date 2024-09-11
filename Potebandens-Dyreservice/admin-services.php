@@ -34,7 +34,7 @@
                         $resultData = mysqli_stmt_get_result($stmt);
                     ?>
 
-                    <div id="confirmation">
+                    <div id="confirmation-delete">
                         <div class="content">
                             <h2>Er du sikker på, at du gerne vil slette denne ydelse?</h2>
                             <div class="buttons">
@@ -44,21 +44,20 @@
                         </div>
                     </div>
 
-                    <h3>Oversigt over alle ydelser og priser i tabel</h3>
-                    <p>admin skal kunne oprette/opdatere/slette rækker i tabellen, som går ind og sletter fra db også (i admin-services.php)</p>
+                    <div id="confirmation-update">
+                        <div class="content">
+                            <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
+                            <div class="buttons">
+                                <button class="confirm_update">Yes</button>
+                                <button class="cancel_update">No</button>
+                            </div>
+                        </div>
+                    </div>
 
-                    <br>
-                    <hr>
-                    <br>
+                    <h3>Oversigt over alle ydelser og priser i tabel</h3>
 
                     <?php if (isset($_SESSION["username"])) { ?>
                         <div class="form">
-                            <div class="success">
-                                <p style="color: darkred; font-weight: 600;">confirmation text when service has been created</p>
-                            </div>
-                            <p style="color: green; font-weight: 600;">virker</p>
-                            <h3>Opret ny ydelse</h3>
-                            <br>
                             <?php
                                 if (isset($_GET["error"])) {
                                     if ($_GET["error"] == "emptyinput") {
@@ -67,42 +66,54 @@
                                     }
                                 }
                             ?>
-                            <br>  
-                            <form action="includes/newservice.inc.php" method="post">
-                                <div class="label">
-                                    <label for='service_name'>Ydelse</label>
-                                    <div class="input">
-                                        <input type='text' name='service_name'>
-                                    </div>
-                                </div>
-                                <div class="label">
-                                    <label for='service_length'>Hvor længe</label>
-                                    <div class="input">
-                                        <input type='text' name='service_length'>
-                                    </div>                            
-                                </div>
-                                <div class="label">
-                                    <label for='service_description'>Beskrivelse</label>
-                                    <div class="input">
-                                        <input type='text' name='service_description'>
-                                    </div>                            
-                                </div>
-                                <div class="label">
-                                    <label for='service_price'>Pris</label>
-                                    <div class="input">
-                                        <input type='text' name='service_price'>
-                                    </div>                            
-                                </div>
-                                <div class="button">
-                                    <button type="submit" name="add-service">Opret ydelse</button>
-                                </div>
-                            </form>
+
+                            <!-- error msg if values are not approved -->
+                            <div id="error_create"></div>
+
+                            <div class="show_hide">
+                                <button id="show_add_form">Tilføj Ydelse</button>
+                                <button id="hide_add_form">Skjul formular</button>
+                            </div>
+
+                            <div id="new_service">
+                                <table class="new_service">
+                                    <tr>
+                                        <th>Ydelse</th>
+                                        <td>
+                                            <input type="text" class="service_name" name="service_name">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hvor længe</th>
+                                        <td>
+                                            <input type="text" class="service_length" name="service_length">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Beskrivelse</th>
+                                        <td>
+                                            <input type="text-area" class="service_description" name="service_description">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Pris</th>
+                                        <td>
+                                            <input type="text" class="service_price" name="service_price">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <!-- fix to make button fill entire width of bottom cell -->
+                                        <td class="button">
+                                            <button id="create-service">Create</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
                         </div>
                     <?php } ?>
         
-                    <br>
                     <hr>
-                    <br>
 
                     <table>
                         <tr>
@@ -119,15 +130,25 @@
                         <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                             
                             <tr attr-service_id="<?php echo $row['id']; ?>">
-                                <td><?php echo $row['id']?></td>
-                                <td><?php echo $row['service_name']?></td>
-                                <td><?php echo $row['service_length']?></td>
-                                <td><?php echo $row['service_description']?></td>
-                                <td><?php echo $row['service_price']?> kr.</td>
+                                <td>
+                                    <?php echo $row['id']?>
+                                </td>
+                                <td>
+                                    <input type="text" class="service_name" value="<?php echo $row['service_name']?>">
+                                </td>
+                                <td>
+                                    <input type="text" class="service_length" value="<?php echo $row['service_length']?>">
+                                </td>
+                                <td>
+                                    <input type="text" class="service_description" value="<?php echo $row['service_description']?>">
+                                </td>
+                                <td>
+                                    <input type="text" class="service_price" value="<?php echo $row['service_price']?>"> kr.
+                                </td>
                                 <?php if (isset($_SESSION["username"])) { ?>
                                     <td class="buttons">
                                         <div class="update">
-                                            <p style="color: orange; font-weight: 600;">to do</p>
+                                            <p style="color: green; font-weight: 600;">virker</p>
                                             <button class="update-service">Opdater</button>
                                         </div>                                    
                                         <div class="delete">

@@ -13,12 +13,9 @@
     // Set the DELETE SQL data
 	$sql = "DELETE FROM services WHERE id='".$id."'";
 
-	// Process the query so that we will save the date of birth
-	if ($conn->query($sql)) {
-	    echo "Ydelse slettet!";
-	}
-    else {
-	    echo "Error: " . $sql . "<br>" . $conn->error;
+	// Process the query so row is deleted from table and db
+	if (!$conn->query($sql)) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 
 	// Close the connection after using it
