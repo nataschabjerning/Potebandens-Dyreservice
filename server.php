@@ -10,4 +10,6 @@ work
 $serverName = "local.potebandens-dyreservice.dk";
 $dbName = "potebandens_dyreservice_db";
 $dbusername = "root";
-$dbpassword = "root"; -->
+$dbpassword = "root"; 
+
+sfvxv-->
