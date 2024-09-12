@@ -76,29 +76,17 @@
                             }
                         }
                     }
-                    h3 {
-
-                    }
-                    p {
-
-                    }
                     .form {
-                        .success {
+                        .alertMessage {
                             p {
 
                             }
                         }
-                        h3 {
-
-                        }
                         .show_hide {
+                            background-color: rgba(72, 48, 36, 0.5);
+                            border-bottom: 1px solid rgba(72, 48, 36, 0.1);
+                            padding: .5rem 0;
                             text-align: center;
-                            button {
-                                font-size: 1rem;
-                                font-weight: 600;
-                                padding: 1rem 3rem;
-                                border-radius: 5px;
-                            }
                             #hide_add_form {
                                 display:none;
                             }
@@ -108,33 +96,42 @@
                         }
                         #new_service {
                             display: none;
-                            .new_service:second-last {
-                                width: 100%;
-                                border: none;
-                            }
-                            label {
-                                font-size: 1.5rem;
-                                font-weight: 600;
-                            }
-                            input {
-                
-                            }
-                            select {
-                                option {
-                
+                            width: fit-content;
+                            margin: 2rem auto;
+                            .new_service {
+                                margin-bottom: 1rem;
+                                tr {
+                                    th {
+                                        font-size: 1.5rem;
+                                        font-weight: 600;
+                                    }
+                                    td {
+                                        
+                                    }
+                                    .service_description {
+                                        height: 2rem;
+                                    }
                                 }
                             }
-                            button {
-                                padding: .5rem;
-                                border: none;
-                                border-radius: 10px;
-                                color: white;
-                                font-weight: 600;
-                                background-color: green;
-                                width: fit-content;
-                                cursor: pointer;
+                            .button {
+                                button {
+                                    padding: .5rem;
+                                    border: none;
+                                    border-radius: 10px;
+                                    color: white;
+                                    font-weight: 600;
+                                    background-color: green;
+                                    width: 100%;
+                                    cursor: pointer;
+                                }
+                                button:hover {
+                                    background-color: rgb(2, 95, 2);
+                                }
                             }
                         }
+                    }
+                    h3 {
+
                     }
                     table {
                         tr {
@@ -152,9 +149,13 @@
                                         background-color: rgb(253, 156, 29);
                                         padding: .5rem;
                                         border-radius: 10px;
+                                        border: none;
                                         color: white;
                                         font-weight: 600;
                                         cursor: pointer;
+                                    }
+                                    button:hover {
+                                        background-color: rgb(216, 126, 8);
                                     }
                                 }
                                 .delete {
@@ -162,9 +163,13 @@
                                         background-color: rgb(221, 0, 0);
                                         padding: .5rem;
                                         border-radius: 10px;
+                                        border: none;
                                         color: white;
                                         font-weight: 600;
                                         cursor: pointer;
+                                    }
+                                    button:hover {
+                                        background-color: rgb(175, 2, 2);
                                     }
                                 }
                             }

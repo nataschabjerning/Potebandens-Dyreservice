@@ -7,7 +7,7 @@
             <?php
                 include("../../../includes/connect.inc.php");
 
-                $sql = "SELECT * FROM services;";
+                $sql = "SELECT * FROM services ORDER BY service_name ASC;";
                 $stmt = $conn->prepare($sql);
                 mysqli_stmt_execute($stmt);
                 $resultData = mysqli_stmt_get_result($stmt);
@@ -30,7 +30,7 @@
 
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                     <tr>
-                        <td><?php echo $row['service_icon'].$row['service_name']?></td>
+                        <td><?php echo $row['service_name']?></td>
                         <td><?php echo $row['service_length']?></td>
                         <td><?php echo $row['service_description']?></td>
                         <td><?php echo $row['service_price']?> kr.</td>

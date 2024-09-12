@@ -5,6 +5,7 @@
     top: 0;
     width: 100%;
     padding: 2rem 0;
+    z-index: 99;
     .container {
         display: flex;
         justify-content: space-between;
@@ -18,13 +19,14 @@
                 @media (max-width: 768px) {
                     display: none;
                 }
-                .login {
+                .login, .logout {
                     position: absolute;
                     top: 0;
                     left: 0;
                     font-size: .6rem;
                     a {
                         border:none;
+                        text-shadow: none;
                         color:#997602;
                     }
                     a:hover {
@@ -36,6 +38,7 @@
                     a {
                         text-decoration: none;
                         color: #fff;
+                        text-shadow: 1px 1px 2px rgb(0, 13, 126);
                         font-weight: 600;
                         padding: .5rem 1rem;
                         border-top: 2px solid transparent;
@@ -119,6 +122,20 @@
                         align-items: flex-end;
                         gap: 1rem;
                         padding: 0 20px;
+                        .login, .logout {
+                            position: absolute;
+                            top: 0;
+                            left: 20px;
+                            a {
+                                font-size: .6rem;
+                                border:none;
+                                text-shadow: none;
+                                color:#997602;
+                            }
+                            a:hover {
+                                border: none;
+                            }
+                        }
                         li {
                             list-style-type: none;
                             a {

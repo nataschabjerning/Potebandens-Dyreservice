@@ -14,6 +14,19 @@
     $service_description    = $_REQUEST['service_description'];
     $service_price          = $_REQUEST['service_price'];
 
+    // if not filled out
+    if(!$service_name || !$service_description || !$service_price) {
+        exit;
+    }
+    // if there is numbers in service_name
+    if(preg_match("/\d/", $service_name)) {
+        exit;
+    }
+    // if service_price is not a number
+    if(!is_numeric($service_price)) {
+        exit;
+    }
+
     $sql = "UPDATE services 
 	SET 
     service_name='$service_name',

@@ -27,36 +27,22 @@ $(document).ready(function(){
         ]
     });
 
-    $('#show_add_form').click(function(){
-		$(this).hide();
-		$("#new_service").show();
-		$("#hide_add_form").show();
-	});
-	$('#hide_add_form').click(function(){
-		$(this).hide();
-		$("#new_service").hide();
-		$("#show_add_form").show();
-	});
+    // show/hide 'new service' form
+    $(".show_hide").click(function () {
+        $("#new_service").slideToggle();
+        $(this).children("#show_add_form").toggle();
+        $(this).children("#hide_add_form").toggle();
+    });
 
-
+    // Function to create service in html table and db table
     $('#create-service').click(function() {
 
         $service_name = $('input[name=service_name]').val();
         $service_length = $('input[name=service_length]').val();
         $service_description = $('input[name=service_description]').val();
         $service_price = $('input[name=service_price]').val();
-
-        $response = false;
-
-        if(!$service_name || !$service_length || !$service_description || !$service_price) {
-            $response = false;
-            
-        }
-        else {
-            $reponse = true;
-        }
         
-        $.ajax({
+        var $request = $.ajax({
             type: 'POST',
             url: 'includes/createservice.inc.php',
             data: {
@@ -64,31 +50,48 @@ $(document).ready(function(){
                 service_length: $service_length,
                 service_description: $service_description,
                 service_price: $service_price
-            },
-            success: function () { 
-                if($response == true) {
-                    // reload page
-                    window.location.reload();
-                    alert("Ydelse oprettet!");
-                }
-                else {
-                    window.location.reload();
-                    alert("Udfyld alle felter!");
-                } 
-            } 
+            }
         })
+        .done(function() {
+            // if one or more fields is empty
+            if(!$service_name || !$service_length || !$service_description || !$service_price) {
+                $request.abort();
+                window.location.reload();
+                alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if 'service_price' does not contain only numbers
+            if (isNaN($service_price)) {
+                $request.abort();
+                window.location.reload();
+                alert("Obs! Det ser ud som om at det ikke er tal i ydelsens pris.");
+            }
+            // if 'service_name' contains numbers
+            if ($service_name.match(".*\\d.*")) {
+                $request.abort();
+                window.location.reload();
+                alert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+            }
+            // if all checks have cleared
+            // show message in #alertMessage div
+            $('#alertMessage').html('<p>Ydelse oprettet!</p>');
+            // reload page after 3 seconds (#alertMessage dissappears)
+            
+            // setTimeout(function() {
+            //     location.reload();
+            // }, 3000);
+		})
     });
     
-
     // Function to update service from html table and db table
     function updateService() {
 	    $(document).delegate(".update-service", "click", function() {
 
+            // select the closest table row (tr) to the clicked update button
             let $table_row  = jQuery(this).closest("tr");
-            // get the service ID
+            // get the service ID from table row (tr) attr class
             var serviceId   = $table_row.attr('attr-service_id');
 
-            // ADD INPUTS
+            // Get inputs from services
             let $service_name 	        = $table_row.find(".service_name").val();
             let $service_length	        = $table_row.find(".service_length").val();
             let $service_description 	= $table_row.find(".service_description").val();
@@ -109,9 +112,8 @@ $(document).ready(function(){
             });
             // if confirm_update (yes)
             $('.confirm_update').click(function(){
-
                 // Ajax config
-                $.ajax({
+                var $request = $.ajax({
                     type: "POST",
                     // get the url to send to, when btn is clicked
                     url: 'includes/updateservice.inc.php',
@@ -123,16 +125,39 @@ $(document).ready(function(){
                         service_description: $service_description,
                         service_price: $service_price
                     },
-                    // when the request to update the selected row is completed
-                    success: function () {
-                        // alert that the row has been successfully updated
-                        alert("Ydelse opdateret!");
-                        // hide confirmation box
-                        $("#confirmation-update").hide();
-                        // reload page
+                })
+                .done(function() {
+                    // if one or more fields is empty
+                    if($service_name  === "" || $service_description  === "" || $service_price === "") {
+                        $request.abort();
                         window.location.reload();
+                        alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                        $("#confirmation-update").hide();
                     }
-                });
+                    // if 'service_price' does not contain only numbers
+                    if (isNaN($service_price)) {
+                        $request.abort();
+                        window.location.reload();
+                        alert("Obs! Det ser ud som om at det ikke er tal i ydelsens pris.");
+                        $("#confirmation-update").hide();
+                    }
+                    // if 'service_name' contains numbers
+                    if ($service_name.match(".*\\d.*")) {
+                        $request.abort();
+                        window.location.reload();
+                        alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
+                        $("#confirmation-update").hide();
+                    }
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    // show message in #alertMessage div
+                    $('#alertMessage').html('<p>Ydelse opdateret!</p>');
+                    // reload page after 3 seconds (#alertMessage dissappears)
+                    setTimeout(function() {
+                        location.reload();
+                    }, 3000);
+                })  
             });
         })
     }
@@ -156,8 +181,8 @@ $(document).ready(function(){
             $('.cancel_delete').click(function(){ 
                 if(buttonclicked != false) {
                     window.location.reload();
-                    alert("Ingen ydelse blev slettet!");
                     $("#confirmation-delete").hide();
+                    alert("Ingen ydelse blev slettet!");
                 } 
             });
             // if confirm_delete (yes)
@@ -171,19 +196,18 @@ $(document).ready(function(){
                     // data to send
                     data: {
                         service_id: serviceId
-                    },
-                    // when the request to delete the selected row is completed
-                    success: function () {
-                        // remove the table row
-                        $table_row.remove();
-                        // alert that the row has been successfully removed
-                        alert("Ydelse slettet!");
-                        // hide confirmation box
-                        $("#confirmation-delete").hide();
-                        // reload page
-                        window.location.reload();
                     }
-                });
+                })
+                .done(function() {
+                    // remove the table row
+                    $table_row.remove();
+                    // hide confirmation box
+                    $("#confirmation-delete").hide();
+                    // reload page
+                    window.location.reload();
+                    // alert that the row has been successfully removed
+                    alert("Ydelse slettet!");
+                })
             });
         })
     }

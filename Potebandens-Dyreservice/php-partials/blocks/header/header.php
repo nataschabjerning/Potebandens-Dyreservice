@@ -30,12 +30,8 @@
 
                 <nav class="site-navigation">
                     <ul class="nav-items">
-                        <li><a href="index.php">Forside</a></li>
-                        <li><a href="services.php">Ydelser | Priser</a></li>
-                        <li><a href="about.php">Om os</a></li>
-                        <li><a href="contact.php">Kontakt</a></li>
                         <?php 
-                            if (isset($_SESSION["username"])) {
+                            if (isset($_SESSION["id"])) {
                                 echo "<li><a href='admin.php'>Admin</a></li>";
                                 echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
                             }
@@ -43,6 +39,10 @@
                                 echo "<li class='login'><a href='login.php'>Admin</a></li>";
                             }
                         ?>
+                        <li><a href="index.php">Forside</a></li>
+                        <li><a href="services.php">Ydelser | Priser</a></li>
+                        <li><a href="about.php">Om os</a></li>
+                        <li><a href="contact.php">Kontakt</a></li>
                     </ul>
 
                     <div class="mobile-menu">
@@ -56,12 +56,8 @@
                         
                         <div class="menu-content">
                             <ul class="mobile-nav-items">
-                                <li><a href="index.php">Forside</a></li>
-                                <li><a href="services.php">Ydelser | Priser</a></li>
-                                <li><a href="about.php">Om os</a></li>
-                                <li><a href="contact.php">Kontakt</a></li>
                                 <?php 
-                                    if (isset($_SESSION["username"])) {
+                                    if (isset($_SESSION["id"])) {
                                         echo "<li><a href='admin.php'>Admin</a></li>";
                                         echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
                                     }
@@ -69,6 +65,10 @@
                                         echo "<li class='login'><a href='login.php'>Admin</a></li>";
                                     }
                                 ?>
+                                <li><a href="index.php">Forside</a></li>
+                                <li><a href="services.php">Ydelser | Priser</a></li>
+                                <li><a href="about.php">Om os</a></li>
+                                <li><a href="contact.php">Kontakt</a></li>
                             </ul>
                         </div>
 
