@@ -72,10 +72,13 @@ $(document).ready(function(){
                 alert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
             // if all checks have cleared
+            
             // show message in #alertMessage div
             $('#alertMessage').html('<p>Ydelse oprettet!</p>');
+
+            // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
+
             // reload page after 3 seconds (#alertMessage dissappears)
-            
             // setTimeout(function() {
             //     location.reload();
             // }, 3000);

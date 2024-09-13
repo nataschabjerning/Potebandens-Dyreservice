@@ -33,7 +33,7 @@
                         <?php 
                             if (isset($_SESSION["id"])) {
                                 echo "<li><a href='admin.php'>Admin</a></li>";
-                                echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
+                                echo "<li class='logout'><a href='includes/register-login/logout.php'>Log out</a></li>";
                             }
                             else {
                                 echo "<li class='login'><a href='login.php'>Admin</a></li>";
@@ -59,7 +59,7 @@
                                 <?php 
                                     if (isset($_SESSION["id"])) {
                                         echo "<li><a href='admin.php'>Admin</a></li>";
-                                        echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
+                                        echo "<li class='logout'><a href='includes/register-login/logout.php'>Log out</a></li>";
                                     }
                                     else {
                                         echo "<li class='login'><a href='login.php'>Admin</a></li>";

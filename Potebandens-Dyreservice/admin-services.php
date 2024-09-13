@@ -100,24 +100,24 @@
                         <h3>Oversigt over alle ydelser og priser i tabel</h3>
 
                         <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Ydelse</th>
-                                <th>Hvor længe</th>
-                                <th>Beskrivelse</th>
-                                <th>Pris</th>
-                                <th>Opdater/Slet</th>
-                            </tr>
-
-                            <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-                            
-                                <tr attr-service_id="<?php echo $row['id']; ?>">
-                                    <td><?php echo $row['id']?></td>
-                                    <td><input type="text" class="service_name" value="<?php echo $row['service_name']?>"></td>
-                                    <td><input type="text" class="service_length" value="<?php echo $row['service_length']?>"></td>
-                                    <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>
-                                    <td><input type="text" class="service_price" value="<?php echo $row['service_price']?>"> kr.</td>
-                                    <?php if (isset($_SESSION["username"])) { ?>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ydelse</th>
+                                    <th>Hvor længe</th>
+                                    <th>Beskrivelse</th>
+                                    <th>Pris</th>
+                                    <th>Opdater/Slet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                                    <tr attr-service_id="<?php echo $row['id']; ?>">
+                                        <td><?php echo $row['id']?></td>
+                                        <td><input type="text" class="service_name" value="<?php echo $row['service_name']?>"></td>
+                                        <td><input type="text" class="service_length" value="<?php echo $row['service_length']?>"></td>
+                                        <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>
+                                        <td><input type="text" class="service_price" value="<?php echo $row['service_price']?>"> kr.</td>
                                         <td class="buttons">
                                             <div class="update">
                                                 <button class="update-service">Opdater</button>
@@ -126,9 +126,9 @@
                                                 <button class="delete-service">Slet</button>
                                             </div>
                                         </td>
-                                    <?php } ?>
-                                </tr>
-                            <?php } ?>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
                         </table>
                     </div> <!-- .all-services end -->
                 <?php } // if (isset($_SESSION["username"])) end
