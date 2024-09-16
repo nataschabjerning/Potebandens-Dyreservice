@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Ydelser og priser</title>
+    <title>Potebandens Dyreservice | Log Ind</title>
 </head>
 
 <?php
@@ -8,13 +8,6 @@
 
 <div class="page-login">
 
-    <div class="subhero">
-        <div class="overlay"></div>
-        <div class="page-title">
-            <h1>Log ind</h1>
-        </div>
-    </div>
-
     <div class="page-content">
 
         <div class="container">
@@ -22,8 +15,12 @@
             <div class="block admin">
 
                 <?php
-                    include("includes/register-login/login.php");
-                    include("includes/register-login/registration.php");
+                    include("includes/login.inc.php");
+                    // if logged in
+                    if (isset($_SESSION["id"])) {
+                        include("includes/changepassword.inc.php");
+                        include("includes/signup.inc.php");
+                    }
                 ?>
 
             </div>

@@ -34,6 +34,7 @@
                     <h2>Liste over muligheder som admin</h2>
 
                     <ul>
+                        <li><a href="login.php">Opret Bruger</a></li>
                         <li><a href="admin-about.php">Ret 'Om os'</a></li>
                         <li><a href="admin-contact.php">Ret 'Kontakt os'</a></li>
                         <li><a href="admin-services.php">Ret 'Ydelser og priser'</a></li>
@@ -45,7 +46,7 @@
                     <h3>- 'Kontakt os' linker til side der har en tabel(eller andet) der viser telefonnummer, email osv.</h3>
                     <h3>- 'Ydelser og priser' linker til side der har en tabel over alle ydelser og priser</h3>
                 
-                <?php } // if (isset($_SESSION["username"])) end
+                <?php } // if (isset($_SESSION["id"])) end
 
                 // if not logged in
                 else { ?>
