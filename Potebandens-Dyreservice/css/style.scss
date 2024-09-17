@@ -3,20 +3,21 @@
 
 @import 'abstract/general.scss';
 
-/* Components
-------------------------------------------------------*/
-
-@import '../php-partials/components/logo.scss';
-
 /* Blocks
 ------------------------------------------------------*/
 
+@import '../php-partials/blocks/db_services/db_services.scss';
 @import '../php-partials/blocks/footer/footer.scss';
 @import '../php-partials/blocks/header/header.scss';
 @import '../php-partials/blocks/info/info.scss';
 @import '../php-partials/blocks/sendemail/sendemail.scss';
 @import '../php-partials/blocks/service-slider/service-slider.scss';
-@import '../php-partials/blocks/db_services/db_services.scss';
+@import '../php-partials/blocks/update-users/users.scss';
+
+/* Components
+------------------------------------------------------*/
+
+@import '../php-partials/components/logo.scss';
 
 /* Pages
 ------------------------------------------------------*/

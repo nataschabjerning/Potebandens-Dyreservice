@@ -14,15 +14,112 @@
 
             <div class="block admin">
 
-                <?php
-                    include("includes/login.inc.php");
-                    // if logged in
-                    if (isset($_SESSION["id"])) {
-                        include("includes/changepassword.inc.php");
-                        include("includes/signup.inc.php");
-                    }
-                ?>
+                <div class="messages">
+                    <?php
+                        if (isset($_GET["error"])) {
+                            // errors for loggin in
+                            if ($_GET["error"] == "emptylogininput") {
+                                echo "<div class='error'>";
+                                echo "<h4>- Udfyld alle felter</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "wrongusername") {
+                                echo "<div class='error'>";
+                                echo "<h4>- Brugernavn findes ikke</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "wrongpassword") {
+                                echo "<div class='error'>";
+                                echo "<h4>- Kodeordet er forkert</h4>";
+                                echo "</div>";
+                            }
+                            // errors for changing password
+                            if ($_GET["error"] == "currentpassworddoesnotmatch") {
+                                echo "<div class='error'>";
+                                echo "<h3>Skift Kodeord</h3>";
+                                echo "<h4>- Det nuværende kodeord er forkert</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "newpasswordsdoesntmatch") {
+                                echo "<div class='error'>";
+                                echo "<h3>Skift Kodeord</h3>";
+                                echo "<h4>- De to nye kodeord matcher ikke</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "repeatnewpassword") {
+                                echo "<div class='error'>";
+                                echo "<h3>Skift Kodeord</h3>";
+                                echo "<h4>- Gentag det nye kodeord</h4>";
+                                echo "</div>";
+                            }
+                            // errors for creating new user
+                            if ($_GET["error"] == "emptysignupinput") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Udfyld alle felter!</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "invalidusername") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Brugernavnet er ikke gyldigt. Vælg et gyldigt brugernavn!</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "invalidemail") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Denne email adresse ser ikke ud til at eksisterer. Indtast en gyldig email adresse!</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "passwordsdoesntmatch") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Kodeordene matcher ikke!</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "usernameoremailtaken") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Der er allerede oprettet en bruger med dette brugernavn eller email!</h4>";
+                                echo "</div>";
+                            }
+                            if ($_GET["error"] == "stmtfailed") {
+                                echo "<div class='error'>";
+                                echo "<h3>Opret Bruger</h3>";
+                                echo "<h4>- Noget gik galt. Prøv igen senere!</h4>";
+                                echo "</div>";
+                            }
+                        }
+                        // if password was changed successfully
+                        if (isset($_GET["passwordupdated"])) {
+                            echo "<div class='success'>";
+                            echo "<h3>Kodeord opdateret!</h3>";
+                            echo "</div>";
+                        }
+                        // if user was created successfully
+                        if (isset($_GET["usercreated"])) {
+                            echo "<div class='success'>";
+                            echo "<h3>Bruger oprettet!</h3>";
+                            echo "</div>";
+                        }
+                    ?>
+                </div>
 
+                <div class="login">
+                    <?php
+                        include("includes/login.inc.php");
+                    ?>
+                </div>
+                
+                <div class="update">
+                    <?php
+                        // if logged in
+                        if (isset($_SESSION["id"]) || isset($_SESSION["username"])) {
+                            include("includes/changepassword.inc.php");
+                            include("includes/signup.inc.php");
+                        }
+                    ?>
+                </div>
             </div>
 
         </div>

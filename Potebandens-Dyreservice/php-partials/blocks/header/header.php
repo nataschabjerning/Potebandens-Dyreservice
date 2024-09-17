@@ -31,7 +31,7 @@
                 <nav class="site-navigation">
                     <ul class="nav-items">
                         <?php 
-                            if (isset($_SESSION["username"])) {
+                            if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                                 echo "<li><a href='admin.php'>Admin</a></li>";
                                 echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
                             }
@@ -57,7 +57,7 @@
                         <div class="menu-content">
                             <ul class="mobile-nav-items">
                                 <?php 
-                                    if (isset($_SESSION["username"])) {
+                                    if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                                         echo "<li><a href='admin.php'>Admin</a></li>";
                                         echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
                                     }

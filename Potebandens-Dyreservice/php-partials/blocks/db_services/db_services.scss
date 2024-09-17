@@ -2,15 +2,19 @@
     .container {
         text-align: center;
         .all-services {
-            table {
-                margin: 0 auto;
-            }
             table, th, td {
                 border: 1px solid black;
                 border-collapse: collapse;
             }
-            th, td {
-                padding: 1rem;
+            table {
+                margin: 0 auto;
+                th, td {
+                    padding: 1rem;
+                }
+                .service_id {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
             }
         }
     }

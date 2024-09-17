@@ -12,7 +12,7 @@
         <div class="page-title">
             <h1>Om os</h1>
             <?php 
-                if (isset($_SESSION["id"])) {
+                if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                     echo "<h3>" . $_SESSION["username"] . "</h3>";
                 }
                 else {
@@ -27,7 +27,7 @@
             <div class="container">
 
                 <!-- if logged in -->
-                <?php if (isset($_SESSION["id"])) { ?>
+                <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
 
                     <!-- include php blocks here -->
 

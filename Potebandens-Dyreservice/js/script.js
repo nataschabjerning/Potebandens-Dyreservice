@@ -27,6 +27,57 @@ $(document).ready(function(){
         ]
     });
 
+    // delete user from db and table
+    function deleteUser() {
+	    $(document).delegate(".delete-user", "click", function() {
+
+            let $table_row  = jQuery(this).closest("tr");
+            // get the service ID
+            var serviceId   = $table_row.attr('attr-user_id');
+
+            // show confirmaiton box
+            $("#confirmation-user-delete").show();
+
+            // CONFIRMATION
+            var buttonclicked;
+            // if cancel_delete (no)
+            $('.cancel_delete').click(function(){ 
+                if(buttonclicked != false) {
+                    window.location.reload();
+                    $("#confirmation-delete").hide();
+                    alert("Ingen ydelse blev slettet!");
+                } 
+            });
+            // if confirm_delete (yes)
+            $('.confirm_delete').click(function(){
+                // Ajax config
+                $.ajax({
+                    //we are using GET method to get data from server side
+                    type: "GET",
+                    // get the url to send to, when btn is clicked
+                    url: 'includes/deleteservice.inc.php',
+                    // data to send
+                    data: {
+                        service_id: serviceId
+                    }
+                })
+                .done(function() {
+                    // remove the table row
+                    $table_row.remove();
+                    // hide confirmation box
+                    $("#confirmation-delete").hide();
+                    // reload page
+                    window.location.reload();
+                    // alert that the row has been successfully removed
+                    alert("Ydelse slettet!");
+                })
+            });
+        })
+    }
+    // call the function to initiate when delete-service btn is clicked
+    deleteUser();
+
+
     // show/hide 'new service' form
     $(".show_hide").click(function () {
         $("#new_service").slideToggle();

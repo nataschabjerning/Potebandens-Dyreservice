@@ -13,7 +13,7 @@
         <div class="page-title">
             <h1>Ydelser og priser</h1>
             <?php 
-                if (isset($_SESSION["id"])) {
+                if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                     echo "<h3>" . $_SESSION["username"] . "</h3>";
                 }
                 else {
@@ -27,7 +27,7 @@
         <div class="block services">
             <div class="container">
                 <!-- if logged in -->
-                <?php if (isset($_SESSION["id"])) { ?>
+                <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
                     <div class="all-services">
     
                         <?php
@@ -113,7 +113,7 @@
                             <tbody>
                                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                                     <tr attr-service_id="<?php echo $row['id']; ?>">
-                                        <td><?php echo $row['id']?></td>
+                                        <td class="service_id"><?php echo $row['id']?></td>
                                         <td><input type="text" class="service_name" value="<?php echo $row['service_name']?>"></td>
                                         <td><input type="text" class="service_length" value="<?php echo $row['service_length']?>"></td>
                                         <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>

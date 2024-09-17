@@ -3,15 +3,25 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.error {
-    text-align: center;
-    margin: 1rem 0;
-    color: rgb(226, 3, 3);
-}
-.success {
-    text-align: center;
-    margin: 1rem 0;
-    color: green;
+.messages {
+    margin: 0 auto;
+    width: fit-content;
+    .error, .success {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+        margin: 0 0 2rem;
+        color: rgb(226, 3, 3);
+        border: 1px solid rgb(226, 3, 3);
+    }
+    .success {
+        color: green;
+        border: 1px solid green;
+    }
 }
 
 .subhero {
@@ -77,4 +87,42 @@ button:hover {
 
 .no_session {
     text-align: center;
+}
+
+#confirmation-user-delete, #confirmation-delete, #confirmation-update {
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    display:none;
+    border-radius: 25px;
+    border: 4px solid rgb(255, 0, 0);
+    height: 200px;
+    width: 800px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        background-color:rgba(170, 0, 0, .6);
+        h2 {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        .buttons {
+            button {
+                /* SET BACKGROUND COLOR ON UPDATE/DELETE CONFIRMATION BUTTONS */
+                background-color: grey;
+                font-size: 1.2rem;
+                font-weight: 600;
+                padding: 1rem 3rem;
+                border-radius: 5px;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
