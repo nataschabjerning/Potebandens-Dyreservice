@@ -27,6 +27,25 @@ $(document).ready(function(){
         ]
     });
 
+    // show/hide 'change password' form
+    $(".change_password").click(function () {
+        $("#change-password").slideToggle();
+        $(this).children("#show_password").toggle();
+        $(this).children("#hide_password").toggle();
+    });
+    // show/hide 'new user' form
+    $(".new_user").click(function () {
+        $("#create-user").slideToggle();
+        $(this).children("#show_new_user").toggle();
+        $(this).children("#hide_new_user").toggle();
+    });
+    // show/hide 'new service' form
+    $(".show_hide").click(function () {
+        $("#new_service").slideToggle();
+        $(this).children("#show_add_form").toggle();
+        $(this).children("#hide_add_form").toggle();
+    });
+
     // delete user from db and table
     function deleteUser() {
 	    $(document).delegate(".delete-user", "click", function() {
@@ -76,14 +95,6 @@ $(document).ready(function(){
     }
     // call the function to initiate when delete-service btn is clicked
     deleteUser();
-
-
-    // show/hide 'new service' form
-    $(".show_hide").click(function () {
-        $("#new_service").slideToggle();
-        $(this).children("#show_add_form").toggle();
-        $(this).children("#hide_add_form").toggle();
-    });
 
     // Function to create service in html table and db table
     $('#create-service').click(function() {

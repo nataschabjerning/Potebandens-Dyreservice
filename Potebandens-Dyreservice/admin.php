@@ -34,8 +34,10 @@
                     <h2>Liste over muligheder som admin</h2>
 
                     <ul>
-                        <li><a href="profile.php">Administrér Brugere</a></li>
-                        <li><a href="login.php">Opret Bruger</a></li>
+                        <li>
+                            <a href="profile.php">Profil</a>
+                            <p>- Skift kodeord, administrér brugere</p>
+                        </li>
                         <li><a href="admin-about.php">Ret 'Om os'</a></li>
                         <li><a href="admin-contact.php">Ret 'Kontakt os'</a></li>
                         <li><a href="admin-services.php">Ret 'Ydelser og priser'</a></li>

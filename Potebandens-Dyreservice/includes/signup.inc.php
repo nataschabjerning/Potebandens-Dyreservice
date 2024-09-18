@@ -1,4 +1,4 @@
-<div class="create-user">
+<div id="create-user">
     <form action="./includes/signup.inc.php" method="post">
         
         <h2>Opret Bruger</h2>
@@ -55,27 +55,27 @@
         // Go through all checks ->
         // call to emptyInputSignup() in includes/functions.inc.php (line 6)
         if (emptyInputSignup($name, $username, $email, $password, $repeat_password) !== false) {
-            header("Location: ../login.php?error=emptysignupinput");
+            header("Location: ../profile.php?error=emptysignupinput");
             exit();
         }
         // call to invalidUid() in includes/functions.inc.php (line 18)
         if (invalidUid($username) !== false) {
-            header("Location: ../login.php?error=invalidusername");
+            header("Location: ../profile.php?error=invalidusername");
             exit();
         }
         // call to invalidEmail in includes/functions.inc.php (line 30)
         if (invalidEmail($email) !== false) {
-            header("Location: ../login.php?error=invalidemail");
+            header("Location: ../profile.php?error=invalidemail");
             exit();
         }
         // call to passwordMatch() in includes/functions.inc.php (line 42)
         if (passwordMatch($password, $repeat_password) !== false) {
-            header("Location: ../login.php?error=passwordsdoesntmatch");
+            header("Location: ../profile.php?error=passwordsdoesntmatch");
             exit();
         }
         // call to uidExists() in includes/functions.inc.php (line 54)
         if (uidExists($conn, $username, $email) !== false) {
-            header("Location: ../login.php?error=usernameoremailtaken");
+            header("Location: ../profile.php?error=usernameoremailtaken");
             exit();
         }
 

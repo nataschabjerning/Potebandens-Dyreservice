@@ -1,53 +1,54 @@
 .users {
-    .container {
-        .all-users {
-            text-align: center;
-            
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
+    margin: 0 auto;
+    .all-users {
+        text-align: center;
+        
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            margin: 0 auto;
+            th, td {
+                padding: 1rem;
             }
-            table {
-                margin: 0 auto;
-                th, td {
-                    padding: 1rem;
-                }
-                thead {
-                    tr {
-                        th {
+            thead {
+                tr {
+                    th {
 
-                        }
                     }
                 }
-                tbody {
-                    tr {
-                        td {
+            }
+            tbody {
+                tr {
+                    td {
 
-                        }
-                        .user_id {
-                            font-size: 1rem;
-                            font-weight: 600;
-                        }
-                        .buttons {
-                            .delete {
-                                button {
-                                    background-color: rgb(221, 0, 0);
-                                    padding: .5rem 1rem;
-                                    border-radius: 10px;
-                                    border: none;
-                                    color: white;
-                                    font-weight: 600;
-                                    cursor: pointer;
-                                }
-                                button:hover {
-                                    // background-color: darken($color: #000000, $amount: 0);
-                                    background-color: rgb(194, 3, 3);
-                                }
+                    }
+                    .user_id {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                    .buttons {
+                        .delete {
+                            button {
+                                margin: 0;
+                                background-color: rgb(221, 0, 0);
+                                padding: .5rem 1rem;
+                                border-radius: 10px;
+                                border: none;
+                                color: white;
+                                font-weight: 600;
+                                cursor: pointer;
+                            }
+                            button:hover {
+                                // background-color: darken($color: #000000, $amount: 0);
+                                background-color: rgb(194, 3, 3);
                             }
                         }
                     }
                 }
             }
-        }      
-    }
+        }
+    }      
+    
 }

@@ -125,35 +125,24 @@
 
                             }
                             .buttons {
-                                display: flex;
-                                gap: 1rem;
-                                .update {
+                                .update, .delete {
                                     button {
+                                        margin: 0;
                                         background-color: rgb(253, 156, 29);
                                         padding: .5rem;
                                         border-radius: 10px;
-                                        border: none;
+                                        border: 1px solid black;
                                         color: white;
                                         font-weight: 600;
                                         cursor: pointer;
                                     }
                                     button:hover {
-                                        background-color: rgb(216, 126, 8);
+                                        background-color: darken($color: #D87E08, $amount: 50%);
                                     }
                                 }
                                 .delete {
                                     button {
                                         background-color: rgb(221, 0, 0);
-                                        padding: .5rem 1rem;
-                                        border-radius: 10px;
-                                        border: none;
-                                        color: white;
-                                        font-weight: 600;
-                                        cursor: pointer;
-                                    }
-                                    button:hover {
-                                        // background-color: darken($color: #000000, $amount: 0);
-                                        background-color: rgb(194, 3, 3);
                                     }
                                 }
                             }

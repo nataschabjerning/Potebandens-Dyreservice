@@ -1,9 +1,4 @@
-<?php
-    session_start();
-    $userId = $_SESSION["id"];
-?>
-
-<div class="change-password">
+<div id="change-password">
     <form action="./includes/changepassword.inc.php" method="post">
         <h2>Skift Kodeord</h2>
 
@@ -29,6 +24,9 @@
 
     if(isset($_POST['change'])) {
 
+        session_start();
+        $userId = $_SESSION["id"];
+
         // connect to database and functions
         require_once "connect.inc.php";
         require_once "functions.inc.php";
@@ -44,11 +42,11 @@
         
         if (password_verify($currentPassword,$row['password'])) {
             if($repeatNewPassword =='') {
-                header("location: ../login.php?error=repeatnewpassword");
+                header("location: ../profile.php?error=repeatnewpassword");
                 exit();
             }
             if($newPassword != $repeatNewPassword) {
-                header("location: ../login.php?error=newpasswordsdoesntmatch");
+                header("location: ../profile.php?error=newpasswordsdoesntmatch");
                 exit();
             }
             if(!isset($errors)) {
@@ -58,16 +56,16 @@
                 $result = mysqli_query($conn,"UPDATE users SET password='$newPassword' WHERE id='$userId'");
 
                 if($result) {
-                    header("location: ../login.php?passwordupdated");
+                    header("location: ../profile.php?passwordupdated");
                 }
                 else {
-                    header("location: ../login.php?error=stmtfailed");
+                    header("location: ../profile.php?error=stmtfailed");
                     exit();
                 }
             }
         }
         else {
-            header("location: ../login.php?error=currentpassworddoesnotmatch");
+            header("location: ../profile.php?error=currentpassworddoesnotmatch");
             exit();
         }
     }
