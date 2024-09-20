@@ -17,11 +17,31 @@
 
     <div class="page-content">
 
-        <!-- include php blocks here -->
+        <!-- if logged in -->
+        <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
 
-        <?php
-            include("php-partials/blocks/sendemail/sendemail.php");
-        ?>
+            <div class="logged-in">
+                <h3>Du er logget ind som</h3>
+                <h2><?php echo $_SESSION["username"]; ?></h2>
+            </div>
+
+            <div class="back">
+                <a href="admin.php">Tilbage til oversigt</a>
+            </div>
+
+            <!-- include admin php blocks here -->
+
+        <?php } // if (isset($_SESSION["username"])) end
+
+        // if not logged in
+        else { ?>
+            <div class="no_session">
+                <!-- include user php blocks here -->
+                <?php
+                    include("php-partials/blocks/sendemail/sendemail.php");
+                ?>
+            </div>
+        <?php } ?>
 
     </div>
 

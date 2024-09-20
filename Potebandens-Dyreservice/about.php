@@ -17,15 +17,31 @@
 
     <div class="page-content">
 
-        <div class="container">
+        <!-- if logged in -->
+        <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
+
+            <div class="logged-in">
+                <h3>Du er logget ind som</h3>
+                <h2><?php echo $_SESSION["username"]; ?></h2>
+            </div>
 
             <div class="back">
                 <a href="admin.php">Tilbage til oversigt</a>
             </div>
 
-            <!-- include php blocks here -->
+            <!-- include admin php blocks here -->
 
-        </div>
+        <?php } // if (isset($_SESSION["username"])) end
+
+        // if not logged in
+        else { ?>
+            <div class="no_session">
+                <!-- include user php blocks here -->
+                <?php
+                    
+                ?>
+            </div>
+        <?php } ?>
 
     </div>
 

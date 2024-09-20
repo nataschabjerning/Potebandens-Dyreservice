@@ -52,7 +52,7 @@ $(document).ready(function(){
 
             let $table_row  = jQuery(this).closest("tr");
             // get the service ID
-            var serviceId   = $table_row.attr('attr-user_id');
+            var userId   = $table_row.attr('attr-user_id');
 
             // show confirmaiton box
             $("#confirmation-user-delete").show();
@@ -60,40 +60,40 @@ $(document).ready(function(){
             // CONFIRMATION
             var buttonclicked;
             // if cancel_delete (no)
-            $('.cancel_delete').click(function(){ 
+            $('.cancel_user_delete').click(function(){ 
                 if(buttonclicked != false) {
                     window.location.reload();
-                    $("#confirmation-delete").hide();
-                    alert("Ingen ydelse blev slettet!");
+                    $("#confirmation-user-delete").hide();
+                    alert("Ingen bruger blev slettet!");
                 } 
             });
             // if confirm_delete (yes)
-            $('.confirm_delete').click(function(){
+            $('.confirm_user_delete').click(function(){
                 // Ajax config
                 $.ajax({
                     //we are using GET method to get data from server side
                     type: "GET",
                     // get the url to send to, when btn is clicked
-                    url: 'includes/deleteservice.inc.php',
+                    url: 'includes/deleteuser.inc.php',
                     // data to send
                     data: {
-                        service_id: serviceId
+                        user_id: userId
                     }
                 })
                 .done(function() {
                     // remove the table row
                     $table_row.remove();
                     // hide confirmation box
-                    $("#confirmation-delete").hide();
+                    $("#confirmation-user-delete").hide();
                     // reload page
                     window.location.reload();
                     // alert that the row has been successfully removed
-                    alert("Ydelse slettet!");
+                    alert("Bruger slettet!");
                 })
             });
         })
     }
-    // call the function to initiate when delete-service btn is clicked
+    // call the function to initiate when delete-user btn is clicked
     deleteUser();
 
     // Function to create service in html table and db table

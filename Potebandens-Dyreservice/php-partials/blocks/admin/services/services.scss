@@ -1,0 +1,83 @@
+.services {
+    text-align: center;
+    .container {
+        .all-services {
+            .form {
+                .show_hide {
+                    background-color: rgba(72, 48, 36, 0.5);
+                    border-bottom: 1px solid rgba(72, 48, 36, 0.1);
+                    padding: .5rem 0;
+                    text-align: center;
+                    width: fit-content;
+                    margin: 0 auto;
+                    #hide_add_form {
+                        display:none;
+                    }
+                    #hide_add_form:hover, #show_add_form:hover {
+                        cursor: pointer;
+                    }
+                }
+                .alertMessage {
+                    p {
+    
+                    }
+                }
+                #new_service {
+                    display: none;
+                    width: fit-content;
+                    margin: 2rem auto;
+                    .new_service {
+                        margin-bottom: 1rem;
+                        tr {
+                            th {
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                            }
+                            td {
+                                
+                            }
+                            .service_description {
+                                height: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+            h3 {
+    
+            }
+            table {
+                tr {
+                    th {
+    
+                    }
+                    td {
+    
+                    }
+                    .buttons {
+                        .update, .delete {
+                            button {
+                                margin: 0;
+                                background-color: rgb(253, 156, 29);
+                                padding: .5rem;
+                                border-radius: 10px;
+                                border: 1px solid black;
+                                color: white;
+                                font-weight: 600;
+                                cursor: pointer;
+                            }
+                            button:hover {
+                                background-color: darken($color: #D87E08, $amount: 50%);
+                            }
+                        }
+                        .delete {
+                            button {
+                                background-color: rgb(221, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

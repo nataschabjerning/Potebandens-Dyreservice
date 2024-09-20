@@ -14,7 +14,6 @@
             ?>
 
             <h3>Oversigt over alle ydelser og priser i tabel</h3>
-            <p>admin skal kunne oprette/opdatere/slette rækker i tabellen, som går ind og sletter fra db også (i admin-services.php)</p>
             
             <br>
             <hr>

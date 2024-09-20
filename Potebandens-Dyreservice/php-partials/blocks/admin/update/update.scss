@@ -1,0 +1,52 @@
+.change_password, .new_user {
+    background-color: rgba(72, 48, 36, 0.5);
+    border-bottom: 1px solid rgba(72, 48, 36, 0.1);
+    padding: .5rem 0;
+    text-align: center;
+    #hide_password, #hide_new_user {
+        display:none;
+    }
+    #hide_password:hover, #hide_new_user:hover, #show_password:hover, #show_new_user:hover {
+        cursor: pointer;
+    }
+}
+#change-password, #create-user {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+    form {
+        outline: 1px dashed #478f54;
+        border-radius: 10px;
+        padding: 2rem;
+        h2 {
+            margin-bottom: 2rem;
+        }
+        .passwordform, .newuserform {
+            label {
+                font-weight: 600;
+            }
+            input {
+                margin: .5rem 0 1rem;
+                height: 30px;
+                border: 1px solid black;
+                border-radius: 5px;
+                text-align: center;
+            }
+            input[type="email"] {
+                width: 100%;
+            }
+        }
+    }
+}
+#create-user {
+    form {
+        .newuserform {
+            .bottom-fields {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+    }
+}

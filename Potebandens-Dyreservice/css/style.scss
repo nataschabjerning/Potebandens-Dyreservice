@@ -12,7 +12,14 @@
 @import '../php-partials/blocks/info/info.scss';
 @import '../php-partials/blocks/sendemail/sendemail.scss';
 @import '../php-partials/blocks/service-slider/service-slider.scss';
-@import '../php-partials/blocks/update-users/users.scss';
+
+/* Blocks Admin
+------------------------------------------------------*/
+
+@import '../php-partials/blocks/admin/list/list.scss';
+@import '../php-partials/blocks/admin/services/services.scss';
+@import '../php-partials/blocks/admin/update/update.scss';
+@import '../php-partials/blocks/admin/users/users.scss';
 
 /* Components
 ------------------------------------------------------*/
@@ -23,7 +30,6 @@
 ------------------------------------------------------*/
 
 @import 'pages/about.scss';
-@import 'pages/admin-services.scss';
 @import 'pages/admin.scss';
 @import 'pages/contact.scss';
 @import 'pages/index.scss';
