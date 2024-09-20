@@ -20,13 +20,15 @@
         <!-- if logged in show page content -->
         <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
 
-            <div class="logged-in">
-                <h3>Du er logget ind som</h3>
-                <h2><?php echo $_SESSION["username"]; ?></h2>
-            </div>
+            <div class="subheader">
+                <div class="logged-in">
+                    <h3>Du er logget ind som</h3>
+                    <h2><?php echo $_SESSION["username"]; ?></h2>
+                </div>
 
-            <div class="back">
-                <a href="admin.php">Tilbage til oversigt</a>
+                <div class="back">
+                    <a href="admin.php">Tilbage til oversigt</a>
+                </div>
             </div>
 
             <?php

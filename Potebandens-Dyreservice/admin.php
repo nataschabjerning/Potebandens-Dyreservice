@@ -11,15 +11,7 @@
     <div class="subhero">
         <div class="overlay"></div>
         <div class="page-title">
-            <h1>Administrator Side</h1>
-            <?php 
-                if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
-                    echo "<h3>" . $_SESSION["username"] . "</h3>";
-                }
-                else {
-                    echo "<h3>Administrator</h3>";
-                }
-            ?>
+            <h1>Administrator</h1>
         </div>
     </div>
 
@@ -28,9 +20,11 @@
         <!-- if logged in -->
         <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
 
-            <div class="logged-in">
-                <h3>Du er logget ind som</h3>
-                <h2><?php echo $_SESSION["username"]; ?></h2>
+            <div class="subheader">
+                <div class="logged-in">
+                    <h3>Du er logget ind som</h3>
+                    <h2><?php echo $_SESSION["username"]; ?></h2>
+                </div>
             </div>
             
             <!-- include php blocks here -->

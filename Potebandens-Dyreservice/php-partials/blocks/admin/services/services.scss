@@ -4,22 +4,40 @@
         .all-services {
             .form {
                 .show_hide {
-                    background-color: rgba(72, 48, 36, 0.5);
-                    border-bottom: 1px solid rgba(72, 48, 36, 0.1);
-                    padding: .5rem 0;
-                    text-align: center;
+                    margin: 0 auto 1rem;
                     width: fit-content;
-                    margin: 0 auto;
+                    cursor: pointer;
+                    background-color: rgba(71,143,84, .8);
+                    width: fit-content;
+                    border-radius: 10px;
+                    border: 1px solid rgba(71,143,84, 1);
+                    cursor: pointer;
                     #hide_add_form {
                         display:none;
+                        padding: .5rem 1rem;
+                        border-radius: 10px;
+                        color: white;
+                        font-weight: 600;
+                        outline: 1px solid rgb(213,37,30);
                     }
-                    #hide_add_form:hover, #show_add_form:hover {
-                        cursor: pointer;
+                    #show_add_form {
+                        padding: .5rem 1rem;
+                        color: white;
+                        font-weight: 600;
                     }
                 }
-                .alertMessage {
+                .show_hide:hover {
+                    background-color: rgba(71,143,84, 1);
+                }
+                #alertMessage {
                     p {
-    
+                        margin: 0 auto;
+                        width: fit-content;
+                        border-radius: 10px;
+                        color: green;
+                        border: 1px solid green;
+                        font-weight: 600;
+                        padding: 1rem 2rem;
                     }
                 }
                 #new_service {
@@ -55,10 +73,10 @@
     
                     }
                     .buttons {
-                        .update, .delete {
+                        .update-service, .delete-service {
                             button {
                                 margin: 0;
-                                background-color: rgb(253, 156, 29);
+                                background-color: rgba(253, 156, 29, 1);
                                 padding: .5rem;
                                 border-radius: 10px;
                                 border: 1px solid black;
@@ -67,12 +85,16 @@
                                 cursor: pointer;
                             }
                             button:hover {
-                                background-color: darken($color: #D87E08, $amount: 50%);
+                                background-color: rgb(223, 138, 27);
                             }
                         }
-                        .delete {
+                        .delete-service {
+                            margin-top: .3rem;
                             button {
-                                background-color: rgb(221, 0, 0);
+                                background-color: rgba(221, 0, 0, 1);
+                            }
+                            button:hover {
+                                background-color: rgb(199, 3, 3);
                             }
                         }
                     }

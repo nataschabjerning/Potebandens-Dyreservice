@@ -92,11 +92,11 @@
                                 <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>
                                 <td><input type="text" class="service_price" value="<?php echo $row['service_price']?>"> kr.</td>
                                 <td class="buttons">
-                                    <div class="update">
-                                        <button class="update-service">Opdater</button>
+                                    <div class="update-service">
+                                        <button>Opdater</button>
                                     </div>                                    
-                                    <div class="delete">
-                                        <button class="delete-service">Slet</button>
+                                    <div class="delete-service">
+                                        <button>Slet</button>
                                     </div>
                                 </td>
                             </tr>

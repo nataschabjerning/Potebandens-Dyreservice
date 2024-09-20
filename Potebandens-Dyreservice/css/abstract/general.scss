@@ -3,27 +3,6 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.messages {
-    margin: 0 auto;
-    width: fit-content;
-    .error, .success {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-        margin: 0 0 2rem;
-        color: rgb(226, 3, 3);
-        border: 1px solid rgb(226, 3, 3);
-    }
-    .success {
-        color: green;
-        border: 1px solid green;
-    }
-}
-
 .subhero {
     background-image: linear-gradient(
         to bottom,
@@ -58,21 +37,36 @@
     padding: 6rem 0;
 }
 
-.logged-in {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-    text-align: center;
-    padding: 2rem;
-    h3 {
-        margin-bottom: 1rem;
+.subheader {
+    position: relative;
+    .logged-in {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+        text-align: center;
+        padding: 2rem;
+        h3 {
+            margin-bottom: 1rem;
+        }
+        // h2 {
+    
+        // }
     }
-    // h2 {
-
-    // }
-}
-
-.back {
-    a {
-
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(36,58,148, .6);
+        width: fit-content;
+        border-radius: 10px;
+        border: 1px solid rgba(36,58,148, 1);
+        margin: 1rem;
+        a {
+            padding: .5rem;
+            color: white;
+            font-weight: 600;
+        }
+    }
+    .back:hover {
+        background-color: rgba(36,58,148, 1);
     }
 }
 
@@ -133,8 +127,6 @@ button:hover {
                 font-weight: 600;
                 padding: 1rem 3rem;
                 border-radius: 5px;
-            }
-            button:hover {
                 cursor: pointer;
             }
         }

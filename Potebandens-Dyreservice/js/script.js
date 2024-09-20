@@ -141,9 +141,9 @@ $(document).ready(function(){
             // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
 
             // reload page after 3 seconds (#alertMessage dissappears)
-            // setTimeout(function() {
-            //     location.reload();
-            // }, 3000);
+            setTimeout(function() {
+                location.reload();
+            }, 2500);
 		})
     });
     
