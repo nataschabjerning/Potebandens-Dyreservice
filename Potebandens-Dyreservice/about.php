@@ -19,6 +19,10 @@
 
         <div class="container">
 
+            <div class="back">
+                <a href="admin.php">Tilbage til oversigt</a>
+            </div>
+
             <!-- include php blocks here -->
 
         </div>

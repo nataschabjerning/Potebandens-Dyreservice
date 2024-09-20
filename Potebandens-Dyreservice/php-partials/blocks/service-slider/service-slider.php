@@ -14,8 +14,8 @@
         </div>
 
         <?php
-            include("../../../includes/connect.inc.php");
-            include("../../../includes/functions.inc.php");
+            include("includes/connect.inc.php");
+            include("includes/functions.inc.php");
 
             $sql = "SELECT * FROM services LIMIT 6;";
             $stmt = $conn->prepare($sql);

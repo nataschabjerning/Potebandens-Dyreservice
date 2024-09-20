@@ -25,6 +25,11 @@
     
     <div class="page-content">
         <div class="container">
+
+            <div class="back">
+                <a href="admin.php">Tilbage til oversigt</a>
+            </div>
+            
             <div class="block profile">
 
                 <!-- if logged in show page content -->

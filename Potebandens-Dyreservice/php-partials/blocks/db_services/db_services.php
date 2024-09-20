@@ -5,7 +5,7 @@
         <div class="all-services">
             
             <?php
-                include("../../../includes/connect.inc.php");
+                include("includes/connect.inc.php");
 
                 $sql = "SELECT * FROM services ORDER BY service_name ASC;";
                 $stmt = $conn->prepare($sql);

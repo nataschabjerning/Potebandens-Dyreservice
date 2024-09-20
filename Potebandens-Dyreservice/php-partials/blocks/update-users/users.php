@@ -7,8 +7,7 @@
         <div class="all-users">
 
             <?php
-                include("../../../includes/connect.inc.php");
-                include("../../../includes/functions.inc.php");
+                include("includes/connect.inc.php");
 
                 $sql = "SELECT * FROM users ORDER BY name DESC;";
                 $stmt = $conn->prepare($sql);

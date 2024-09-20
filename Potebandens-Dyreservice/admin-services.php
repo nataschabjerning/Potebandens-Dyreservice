@@ -26,13 +26,18 @@
     <div class="page-content">
         <div class="block services">
             <div class="container">
+                
+                <div class="back">
+                    <a href="admin.php">Tilbage til oversigt</a>
+                </div>
+                
                 <!-- if logged in -->
                 <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
                     <div class="all-services">
     
                         <?php
-                            include("../../../includes/connect.inc.php");
-                            include("../../../includes/functions.inc.php");
+                            include("includes/connect.inc.php");
+                            include("includes/functions.inc.php");
 
                             $sql = "SELECT * FROM services ORDER BY id DESC;";
                             $stmt = $conn->prepare($sql);

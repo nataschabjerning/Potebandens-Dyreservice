@@ -25,6 +25,10 @@
     <div class="page-content">
         <div class="block contact">
             <div class="container">
+
+                <div class="back">
+                    <a href="admin.php">Tilbage til oversigt</a>
+                </div>
         
                 <!-- if logged in -->
                 <?php if (isset($_SESSION["id"])  || isset($_SESSION["username"])) { ?>
