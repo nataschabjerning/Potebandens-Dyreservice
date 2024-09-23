@@ -1,42 +1,3 @@
-<div id="create-user">
-    <form action="./includes/signup.inc.php" method="post">
-        
-        <h2>Opret Bruger</h2>
-
-        <div class="newuserform">
-                <div class="email">
-                    <label for="email">Email</label>
-                    <div class="input">
-                        <input type="email" name="email" placeholder="natascha@email.dk">
-                    </div>
-                </div>
-            <div class="bottom-fields">
-                <div class="name">
-                    <label for="name">Fulde navn</label>
-                    <div class="input">
-                        <input type="text" name="name" placeholder="Natascha Bjerning">
-                    </div>
-                    <label for="username">Brugernavn</label>
-                    <div class="input">
-                        <input type="text" name="username" placeholder="Natascha1234">
-                    </div>
-                </div>
-                <div class="password">
-                    <label for="pw">Kodeord</label>
-                    <div class="input">
-                        <input type="password" name="password">
-                    </div>
-                    <label for="pwrepeat">Gentag kodeord</label>
-                    <div class="input">
-                        <input type="password" name="repeat_password">
-                    </div>  
-                </div> 
-            </div>      
-        </div>
-        <button type="submit" name="create">Opret Bruger</button>
-    </form>
-</div>
-
 <?php
     // if 'Opret Bruger' button is clicked
     if (isset($_POST["create"])) {
@@ -83,3 +44,42 @@
         createUser($conn, $name, $username, $email, $password);
     }
 ?>
+
+<div id="create-user">
+    <form action="./includes/signup.inc.php" method="post">
+        
+        <h2>Opret Bruger</h2>
+
+        <div class="newuserform">
+                <div class="email">
+                    <label for="email">Email</label>
+                    <div class="input">
+                        <input type="email" name="email" placeholder="natascha@email.dk">
+                    </div>
+                </div>
+            <div class="bottom-fields">
+                <div class="name">
+                    <label for="name">Fulde navn</label>
+                    <div class="input">
+                        <input type="text" name="name" placeholder="Natascha Bjerning">
+                    </div>
+                    <label for="username">Brugernavn</label>
+                    <div class="input">
+                        <input type="text" name="username" placeholder="Natascha1234">
+                    </div>
+                </div>
+                <div class="password">
+                    <label for="pw">Kodeord</label>
+                    <div class="input">
+                        <input type="password" name="password">
+                    </div>
+                    <label for="pwrepeat">Gentag kodeord</label>
+                    <div class="input">
+                        <input type="password" name="repeat_password">
+                    </div>  
+                </div> 
+            </div>      
+        </div>
+        <button type="submit" name="create">Opret Bruger</button>
+    </form>
+</div>

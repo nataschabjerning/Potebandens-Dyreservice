@@ -1,25 +1,3 @@
-<div id="change-password">
-    <form action="./includes/changepassword.inc.php" method="post">
-        <h2>Skift Kodeord</h2>
-
-        <div class="passwordform">
-            <label for="username">Nuværende kodeord</label>
-            <div class="input">
-                <input type="password" name="currentPassword">
-            </div>
-            <label for="password">Nyt kodeord</label>
-            <div class="input">
-                <input type="password" name="newPassword">
-            </div>
-            <label for="password">Gentag nyt kodeord</label>
-            <div class="input">
-                <input type="password" name="repeatNewPassword">
-            </div>
-        </div>
-        <button type="submit" name="change">Skift kodeord</button>
-    </form>
-</div>
-
 <?php
 
     if(isset($_POST['change'])) {
@@ -70,3 +48,25 @@
         }
     }
 ?>
+
+<div id="change-password">
+    <form action="./includes/changepassword.inc.php" method="post">
+        <h2>Skift Kodeord</h2>
+
+        <div class="passwordform">
+            <label for="username">Nuværende kodeord</label>
+            <div class="input">
+                <input type="password" name="currentPassword">
+            </div>
+            <label for="password">Nyt kodeord</label>
+            <div class="input">
+                <input type="password" name="newPassword">
+            </div>
+            <label for="password">Gentag nyt kodeord</label>
+            <div class="input">
+                <input type="password" name="repeatNewPassword">
+            </div>
+        </div>
+        <button type="submit" name="change">Skift kodeord</button>
+    </form>
+</div>

@@ -36,9 +36,9 @@
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    ob_start(); ?>
-        <table></table>
-    <?php $sHTML = ob_get_clean();
+    // ob_start(); ?>
+        <!-- <table></table> -->
+    <!-- <?php // $sHTML = ob_get_clean(); -->
 
     // Close the connection after using it
     $conn->close();
