@@ -2,13 +2,13 @@
     include("includes/connect.inc.php");
 
     // if delete is confirmed, delete from uploads folder too
-    // if (isset($_POST['submit'])) {
-    //     $photoname = $_POST['photoname'];
-    //     if (!unlink($photoname)) {
-    //         echo ("Error deleting $photoname");
+    // if (isset($_POST['delete-image'])) {
+    //     $image_link = $_POST['image_link'];
+    //     if (!unlink($image_link)) {
+    //         echo ("Error deleting $image_link");
     //     }
     //     else {
-    //         echo ("Deleted $photoname");
+    //         echo ("Deleted $image_link");
     //     }
     // }
 
@@ -48,7 +48,7 @@
                         </div>
                     <?php } ?>
                     <div class="delete">
-                        <button class="delete-image">Slet Billede</button>
+                        <button class="delete-image" name="delete-image">Slet Billede</button>
                     </div>
                 </section>
             <?php } ?>
