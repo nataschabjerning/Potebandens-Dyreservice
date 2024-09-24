@@ -1,6 +1,17 @@
 <?php
     include("includes/connect.inc.php");
 
+    // if delete is confirmed, delete from uploads folder too
+    // if (isset($_POST['submit'])) {
+    //     $photoname = $_POST['photoname'];
+    //     if (!unlink($photoname)) {
+    //         echo ("Error deleting $photoname");
+    //     }
+    //     else {
+    //         echo ("Deleted $photoname");
+    //     }
+    // }
+
     $sql = "SELECT * FROM gallery;";
     $stmt = $conn->prepare($sql);
     mysqli_stmt_execute($stmt);
