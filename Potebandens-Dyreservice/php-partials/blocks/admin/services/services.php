@@ -34,12 +34,11 @@
 
             <div class="form">
 
-                <div class="show_hide">
+                <div class="add_service">
                     <div id="show_add_form">Tilføj Ydelse</div>
                     <div id="hide_add_form">Skjul formular</div>
                 </div>
 
-                <!-- STYLING FOR THIS MESSAGE DIV -->
                 <!-- message div for success when creating/updating service -->
                 <div id="alertMessage"></div>
 
@@ -56,10 +55,6 @@
                         <tr>
                             <th>Beskrivelse</th>
                             <td><input type="text" class="service_description" name="service_description"></td>
-                        </tr>
-                        <tr>
-                            <th>Pris</th>
-                            <td><input type="text" class="service_price" name="service_price"></td>
                         </tr>
                     </table>
                         <div class="button">
@@ -79,7 +74,6 @@
                             <th>Ydelse</th>
                             <th>Hvor længe</th>
                             <th>Beskrivelse</th>
-                            <th>Pris</th>
                             <th>Opdater/Slet</th>
                         </tr>
                     </thead>
@@ -90,7 +84,6 @@
                                 <td><input type="text" class="service_name" value="<?php echo $row['service_name']?>"></td>
                                 <td><input type="text" class="service_length" value="<?php echo $row['service_length']?>"></td>
                                 <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>
-                                <td><input type="text" class="service_price" value="<?php echo $row['service_price']?>"> kr.</td>
                                 <td class="buttons">
                                     <div class="update-service">
                                         <button>Opdater</button>

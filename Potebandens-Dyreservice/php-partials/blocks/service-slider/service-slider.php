@@ -25,18 +25,17 @@
 
         <div class="slider">
             
-        <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-            <div class="slide">
-                    <div class="overlay"></div>
-                    <div class="service-content">
-                        <div class="text">
-                            <h3><?php echo $row['service_name']?></h3>
-                            <p><?php echo $row['service_description']?></p>
-                            <p><?php echo $row['service_price']?> kr.</p>
+            <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                <div class="slide">
+                        <div class="overlay"></div>
+                        <div class="service-content">
+                            <div class="text">
+                                <h3><?php echo $row['service_name']?></h3>
+                                <p><?php echo $row['service_description']?></p>
+                            </div>
                         </div>
-                    </div>
-                
-            </div>
+                    
+                </div>
             <?php } ?>
             
         </div>

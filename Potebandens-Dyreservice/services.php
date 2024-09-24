@@ -11,7 +11,7 @@
     <div class="subhero">
         <div class="overlay"></div>
         <div class="page-title">
-            <h1>Ydelser og priser</h1>
+            <h1>Ydelser</h1>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
             </div>
 
             <div class="back">
-                <a href="admin.php">Tilbage til oversigt</a>
+                <a href="admin.php">Til Oversigten</a>
             </div>
         </div>
 

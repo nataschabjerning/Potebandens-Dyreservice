@@ -27,11 +27,14 @@
                 </div>
 
                 <div class="back">
-                    <a href="admin.php">Tilbage til oversigt</a>
+                    <a href="admin.php">Til Oversigten</a>
                 </div>
             </div>
 
-            <!-- include admin php blocks here -->
+            <?php 
+                // <!-- include admin php blocks here -->
+
+            ?>
 
         <?php } // if (isset($_SESSION["username"])) end
 
@@ -40,7 +43,7 @@
             <div class="no_session">
                 <!-- include user php blocks here -->
                 <?php
-                    
+                    include("php-partials/blocks/about/about.php");
                 ?>
             </div>
         <?php } ?>
@@ -48,7 +51,6 @@
     </div>
 
 </div>
-
 
 <?php
     include_once("php-partials/blocks/footer/footer.php");

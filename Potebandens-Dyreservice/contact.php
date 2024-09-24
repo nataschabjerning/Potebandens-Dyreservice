@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="back">
-                    <a href="admin.php">Tilbage til oversigt</a>
+                    <a href="admin.php">Til Oversigten</a>
                 </div>
             </div>
 

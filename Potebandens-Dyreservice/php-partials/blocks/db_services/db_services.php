@@ -13,6 +13,8 @@
                 $resultData = mysqli_stmt_get_result($stmt);
             ?>
 
+            <h1>Lav oversigt om til 'kort' i stedet for pænere bruger oversigt</h1>
+            
             <h3>Oversigt over alle ydelser og priser i tabel</h3>
             
             <br>
@@ -24,7 +26,6 @@
                     <th>Ydelse</th>
                     <th>Hvor længe</th>
                     <th>Beskrivelse</th>
-                    <th>Pris</th>
                 </tr>
 
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
@@ -32,7 +33,6 @@
                         <td><?php echo $row['service_name']?></td>
                         <td><?php echo $row['service_length']?></td>
                         <td><?php echo $row['service_description']?></td>
-                        <td><?php echo $row['service_price']?> kr.</td>
                     </tr>
                 <?php } ?>
             </table>

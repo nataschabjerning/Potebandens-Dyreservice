@@ -40,11 +40,67 @@ $(document).ready(function(){
         $(this).children("#hide_new_user").toggle();
     });
     // show/hide 'new service' form
-    $(".show_hide").click(function () {
+    $(".add_service").click(function () {
         $("#new_service").slideToggle();
         $(this).children("#show_add_form").toggle();
         $(this).children("#hide_add_form").toggle();
     });
+    // show/hide 'add image' form
+    $(".add_image").click(function () {
+        $("#insert-image").slideToggle();
+        $(this).children("#show_add_image").toggle();
+        $(this).children("#hide_add_image").toggle();
+    });
+
+    // delete image from db and table
+    function deleteImage() {
+	    $(document).delegate(".delete-image", "click", function() {
+
+            let $table_row  = jQuery(this).closest("section");
+            // get the service ID
+            var imageId   = $table_row.attr('attr-image_id');
+
+            // show confirmaiton box
+            $("#confirmation-image-delete").show();
+
+            // CONFIRMATION
+            var buttonclicked;
+            // if cancel_delete (no)
+            $('.cancel_image_delete').click(function(){ 
+                if(buttonclicked != false) {
+                    window.location.reload();
+                    $("#confirmation-image-delete").hide();
+                    alert("Intet billede blev slettet!");
+                } 
+            });
+            // if confirm_delete (yes)
+            $('.confirm_image_delete').click(function(){
+                // Ajax config
+                $.ajax({
+                    //we are using GET method to get data from server side
+                    type: "GET",
+                    // get the url to send to, when btn is clicked
+                    url: 'includes/deleteimage.inc.php',
+                    // data to send
+                    data: {
+                        image_id: imageId
+                    }
+                })
+                .done(function() {
+                    // remove the table row
+                    $table_row.remove();
+                    // hide confirmation box
+                    // $("#confirmation-user-delete").hide();
+                    // reload page
+                    window.location.reload();
+                    // alert that the row has been successfully removed
+                    alert("Billede slettet!");
+                })
+            });
+        })
+    }
+    // call the function to initiate when delete-user btn is clicked
+    deleteImage();
 
     // delete user from db and table
     function deleteUser() {
@@ -116,16 +172,10 @@ $(document).ready(function(){
         })
         .done(function() {
             // if one or more fields is empty
-            if(!$service_name || !$service_length || !$service_description || !$service_price) {
+            if(!$service_name || !$service_length || !$service_description) {
                 $request.abort();
                 window.location.reload();
                 alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-            }
-            // if 'service_price' does not contain only numbers
-            if (isNaN($service_price)) {
-                $request.abort();
-                window.location.reload();
-                alert("Obs! Det ser ud som om at det ikke er tal i ydelsens pris.");
             }
             // if 'service_name' contains numbers
             if ($service_name.match(".*\\d.*")) {
@@ -160,7 +210,6 @@ $(document).ready(function(){
             let $service_name 	        = $table_row.find(".service_name").val();
             let $service_length	        = $table_row.find(".service_length").val();
             let $service_description 	= $table_row.find(".service_description").val();
-            let $service_price 	        = $table_row.find(".service_price").val();
 
             // show confirmaiton box
             $("#confirmation-update").show();
@@ -187,23 +236,15 @@ $(document).ready(function(){
                         service_id: serviceId,
                         service_name: $service_name,
                         service_length: $service_length,
-                        service_description: $service_description,
-                        service_price: $service_price
+                        service_description: $service_description
                     },
                 })
                 .done(function() {
                     // if one or more fields is empty
-                    if($service_name  === "" || $service_description  === "" || $service_price === "") {
+                    if($service_name  === "" || $service_description  === "") {
                         $request.abort();
                         window.location.reload();
                         alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-                        $("#confirmation-update").hide();
-                    }
-                    // if 'service_price' does not contain only numbers
-                    if (isNaN($service_price)) {
-                        $request.abort();
-                        window.location.reload();
-                        alert("Obs! Det ser ud som om at det ikke er tal i ydelsens pris.");
                         $("#confirmation-update").hide();
                     }
                     // if 'service_name' contains numbers

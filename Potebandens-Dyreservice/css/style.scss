@@ -6,8 +6,10 @@
 /* Blocks
 ------------------------------------------------------*/
 
+@import '../php-partials/blocks/about/about.scss';
 @import '../php-partials/blocks/db_services/db_services.scss';
 @import '../php-partials/blocks/footer/footer.scss';
+@import '../php-partials/blocks/gallery/gallery.scss';
 @import '../php-partials/blocks/header/header.scss';
 @import '../php-partials/blocks/info/info.scss';
 @import '../php-partials/blocks/sendemail/sendemail.scss';
@@ -16,9 +18,11 @@
 /* Blocks Admin
 ------------------------------------------------------*/
 
+@import '../php-partials/blocks/admin/gallery/admin-gallery.scss';
 @import '../php-partials/blocks/admin/list/list.scss';
 @import '../php-partials/blocks/admin/services/services.scss';
 @import '../php-partials/blocks/admin/update/update.scss';
+@import '../php-partials/blocks/admin/upload/upload.scss';
 @import '../php-partials/blocks/admin/users/users.scss';
 
 /* Components
