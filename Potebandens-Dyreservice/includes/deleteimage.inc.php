@@ -10,14 +10,6 @@
     // get the service_id from del() function in script.js
     $id = $_REQUEST['image_id'];
 
-    $filename = $_POST['delete-image'];
-    if (file_exists($filename)) {
-        unlink($filename);
-        echo 'File '.$filename.' has been deleted';
-    } else {
-        echo 'Could not delete '.$filename.', file does not exist';
-    }
-
     // Set the DELETE SQL data
 	$sql = "DELETE FROM gallery WHERE id='".$id."'";
 
