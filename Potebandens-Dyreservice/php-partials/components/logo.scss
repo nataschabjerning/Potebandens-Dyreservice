@@ -8,6 +8,9 @@ a {
         gap: 1rem;
         .logo {
             height: 50px;
+            @media (max-width: 1024px) {
+                height: 40px;
+            }
             img {
                 height: 100%;
             }
@@ -16,6 +19,10 @@ a {
             h2 {
                 color: #fff;
                 text-shadow: 2px 2px 4px rgb(22, 22, 22);
+                @media (max-width: 850px) {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
     }

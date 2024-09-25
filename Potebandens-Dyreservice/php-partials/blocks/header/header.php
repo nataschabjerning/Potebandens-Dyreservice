@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once("includes/connect.inc.php");
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +25,6 @@
             <div class="container">
                 
                 <?php
-                    include_once("includes/connect.inc.php");
                     include("php-partials/components/logo.php");
                 ?>
 
