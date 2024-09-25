@@ -6,12 +6,25 @@
     $targetDir = "uploads/";
     
     if (isset($_POST["upload"])) {
+        
+        $sql = "SELECT * FROM gallery;";
+        $res = mysqli_query($conn,$sql);
+        $res=mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($res);
+
+
+
         if (!empty($_FILES["file"]["name"])) {
             $image_link = basename($_FILES["file"]["name"]);
             $image_alt = $_POST["image_alt"];
             $image_text = $_POST["image_text"];
             $targetFilePath = $targetDir . $image_link;
             $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+            if($image_link == $row["image_link"]) {
+                header("location: ../gallery.php?error=imagealreadyuploaded");
+                exit();
+            }
         
             // Allow certain file formats
             $allowTypes = array('jpg','png','jpeg','gif');

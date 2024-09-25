@@ -29,6 +29,14 @@
                 echo "<h4>- Der skete en fejl da filen skulle indsættes i databasen. Prøv igen</h4>";
                 echo "</div>";
             }
+            // failed to insert into database
+            if ($_GET["error"] == "imagealreadyuploaded") {
+                echo "<div class='error'>";
+                echo "<h3>Tilføj Billede</h3>";
+                echo "<h4>- Det ser ud til at billedet deler filnavn med et billede der allerede er uploaded</h4>";
+                echo "<h4>- Omdøb billedfilen, eller tjek om billedet allerede er i galleriet</h4>";
+                echo "</div>";
+            }
         }
         // if image was uploaded successfully
         if (isset($_GET["success"])) {

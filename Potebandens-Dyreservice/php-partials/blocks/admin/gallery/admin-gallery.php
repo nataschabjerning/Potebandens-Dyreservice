@@ -1,6 +1,7 @@
 <?php
     include("includes/connect.inc.php");
 
+
     $sql = "SELECT * FROM gallery;";
     $stmt = $conn->prepare($sql);
     mysqli_stmt_execute($stmt);
