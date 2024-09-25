@@ -12,18 +12,13 @@
     $service_name           = $_REQUEST['service_name'];
     $service_length         = $_REQUEST['service_length'];
     $service_description    = $_REQUEST['service_description'];
-    $service_price          = $_REQUEST['service_price'];
 
     // if not filled out
-    if(!$service_name || !$service_description || !$service_price) {
+    if(!$service_name || !$service_description) {
         exit;
     }
     // if there is numbers in service_name
     if(preg_match("/\d/", $service_name)) {
-        exit;
-    }
-    // if service_price is not a number
-    if(!is_numeric($service_price)) {
         exit;
     }
 
@@ -31,8 +26,7 @@
 	SET 
     service_name='$service_name',
     service_length='$service_length',
-    service_description='$service_description',
-    service_price='$service_price' 
+    service_description='$service_description'
     WHERE id='$id'";
 
     // Process the query so row is updated in table and db

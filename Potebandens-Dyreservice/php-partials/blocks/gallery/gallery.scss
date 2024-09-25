@@ -12,11 +12,18 @@
                 grid-template-columns: 1fr;
             }
             .image-card {
-                display: flex;
-                flex-direction: column;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                background-image: linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 253, .8) 0%,
+                    rgba(255, 255, 255, 0.8) 100%),
+                    url('../../../../../Images/References/allepoter.png'
+                );
+                background-position: center;
+                background-size: contain;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                border-bottom: 1px solid black;
+                border-top: 1px solid black;
                 border-radius: 10px;
-                height: fit-content;
                 @media (max-width: 1024px) {
                     grid-template-columns: repeat(2, 1fr);
                 }
@@ -37,7 +44,7 @@
                     img {
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
-                        object-fit: cover;
+                        object-fit: contain;
                         height: 100%;
                         width: 100%;
                     }
@@ -46,6 +53,8 @@
                     background-color: white;
                     padding: 1rem;
                     text-align: center;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
                     @media (max-width: 450px) {
                         padding: .8rem;
                     }

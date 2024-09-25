@@ -56,9 +56,9 @@ $(document).ready(function(){
     function deleteImage() {
 	    $(document).delegate(".delete-image", "click", function() {
 
-            let $table_row  = jQuery(this).closest("section");
+            let $section  = jQuery(this).closest("section");
             // get the service ID
-            var imageId   = $table_row.attr('attr-image_id');
+            var imageId   = $section.attr('attr-image_id');
 
             // show confirmaiton box
             $("#confirmation-image-delete").show();
@@ -88,7 +88,7 @@ $(document).ready(function(){
                 })
                 .done(function() {
                     // remove the table row
-                    $table_row.remove();
+                    $section.remove();
                     // hide confirmation box
                     // $("#confirmation-user-delete").hide();
                     // reload page

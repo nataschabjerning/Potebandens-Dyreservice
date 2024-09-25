@@ -7,13 +7,13 @@
 
     include_once("connect.inc.php");
 
-    // get the service_id from del() function in script.js
+    // get the image_id from del() function in script.js
     $id = $_REQUEST['image_id'];
 
     // Set the DELETE SQL data
 	$sql = "DELETE FROM gallery WHERE id='".$id."'";
 
-	// Process the query so row is deleted from table and db
+	// Process the query so section is deleted from table and db
 	if (!$conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
 	}
