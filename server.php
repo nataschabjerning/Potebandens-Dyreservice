@@ -25,22 +25,22 @@ $dbpassword = "root";
 # DATABASE - TABLES
 
 gallery
-- id
-- image_link
-- image_alt
-- image_text
+- id (INT AUTO_INCREMENT)
+- image_link (VARCHAR 255)
+- image_alt (VARCHAR 50)
+- image_text (VARCHAR 100)
 
 services
-- id
-- service_name
-- service_length
-- service_description
+- id (INT AUTO_INCREMENT)
+- service_name (VARCHAR 100)
+- service_short_description (VARCHAR 100)
+- service_description (VARCHAR 255)
 
 users
-- id
-- name
-- username
-- email
-- password
+- id (INT AUTO_INCREMENT)
+- name (VARCHAR 50)
+- username (VARCHAR 50)
+- email (VARCHAR 100)
+- password (VARCHAR 255)
 
 -->

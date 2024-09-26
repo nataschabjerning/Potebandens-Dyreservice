@@ -67,7 +67,8 @@
                                     }
                                 ?>
                                 <li><a href="index.php">Forside</a></li>
-                                <li><a href="services.php">Ydelser | Priser</a></li>
+                                <li><a href="services.php">Ydelser</a></li>
+                                <li><a href="gallery.php">Galleri</a></li>
                                 <li><a href="about.php">Om os</a></li>
                                 <li><a href="contact.php">Kontakt</a></li>
                             </ul>

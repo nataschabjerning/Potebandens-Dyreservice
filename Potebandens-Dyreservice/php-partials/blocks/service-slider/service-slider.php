@@ -17,7 +17,7 @@
             include("includes/connect.inc.php");
             include("includes/functions.inc.php");
 
-            $sql = "SELECT * FROM services LIMIT 6;";
+            $sql = "SELECT * FROM services ORDER BY id DESC LIMIT 6;";
             $stmt = $conn->prepare($sql);
             mysqli_stmt_execute($stmt);
             $resultData = mysqli_stmt_get_result($stmt);
@@ -31,7 +31,7 @@
                         <div class="service-content">
                             <div class="text">
                                 <h3><?php echo $row['service_name']?></h3>
-                                <p><?php echo $row['service_description']?></p>
+                                <p><?php echo $row['service_short_description']?></p>
                             </div>
                         </div>
                     

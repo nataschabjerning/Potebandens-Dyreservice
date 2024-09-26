@@ -35,7 +35,7 @@
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <section class="image-card" attr-image_id="<?php echo $row['id']; ?>">
                     <div class="image">
-                        <img src="includes/uploads/<?php echo $row['image_link']?>" alt="<?php echo $row['image_alt']?>">
+                        <img src="includes/gallery-uploads/<?php echo $row['image_link']?>" alt="<?php echo $row['image_alt']?>">
                     </div>
                     <?php if (!empty($row['image_text'])) { ?>
                         <div class="text">

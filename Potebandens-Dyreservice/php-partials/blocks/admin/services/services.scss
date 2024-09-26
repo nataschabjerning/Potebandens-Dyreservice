@@ -42,20 +42,73 @@
                 }
                 #new_service {
                     display: none;
-                    width: fit-content;
                     margin: 2rem auto;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
                     .new_service {
-                        margin-bottom: 1rem;
-                        tr {
-                            th {
-                                font-size: 1.5rem;
+                        outline: 1px dashed #478f54;
+                        border-radius: 10px;
+                        padding: 2rem;
+                        position: relative;
+                            .span {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                span {
+                                    color: red;
+                                    font-weight: 900;
+                                }
+                            }
+                        h2 {
+                            margin-bottom: 2rem;
+                        }
+                        form {
+                            label {
                                 font-weight: 600;
+                                span {
+                                    color: red;
+                                    font-weight: 900;
+                                }
                             }
-                            td {
+                            textarea::placeholder {
+                                text-align: center;
+                            }
+                            textarea, input {
+                                font-size: 1rem;
+                                padding: .5rem;
+                                height: 55px;
+                                border: 1px solid black;
+                                border-radius: 5px;
+                                margin: .5rem 0;
+                                width: 100%;
+                                text-indent: 10px;
+                            }
+                            .top {
+                                display: flex;
+                                gap: 1rem;
+                                .name, .short_description, .notes {
+                                    width: 100%;
+                                }
+                            }
+                            .descriptions {
+                                margin-top: 1rem;
+                                    #service_description {
+                                        position: relative;
+                                        .star {
+                                            position: absolute;
+                                            width: 10px;
+                                            top: .5rem;
+                                            left: 2px;
+                                            color: red;
+                                            font-weight: 900;
+                                        }
+                                    }
+                                    textarea::placeholder {
+                                        text-align: left;
+                                    }
+                            
                                 
-                            }
-                            .service_description {
-                                height: 2rem;
                             }
                         }
                     }
@@ -64,13 +117,43 @@
             h3 {
     
             }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
             table {
+                margin: 0 auto;
+                .service_id {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
                 tr {
                     th {
-    
+                        padding: 5px;
                     }
                     td {
-    
+                        height: 100%;
+                        textarea {
+                            height: 150px;
+                            width: 140px;
+                            border-radius: 0;
+                            border-style:hidden;
+                        }
+                        input {
+                            border: none;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                    .service_id {
+                        text-align: center;
+                    }
+                    .service_name {
+                        #service_name {
+                            vertical-align: middle;
+                            font-size: 1.2rem;
+                            width: 120px;
+                        }
                     }
                     .buttons {
                         .update-service, .delete-service {

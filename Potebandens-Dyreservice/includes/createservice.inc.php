@@ -7,29 +7,25 @@
 
     include_once("connect.inc.php");
 
-    // set to false and go though all checks below
-    $response = false;
-
-    $service_name           = $_POST['service_name'];
-    $service_length         = $_POST['service_length'];
-    $service_description    = $_POST['service_description'];
-    $service_price          = $_POST['service_price'];
+    $service_name               = $_POST['service_name'];
+    $service_short_description  = $_POST['service_short_description'];
+    $service_description_one    = $_POST['service_description_one'];
+    $service_description_two    = $_POST['service_description_two'];
+    $service_description_three  = $_POST['service_description_three'];
+    $service_description_four   = $_POST['service_description_four'];
+    $important_note             = $_POST['important_note'];
 
     // if not filled out
-    if(!$service_name || !$service_description || !$service_price) {
+    if(!$service_name || !$service_short_description || !$service_description_one) {
         exit;
     }
     // if there is numbers in service_name
     if(preg_match("/\d/", $service_name)) {
         exit;
     }
-    // if service_price is not a number
-    if(!is_numeric($service_price)) {
-        exit;
-    }
     
-    $sql = "INSERT INTO services (service_name, service_length, service_description, service_price) 
-    VALUES ('$service_name', '$service_length', '$service_description', '$service_price')";
+    $sql = "INSERT INTO services (service_name, service_short_description, service_description_one, service_description_two, service_description_three, service_description_four, important_note) 
+    VALUES ('$service_name', '$service_short_description', '$service_description_one', '$service_description_two', '$service_description_three', '$service_description_four', '$important_note')";
 
     // Process the query so row is created in table and db
     if (!$conn->query($sql)) {

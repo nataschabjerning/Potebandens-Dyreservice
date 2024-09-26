@@ -155,24 +155,30 @@ $(document).ready(function(){
     // Function to create service in html table and db table
     $('#create-service').click(function() {
 
-        $service_name = $('input[name=service_name]').val();
-        $service_length = $('input[name=service_length]').val();
-        $service_description = $('input[name=service_description]').val();
-        $service_price = $('input[name=service_price]').val();
+        $service_name = $('textarea[name=service_name]').val();
+        $service_short_description = $('textarea[name=service_short_description]').val();
+        $service_description_one = $('textarea[name=service_description_one]').val();
+        $service_description_two = $('textarea[name=service_description_two]').val();
+        $service_description_three = $('textarea[name=service_description_three]').val();
+        $service_description_four = $('textarea[name=service_description_four]').val();
+        $important_note = $('textarea[name=important_note]').val();
         
         var $request = $.ajax({
             type: 'POST',
             url: 'includes/createservice.inc.php',
             data: {
                 service_name: $service_name,
-                service_length: $service_length,
-                service_description: $service_description,
-                service_price: $service_price
+                service_short_description: $service_short_description,
+                service_description_one: $service_description_one,
+                service_description_two: $service_description_two,
+                service_description_three: $service_description_three,
+                service_description_four: $service_description_four,
+                important_note: $important_note
             }
         })
         .done(function() {
             // if one or more fields is empty
-            if(!$service_name || !$service_length || !$service_description) {
+            if(!$service_name || !$service_short_description || !$service_description_one) {
                 $request.abort();
                 window.location.reload();
                 alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
@@ -187,13 +193,13 @@ $(document).ready(function(){
             
             // show message in #alertMessage div
             $('#alertMessage').html('<p>Ydelse oprettet!</p>');
-
+            
             // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
 
-            // reload page after 3 seconds (#alertMessage dissappears)
+            // // reload page after 3 seconds (#alertMessage dissappears)
             setTimeout(function() {
                 location.reload();
-            }, 2500);
+            }, 2000);
 		})
     });
     
@@ -207,9 +213,13 @@ $(document).ready(function(){
             var serviceId   = $table_row.attr('attr-service_id');
 
             // Get inputs from services
-            let $service_name 	        = $table_row.find(".service_name").val();
-            let $service_length	        = $table_row.find(".service_length").val();
-            let $service_description 	= $table_row.find(".service_description").val();
+            let $service_name = $table_row.find("#service_name").val();
+            let $service_short_description = $table_row.find("#service_short_description").val();
+            let $service_description_one = $table_row.find("#service_description_one").val();
+            let $service_description_two = $table_row.find("#service_description_two").val();
+            let $service_description_three = $table_row.find("#service_description_three").val();
+            let $service_description_four = $table_row.find("#service_description_four").val();
+            let $important_note = $table_row.find("#important_note").val();
 
             // show confirmaiton box
             $("#confirmation-update").show();
@@ -235,13 +245,16 @@ $(document).ready(function(){
                     data: {
                         service_id: serviceId,
                         service_name: $service_name,
-                        service_length: $service_length,
-                        service_description: $service_description
+                        service_short_description: $service_short_description,
+                        service_description_one: $service_description_one,
+                        service_description_two: $service_description_two,
+                        service_description_three: $service_description_three,
+                        service_description_four: $service_description_four,important_note: $important_note,
                     },
                 })
                 .done(function() {
                     // if one or more fields is empty
-                    if($service_name  === "" || $service_description  === "") {
+                    if($service_name  === "" || $service_description_one  === "") {
                         $request.abort();
                         window.location.reload();
                         alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
@@ -262,7 +275,7 @@ $(document).ready(function(){
                     // reload page after 3 seconds (#alertMessage dissappears)
                     setTimeout(function() {
                         location.reload();
-                    }, 3000);
+                    }, 2000);
                 })  
             });
         })

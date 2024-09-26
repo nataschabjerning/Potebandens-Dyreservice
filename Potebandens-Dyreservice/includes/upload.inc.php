@@ -3,7 +3,7 @@
     include_once 'connect.inc.php';
 
     // File upload directory
-    $targetDir = "uploads/";
+    $targetDir = "gallery-uploads/";
     
     if (isset($_POST["upload"])) {
         
@@ -11,8 +11,6 @@
         $res = mysqli_query($conn,$sql);
         $res=mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($res);
-
-
 
         if (!empty($_FILES["file"]["name"])) {
             $image_link = basename($_FILES["file"]["name"]);

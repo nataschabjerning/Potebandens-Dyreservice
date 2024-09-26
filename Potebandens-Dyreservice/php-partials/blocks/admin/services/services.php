@@ -4,7 +4,6 @@
 
             <?php
                 include("includes/connect.inc.php");
-                include("includes/functions.inc.php");
 
                 $sql = "SELECT * FROM services ORDER BY id DESC;";
                 $stmt = $conn->prepare($sql);
@@ -13,35 +12,35 @@
             ?>
 
             <div id="confirmation-delete">
-            <div class="content">
-                <h2>Er du sikker på, at du gerne vil slette denne ydelse?</h2>
-                <div class="buttons">
-                    <button class="confirm_delete">
-                        <img src="../../../../Images/References/grønpotebtn.png" alt="">
-                        <h4>Ja</h4>
-                    </button>
-                    <button class="cancel_delete">
-                        <img src="../../../../Images/References/rødpotebtn.png" alt="">
-                        <h4>Nej</h4>
-                    </button>
+                <div class="content">
+                    <h2>Er du sikker på, at du gerne vil slette denne ydelse?</h2>
+                    <div class="buttons">
+                        <button class="confirm_delete">
+                            <img src="../../../../Images/References/grønpotebtn.png" alt="">
+                            <h4>Ja</h4>
+                        </button>
+                        <button class="cancel_delete">
+                            <img src="../../../../Images/References/rødpotebtn.png" alt="">
+                            <h4>Nej</h4>
+                        </button>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div id="confirmation-update">
-            <div class="content">
-                <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
-                <div class="buttons">
-                    <button class="confirm_update">
-                        <img src="../../../../Images/References/grønpotebtn.png" alt="">
-                        <h4>Ja</h4>
-                    </button>
-                    <button class="cancel_update">
-                        <img src="../../../../Images/References/rødpotebtn.png" alt="">
-                        <h4>Nej</h4>
-                    </button>
+                <div class="content">
+                    <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
+                    <div class="buttons">
+                        <button class="confirm_update">
+                            <img src="../../../../Images/References/grønpotebtn.png" alt="">
+                            <h4>Ja</h4>
+                        </button>
+                        <button class="cancel_update">
+                            <img src="../../../../Images/References/rødpotebtn.png" alt="">
+                            <h4>Nej</h4>
+                        </button>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="form">
@@ -55,37 +54,69 @@
                 <div id="alertMessage"></div>
 
                 <div id="new_service">
-                    <table class="new_service">
-                        <tr>
-                            <th>Ydelse</th>
-                            <td><input type="text" class="service_name" name="service_name"></td>
-                        </tr>
-                        <tr>
-                            <th>Hvor længe</th>
-                            <td><input type="text" class="service_length" name="service_length"></td>
-                        </tr>
-                        <tr>
-                            <th>Beskrivelse</th>
-                            <td><input type="text" class="service_description" name="service_description"></td>
-                        </tr>
-                    </table>
+                    <div class="new_service">
+                        <h2>Tilføj Ydelse</h2>
+                        <p class="span"><span>*</span> SKAL udfyldes</p>
+                        <form method="post">
+                            <div class="top">
+                                <div class="name">
+                                    <label>Ydelsens Navn <span>*</span></label>
+                                    <div class="input">
+                                        <input type="text" class="service_name" name="service_name">
+                                    </div>
+                                </div>
+                                <div class="short_description">
+                                    <label>Kort Beskrivelse <span>*</span></label>
+                                    <div class="input">
+                                        <textarea name="service_short_description" id="service_short_description" placeholder="En kort tekst til visning på forsiden"></textarea>
+                                    </div>
+                                </div>
+                                <div class="notes">
+                                    <label>Vigtige Noter</label>
+                                    <div class="input">
+                                        <textarea name="important_note" id="important_note" placeholder="Regler, priser, info el. lign. (Denne tekst bliver vist under alle tekstfelter)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descriptions">
+                                <p>Vil du dele tekst op i sektioner, kan du gøre det ved at skrive det i hvert sit tekstfelt. Som minimum skal første tekstfelt udfyldes.</p>
+                                <div class="input" id="service_description">
+                                    <p class="star">*</p>
+                                    <textarea name="service_description_one" id="service_description_one" placeholder="Tekstfelt 1 (max 250 tegn)"></textarea>
+                                </div>
+                                <div class="input">
+                                    <textarea name="service_description_two" id="service_description_two" placeholder="Tekstfelt 2 (max 250 tegn)"></textarea>
+                                </div>
+                                <div class="input">
+                                    <textarea name="service_description_three" id="service_description_three" placeholder="Tekstfelt 3 (max 250 tegn)"></textarea>
+                                </div>
+                                <div class="input">
+                                    <textarea name="service_description_four" id="service_description_four" placeholder="Tekstfelt 4 (max 250 tegn)"></textarea>
+                                </div>
+                            </div>
+                        </form>
                         <div class="button">
-                            <!-- fix to make button fill entire width of bottom cell -->
-                            <button id="create-service">Opret ydelse</button>
+                            <button id="create-service">Tilføj ydelse</button>
                         </div>
-                </div> <!-- .new_service end -->
+                    </div> <!-- .new_service end -->
+                </div>
+                
 
                 <hr>
 
-                <h3>Oversigt over alle ydelser og priser i tabel</h3>
+                <h3>Oversigt over alle ydelser i tabel</h3>
 
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Ydelse</th>
-                            <th>Hvor længe</th>
-                            <th>Beskrivelse</th>
+                            <th>Ydelsens Navn</th>
+                            <th>Kort beskrivelse</th>
+                            <th>Tekstfelt 1</th>
+                            <th>Tekstfelt 2</th>
+                            <th>Tekstfelt 3</th>
+                            <th>Tekstfelt 4</th>
+                            <th>Vigtige Noter</th>
                             <th>Opdater/Slet</th>
                         </tr>
                     </thead>
@@ -93,12 +124,16 @@
                         <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                             <tr attr-service_id="<?php echo $row['id']; ?>">
                                 <td class="service_id"><?php echo $row['id']?></td>
-                                <td><input type="text" class="service_name" value="<?php echo $row['service_name']?>"></td>
-                                <td><input type="text" class="service_length" value="<?php echo $row['service_length']?>"></td>
-                                <td><input type="text" class="service_description" value="<?php echo $row['service_description']?>"></td>
+                                <td class="service_name"><textarea name="service_name" id="service_name"><?php echo $row['service_name']?></textarea></td>
+                                <td><textarea name="service_short_description" id="service_short_description"><?php echo $row['service_short_description']?></textarea></td>
+                                <td><textarea name="service_description_one" id="service_description_one"><?php echo $row['service_description_one']?></textarea></td>
+                                <td><textarea name="service_description_two" id="service_description_two"><?php echo $row['service_description_two']?></textarea></td>
+                                <td><textarea name="service_description_three" id="service_description_three"><?php echo $row['service_description_three']?></textarea></td>
+                                <td><textarea name="service_description_four" id="service_description_four"><?php echo $row['service_description_four']?></textarea></td>
+                                <td><textarea name="important_note" id="important_note"><?php echo $row['important_note']?></textarea></td>
                                 <td class="buttons">
                                     <div class="update-service">
-                                        <button>Opdater</button>
+                                      <button>Opdater</button>
                                     </div>                                    
                                     <div class="delete-service">
                                         <button>Slet</button>

@@ -7,7 +7,7 @@
 
     include_once("connect.inc.php");
 
-    // get the service_id from del() function in script.js
+    // get the user_id from deleteUser() function in script.js
     $id = $_REQUEST['user_id'];
 
     // Set the DELETE SQL data

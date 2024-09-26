@@ -2,18 +2,35 @@
     .container {
         text-align: center;
         .all-services {
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
+            h1 {
+
             }
-            table {
-                margin: 0 auto;
-                th, td {
-                    padding: 1rem;
-                }
-                .service_id {
-                    font-size: 1rem;
-                    font-weight: 600;
+            hr {
+                margin: 2rem 0;
+                border: 1px solid blue;
+            }
+            .service-cards {
+                .card {
+                    background-image: linear-gradient(
+                        to bottom,
+                        rgba(255, 255, 253, .8) 0%,
+                        rgba(255, 255, 255, 0.8) 100%),
+                        url('../../../../../Images/References/allepoter.png'
+                    );
+                    height: 300px;
+                    margin: 1rem 0;
+                    padding: 2rem;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                    .title {
+                        h2 {
+                            
+                        }
+                    }
+                    .description {
+                        p {
+
+                        }
+                    }
                 }
             }
         }
