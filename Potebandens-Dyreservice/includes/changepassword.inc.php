@@ -15,7 +15,6 @@
 
         $sql="SELECT password from users where id='$userId'";
         $res = mysqli_query($conn,$sql);
-        $res=mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($res);
         
         if (password_verify($currentPassword,$row['password'])) {

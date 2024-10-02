@@ -16,7 +16,7 @@
     $important_note             = $_POST['important_note'];
 
     // if not filled out
-    if(!$service_name || !$service_short_description || !$service_description_one) {
+    if(empty($service_name) || empty($service_short_description) || empty($service_description_one)) {
         exit;
     }
     // if there is numbers in service_name

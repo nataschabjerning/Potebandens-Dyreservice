@@ -35,8 +35,13 @@
             exit();
         }
         // call to uidExists() in includes/functions.inc.php (line 54)
-        if (uidExists($conn, $username, $email) !== false) {
-            header("Location: ../profile.php?error=usernameoremailtaken");
+        if (uidExists($conn, $username, $username) !== false) {
+            header("Location: ../profile.php?error=usernametaken");
+            exit();
+        }
+        // call to uidExists() in includes/functions.inc.php (line 54)
+        if (uidExists($conn, $email, $email) !== false) {
+            header("Location: ../profile.php?error=emailtaken");
             exit();
         }
 

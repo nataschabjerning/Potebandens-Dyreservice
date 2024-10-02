@@ -6,50 +6,59 @@
     $targetDir = "gallery-uploads/";
     
     if (isset($_POST["upload"])) {
-        
-        $sql = "SELECT * FROM gallery;";
-        $res = mysqli_query($conn,$sql);
-        $res=mysqli_query($conn,$sql);
-        $row = mysqli_fetch_assoc($res);
 
+        $image_link = basename($_FILES["file"]["name"]);
+        $image_alt = $_POST["image_alt"];
+        $image_text = $_POST["image_text"];
+        
+        $sql = mysqli_query($conn, "SELECT image_link FROM gallery WHERE image_link='$image_link'");
+
+        // If file name already exists in database
+        if (mysqli_num_rows($sql) > 0) {
+            header("location: ../gallery.php?error=imagealreadyuploaded");
+            exit();
+        }
+        // If 'alt' text field is empty
+        if (empty($image_alt)) {
+            header("location: ../gallery.php?error=altempty");
+            exit();
+        }
+        // if image file is selected
         if (!empty($_FILES["file"]["name"])) {
-            $image_link = basename($_FILES["file"]["name"]);
-            $image_alt = $_POST["image_alt"];
-            $image_text = $_POST["image_text"];
             $targetFilePath = $targetDir . $image_link;
             $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-
-            if($image_link == $row["image_link"]) {
-                header("location: ../gallery.php?error=imagealreadyuploaded");
-                exit();
-            }
-        
             // Allow certain file formats
             $allowTypes = array('jpg','png','jpeg','gif');
+            // if allowed file formats is selected
             if (in_array($fileType, $allowTypes)) {
-                // Upload file to server
+                // Upload file to folder
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
                     // Insert image file name into database
                     $insert = $conn->query("INSERT INTO gallery (image_link, image_alt, image_text) VALUES ('".$image_link."', '".$image_alt."', '".$image_text."')");
+                    // IF ALL CHECKS CLEAR
                     if ($insert) {
-                        header("Location: ../gallery.php?success=imageuploaded");
+                        header("Location: ../gallery.php?imageuploaded");
                         exit();
                     }
+                    // if insert into database failed
                     else {
                         header("Location: ../gallery.php?error=insertfailed");
                         exit();
                     }
                 }
+                // if uploading to folder failer
                 else {
                     header("Location: ../gallery.php?error=movingfilefailed");
                     exit();
                 }
             }
+            // if there is selected a not allowed file format
             else {
                 header("Location: ../gallery.php?error=wrongfiletype");
                 exit();
             }
         }
+        // if no file was selected
         else {
             header("Location: ../gallery.php?error=nofilewasselected");
             exit();

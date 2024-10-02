@@ -1,4 +1,4 @@
-<div class="block services">
+<div class="block admin-services">
     <div class="container">
         <div class="all-services">
 
@@ -11,7 +11,7 @@
                 $resultData = mysqli_stmt_get_result($stmt);
             ?>
 
-            <div id="confirmation-delete">
+            <div id="confirmation-service-delete">
                 <div class="content">
                     <h2>Er du sikker på, at du gerne vil slette denne ydelse?</h2>
                     <div class="buttons">
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <div id="confirmation-update">
+            <div id="confirmation-service-update">
                 <div class="content">
                     <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
                     <div class="buttons">
@@ -43,15 +43,14 @@
                 </div>
             </div>
 
+            <hr>
+
             <div class="form">
 
                 <div class="add_service">
                     <div id="show_add_form">Tilføj Ydelse</div>
                     <div id="hide_add_form">Skjul formular</div>
                 </div>
-
-                <!-- message div for success when creating/updating service -->
-                <div id="alertMessage"></div>
 
                 <div id="new_service">
                     <div class="new_service">
@@ -104,45 +103,60 @@
 
                 <hr>
 
-                <h3>Oversigt over alle ydelser i tabel</h3>
+                <h2>Oversigt over alle ydelser</h2>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Ydelsens Navn</th>
-                            <th>Kort beskrivelse</th>
-                            <th>Tekstfelt 1</th>
-                            <th>Tekstfelt 2</th>
-                            <th>Tekstfelt 3</th>
-                            <th>Tekstfelt 4</th>
-                            <th>Vigtige Noter</th>
-                            <th>Opdater/Slet</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-                            <tr attr-service_id="<?php echo $row['id']; ?>">
-                                <td class="service_id"><?php echo $row['id']?></td>
-                                <td class="service_name"><textarea name="service_name" id="service_name"><?php echo $row['service_name']?></textarea></td>
-                                <td><textarea name="service_short_description" id="service_short_description"><?php echo $row['service_short_description']?></textarea></td>
-                                <td><textarea name="service_description_one" id="service_description_one"><?php echo $row['service_description_one']?></textarea></td>
-                                <td><textarea name="service_description_two" id="service_description_two"><?php echo $row['service_description_two']?></textarea></td>
-                                <td><textarea name="service_description_three" id="service_description_three"><?php echo $row['service_description_three']?></textarea></td>
-                                <td><textarea name="service_description_four" id="service_description_four"><?php echo $row['service_description_four']?></textarea></td>
-                                <td><textarea name="important_note" id="important_note"><?php echo $row['important_note']?></textarea></td>
-                                <td class="buttons">
+                <div class="display-service">
+                    <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                        <section attr-service_id="<?php echo $row['id']; ?>">
+                            <div class="textareas">
+                                <div class="service_id">
+                                    <h4>ID:</h4>
+                                    <h4><?php echo $row['id']?></h4>
+                                </div>
+                                <div class="line service_name">
+                                    <h4>Ydelsens Navn</h4>
+                                    <textarea name="service_name" id="service_name"><?php echo $row['service_name']?></textarea>
+                                </div>
+                                <div class="line service_short_description">
+                                    <h4>Kort beskrivelse</h4>
+                                    <textarea name="service_short_description" id="service_short_description"><?php echo $row['service_short_description']?></textarea>
+                                </div>
+                                <div class="line service_description_one">
+                                    <h4>Tekstfelt 1</h4>
+                                    <textarea name="service_description_one" id="service_description_one"><?php echo $row['service_description_one']?></textarea>
+                                </div>
+                                <div class="line service_description_two">
+                                    <h4>Tekstfelt 2</h4>
+                                    <textarea name="service_description_two" id="service_description_two"><?php echo $row['service_description_two']?></textarea>
+                                </div>
+                                <div class="line service_description_three">
+                                    <h4>Tekstfelt 3</h4>
+                                    <textarea name="service_description_three" id="service_description_three"><?php echo $row['service_description_three']?></textarea>
+                                </div>
+                                <div class="line service_description_four">
+                                    <h4>Tekstfelt 4</h4>
+                                    <textarea name="service_description_four" id="service_description_four"><?php echo $row['service_description_four']?></textarea>
+                                </div>
+                                <div class="line important_note">
+                                    <h4>Vigtig Note</h4>
+                                    <textarea name="important_note" id="important_note"><?php echo $row['important_note']?></textarea>
+                                </div>
+                                <div class="info">
+                                    <p>Vil du opdatere en ydelse?</p>
+                                    <p>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+                                </div>
+                                <div class="buttons">
                                     <div class="update-service">
-                                      <button>Opdater</button>
+                                        <button id="update-service">Opdatér</button>
                                     </div>                                    
                                     <div class="delete-service">
-                                        <button>Slet</button>
+                                        <button id="delete-service">Slet</button>
                                     </div>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </section>
+                    <?php } ?>
+                </div> <!-- .display-service end -->
 
             </div> <!-- .form end -->
 

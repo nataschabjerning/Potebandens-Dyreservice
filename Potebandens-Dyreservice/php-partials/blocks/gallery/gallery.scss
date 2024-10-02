@@ -14,8 +14,8 @@
             .image-card {
                 background-image: linear-gradient(
                     to bottom,
-                    rgba(255, 255, 253, .8) 0%,
-                    rgba(255, 255, 255, 0.8) 100%),
+                    rgba(255, 255, 253, .9) 0%,
+                    rgba(255, 255, 255, 0.9) 100%),
                     url('../../../../../Images/References/allepoter.png'
                 );
                 background-position: center;
@@ -24,6 +24,7 @@
                 border-bottom: 1px solid black;
                 border-top: 1px solid black;
                 border-radius: 10px;
+                height: 100%;
                 @media (max-width: 1024px) {
                     grid-template-columns: repeat(2, 1fr);
                 }
@@ -31,6 +32,7 @@
                     grid-template-columns: 1fr;
                 }
                 .image {
+                    margin: 1rem;
                     height: 300px;
                     @media (max-height: 800px) {
                         height: 250px;

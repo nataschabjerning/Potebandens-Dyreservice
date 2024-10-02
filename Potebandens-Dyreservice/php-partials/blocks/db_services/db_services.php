@@ -12,34 +12,34 @@
     <div class="container">
 
         <div class="all-services">
-
-            <h1>Lav oversigt om til 'kort' i stedet, for pænere bruger oversigt</h1>
             
-            <hr>
-
             <div class="service-cards">
     
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
 
                     <div class="card">
-
+                        <a href="contact.php" class="contact">
+                            <p>Kontakt Lonni for mere info</p>
+                        </a>
                         <div class="title">
                             <h2><?php echo $row['service_name']?></h2>
                         </div>
 
+                        <hr>
+
                         <div class="description">
-                            <p><?php echo $row['service_description_one']?></p>
+                            <p class="service_description_one"><?php echo $row['service_description_one']?></p>
                             <?php if (!empty($row['service_description_two'])) { ?>
-                                <p><?php echo $row['service_description_two']?></p>
+                                <p class="service_description_two"><?php echo $row['service_description_two']?></p>
                             <?php } ?>
                             <?php if (!empty($row['service_description_three'])) { ?>
-                                <p><?php echo $row['service_description_three']?></p>
+                                <p class="service_description_three"><?php echo $row['service_description_three']?></p>
                             <?php } ?>
                             <?php if (!empty($row['service_description_four'])) { ?>
-                                <p><?php echo $row['service_description_four']?></p>
+                                <p class="service_description_four"><?php echo $row['service_description_four']?></p>
                             <?php } ?>
                             <?php if (!empty($row['important_note'])) { ?>
-                                <p><?php echo $row['important_note']?></p>
+                                <p class="important_note"><?php echo $row['important_note']?></p>
                             <?php } ?>
                         </div>
 

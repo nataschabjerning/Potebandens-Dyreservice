@@ -1,8 +1,13 @@
 .users {
+    text-align: center;
     margin: 0 auto;
+    padding-top: 0;
     .all-users {
         text-align: center;
         
+        h2 {
+            margin: 2rem 0;
+        }
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -21,9 +26,6 @@
             }
             tbody {
                 tr {
-                    td {
-
-                    }
                     .user_id {
                         font-size: 1rem;
                         font-weight: 600;

@@ -1,32 +1,38 @@
-.update {
-    padding: 4rem 0 0;
+.create-update_user {
+    padding: 6rem 0 0;
     .container {
-        .messages {
-            margin: 0 auto;
-            width: fit-content;
-            .error, .success {
+        .create-update_user-messages {
+            width: 100%;
+            .error {
+                width: fit-content;
+                margin: 0 auto 2rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 2rem;
+                padding: .5rem 1rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-                margin: 0 0 2rem;
                 color: rgb(226, 3, 3);
                 border: 1px solid rgb(226, 3, 3);
-            }
-            .success {
-                color: green;
-                border: 1px solid green;
+                .title {
+                    font-size: 1.2rem;
+                }
+                .caption {
+                    font-size: 1rem;
+                }
+                @media (max-width: 768px) {
+                    font-weight: 300;
+                }
             }
         }
         .buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin: 2rem 0;
             .change_password, .new_user {
-                margin: 0 auto 1rem;
+                margin: 0 auto;
                 width: fit-content;
                 cursor: pointer;
                 background-color: rgba(71,143,84, .8);
@@ -59,7 +65,7 @@
             }
             #change-password, #create-user {
                 display: none;
-                margin: 0 auto;
+                margin: 2rem auto 0;
                 text-align: center;
                 padding: 2rem;
                 border-radius: 10px;
@@ -84,6 +90,11 @@
                         }
                         input[type="email"] {
                             width: 100%;
+                        }
+                    }
+                    .passwordform {
+                        input {
+                            width: 70%;
                         }
                     }
                 }

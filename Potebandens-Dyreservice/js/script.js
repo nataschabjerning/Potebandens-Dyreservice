@@ -52,110 +52,10 @@ $(document).ready(function(){
         $(this).children("#hide_add_image").toggle();
     });
 
-    // delete image from db and table
-    function deleteImage() {
-	    $(document).delegate(".delete-image", "click", function() {
-
-            let $section  = jQuery(this).closest("section");
-            // get the service ID
-            var imageId   = $section.attr('attr-image_id');
-
-            // show confirmaiton box
-            $("#confirmation-image-delete").show();
-
-            // CONFIRMATION
-            var buttonclicked;
-            // if cancel_delete (no)
-            $('.cancel_image_delete').click(function(){ 
-                if(buttonclicked != false) {
-                    window.location.reload();
-                    $("#confirmation-image-delete").hide();
-                    alert("Intet billede blev slettet!");
-                } 
-            });
-            // if confirm_delete (yes)
-            $('.confirm_image_delete').click(function(){
-                // Ajax config
-                $.ajax({
-                    //we are using GET method to get data from server side
-                    type: "GET",
-                    // get the url to send to, when btn is clicked
-                    url: 'includes/deleteimage.inc.php',
-                    // data to send
-                    data: {
-                        image_id: imageId
-                    }
-                })
-                .done(function() {
-                    // remove the table row
-                    $section.remove();
-                    // hide confirmation box
-                    // $("#confirmation-user-delete").hide();
-                    // reload page
-                    window.location.reload();
-                    // alert that the row has been successfully removed
-                    alert("Billede slettet!");
-                })
-            });
-        })
-    }
-    // call the function to initiate when delete-user btn is clicked
-    deleteImage();
-
-    // delete user from db and table
-    function deleteUser() {
-	    $(document).delegate(".delete-user", "click", function() {
-
-            let $table_row  = jQuery(this).closest("tr");
-            // get the service ID
-            var userId   = $table_row.attr('attr-user_id');
-
-            // show confirmaiton box
-            $("#confirmation-user-delete").show();
-
-            // CONFIRMATION
-            var buttonclicked;
-            // if cancel_delete (no)
-            $('.cancel_user_delete').click(function(){ 
-                if(buttonclicked != false) {
-                    window.location.reload();
-                    $("#confirmation-user-delete").hide();
-                    alert("Ingen bruger blev slettet!");
-                } 
-            });
-            // if confirm_delete (yes)
-            $('.confirm_user_delete').click(function(){
-                // Ajax config
-                $.ajax({
-                    //we are using GET method to get data from server side
-                    type: "GET",
-                    // get the url to send to, when btn is clicked
-                    url: 'includes/deleteuser.inc.php',
-                    // data to send
-                    data: {
-                        user_id: userId
-                    }
-                })
-                .done(function() {
-                    // remove the table row
-                    $table_row.remove();
-                    // hide confirmation box
-                    $("#confirmation-user-delete").hide();
-                    // reload page
-                    window.location.reload();
-                    // alert that the row has been successfully removed
-                    alert("Bruger slettet!");
-                })
-            });
-        })
-    }
-    // call the function to initiate when delete-user btn is clicked
-    deleteUser();
-
-    // Function to create service in html table and db table
+    // ---------- CREATE SERVICE ----------
     $('#create-service').click(function() {
 
-        $service_name = $('textarea[name=service_name]').val();
+        $service_name = $('input[name=service_name]').val();
         $service_short_description = $('textarea[name=service_short_description]').val();
         $service_description_one = $('textarea[name=service_description_one]').val();
         $service_description_two = $('textarea[name=service_description_two]').val();
@@ -184,153 +84,236 @@ $(document).ready(function(){
                 alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
             // if 'service_name' contains numbers
-            if ($service_name.match(".*\\d.*")) {
+            else if ($service_name.match(".*\\d.*")) {
                 $request.abort();
                 window.location.reload();
                 alert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
-            // if all checks have cleared
-            
-            // show message in #alertMessage div
-            $('#alertMessage').html('<p>Ydelse oprettet!</p>');
-            
-            // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
+            else {
+                // if all checks have cleared
+                alert("Ydelse oprettet!");
+                
+                // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
 
-            // // reload page after 3 seconds (#alertMessage dissappears)
-            setTimeout(function() {
-                location.reload();
-            }, 2000);
+                window.location.reload();
+            }
 		})
     });
     
-    // Function to update service from html table and db table
-    function updateService() {
-	    $(document).delegate(".update-service", "click", function() {
+    // ---------- UPDATE SERVICE ----------
+    $('.update-service').click(function() {
 
-            // select the closest table row (tr) to the clicked update button
-            let $table_row  = jQuery(this).closest("tr");
-            // get the service ID from table row (tr) attr class
-            var serviceId   = $table_row.attr('attr-service_id');
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the service ID from section attr class
+        var $serviceId   = $section.attr('attr-service_id');
 
-            // Get inputs from services
-            let $service_name = $table_row.find("#service_name").val();
-            let $service_short_description = $table_row.find("#service_short_description").val();
-            let $service_description_one = $table_row.find("#service_description_one").val();
-            let $service_description_two = $table_row.find("#service_description_two").val();
-            let $service_description_three = $table_row.find("#service_description_three").val();
-            let $service_description_four = $table_row.find("#service_description_four").val();
-            let $important_note = $table_row.find("#important_note").val();
+        // Get inputs from services
+        let $service_name = $section.find("#service_name").val();
+        let $service_short_description = $section.find("#service_short_description").val();
+        let $service_description_one = $section.find("#service_description_one").val();
+        let $service_description_two = $section.find("#service_description_two").val();
+        let $service_description_three = $section.find("#service_description_three").val();
+        let $service_description_four = $section.find("#service_description_four").val();
+        let $important_note = $section.find("#important_note").val();
 
-            // show confirmaiton box
-            $("#confirmation-update").show();
+        // show confirmaiton box
+        $("#confirmation-service-update").show();
 
-            // CONFIRMATION
-            var buttonclicked;
-            // if cancel_update (no)
-            $('.cancel_update').click(function(){ 
-                if(buttonclicked != false) {
+        // if cancel_update (no)
+        $('.cancel_update').click(function(){ 
+            window.location.reload();
+            alert("Ingen ydelse blev opdateret!");
+            $("#confirmation-service-update").hide();
+        });
+        // if confirm_update (yes)
+        $('.confirm_update').click(function(){
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateservice.inc.php',
+                // data to send
+                data: {
+                    service_id: $serviceId,
+                    service_name: $service_name,
+                    service_short_description: $service_short_description,
+                    service_description_one: $service_description_one,
+                    service_description_two: $service_description_two,
+                    service_description_three: $service_description_three,
+                    service_description_four: $service_description_four,important_note: $important_note,
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if($service_name  === "" || $service_description_one  === "") {
+                    $request.abort();
                     window.location.reload();
-                    alert("Ingen ydelse blev opdateret!");
+                    alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                     $("#confirmation-update").hide();
-                } 
-            });
-            // if confirm_update (yes)
-            $('.confirm_update').click(function(){
-                // Ajax config
-                var $request = $.ajax({
-                    type: "POST",
-                    // get the url to send to, when btn is clicked
-                    url: 'includes/updateservice.inc.php',
-                    // data to send
-                    data: {
-                        service_id: serviceId,
-                        service_name: $service_name,
-                        service_short_description: $service_short_description,
-                        service_description_one: $service_description_one,
-                        service_description_two: $service_description_two,
-                        service_description_three: $service_description_three,
-                        service_description_four: $service_description_four,important_note: $important_note,
-                    },
-                })
-                .done(function() {
-                    // if one or more fields is empty
-                    if($service_name  === "" || $service_description_one  === "") {
-                        $request.abort();
-                        window.location.reload();
-                        alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-                        $("#confirmation-update").hide();
-                    }
-                    // if 'service_name' contains numbers
-                    if ($service_name.match(".*\\d.*")) {
-                        $request.abort();
-                        window.location.reload();
-                        alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
-                        $("#confirmation-update").hide();
-                    }
+                }
+                // if 'service_name' contains numbers
+                else if ($service_name.match(".*\\d.*")) {
+                    $request.abort();
+                    window.location.reload();
+                    alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
+                    $("#confirmation-update").hide();
+                }
+                else {
                     // if all checks have cleared
                     // hide confirmation box
-                    $("#confirmation-update").hide();
-                    // show message in #alertMessage div
-                    $('#alertMessage').html('<p>Ydelse opdateret!</p>');
-                    // reload page after 3 seconds (#alertMessage dissappears)
-                    setTimeout(function() {
-                        location.reload();
-                    }, 2000);
-                })  
-            });
-        })
-    }
-    // call the function to initiate when update-service btn is clicked
-    updateService();
+                    $("#confirmation-service-update").hide();
+                    alert("Ydelse " + $serviceId + " opdateret!");
+                    // reload page to show update
+                    window.location.reload();
+                }
+            })  
+        });
+    })
 
-    // Function to delete service from html table and db table
-    function deleteService() {
-	    $(document).delegate(".delete-service", "click", function() {
+    // ---------- DELETE SERVICE ----------
+    $('.delete-service').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the service ID
+        var $serviceId   = $section.attr('attr-service_id');
+
+        // show confirmaiton box
+        $("#confirmation-service-delete").show();
+
+        // CONFIRMATION
+        var buttonclicked;
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            if(buttonclicked != false) {
+                window.location.reload();
+                $("#confirmation-service-delete").hide();
+                alert("Ingen ydelse blev slettet!");
+            } 
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteservice.inc.php',
+                // data to send
+                data: {
+                    service_id: $serviceId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                // hide confirmation box
+                $("#confirmation-service-delete").hide();
+                // reload page
+                window.location.reload();
+                // alert that the row has been successfully removed
+                alert("Ydelse " + $serviceId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- DELETE IMAGE ----------
+    $('.delete-image').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the service ID
+        var imageId   = $section.attr('attr-image_id');
+
+        // show confirmaiton box
+        $("#confirmation-image-delete").show();
+
+        // CONFIRMATION
+        var buttonclicked;
+        // if cancel_delete (no)
+        $('.cancel_image_delete').click(function(){ 
+            if(buttonclicked != false) {
+                window.location.reload();
+                $("#confirmation-image-delete").hide();
+                alert("Intet billede blev slettet!");
+            } 
+        });
+        // if confirm_delete (yes)
+        $('.confirm_image_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteimage.inc.php',
+                // data to send
+                data: {
+                    image_id: imageId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                // hide confirmation box
+                $("#confirmation-image-delete").hide();
+                // reload page
+                window.location.reload();
+                // alert that the row has been successfully removed
+                alert("Billede slettet!");
+            })
+        });
+    })
+
+    // ---------- DELETE USER ----------
+    function deleteUser() {
+	    $(document).delegate(".delete-user", "click", function() {
 
             let $table_row  = jQuery(this).closest("tr");
             // get the service ID
-            var serviceId   = $table_row.attr('attr-service_id');
+            var $userId   = $table_row.attr('attr-user_id');
+            // FIND USERNAME AND DISPLAY ON DELETE CONFIRMATION
+            let $username = $table_row.find("#user_username").val();
 
             // show confirmaiton box
-            $("#confirmation-delete").show();
+            $("#confirmation-user-delete").show();
 
             // CONFIRMATION
             var buttonclicked;
             // if cancel_delete (no)
-            $('.cancel_delete').click(function(){ 
+            $('.cancel_user_delete').click(function(){
                 if(buttonclicked != false) {
                     window.location.reload();
-                    $("#confirmation-delete").hide();
-                    alert("Ingen ydelse blev slettet!");
+                    $("#confirmation-user-delete").hide();
+                    alert("Ingen bruger blev slettet!");
                 } 
             });
             // if confirm_delete (yes)
-            $('.confirm_delete').click(function(){
+            $('.confirm_user_delete').click(function(){
                 // Ajax config
                 $.ajax({
                     //we are using GET method to get data from server side
                     type: "GET",
                     // get the url to send to, when btn is clicked
-                    url: 'includes/deleteservice.inc.php',
+                    url: 'includes/deleteuser.inc.php',
                     // data to send
                     data: {
-                        service_id: serviceId
+                        user_id: $userId,
+                        user_username: $username
                     }
                 })
                 .done(function() {
                     // remove the table row
                     $table_row.remove();
                     // hide confirmation box
-                    $("#confirmation-delete").hide();
+                    $("#confirmation-user-delete").hide();
                     // reload page
                     window.location.reload();
                     // alert that the row has been successfully removed
-                    alert("Ydelse slettet!");
+                    alert("Bruger: '" + $username + "' blev slettet!");
                 })
             });
         })
     }
-    // call the function to initiate when delete-service btn is clicked
-    deleteService();
+    // call the function to initiate when delete-user btn is clicked
+    deleteUser();
 
 });

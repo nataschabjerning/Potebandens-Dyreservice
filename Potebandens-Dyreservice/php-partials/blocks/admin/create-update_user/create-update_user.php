@@ -1,80 +1,90 @@
-<div class="block update">
+<div class="block create-update_user">
     <div class="container">
 
-        <div class="messages">
+        <div class="create-update_user-messages">
             <?php
                 if (isset($_GET["error"])) {
                     // errors for changing password
                     if ($_GET["error"] == "currentpassworddoesnotmatch") {
                         echo "<div class='error'>";
-                        echo "<h3>Skift Kodeord</h3>";
-                        echo "<h4>- Det nuværende kodeord er forkert</h4>";
+                        echo "<p class='title'>Skift Kodeord</p>";
+                        echo "<p class='caption'>- Det nuværende kodeord er forkert</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "newpasswordsdoesntmatch") {
                         echo "<div class='error'>";
-                        echo "<h3>Skift Kodeord</h3>";
-                        echo "<h4>- De to nye kodeord matcher ikke</h4>";
+                        echo "<p class='title'>Skift Kodeord</p>";
+                        echo "<p class='caption'>- De to nye kodeord matcher ikke</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "repeatnewpassword") {
                         echo "<div class='error'>";
-                        echo "<h3>Skift Kodeord</h3>";
-                        echo "<h4>- Gentag det nye kodeord</h4>";
+                        echo "<p class='title'>Skift Kodeord</p>";
+                        echo "<p class='caption'>- Gentag det nye kodeord</p>";
                         echo "</div>";
                     }
                     // errors for creating new user
                     if ($_GET["error"] == "emptysignupinput") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Udfyld alle felter!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Udfyld alle felter!</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "invalidusername") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Brugernavnet er ikke gyldigt. Vælg et gyldigt brugernavn!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Brugernavnet er ikke gyldigt. Vælg et gyldigt brugernavn!</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "invalidemail") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Denne email adresse ser ikke ud til at eksisterer. Indtast en gyldig email adresse!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Denne email adresse ser ikke ud til at eksisterer. Indtast en gyldig email adresse!</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "passwordsdoesntmatch") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Kodeordene matcher ikke!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Kodeordene matcher ikke!</p>";
                         echo "</div>";
                     }
-                    if ($_GET["error"] == "usernameoremailtaken") {
+                    if ($_GET["error"] == "usernametaken") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Der er allerede oprettet en bruger med dette brugernavn eller email!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Der er allerede oprettet en bruger med dette brugernavn!</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "emailtaken") {
+                        echo "<div class='error'>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Der er allerede oprettet en bruger med denne email!</p>";
                         echo "</div>";
                     }
                     if ($_GET["error"] == "stmtfailed") {
                         echo "<div class='error'>";
-                        echo "<h3>Opret Bruger</h3>";
-                        echo "<h4>- Noget gik galt. Prøv igen senere!</h4>";
+                        echo "<p class='title'>Opret Bruger</p>";
+                        echo "<p class='caption'>- Noget gik galt. Prøv igen senere!</p>";
                         echo "</div>";
                     }
                 }
                 // if password was changed successfully
                 if (isset($_GET["passwordupdated"])) {
-                    echo "<div class='success'>";
-                    echo "<h3>Kodeord opdateret!</h3>";
-                    echo "</div>";
+                    echo "<script type='text/javascript'>";
+                    // show alert box and redirect user to profile when 'ok' is clicked
+                    echo "alert('Kodeord opdateret!');window.location.href = 'profile.php';";
+                    echo "</script>";
                 }
                 // if user was created successfully
                 if (isset($_GET["usercreated"])) {
-                    echo "<div class='success'>";
-                    echo "<h3>Bruger oprettet!</h3>";
-                    echo "</div>";
+                    echo "<script type='text/javascript'>";
+                    // show alert box and redirect user to profile when 'ok' is clicked
+                    echo "alert('Bruger oprettet!');window.location.href = 'profile.php';";
+                    echo "</script>";
                 }
             ?>
         </div>
+
+        <hr>
 
         <div class="buttons">
             <div>

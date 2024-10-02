@@ -7,7 +7,7 @@
     $resultData = mysqli_stmt_get_result($stmt);
 ?>
 
-<div class="block gallery">
+<div class="block admin-gallery">
 
     <div class="container">
 
@@ -28,8 +28,10 @@
         </div>
 
         <?php
-            include("php-partials/blocks/admin/upload/upload.php");
+            include("php-partials/blocks/admin/upload-image/upload-image.php");
         ?>
+
+        <hr>
 
         <div class="images">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
@@ -42,8 +44,8 @@
                             <h3><?php echo $row['image_text']?></h3>
                         </div>
                     <?php } ?>
-                    <div class="delete">
-                        <button class="delete-image" name="delete-image">Slet Billede</button>
+                    <div class="delete-image">
+                        <button id="delete-image">Slet Billede</button>
                     </div>
                 </section>
             <?php } ?>
