@@ -11,10 +11,12 @@
                 gap: 1rem;
                 padding: 0;
                 @media (max-width: 1024px) {
-                    grid-template-columns: repeat(2, 1fr);
-                    row-gap: 2rem;
+                    grid-template-columns: repeat(3, 1fr);
                 }
                 @media (max-width: 768px) {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @media (max-width: 450px) {
                     grid-template-columns: 1fr;
                     row-gap: 2rem;
                 }

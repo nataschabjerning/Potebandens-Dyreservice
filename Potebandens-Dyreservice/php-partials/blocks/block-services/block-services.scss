@@ -10,15 +10,14 @@
                 gap: 1rem;
                 .card {
                     position: relative;
-                    background-image: linear-gradient(
+                    background: linear-gradient(
                         to bottom,
-                        rgba(255, 255, 253, .9) 0%,
-                        rgba(255, 255, 255, 0.9) 100%),
-                        url('../../../../../Images/References/allepoter.png'
+                        rgba(36, 58, 148, .1) 0%,
+                        rgba(36, 58, 148, .1) 100%
                     );
                     border-radius: 10px;
-                    border-bottom: 1px solid black;
-                    border-top: 1px solid black;
+                    border-bottom: 1px solid rgba(36, 58, 148, 1);
+                    border-top: 1px solid rgba(36, 58, 148, 1);
                     min-height: 300px;
                     padding: 2rem;
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
@@ -26,12 +25,15 @@
                         position: absolute;
                         bottom: 0;
                         right: 0;
-                        padding: .5rem;
+                        padding: .2rem .5rem;
                         font-size: 1rem;
-                        color: #3f48cc;
+                        color: black;
+                        background-color: rgba(58,117,69, .2);
+                        border-top-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
                     }
                     .contact:hover {
-                        color: #478f54;
+                        background-color: rgba(58,117,69, .5);
                     }
                     .title {
                         text-align: center;
@@ -44,6 +46,7 @@
                         border: 1px solid rgba(36, 58, 148, 1);
                     }
                     .description {
+                        font-size: 1.1rem;
                         p {
                             margin: 1rem 0;
                         }

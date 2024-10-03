@@ -43,8 +43,17 @@
     }
 }
 
+.block:first-of-type {
+    padding-top: 6rem;
+}
+.block:last-of-type {
+    padding-bottom: 6rem;
+}
 .block {
-    padding: 6rem 0;
+    padding: 4rem 0;
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
 }
 
 .subheader {

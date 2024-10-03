@@ -7,8 +7,8 @@ $(document).ready(function(){
     });
 
     // Slider on front page to diplay services
-    $('.slider').slick({
-        slidesToShow: 2,
+    $('.service-slider').slick({
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
         dots: true,
@@ -17,7 +17,44 @@ $(document).ready(function(){
         nextArrow: $('.service-next'),
         responsive: [
             {
-                breakpoint: 800,
+                breakpoint: 1024,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+    
+    // Slider on front page to diplay gallery
+    $('.gallery-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: false,
+        prevArrow: $('.gallery-prev'),
+        nextArrow: $('.gallery-next'),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
