@@ -1,0 +1,81 @@
+.users {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0;
+    .all-users {
+        text-align: center;
+        .container {
+            h2 {
+                text-transform: uppercase;
+                margin: 2rem 0;
+            }
+            .display-users {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                section {
+                    padding: 1rem;
+                    border-radius: 10px;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                    .user {
+                        position: relative;
+                        outline: 1px dashed #478f54;
+                        border-radius: 10px;
+                        padding: 2rem 1rem 1rem;
+                        h4 {
+                            margin: 0 0 .3rem;
+                            width: fit-content;
+                        }
+                        .line {
+                            border-bottom: 4px solid rgb(2, 95, 2);
+                            padding-top: .5rem;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .user_id {
+                            display: flex;
+                            position: absolute;
+                            top:0;
+                            left: 0;
+                            border: none;
+                            margin: .4rem .4rem 0;
+                            padding: 0;
+                            color: #478f54;
+                            border-bottom: 1px solid #3f48cc;
+                            h4 {
+                                margin: 0;
+                            }
+                        }
+                        .user_email {
+                            display: block;
+                            h4 {
+                                margin: 0 auto .3rem;
+                            }
+                        }
+                        .delete-user {
+                            position: absolute;
+                            top:0;
+                            right: 0;
+                            #delete-user {
+                                background-color: rgb(221, 0, 0);
+                                padding: .2rem 1.2rem;
+                                border: none;
+                                color: white;
+                                font-weight: 600;
+                                border-radius: 0;
+                                border-top-right-radius: 10px;
+                                border-bottom-left-radius: 10px;
+                                background-color: rgba(221, 0, 0, 1);
+                                margin: 0;
+                                cursor: pointer;
+                            }
+                            #delete-user:hover {
+                                background-color: rgb(194, 3, 3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,24 +6,24 @@
 /* Blocks
 ------------------------------------------------------*/
 
-@import '../php-partials/blocks/about/about.scss';
-@import '../php-partials/blocks/db_services/db_services.scss';
-@import '../php-partials/blocks/footer/footer.scss';
-@import '../php-partials/blocks/gallery/gallery.scss';
-@import '../php-partials/blocks/header/header.scss';
-@import '../php-partials/blocks/info/info.scss';
-@import '../php-partials/blocks/sendemail/sendemail.scss';
-@import '../php-partials/blocks/service-slider/service-slider.scss';
+@import '../php-partials/blocks/block-about/block-about.scss';
+@import '../php-partials/blocks/block-services/block-services.scss';
+@import '../php-partials/blocks/block-footer/block-footer.scss';
+@import '../php-partials/blocks/block-gallery/block-gallery.scss';
+@import '../php-partials/blocks/block-header/block-header.scss';
+@import '../php-partials/blocks/block-info/block-info.scss';
+@import '../php-partials/blocks/block-sendemail/block-sendemail.scss';
+@import '../php-partials/blocks/block-service-slider/block-service-slider.scss';
 
-/* Blocks Admin
+/* Admin Blocks
 ------------------------------------------------------*/
 
-@import '../php-partials/blocks/admin/gallery/admin-gallery.scss';
-@import '../php-partials/blocks/admin/list/list.scss';
-@import '../php-partials/blocks/admin/services/services.scss';
-@import '../php-partials/blocks/admin/create-update_user/create-update_user.scss';
-@import '../php-partials/blocks/admin/upload-image/upload-image.scss';
-@import '../php-partials/blocks/admin/users/users.scss';
+@import '../php-partials/admin-blocks/block-admin-gallery/block-admin-gallery.scss';
+@import '../php-partials/admin-blocks/block-list/block-list.scss';
+@import '../php-partials/admin-blocks/block-admin-services/block-admin-services.scss';
+@import '../php-partials/admin-blocks/block-create-update_user/block-create-update_user.scss';
+@import '../php-partials/admin-blocks/block-upload-image/block-upload-image.scss';
+@import '../php-partials/admin-blocks/block-users/block-users.scss';
 
 /* Components
 ------------------------------------------------------*/
@@ -34,6 +34,10 @@
 ------------------------------------------------------*/
 
 @import 'pages/about.scss';
+@import 'pages/admin-about.scss';
+@import 'pages/admin-contact.scss';
+@import 'pages/admin-gallery.scss';
+@import 'pages/admin-services.scss';
 @import 'pages/admin.scss';
 @import 'pages/contact.scss';
 @import 'pages/index.scss';

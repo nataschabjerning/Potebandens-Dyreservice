@@ -1,5 +1,5 @@
 <?php
-    include_once("php-partials/blocks/header/header.php");
+    include_once("php-partials/blocks/block-header/block-header.php");
 ?>
 
 <div class="page-index">
@@ -18,8 +18,8 @@
 
         <?php
             // <!-- include() php components here -->
-            include("php-partials/blocks/info/info.php");
-            include("php-partials/blocks/service-slider/service-slider.php");
+            include("php-partials/blocks/block-info/block-info.php");
+            include("php-partials/blocks/block-service-slider/block-service-slider.php");
         ?>
 
     </div>
@@ -27,5 +27,5 @@
 </div>
 
 <?php
-    include_once("php-partials/blocks/footer/footer.php");
+    include_once("php-partials/blocks/block-footer/block-footer.php");
 ?>

@@ -267,11 +267,11 @@ $(document).ready(function(){
     function deleteUser() {
 	    $(document).delegate(".delete-user", "click", function() {
 
-            let $table_row  = jQuery(this).closest("tr");
+            let $section  = jQuery(this).closest("section");
             // get the service ID
-            var $userId   = $table_row.attr('attr-user_id');
+            var $userId   = $section.attr('attr-user_id');
             // FIND USERNAME AND DISPLAY ON DELETE CONFIRMATION
-            let $username = $table_row.find("#user_username").val();
+            let $username = $section.find("#user_username").val();
 
             // show confirmaiton box
             $("#confirmation-user-delete").show();
@@ -302,7 +302,7 @@ $(document).ready(function(){
                 })
                 .done(function() {
                     // remove the table row
-                    $table_row.remove();
+                    $section.remove();
                     // hide confirmation box
                     $("#confirmation-user-delete").hide();
                     // reload page

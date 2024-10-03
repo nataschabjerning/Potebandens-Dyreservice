@@ -3,7 +3,7 @@
 </head>
 
 <?php
-    include_once("php-partials/blocks/header/header.php");
+    include_once("php-partials/blocks/block-header/block-header.php");
 ?>
 
 <div class="page-services">
@@ -29,14 +29,14 @@
             
             <!-- include php blocks here -->
             <?php
-                include("php-partials/blocks/admin/list/list.php");      
+                include("php-partials/admin-blocks/block-list/block-list.php");      
             ?>
         
         <?php } // if (isset($_SESSION["id"])) end
 
         // if not logged in
         else { ?>
-            <div class="no_session">
+            <div class="block no_session">
                 <h1>Beklager!</h1>
                 <h2>Du skal være logget ind for at se denne side.</h2>
             </div>
@@ -48,5 +48,5 @@
 
 
 <?php
-    include_once("php-partials/blocks/footer/footer.php");
+    include_once("php-partials/blocks/block-footer/block-footer.php");
 ?>

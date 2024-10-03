@@ -3,7 +3,7 @@
 </head>
 
 <?php
-    include_once("php-partials/blocks/header/header.php");
+    include_once("php-partials/blocks/block-header/block-header.php");
 ?>
 
 <div class="page-login">
@@ -30,5 +30,5 @@
 
 
 <?php
-    include_once("php-partials/blocks/footer/footer.php");
+    include_once("php-partials/blocks/block-footer/block-footer.php");
 ?>
