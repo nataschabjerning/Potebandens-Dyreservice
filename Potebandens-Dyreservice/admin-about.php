@@ -33,7 +33,7 @@
 
             <?php
                 // include admin php blocks here 
-                
+                include("php-partials/admin-blocks/block-admin-about/block-admin-about.php");
             ?>
 
         <?php } // if (isset($_SESSION["username"])) end

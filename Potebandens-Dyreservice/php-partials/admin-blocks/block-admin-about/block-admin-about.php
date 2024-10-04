@@ -7,7 +7,7 @@
     $resultData = mysqli_stmt_get_result($stmt);
 ?>
 
-<div class="block about">
+<div class="block admin-about">
 
     <div class="container">
 
@@ -87,4 +87,4 @@
 
     </div> <!-- .container end -->
 
-</div> <!-- .block .about end -->
+</div> <!-- .block .admin-about end -->
