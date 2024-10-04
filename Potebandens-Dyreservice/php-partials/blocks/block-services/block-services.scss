@@ -1,71 +1,92 @@
 .services {
-    background-color: rgba(36, 58, 148, 1);
-    .container {
-        .all-services {
-            .service-cards {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-                @media (max-width: 768px) {
-                    grid-template-columns: 1fr;
-                }
-                .card {
-                    background-image: linear-gradient(
-                        to bottom,
-                        rgba(0, 0, 0, 0.4) 0%,
-                        rgba(0, 0, 0, 0.4) 100%),
-                        url('../../../../Images/References/darkbluepawpng.png'
-                    );
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    border-radius: 10px;
-                    border-bottom: 1px solid #3c5de4;
-                    border-top: 1px solid #3c5de4;
-                    min-height: 300px;
-                    padding: 2rem;
-                    color: white;
-                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-                    @media (max-width: 768px) {
-                        padding: 1rem;
+    background-color: #478f54;
+    border-top: 5px double #33663d;
+    .service-inner {
+        border: 20px solid transparent;
+        border-image-source: url('../../../../Images/References/squaredarkgreenpawlinepng.png');
+        border-image-repeat:repeat;
+        border-image-slice: 20%;
+        margin: 0 4rem;
+        padding: 4rem;
+        @media (max-width: 1024px) {
+            margin: 0 2rem;
+            padding: 2rem;
+        }
+        @media (max-width: 768px) {
+            margin: 0 .5rem;
+            padding: .5rem;
+        }
+        .container {
+            @media (max-width: 768px) {
+                padding: 0;
+                width: 100%;
+            }
+            .all-services {
+                .service-cards {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    @media (max-width: 850px) {
+                        grid-template-columns: 1fr;
                     }
-                    .contact {
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        padding: .2rem .5rem;
-                        font-size: 1rem;
+                    .card {
+                        background-image: linear-gradient(
+                            to bottom,
+                            rgba(0, 0, 0, 0.4) 0%,
+                            rgba(0, 0, 0, 0.4) 100%),
+                            url('../../../../Images/References/darkgreenpawpng.png'
+                        );
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        position: relative;
+                        border-radius: 10px;
+                        border-bottom: 3px solid #3c5de4;
+                        border-top: 3px solid #3c5de4;
+                        min-height: 300px;
+                        padding: 2rem;
                         color: white;
-                        background-color: rgba(0, 128, 0, .5);
-                        border-top-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                    }
-                    .contact:hover {
-                        background-color: rgba(0, 128, 0, 1);
-                    }
-                    .title {
-                        text-align: center;
-                        h2 {
-                            text-transform: uppercase;
-                            @media (max-width: 768px) {
-                                font-size: 1.4rem;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                        @media (max-width: 768px) {
+                            padding: 1rem;
+                        }
+                        .contact {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            padding: .2rem .5rem;
+                            font-size: 1rem;
+                            color: white;
+                            background-color: rgba(63, 72, 204, .6);
+                            border-top-left-radius: 10px;
+                            border-bottom-right-radius: 10px;
+                        }
+                        .contact:hover {
+                            background-color: #478f54;
+                        }
+                        .title {
+                            text-align: center;
+                            h2 {
+                                text-transform: uppercase;
+                                @media (max-width: 768px) {
+                                    font-size: 1.4rem;
+                                }
                             }
                         }
-                    }
-                    hr {
-                        margin: 1rem 0;
-                        border: 1px solid rgba(36, 58, 148, 1);
-                    }
-                    .description {
-                        font-size: 1.1rem;
-                        @media (max-width: 768px) {
-                            font-size: 1rem;
-                        }
-                        p {
+                        hr {
                             margin: 1rem 0;
+                            border: 1px solid rgba(36, 58, 148, 1);
                         }
-                        .important_note {
-                            font-weight: 600;
+                        .description {
+                            font-size: 1.1rem;
+                            @media (max-width: 768px) {
+                                font-size: 1rem;
+                            }
+                            p {
+                                margin: 1rem 0;
+                            }
+                            .important_note {
+                                font-weight: 600;
+                            }
                         }
                     }
                 }
