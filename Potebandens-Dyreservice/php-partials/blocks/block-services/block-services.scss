@@ -1,44 +1,55 @@
 .services {
+    background-color: rgba(36, 58, 148, 1);
     .container {
         .all-services {
-            h1 {
-
-            }
             .service-cards {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 1rem;
+                @media (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                }
                 .card {
-                    position: relative;
-                    background: linear-gradient(
+                    background-image: linear-gradient(
                         to bottom,
-                        rgba(36, 58, 148, .1) 0%,
-                        rgba(36, 58, 148, .1) 100%
+                        rgba(0, 0, 0, 0.4) 0%,
+                        rgba(0, 0, 0, 0.4) 100%),
+                        url('../../../../Images/References/darkbluepawpng.png'
                     );
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: relative;
                     border-radius: 10px;
-                    border-bottom: 1px solid rgba(36, 58, 148, 1);
-                    border-top: 1px solid rgba(36, 58, 148, 1);
+                    border-bottom: 1px solid #3c5de4;
+                    border-top: 1px solid #3c5de4;
                     min-height: 300px;
                     padding: 2rem;
+                    color: white;
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                    @media (max-width: 768px) {
+                        padding: 1rem;
+                    }
                     .contact {
                         position: absolute;
                         bottom: 0;
                         right: 0;
                         padding: .2rem .5rem;
                         font-size: 1rem;
-                        color: black;
-                        background-color: rgba(58,117,69, .2);
+                        color: white;
+                        background-color: rgba(0, 128, 0, .5);
                         border-top-left-radius: 10px;
                         border-bottom-right-radius: 10px;
                     }
                     .contact:hover {
-                        background-color: rgba(58,117,69, .5);
+                        background-color: rgba(0, 128, 0, 1);
                     }
                     .title {
                         text-align: center;
                         h2 {
                             text-transform: uppercase;
+                            @media (max-width: 768px) {
+                                font-size: 1.4rem;
+                            }
                         }
                     }
                     hr {
@@ -47,6 +58,9 @@
                     }
                     .description {
                         font-size: 1.1rem;
+                        @media (max-width: 768px) {
+                            font-size: 1rem;
+                        }
                         p {
                             margin: 1rem 0;
                         }

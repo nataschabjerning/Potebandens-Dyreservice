@@ -37,6 +37,12 @@
                             padding-top: .5rem;
                             display: flex;
                             justify-content: space-between;
+                            @media (max-width: 360px) {
+                                display:block;
+                                h4 {
+                                    margin: 0 auto .3rem;
+                                }
+                            }
                         }
                         .user_id {
                             display: flex;

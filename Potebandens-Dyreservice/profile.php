@@ -41,7 +41,7 @@
 
         // if not logged in
         else { ?>
-            <div class="no_session">
+            <div class="block no_session">
                 <h1>Beklager!</h1>
                 <h2>Du skal være logget ind for at se denne side.</h2>
             </div>
