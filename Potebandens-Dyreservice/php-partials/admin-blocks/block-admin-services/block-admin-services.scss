@@ -109,6 +109,14 @@
                     text-align: center;
                     text-transform: uppercase;
                     margin: 0 0 2rem;
+                    @media (max-width: 850px) {
+                        width: 60%;
+                        text-align: left;
+                    }
+                    @media (max-width: 400px) {
+                        width: 50%;
+                        font-size: 1rem;
+                    }
                 }
                 .update-info {
                     position: absolute;
@@ -119,11 +127,17 @@
                     text-align: center;
                     border: 2px solid rgb(236, 126, 0);
                     background-color:rgba(199, 80, 0, .3);
+                    @media (max-width: 850px) {
+                        font-size: .8rem;
+                    }
                 }
                 .display-service {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 1rem;
+                    @media (max-width: 850px) {
+                        grid-template-columns: 1fr;
+                    }
                     section {
                         padding: 1rem;
                         border-radius: 10px;

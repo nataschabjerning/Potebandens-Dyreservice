@@ -24,6 +24,19 @@ $dbpassword = "root";
 
 # DATABASE - TABLES
 
+about
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- about_image_link (VARCHAR 255)
+- about_image_alt (VARCHAR 255)
+- about_name (VARCHAR 100)  ------ NOT NULL
+- about_text_one (VARCHAR 100)  
+- about_text_two (VARCHAR 255)
+- about_text_three (VARCHAR 255)
+- about_text_four (VARCHAR 255)
+- about_text_five (VARCHAR 255)
+- about_text_six (VARCHAR 255)
+- about_text_seven (VARCHAR 255)
+
 gallery
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
 - image_link (VARCHAR 255)  ------ NOT NULL
