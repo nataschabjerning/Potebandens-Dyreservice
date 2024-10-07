@@ -1,34 +1,102 @@
 .admin-about {
+    padding-top: 0;
     .container {
         h1 {
         }
-        .content {
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-            .me {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+        .about-blocks {
+            position: relative;
+            padding-top: 6rem;
+            .update-about-info {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: .3rem;
+                margin: 1rem 0;
+                text-align: center;
+                border: 2px solid rgb(236, 126, 0);
+                background-color:rgba(199, 80, 0, .3);
+                @media (max-width: 850px) {
+                    font-size: .8rem;
+                }
+            }
+            section:first-of-type {
+                margin-top: 0;
+            }
+            section {
+                margin-top: 4rem;
                 padding: 1rem;
                 border-radius: 10px;
-                outline: 1px dashed #478f54;
-                min-height: 400px;
-                .image {
-                    img {
-                        object-fit: cover;
-                        height: 100%;
-                        width: 100%;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                .me {
+                    position: relative;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                    outline: 1px dashed #478f54;
+                    border-radius: 10px;
+                    padding: 2rem 1rem 1rem;
+                    height: fit-content;
+                    .about_id {
+                        position: absolute;
+                        top:0;
+                        left: 0;
+                        margin: .5rem;
                     }
-                }
-                .intro {
-                    h1 {
-                        margin-bottom: 2rem;
+                    .image {
+                        img {
+                            object-fit: cover;
+                            height: 100%;
+                            width: 100%;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
                     }
-                    p {
-                        margin: 1rem 0;
+                    .intro {
+                        input {
+                            height: 40px;
+                            font-size: 2rem;
+                            font-weight: 600;
+                            padding: .5rem;
+                            width: 80%;
+                            margin-bottom: 1rem;
+                        }
+                        textarea {
+                            margin: .5rem 0;
+                            height: 60px;
+                            width: 100%;
+                            font-size: 1rem;
+                            padding: .5rem;
+                        }
+                    }
+                    .buttons {
+                        position: absolute;
+                        top:0;
+                        right: 0;
+                        .update-about, .delete-about {
+                            button {
+                                margin: 0;
+                                background-color: rgba(253, 156, 29, 1);
+                                padding: .5rem;
+                                border-radius: 0;
+                                border-top-right-radius: 10px;
+                                color: white;
+                                font-weight: 600;
+                                cursor: pointer;
+                            }
+                            button:hover {
+                                background-color: rgb(223, 138, 27);
+                            }
+                        }
+                        .delete-about {
+                            #delete-about {
+                                border-radius: 0;
+                                border-bottom-left-radius: 10px;
+                                background-color: rgba(221, 0, 0, 1);
+                            }
+                            #delete-about:hover {
+                                background-color: rgb(199, 3, 3);
+                            }
+                        }
                     }
                 }
             }

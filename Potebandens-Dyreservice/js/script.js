@@ -88,6 +88,12 @@ $(document).ready(function(){
         $(this).children("#show_add_image").toggle();
         $(this).children("#hide_add_image").toggle();
     });
+    // show/hide 'add about' form on 'about' page
+    $(".add_about").click(function () {
+        $("#insert-about").slideToggle();
+        $(this).children("#show_add_about").toggle();
+        $(this).children("#hide_add_about").toggle();
+    });
 
     // ---------- CREATE SERVICE ----------
     $('#create-service').click(function() {
@@ -296,6 +302,119 @@ $(document).ready(function(){
                 window.location.reload();
                 // alert that the row has been successfully removed
                 alert("Billede slettet!");
+            })
+        });
+    })
+
+    // ---------- UPDATE ABOUT ----------
+    $('.update-about').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the service ID from section attr class
+        var $aboutId   = $section.attr('attr-about_id');
+
+        // Get inputs from abouts
+        let $about_name = $section.find("#about_name").val();
+        let $about_text_one = $section.find("#about_text_one").val();
+        let $about_text_two = $section.find("#about_text_two").val();
+        let $about_text_three = $section.find("#about_text_three").val();
+        let $about_text_four = $section.find("#about_text_four").val();
+        let $about_text_five = $section.find("#about_text_five").val();
+        let $about_text_six = $section.find("#about_text_six").val();
+        let $about_text_seven = $section.find("#about_text_seven").val();
+
+        // show confirmaiton box
+        $("#confirmation-about-update").show();
+
+        // if cancel_update (no)
+        $('.cancel_about_update').click(function(){ 
+            window.location.reload();
+            alert("Ingen infoboks blev opdateret!");
+            $("#confirmation-about-update").hide();
+        });
+        // if confirm_update (yes)
+        $('.confirm_about_update').click(function(){
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateabout.inc.php',
+                // data to send
+                data: {
+                    about_id: $aboutId,
+                    about_name: $about_name,
+                    about_text_one: $about_text_one,
+                    about_text_two: $about_text_two,
+                    about_text_three: $about_text_three,
+                    about_text_four: $about_text_four,
+                    about_text_five: $about_text_five,
+                    about_text_six: $about_text_six,
+                    about_text_seven: $about_text_seven
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if($about_name  === "") {
+                    $request.abort();
+                    window.location.reload();
+                    alert("Obs! Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
+                    $("#confirmation-update").hide();
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-about-update").hide();
+                    alert("Infoboks " + $aboutId + " opdateret!");
+                    // reload page to show update
+                    window.location.reload();
+                }
+            })  
+        });
+    })
+
+    // ---------- DELETE ABOUT ----------
+    $('.delete-about').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the service ID
+        var aboutId   = $section.attr('attr-about_id');
+
+        // show confirmaiton box
+        $("#confirmation-about-delete").show();
+
+        // CONFIRMATION
+        var buttonclicked;
+        // if cancel_delete (no)
+        $('.cancel_about_delete').click(function(){ 
+            if(buttonclicked != false) {
+                window.location.reload();
+                $("#confirmation-about-delete").hide();
+                alert("Ingen info blev slettet!");
+            } 
+        });
+        // if confirm_delete (yes)
+        $('.confirm_about_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteabout.inc.php',
+                // data to send
+                data: {
+                    about_id: aboutId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                // hide confirmation box
+                $("#confirmation-about-delete").hide();
+                // reload page
+                window.location.reload();
+                // alert that the row has been successfully removed
+                alert("Info slettet!");
             })
         });
     })

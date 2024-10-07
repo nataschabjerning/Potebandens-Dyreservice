@@ -5,15 +5,15 @@
             <?php
                 if (isset($_GET["error"])) {
                     // no file was selected to upload
-                    if ($_GET["error"] == "aboutnofilewasselected") {
+                    if ($_GET["error"] == "nofilewasselected") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Ingen fil er valgt. Vælg en fil og prøv igen</p>";
                         echo "</div>";
                     }
                     // no file was selected to upload
-                    if ($_GET["error"] == "aboutaltempty") {
+                    if ($_GET["error"] == "aboutemptyinput") {
                         echo "<div class='error'>";
-                        echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst. Husk at udfylde dette felt og prøv igen</p>";
+                        echo "<p class='caption'>- Et eller flere påkrævede felter er ikke udfyldt. Udfyld alle felter og prøv igen.</p>";
                         echo "</div>";
                     }
                     // not matching the allowed file types
@@ -49,7 +49,7 @@
 
         <div class="new_about">
             <div class="add_about">
-                <div id="show_add_about">Tilføj Billede</div>
+                <div id="show_add_about">Tilføj 'Om mig' Blok</div>
                 <div id="hide_add_about">Skjul Formular</div>
             </div>
 

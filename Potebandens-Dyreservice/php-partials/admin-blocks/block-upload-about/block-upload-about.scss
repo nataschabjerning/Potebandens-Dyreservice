@@ -1,0 +1,145 @@
+.upload-about {
+    padding: 6rem 0 0;
+    .container {
+        .upload-about-messages {
+            width: 100%;
+            .error {
+                width: fit-content;
+                margin: 0 auto 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: .5rem 1rem;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                color: rgb(226, 3, 3);
+                border: 1px solid rgb(226, 3, 3);
+                .caption {
+                    font-size: 1.2rem;
+                }
+                @media (max-width: 768px) {
+                    font-weight: 300;
+                }
+            }
+        }
+        .new_about {
+            margin: 0 auto;
+            .add_about {
+                margin: 2rem auto;
+                width: fit-content;
+                cursor: pointer;
+                background-color: rgba(71,143,84, .8);
+                width: fit-content;
+                border-radius: 10px;
+                border: 1px solid rgba(71,143,84, 1);
+                cursor: pointer;
+                #hide_add_about {
+                    display:none;
+                    padding: .5rem 1rem;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 600;
+                    outline: 1px solid rgb(213,37,30);
+                }
+                #show_add_about {
+                    padding: .5rem 1rem;
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+            .add_about:hover {
+                background-color: rgba(71,143,84, 1);
+            }
+            #insert-about {
+                display: none;
+                margin: 2rem auto;
+                text-align: center;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                max-width: 70%;
+                form {
+                    outline: 1px dashed #478f54;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    position: relative;
+                    h2 {
+                        margin-bottom: 2rem;
+                    }
+                    p {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        span {
+                            color: red;
+                            font-weight: 900;
+                        }
+                    }
+                    .addaboutform {
+                        label {
+                            font-weight: 600;
+                            span {
+                                color: red;
+                                font-weight: 900;
+                            }
+                        }
+                        input {
+                            margin: .5rem 0;
+                            border: 1px solid black;
+                            border-radius: 5px;
+                            text-align: center;
+                            width: 100%;
+                            font-size: .9rem;
+                            height: 40px;
+                            @media (max-width: 768px) {
+                                font-size: .8rem;
+                            }
+                        }
+                        textarea {
+                            width: 100%;
+                            padding: .5rem;
+                            height: 55px;
+                            border: 1px solid black;
+                            border-radius: 5px;
+                            margin: .5rem 0;
+                            width: 100%;
+                            text-indent: 10px;
+                        }
+                        textarea::placeholder {
+                            text-align: center;
+                        }
+                        .about-top, .about-middle, .about-bottom {
+                            display: flex;
+                            gap: 1rem;
+                            width: 100%;
+                            .about_image_link, .about_image_alt,.about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
+                                width: 100%;
+                            }
+                        }
+                        input[type="file"] {
+                            text-align: center;
+                            font-size: 1rem;
+                            width: 100%;
+                            @media (max-width: 768px) {
+                                font-size: .8rem;
+                            }
+                        }
+                        input[type=file]::file-selector-button {
+                            background-color: rgba(217, 168, 0, 1);
+                            color: #000;
+                            border: 0px;
+                            border-right: 1px solid #e5e5e5;
+                            padding: 10px 20px;
+                            margin-right: 10px;
+                            cursor: pointer;
+                        }
+                        input[type=file]::file-selector-button:hover {
+                            background-color: rgb(223, 138, 27);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

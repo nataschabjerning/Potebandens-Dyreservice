@@ -11,18 +11,58 @@
 
     <div class="container">
 
-        <h1>Måske lave det til et while() loop og gøre det muligt at rette i, ligesom ydelser og galleri</h1>
+        <div id="confirmation-about-delete">
+            <div class="content">
+                <h2>Er du sikker på, at du gerne vil slette info om denne person?</h2>
+                <div class="buttons">
+                    <button class="confirm_about_delete">
+                        <img src="../../../../Images/References/grønpotebtn.png" alt="">
+                        <h4>Ja</h4>
+                    </button>
+                    <button class="cancel_about_delete">
+                        <img src="../../../../Images/References/rødpotebtn.png" alt="">
+                        <h4>Nej</h4>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-        <br>
-        <br>
-        <br>
-    
-        <div class="content">
+        <div id="confirmation-about-update">
+                <div class="content">
+                    <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
+                    <div class="buttons">
+                        <button class="confirm_about_update">
+                            <img src="../../../../Images/References/grønpotebtn.png" alt="">
+                            <h4>Ja</h4>
+                        </button>
+                        <button class="cancel_about_update">
+                            <img src="../../../../Images/References/rødpotebtn.png" alt="">
+                            <h4>Nej</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-            <div class="me">
+        <?php
+            include("php-partials/admin-blocks/block-upload-about/block-upload-about.php");
+        ?>
+
+        <hr>
+
+        <div class="about-blocks">
+
+            <p class="update-about-info">Vil du opdatere info i en af boksene?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+
+
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-                    <section class="about-me" attr-about_id="<?php echo $row['id']; ?>">
-                        
+                <section attr-about_id="<?php echo $row['id']; ?>">
+                    <div class="me">
+                        <?php if (!empty($row['id'])) { ?>
+                            <div class="about_id">
+                                <h4>ID: <?php echo $row['id']?></h4>
+                            </div>
+                        <?php } ?>
+
                         <?php if (!empty($row['about_image_link'])) { ?>
                             <div class="image">
                                 <img src="includes/about-uploads/<?php echo $row['about_image_link']?>" alt="<?php echo $row['about_image_alt']?>">
@@ -31,60 +71,66 @@
 
                         <div class="intro">
                             <?php if (!empty($row['about_name'])) { ?>
-                                <h1><?php echo $row['about_name']?></h1>
+                                <div class="about_name">
+                                    <input type="text" name="about_name" id="about_name" value="<?php echo $row['about_name']?>">
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_one'])) { ?>
-                                <p class="one"><?php echo $row['about_text_one']?></p>
+                                <div class="about_text_one">
+                                    <textarea name="about_text_one" id="about_text_one"><?php echo $row['about_text_one']?></textarea>
+                                </div>
+                                
                             <?php } ?>
                             <?php if (!empty($row['about_text_two'])) { ?>
-                                <p><?php echo $row['about_text_two']?></p>
+                                <div class="about_text_two">
+                                    <textarea name="about_text_two" id="about_text_two"><?php echo $row['about_text_two']?></textarea>
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_three'])) { ?>
-                                <p><?php echo $row['about_text_three']?></p>
+                                <div class="about_text_three">
+                                    <textarea name="about_text_three" id="about_text_three"><?php echo $row['about_text_three']?></textarea>
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_four'])) { ?>
-                                <p><?php echo $row['about_text_four']?></p>
+                                <div class="about_text_four">
+                                    <textarea name="about_text_four" id="about_text_four"><?php echo $row['about_text_four']?></textarea>
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_five'])) { ?>
-                                <p><?php echo $row['about_text_five']?></p>
+                                <div class="about_text_five">
+                                    <textarea name="about_text_five" id="about_text_five"><?php echo $row['about_text_five']?></textarea>
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_six'])) { ?>
-                                <p><?php echo $row['about_text_six']?></p>
+                                <div class="about_text_six">
+                                    <textarea name="about_text_six" id="about_text_six"><?php echo $row['about_text_six']?></textarea>
+                                </div>
                             <?php } ?>
                             <?php if (!empty($row['about_text_seven'])) { ?>
-                                <p><?php echo $row['about_text_seven']?></p>
+                                <div class="about_text_seven">
+                                    <textarea name="about_text_seven" id="about_text_seven"><?php echo $row['about_text_seven']?></textarea>
+                                </div>
                             <?php } ?>
                         </div>
 
-                        <div class="delete-about">
-                            <button id="delete-about">Slet Billede</button>
+                        <div class="buttons">
+                            <div class="update-about">
+                                <button id="update-about">Opdatér</button>
+                            </div>
+
+                            <div class="delete-about">
+                                <button id="delete-about">Slet</button>
+                            </div>
                         </div>
+                        
 
-                    </section>
-                <?php } ?>
-            </div>
+                    </div> <!-- .me end -->
 
-        </div>
-        
+                </section>
+            <?php } ?>
 
-        <br>
-        <br>
-        <br>
-        <hr>
-        <br>
-        <br>
-        <br>
-
-        <h1>Måske lave samme funktion her som i galleri, hvis billeder skal skiftes ud løbende</h1>
-        
-        <br>
-        <br>
-        <br>
-
-        <div class="photos">
-            <img src="" alt="">
-        </div>
-
+        </div> <!-- .about-blocks end -->
+    
     </div> <!-- .container end -->
 
 </div> <!-- .block .admin-about end -->

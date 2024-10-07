@@ -1,34 +1,40 @@
 .about {
     .container {
         h1 {
+            text-align: center;
+            font-size: 2.5rem;
         }
-        .content {
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-            .me {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
+        .about-blocks {
+            section {
                 padding: 1rem;
                 border-radius: 10px;
-                outline: 1px dashed #478f54;
-                min-height: 400px;
-                .image {
-                    img {
-                        object-fit: cover;
-                        height: 100%;
-                        width: 100%;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                margin-top: 4rem;
+                .me {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                    outline: 1px dashed #478f54;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    height: fit-content;
+                    .image {
+                        img {
+                            object-fit: cover;
+                            height: 100%;
+                            width: 100%;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                        }
                     }
-                }
-                .intro {
-                    h1 {
-                        margin-bottom: 2rem;
-                    }
-                    p {
-                        margin: 1rem 0;
+                    .intro {
+                        h1 {
+                            margin-bottom: 2rem;
+                            font-size: 2rem;
+                        }
+                        p {
+                            margin: 1rem 0;
+                        }
                     }
                 }
             }

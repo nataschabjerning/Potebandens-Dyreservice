@@ -11,18 +11,13 @@
 
     <div class="container">
 
-        <h1>Måske lave det til et while() loop og gøre det muligt at rette i, ligesom ydelser og galleri</h1>
+        <h1>Hele Holdet</h1>
 
-        <br>
-        <br>
-        <br>
-    
-        <div class="content">
+        <div class="about-blocks">
 
-            <div class="me">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-                    <section class="about-me" attr-about_id="<?php echo $row['id']; ?>">
-                        
+                <section attr-about_id="<?php echo $row['id']; ?>">
+                    <div class="me">
                         <?php if (!empty($row['about_image_link'])) { ?>
                             <div class="image">
                                 <img src="includes/about-uploads/<?php echo $row['about_image_link']?>" alt="<?php echo $row['about_image_alt']?>">
@@ -55,35 +50,12 @@
                                 <p><?php echo $row['about_text_seven']?></p>
                             <?php } ?>
                         </div>
+                    </div>  <!-- .me end -->
 
-                        <div class="delete-about">
-                            <button id="delete-about">Slet Billede</button>
-                        </div>
+                </section>
+            <?php } ?>
 
-                    </section>
-                <?php } ?>
-            </div>
-
-        </div>
-        
-
-        <br>
-        <br>
-        <br>
-        <hr>
-        <br>
-        <br>
-        <br>
-
-        <h1>Måske lave samme funktion her som i galleri, hvis billeder skal skiftes ud løbende</h1>
-        
-        <br>
-        <br>
-        <br>
-
-        <div class="photos">
-            <img src="" alt="">
-        </div>
+        </div>  <!-- .about-blocks end -->
 
     </div> <!-- .container end -->
 

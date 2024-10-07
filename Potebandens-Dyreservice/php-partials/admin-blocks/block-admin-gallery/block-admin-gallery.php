@@ -55,4 +55,4 @@
 
     </div> <!-- .container end -->
 
-</div> <!-- .block .about end -->
+</div> <!-- .block .admin-gallery end -->
