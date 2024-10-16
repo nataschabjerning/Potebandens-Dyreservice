@@ -77,6 +77,17 @@
                         }
                     }
                     .addaboutform {
+                        .about_text_one {
+                            position: relative;
+                            .star {
+                                position: absolute;
+                                width: 10px;
+                                top: .5rem;
+                                left: 2px;
+                                color: red;
+                                font-weight: 900;
+                            }
+                        }
                         label {
                             font-weight: 600;
                             span {
@@ -109,7 +120,7 @@
                         textarea::placeholder {
                             text-align: center;
                         }
-                        .about-top, .about-middle, .about-bottom {
+                        .about-middle, .about-bottom {
                             display: flex;
                             gap: 1rem;
                             width: 100%;

@@ -19,9 +19,7 @@
                 <section attr-about_id="<?php echo $row['id']; ?>">
                     <div class="me">
                         <?php if (!empty($row['about_image_link'])) { ?>
-                            <div class="image">
-                                <img src="includes/about-uploads/<?php echo $row['about_image_link']?>" alt="<?php echo $row['about_image_alt']?>">
-                            </div>
+                            <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-uploads/<?php echo $row['about_image_link']?>');<?php } else { ?>background-image: url('../../../../Images/References/blåpoteprofilepic.jpg');<?php }?>"></div>
                         <?php } ?>
 
                         <div class="intro">

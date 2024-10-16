@@ -7,6 +7,8 @@ $dbName = "potebandens_dyreservice_db";
 $dbusername = "root";
 $dbpassword = "";
 
+
+
 # LAPTOP DATABASE
 
 $serverName = "localhost";
@@ -15,6 +17,8 @@ $dbName = "potebandens_dyreservice_db";
 $dbusername = "root";
 $dbpassword = "";
 
+
+
 # WORK DATABASE
 
 $serverName = "local.potebandens-dyreservice.dk";
@@ -22,14 +26,15 @@ $dbName = "potebandens_dyreservice_db";
 $dbusername = "root";
 $dbpassword = "root";
 
+
+
 # DATABASE - TABLES
 
 about
-- id (INT AUTO_INCREMENT)   ------ NOT NULL
-- about_image_link (VARCHAR 255)
-- about_image_alt (VARCHAR 255)
-- about_name (VARCHAR 100)  ------ NOT NULL
-- about_text_one (VARCHAR 100)  
+- id (INT AUTO_INCREMENT)           ------ NOT NULL
+- about_image_link (VARCHAR 255)    ------ NOT NULL
+- about_name (VARCHAR 100)          ------ NOT NULL
+- about_text_one (VARCHAR 100)      ------ NOT NULL
 - about_text_two (VARCHAR 255)
 - about_text_three (VARCHAR 255)
 - about_text_four (VARCHAR 255)
@@ -59,5 +64,7 @@ users
 - username (VARCHAR 50)     ------ NOT NULL
 - email (VARCHAR 100)       ------ NOT NULL
 - password (VARCHAR 255)    ------ NOT NULL
+
+
 
 -->

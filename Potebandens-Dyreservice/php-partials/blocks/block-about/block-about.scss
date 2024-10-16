@@ -5,6 +5,21 @@
             font-size: 2.5rem;
         }
         .about-blocks {
+            section:nth-child(even) {
+                .me {
+                    .image {
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+                        border-radius: 0;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                    .intro {
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                    }
+                }
+            }
             section {
                 padding: 1rem;
                 border-radius: 10px;
@@ -17,23 +32,22 @@
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 1rem;
-                    height: fit-content;
                     .image {
-                        img {
-                            object-fit: cover;
-                            height: 100%;
-                            width: 100%;
-                            border-top-left-radius: 10px;
-                            border-bottom-left-radius: 10px;
-                        }
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
                     }
                     .intro {
+                        padding: 1rem;
                         h1 {
                             margin-bottom: 2rem;
                             font-size: 2rem;
                         }
                         p {
                             margin: 1rem 0;
+                            text-align:justify;
                         }
                     }
                 }

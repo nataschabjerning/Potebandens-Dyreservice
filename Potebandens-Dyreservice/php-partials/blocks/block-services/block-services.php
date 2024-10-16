@@ -22,14 +22,18 @@
                             <a href="contact.php" class="contact">
                                 <p>Kontakt Lonni for mere info</p>
                             </a>
-                            <div class="title">
-                                <h2><?php echo $row['service_name']?></h2>
-                            </div>
+                            <?php if (!empty($row['service_name'])) { ?>
+                                <div class="title">
+                                    <h2><?php echo $row['service_name']?></h2>
+                                </div>
+                            <?php } ?>
 
                             <hr>
 
                             <div class="description">
-                                <p class="service_description_one"><?php echo $row['service_description_one']?></p>
+                                <?php if (!empty($row['service_description_one'])) { ?>
+                                    <p class="service_description_one"><?php echo $row['service_description_one']?></p>
+                                <?php } ?>
                                 <?php if (!empty($row['service_description_two'])) { ?>
                                     <p class="service_description_two"><?php echo $row['service_description_two']?></p>
                                 <?php } ?>

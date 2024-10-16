@@ -8,7 +8,6 @@
     if (isset($_POST["upload-about"])) {
 
         $about_image_link = basename($_FILES["about_file"]["name"]);
-        $about_image_alt = $_POST["about_image_alt"];
         $about_name = $_POST["about_name"];
         $about_text_one = $_POST["about_text_one"];
         $about_text_two = $_POST["about_text_two"];
@@ -18,27 +17,35 @@
         $about_text_six = $_POST["about_text_six"];
         $about_text_seven = $_POST["about_text_seven"];
         
-        // If 'alt' text field is empty
-        if (empty($about_image_alt) || empty($about_name)) {
-            header("location: ../admin-about.php?error=aboutemptyinput");
+        // If name text field is empty
+        if (empty($about_name)) {
+            header("location: ../admin-about.php?error=aboutemptyname");
+            exit();
+        }
+        // If text field one is empty
+        if (empty($about_text_one)) {
+            header("location: ../admin-about.php?error=aboutemptytextfield");
             exit();
         }
 
         // if image file is selected
         if (!empty($_FILES["about_file"]["name"])) {
+            
             $targetFilePath = $targetDir . $about_image_link;
             $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+        
             // Allow certain file formats
             $allowTypes = array('jpg','png','jpeg','gif');
+
             // if allowed file formats is selected
             if (in_array($fileType, $allowTypes)) {
                 // Upload file to folder
                 if (move_uploaded_file($_FILES["about_file"]["tmp_name"], $targetFilePath)) {
                     // Insert image file name into database
-                    $insert = $conn->query("INSERT INTO about (about_image_link, about_image_alt, about_name, about_text_one, about_text_two, about_text_three, about_text_four, about_text_five, about_text_six, about_text_seven) VALUES ('".$about_image_link."', '".$about_image_alt."', '".$about_name."', '".$about_text_one."', '".$about_text_two."', '".$about_text_three."', '".$about_text_four."', '".$about_text_five."', '".$about_text_six."', '".$about_text_seven."')");
+                    $insert = $conn->query("INSERT INTO about (about_image_link, about_name, about_text_one, about_text_two, about_text_three, about_text_four, about_text_five, about_text_six, about_text_seven) VALUES ('".$about_image_link."', '".$about_name."', '".$about_text_one."', '".$about_text_two."', '".$about_text_three."', '".$about_text_four."', '".$about_text_five."', '".$about_text_six."', '".$about_text_seven."')");
                     // IF ALL CHECKS CLEAR
                     if ($insert) {
-                        header("Location: ../admin-about.php?aboutimageuploaded");
+                        header("Location: ../admin-about.php?aboutuploaded");
                         exit();
                     }
                     // if insert into database failed
@@ -61,7 +68,7 @@
         }
         // if no file was selected
         else {
-            header("Location: ../admin-about.php?error=about_nofilewasselected");
+            header("Location: ../admin-about.php?error=aboutnofilewasselected");
             exit();
         }
     }
@@ -72,20 +79,12 @@
         <h2>Tilføj 'Om Mig' Boks</h2>
         <p><span>*</span> SKAL udfyldes</p>
         <div class="addaboutform">
-            <div class="about-top">
                 <div class="about_image_link">
                     <label for="link">Vælg Fil <span>*</span></label>
                     <div class="input">
                         <input type="file" name="about_file">
                     </div>
                 </div>
-                <div class="about_image_alt">
-                    <label for="alt">Alt Tekst <span>*</span></label>
-                    <div class="input">
-                        <input type="text" name="about_image_alt" placeholder="Tekst hvis fil ikke kan vises">
-                    </div>
-                </div>
-            </div>
             
             <div class="about_name">
                 <label for="about_name">Navn <span>*</span></label>
@@ -95,6 +94,7 @@
             </div>
             <div class="about_text_one">
                 <div class="about_text_one">
+                    <p class="star">*</p>
                     <textarea name="about_text_one" id="about_text_one" placeholder="Tekstfelt 1"></textarea>
                 </div>
             </div>

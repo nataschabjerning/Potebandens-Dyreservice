@@ -22,6 +22,21 @@
             section:first-of-type {
                 margin-top: 0;
             }
+            section:nth-child(odd) {
+                .me {
+                    .image {
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+                        border-radius: 0;
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
+                    .intro {
+                        grid-column: 1/2;
+                        grid-row: 1/2;
+                    }
+                }
+            }
             section {
                 margin-top: 4rem;
                 padding: 1rem;
@@ -34,7 +49,7 @@
                     gap: 2rem;
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
-                    padding: 2rem 1rem 1rem;
+                    padding: 3rem 1rem 1rem;
                     height: fit-content;
                     .about_id {
                         position: absolute;
@@ -43,13 +58,11 @@
                         margin: .5rem;
                     }
                     .image {
-                        img {
-                            object-fit: cover;
-                            height: 100%;
-                            width: 100%;
-                            border-top-left-radius: 10px;
-                            border-bottom-left-radius: 10px;
-                        }
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
                     }
                     .intro {
                         input {
@@ -57,7 +70,7 @@
                             font-size: 2rem;
                             font-weight: 600;
                             padding: .5rem;
-                            width: 80%;
+                            width: 100%;
                             margin-bottom: 1rem;
                         }
                         textarea {
@@ -72,13 +85,14 @@
                         position: absolute;
                         top:0;
                         right: 0;
+                        display: flex;
                         .update-about, .delete-about {
                             button {
                                 margin: 0;
                                 background-color: rgba(253, 156, 29, 1);
-                                padding: .5rem;
+                                padding: .6rem 1rem;
                                 border-radius: 0;
-                                border-top-right-radius: 10px;
+                                border-bottom-left-radius: 10px;
                                 color: white;
                                 font-weight: 600;
                                 cursor: pointer;
@@ -90,7 +104,7 @@
                         .delete-about {
                             #delete-about {
                                 border-radius: 0;
-                                border-bottom-left-radius: 10px;
+                                border-top-right-radius: 10px;
                                 background-color: rgba(221, 0, 0, 1);
                             }
                             #delete-about:hover {

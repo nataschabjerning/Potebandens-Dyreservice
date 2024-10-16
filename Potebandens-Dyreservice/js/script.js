@@ -378,7 +378,8 @@ $(document).ready(function(){
 
         let $section  = jQuery(this).closest("section");
         // get the service ID
-        var aboutId   = $section.attr('attr-about_id');
+        var $aboutId   = $section.attr('attr-about_id');
+        let $about_name = $section.find("#about_name").val();
 
         // show confirmaiton box
         $("#confirmation-about-delete").show();
@@ -390,7 +391,7 @@ $(document).ready(function(){
             if(buttonclicked != false) {
                 window.location.reload();
                 $("#confirmation-about-delete").hide();
-                alert("Ingen info blev slettet!");
+                alert("Ingen infoblok blev slettet!");
             } 
         });
         // if confirm_delete (yes)
@@ -403,7 +404,8 @@ $(document).ready(function(){
                 url: 'includes/deleteabout.inc.php',
                 // data to send
                 data: {
-                    about_id: aboutId
+                    about_id: $aboutId,
+                    about_name: $about_name
                 }
             })
             .done(function() {
@@ -414,7 +416,7 @@ $(document).ready(function(){
                 // reload page
                 window.location.reload();
                 // alert that the row has been successfully removed
-                alert("Info slettet!");
+                alert("Blok med navn '" + $about_name + "' slettet!");
             })
         });
     })

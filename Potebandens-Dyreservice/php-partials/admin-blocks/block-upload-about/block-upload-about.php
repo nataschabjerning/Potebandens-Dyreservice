@@ -5,15 +5,21 @@
             <?php
                 if (isset($_GET["error"])) {
                     // no file was selected to upload
-                    if ($_GET["error"] == "nofilewasselected") {
+                    if ($_GET["error"] == "aboutnofilewasselected") {
                         echo "<div class='error'>";
-                        echo "<p class='caption'>- Ingen fil er valgt. Vælg en fil og prøv igen</p>";
+                        echo "<p class='caption'>- Ingen billedfil er valgt. Vælg en fil og prøv igen</p>";
                         echo "</div>";
                     }
-                    // no file was selected to upload
-                    if ($_GET["error"] == "aboutemptyinput") {
+                    // name input field is empty
+                    if ($_GET["error"] == "aboutemptyname") {
                         echo "<div class='error'>";
-                        echo "<p class='caption'>- Et eller flere påkrævede felter er ikke udfyldt. Udfyld alle felter og prøv igen.</p>";
+                        echo "<p class='caption'>- Det ser ud som om du har glemt at indtaste et navn. Udfyld feltet 'Navn' og prøv igen..</p>";
+                        echo "</div>";
+                    }
+                    // text field one is empty
+                    if ($_GET["error"] == "aboutemptytextfield") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Det ser ud som om du har glemt at udfylde det første tekstfelt. Udfyld feltet og prøv igen..</p>";
                         echo "</div>";
                     }
                     // not matching the allowed file types
@@ -36,10 +42,10 @@
                     }
                 }
                 // if image was uploaded successfully
-                if (isset($_GET["aboutimageuploaded"])) {
+                if (isset($_GET["aboutuploaded"])) {
                     echo "<script type='text/javascript'>";
                     // show alert box and redirect user to gallery when 'ok' is clicked
-                    echo "alert('Bruger sektion er tilføjet!');window.location.href = 'admin-about.php';";
+                    echo "alert('Bruger blok er tilføjet!');window.location.href = 'admin-about.php';";
                     echo "</script>";
                 }
             ?>
