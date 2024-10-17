@@ -3,7 +3,7 @@
     <div class="container">
         
         <?php
-            include("php-partials/components/logo.php");
+            include("php-partials/components/logo/logo.php");
         ?>
 
         <hr>

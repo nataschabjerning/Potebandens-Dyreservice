@@ -31,7 +31,8 @@
 /* Components
 ------------------------------------------------------*/
 
-@import '../php-partials/components/logo.scss';
+@import '../php-partials/components/logo/logo.scss';
+@import '../php-partials/components/creator/creator.scss';
 
 /* Pages
 ------------------------------------------------------*/

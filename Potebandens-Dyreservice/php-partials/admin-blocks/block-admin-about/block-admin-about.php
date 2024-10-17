@@ -29,7 +29,7 @@
 
         <div id="confirmation-about-update">
                 <div class="content">
-                    <h2>Er du sikker på, at du gerne vil opdatere denne ydelse?</h2>
+                    <h2>Er du sikker på, at du gerne vil opdatere oplysninger om denne person?</h2>
                     <div class="buttons">
                         <button class="confirm_about_update">
                             <img src="../../../../Images/References/grønpotebtn.png" alt="">
@@ -62,7 +62,7 @@
                                 <h4>ID: <?php echo $row['id']?></h4>
                             </div>
 
-                            <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-uploads/<?php echo $row['about_image_link']?>');<?php } else { ?>background-image: url('../../../../Images/References/blåpoteprofilepic.jpg');<?php }?>"></div>
+                            <div class="image" style="<?php if (isset($row['about_image_link'])) { ?>background-image: url('includes/about-uploads/<?php echo $row['about_image_link']?>');<?php } else { ?>background-image: url('../../../../Images/References/blåpoteprofilepic.jpg');<?php }?>"></div>
                             
                             <div class="intro">
                                 <div class="about_name">

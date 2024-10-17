@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Kontakt Os</title>
+    <title>Kontakt Os</title>
 </head>
 
 <?php
@@ -18,7 +18,7 @@
     <div class="page-content">
 
         <?php
-            include("php-partials/blocks/block-sendemail/block-sendemail.php");
+            include("php-partials/components/creator/creator.php");
         ?>
 
     </div>

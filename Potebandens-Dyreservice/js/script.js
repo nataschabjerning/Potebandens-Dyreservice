@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+    // show/hide 'creator'
+    $(".show-creator").click(function () {
+        $("#creator").slideToggle();
+    });
+
     // Mobile menu - click on hamburger menu icon to open menu
     $('#menu-btn').click(function() {
         $(this).toggleClass('open');
