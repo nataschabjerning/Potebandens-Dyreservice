@@ -311,6 +311,39 @@ $(document).ready(function(){
         });
     })
 
+
+    // ---------- CREATE ABOUT ----------
+    $('#upload-about').click(function() {
+
+        $about_image_link = $('#about_image_link').val();
+        $about_name = $('input[name=about_name]').val();
+        $about_work_title = $('input[name=about_work_title]').val();
+        $about_text_one = $('textarea[name=about_text_one]').val();
+        $about_text_two = $('textarea[name=about_text$about_text_two]').val();
+        $about_text_three = $('textarea[name=about_$about_text_three]').val();
+        $about_text_four = $('textarea[name=about_$about_text_four]').val();
+        $about_text_five = $('textarea[name=about_$about_text_five]').val();
+        $about_text_six = $('textarea[name=about_$about_text_six]').val();
+        $about_text_seven = $('textarea[name=about_$about_text_seven]').val();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'includes/createabout.inc.php',
+            data: {
+                about_image_link: $$about_image_link,
+                about_name: $about_name,
+                about_work_title: $about_work_title,
+                about_text_one: $about_text_one,
+                about_text_two: $about_text_two,
+                about_text_three: $about_text_three,
+                about_text_four: $about_text_four,
+                about_text_five: $about_text_five,
+                about_text_six: $about_text_six,
+                about_text_seven: $about_text_seven
+            }
+        })
+    });
+
     // ---------- UPDATE ABOUT ----------
     $('.update-about').click(function() {
 
@@ -321,6 +354,7 @@ $(document).ready(function(){
 
         // Get inputs from abouts
         let $about_name = $section.find("#about_name").val();
+        let $about_work_title = $section.find("#about_work_title").val();
         let $about_text_one = $section.find("#about_text_one").val();
         let $about_text_two = $section.find("#about_text_two").val();
         let $about_text_three = $section.find("#about_text_three").val();
@@ -349,6 +383,7 @@ $(document).ready(function(){
                 data: {
                     about_id: $aboutId,
                     about_name: $about_name,
+                    about_work_title: $about_work_title,
                     about_text_one: $about_text_one,
                     about_text_two: $about_text_two,
                     about_text_three: $about_text_three,

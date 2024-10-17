@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Log Ind</title>
+    <title>Log Ind</title>
 </head>
 
 <?php

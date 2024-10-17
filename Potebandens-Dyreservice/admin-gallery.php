@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Admin | Galleri</title>
+    <title>Admin | Galleri</title>
 </head>
 
 <?php

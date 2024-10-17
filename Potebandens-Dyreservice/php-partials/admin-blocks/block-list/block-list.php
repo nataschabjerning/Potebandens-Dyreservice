@@ -7,6 +7,17 @@
         <div class="list-items">
             <ul>
                 <li>
+                    <a href="admin-inbox.php">
+                        <div class="title">
+                            <h4>Indbakke</h4>
+                        </div>
+                        <hr>
+                        <div class="todo">
+                            <P>Her kan du se alle beskeder, der er sendt til dig fra en besøgende på hjemmesiden.</P>
+                        </div>
+                    </a>
+                </li>
+                <li>
                     <a href="profile.php">
                         <div class="title">
                             <h4>Profil</h4>

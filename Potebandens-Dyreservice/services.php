@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Ydelser</title>
+    <title>Ydelser</title>
 </head>
 
 <?php

@@ -34,6 +34,7 @@ about
 - id (INT AUTO_INCREMENT)           ------ NOT NULL
 - about_image_link (VARCHAR 255)    ------ NOT NULL
 - about_name (VARCHAR 100)          ------ NOT NULL
+- about_work_title (VARCHAR 100)
 - about_text_one (VARCHAR 100)      ------ NOT NULL
 - about_text_two (VARCHAR 255)
 - about_text_three (VARCHAR 255)
@@ -41,6 +42,16 @@ about
 - about_text_five (VARCHAR 255)
 - about_text_six (VARCHAR 255)
 - about_text_seven (VARCHAR 255)
+
+contact
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- name (VARCHAR 100)        ------ NOT NULL
+- work_title (VARCHAR 100)
+- phone (INT 100)           ------ NOT NULL
+- email (VARCHAR 255)       ------ NOT NULL
+- adress_street (VARCHAR 255)
+- adress_postal_code (INT 100)
+- adress_city (VARCHAR 255)
 
 gallery
 - id (INT AUTO_INCREMENT)   ------ NOT NULL

@@ -1,0 +1,28 @@
+.contact {
+    .container {
+        .phone-time {
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+            width: fit-content;
+            margin: 2rem 0;
+            .time {
+                display: flex;
+                p {
+                    margin: 0 1rem;
+                }
+            }
+        }
+        .contact-wrapper {
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+            width: fit-content;
+            .contact-options {
+                outline: 1px dashed #478f54;
+                border-radius: 10px;
+                padding: 1.5rem;
+            }
+        }
+    }
+}

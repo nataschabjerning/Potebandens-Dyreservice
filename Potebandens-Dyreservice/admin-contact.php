@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Admin | Kontakt Os</title>
+    <title>Admin | Kontakt</title>
 </head>
 
 <?php

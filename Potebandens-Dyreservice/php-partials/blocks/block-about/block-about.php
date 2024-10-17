@@ -19,12 +19,15 @@
                 <section attr-about_id="<?php echo $row['id']; ?>">
                     <div class="me">
                         <?php if (!empty($row['about_image_link'])) { ?>
-                            <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-uploads/<?php echo $row['about_image_link']?>');<?php } else { ?>background-image: url('../../../../Images/References/blåpoteprofilepic.jpg');<?php }?>"></div>
+                            <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
                         <?php } ?>
 
                         <div class="intro">
                             <?php if (!empty($row['about_name'])) { ?>
                                 <h1><?php echo $row['about_name']?></h1>
+                            <?php } ?>
+                            <?php if (!empty($row['about_work_title'])) { ?>
+                                <h3><?php echo $row['about_work_title']?></h3>
                             <?php } ?>
                             <?php if (!empty($row['about_text_one'])) { ?>
                                 <p class="one"><?php echo $row['about_text_one']?></p>

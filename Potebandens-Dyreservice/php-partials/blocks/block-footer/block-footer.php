@@ -10,26 +10,14 @@
 
         <div class="contact-info">
 
-            <div class="contact-methods">
-                <div class="phone">
-                    <h4>Mobil</h4>
-                    <p>23950412</p>
-                </div>
-                <div class="email">
-                    <h4>Email</h4>
-                    <a href="mailto:nannabjerning@hotmail.com">nannabjerning@hotmail.com</a>
-                </div>
-            </div>
+            
 
-            <div class="week-hours">
-                <h4>Telefontid</h4>
-                <p>Mandag: 9:00 - 15:00</p>
-                <p>Tirsdag: 9:00 - 15:00</p>
-                <p>Onsdag: 9:00 - 15:00</p>
-                <p>Torsdag: 9:00 - 15:00</p>
-                <p>Fredag: 9:00 - 15:00</p>
-                <p>Lørdag: Lukket</p>
-                <p>Søndag: Lukket</p>
+            <div class="contact-us">
+                <a href="contact.php"><h4>Kontakt Os</h4></a>
+                <div class="week-hours">
+                    <p>Alle hverdage</p>
+                    <p>9:00 - 15:00</p>
+                </div>
             </div>
 
             <div class="adress">

@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Om os</title>
+    <title>Om os</title>
 </head>
 
 <?php

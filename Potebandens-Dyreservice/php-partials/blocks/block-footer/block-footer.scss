@@ -16,22 +16,17 @@
             padding-top: 2rem;
             display: flex;
             justify-content: space-evenly;
-            .contact-methods {
-                .phone {
-                    margin-bottom: 1rem;
+            .contact-us {
+                a {
+                    text-decoration: none;
+                    color: #fff;
                 }
-                .email {
-                    a {
-                        text-decoration: none;
-                        color: #fff;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }
+                a:hover {
+                    text-decoration: underline;
                 }
-            }
-            .week-hours {
+                .week-hours {
 
+                }
             }
             .adress {
 

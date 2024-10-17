@@ -1,5 +1,5 @@
 <head>
-    <title>Potebandens Dyreservice | Ydelser og priser</title>
+    <title>Admin</title>
 </head>
 
 <?php

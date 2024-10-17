@@ -120,11 +120,11 @@
                         textarea::placeholder {
                             text-align: center;
                         }
-                        .about-middle, .about-bottom {
+                        .about-top, .about-middle, .about-bottom {
                             display: flex;
                             gap: 1rem;
                             width: 100%;
-                            .about_image_link, .about_image_alt,.about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
+                            .about_image_link, .about_name, .about_work_title, .about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
                                 width: 100%;
                             }
                         }

@@ -62,11 +62,14 @@
                                 <h4>ID: <?php echo $row['id']?></h4>
                             </div>
 
-                            <div class="image" style="<?php if (isset($row['about_image_link'])) { ?>background-image: url('includes/about-uploads/<?php echo $row['about_image_link']?>');<?php } else { ?>background-image: url('../../../../Images/References/blåpoteprofilepic.jpg');<?php }?>"></div>
+                            <div class="image" style="<?php if (isset($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
                             
                             <div class="intro">
                                 <div class="about_name">
                                     <input type="text" name="about_name" id="about_name" value="<?php echo $row['about_name']?>">
+                                </div>
+                                <div class="about_work_title">
+                                    <input type="text" name="about_work_title" id="about_work_title" value="<?php echo $row['about_work_title']?>">
                                 </div>
                                 <div class="about_text_one">
                                     <textarea name="about_text_one" id="about_text_one"><?php echo $row['about_text_one']?></textarea>

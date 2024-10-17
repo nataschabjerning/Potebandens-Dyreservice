@@ -10,6 +10,7 @@
     // get the input values from updateService() function in script.js
     $id                 = $_REQUEST['about_id'];
     $about_name         = $_REQUEST['about_name'];
+    $about_work_title   = $_REQUEST['about_work_title'];
     $about_text_one     = $_REQUEST['about_text_one'];
     $about_text_two     = $_REQUEST['about_text_two'];
     $about_text_three   = $_REQUEST['about_text_three'];
@@ -26,6 +27,7 @@
     $sql = "UPDATE about 
 	SET 
     about_name='$about_name',
+    about_work_title='$about_work_title',
     about_text_one='$about_text_one',
     about_text_two='$about_text_two',
     about_text_three='$about_text_three',
