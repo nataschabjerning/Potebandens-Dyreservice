@@ -43,10 +43,6 @@
                                 position: absolute;
                                 top: 10px;
                                 right: 10px;
-                                span {
-                                    color: red;
-                                    font-weight: 900;
-                                }
                             }
                         h2 {
                             margin-bottom: 2rem;
@@ -54,10 +50,6 @@
                         form {
                             label {
                                 font-weight: 600;
-                                span {
-                                    color: red;
-                                    font-weight: 900;
-                                }
                             }
                             textarea::placeholder {
                                 text-align: center;

@@ -5,6 +5,20 @@ $(document).ready(function(){
         $("#creator").slideToggle();
     });
 
+    // ----- USER CONTACT FORM -----
+    // show input field when user selects either phone or email
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+
     // Mobile menu - click on hamburger menu icon to open menu
     $('#menu-btn').click(function() {
         $(this).toggleClass('open');

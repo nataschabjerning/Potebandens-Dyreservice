@@ -1,112 +1,119 @@
 .contact {
+    padding: 6rem 0 6rem;
     .container {
+        .contact-title, .message-title, .phone-title {
+            text-align: center;
+            margin: 0 0 2rem;
+            text-transform: uppercase;
+            h3 {
+                @media (max-width: 600px) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
         h1 {
             text-align: center;
             @media (max-width: 600px) {
                 font-size: 1.8rem;
             }
         }
-        .contact-info {
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             padding: 2rem 0;
             margin: 2rem 0;
             border-top: 1px solid #3f48cc;
             border-bottom: 1px solid #3f48cc;
-            .contact-title {
-                display: flex;
-                justify-content: space-evenly;
-                margin: 0 0 1rem;
-                @media (max-width: 600px) {
+            .contact-info {
+                .contact-blocks {
+                    display: flex;
+                    flex-wrap: wrap;
                     gap: 1rem;
-                    h2 {
-                        font-size: 1.2rem;
-                    }
-                    h2:nth-of-type(2) {
-                        text-align: right;
+                    margin: 0 0 1rem;
+                    .contact-wrapper {
+                        width: 100%;
+                        margin: 0 auto;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                        .contact-options {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            outline: 1px dashed #478f54;
+                            border-radius: 10px;
+                            padding: 1rem;
+                            .contact-top {
+                                margin: 0 0 1rem;
+                                .name {
+                                    text-align: center;
+                                }
+                                .work_title {
+                                    color: #3f48cc;
+                                    text-align: center;
+                                }
+                            }
+                            .contact-bottom {
+                                display: flex;
+                                .phone, .email {
+                                    text-align: center;
+                                    a {
+                                        margin: 0 auto;
+                                        color: #478f54;
+                                        font-weight: 600;
+                                        padding: .2rem 0;
+                                        border-top: 1px solid transparent;
+                                        border-bottom: 1px solid transparent;
+                                    }
+                                    a:hover {
+                                        border-top: 1px solid #d5251e;
+                                        border-bottom: 1px solid #d5251e;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
+                
             }
-            .contact-blocks {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-                margin: 0 0 1rem;
-                @media (max-width: 1024px) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                @media (max-width: 768px) {
-                    grid-template-columns: 1fr;
-                }
-                .contact-wrapper {
+            .message-form {
+                #new-message {
                     padding: 1.5rem;
                     border-radius: 10px;
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-                    .contact-options {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-evenly;
+                    .new-message {
                         outline: 1px dashed #478f54;
                         border-radius: 10px;
                         padding: 1.5rem;
-                        .name {
-                            text-align: center;
+                        position: relative;
+                        .span {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            font-weight: 600;
                         }
-                        .work_title {
-                            color: #3f48cc;
-                            text-align: center;
-                        }
-                        .phone, .email {
-                            a {
-                                color: #478f54;
-                                font-weight: 600;
-                                padding: .2rem 0;
-                                border-top: 1px solid transparent;
-                                border-bottom: 1px solid transparent;
+                        form {
+                            .how-to-contact {
+                                .message-choice {
+                                    .box {
+                                        display: none;
+                                    }
+                                }
                             }
-                            a:hover {
-                                border-top: 1px solid #d5251e;
-                                border-bottom: 1px solid #d5251e;
-                            }
-                        }
-                        .email {
-                            text-align: center;
-                            a {
-                                margin: 0 auto;
-                            }
-                        }
-                        .phone {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            flex-wrap: wrap;
-                            margin: 1rem 0;
                         }
                     }
                 }
             }
+        }
+
+        .contact-phone {
+            padding: 0 0 2rem;
+            border-bottom: 1px solid #3f48cc;
             .phone-time {
-                position: relative;
-                padding: 2rem 1rem 1rem;
+                padding:1rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-                h4 {
-                    position: absolute;
-                    left: 50%;
-                    top: 10%;
-                    transform: translate(-50%, -50%);
-                    text-transform: uppercase;
-                    @media (max-width: 1024px) {
-                        top: 6%;
-                    }
-                    @media (max-width: 550px) {
-                        top: 5%;
-                    }
-                    @media (max-width: 420px) {
-                        top: 4%;
-                    }
-                    @media (max-width: 320px) {
-                        top: 3%;
-                    }
-                }
                 .time {
                     display: grid;
                     grid-template-columns: repeat(7, 1fr);
@@ -214,6 +221,7 @@
                         border-radius: 10px;
                         padding: .5rem;
                         span {
+                            color: black;
                             font-weight: 600;
                         }
                     }
