@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    // ----- USER INTERFACE -----
+
+    // ----- CREATOR DIV -----
     // show/hide 'creator'
     $(".show-creator").click(function () {
         $("#creator").slideToggle();
@@ -19,12 +22,67 @@ $(document).ready(function(){
         });
     }).change();
 
+    // ----- WRITE MESSAGE TO ADMIN INBOX -----
+    // ----- show how many characters are left in textarea -----
+    var text_max = 255;
+    $('#message_msg_feedback').html(text_max + ' tegn tilbage');
+
+    $('#message_msg').keyup(function() {
+        var text_length = $('#message_msg').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#message_msg_feedback').html(text_remaining + ' tegn tilbage');
+    });
+
+    // ---------- USER SEND MESSAGE TO ADMIN INBOX (block-contact.php) ----------
+    $('#send-contact-message').click(function() {
+
+        $message_name = $('input[name=message_name]').val();
+        $message_subject = $('input[name=message_subject]').val();
+        $message_msg = $('textarea[name=message_msg]').val();
+        $phone_input = $('input[name=phone_input]').val();
+        $email_input = $('input[name=email_input]').val();
+        
+        var $request = $.ajax({
+            type: 'POST',
+            url: 'includes/sendmessage.inc.php',
+            data: {
+                message_name: $message_name,
+                message_subject: $message_subject,
+                message_msg: $message_msg,
+                phone_input: $phone_input,
+                email_input: $email_input
+            }
+        })
+        .done(function() {
+            // if one or more fields is empty
+            if(!$message_name || !$message_subject || !$message_msg) {
+                $request.abort();
+                window.location.reload();
+                alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if 'service_name' contains numbers
+            else if ($message_name.match(".*\\d.*")) {
+                $request.abort();
+                window.location.reload();
+                alert("Obs! Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+            }
+            else {
+                // if all checks have cleared
+                alert("Besked sendt!");
+                window.location.reload();
+            }
+		})
+    });
+
+    // ----- MOBILE MENU ICON -----
     // Mobile menu - click on hamburger menu icon to open menu
     $('#menu-btn').click(function() {
         $(this).toggleClass('open');
         $('.menu-content').toggle("slide");
     });
 
+    // ----- FRONT PAGE SLIDERS -----
     // Slider on front page to diplay services
     $('.service-slider').slick({
         slidesToShow: 3,
@@ -83,6 +141,10 @@ $(document).ready(function(){
         ]
     });
 
+
+    // ----- ADMIN FUNCTIONS -----
+
+    // ----- SHOW FORMS FOR INSERTING IN DB -----
     // show/hide 'change password' form
     $(".change_password").click(function () {
         $("#change-password").slideToggle();

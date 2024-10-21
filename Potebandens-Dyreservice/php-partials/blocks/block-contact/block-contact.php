@@ -76,28 +76,29 @@
                         <p class="span"><span>*</span> SKAL udfyldes</p>
         
                         <form method="post">
-                            <div class="message-name">
+                            <div class="message_name message_div">
                                 <label>Dit Navn <span>*</span></label>
                                 <div class="input">
-                                    <input type="text" name="message-name">
+                                    <input type="text" name="message_name">
                                 </div>
                             </div>
 
-                            <div class="message-subject">
+                            <div class="message_subject message_div">
                                 <label>Emne <span>*</span></label>
                                 <div class="input">
-                                    <input type="text" name="message-subject">
+                                    <input type="text" name="message_subject">
                                 </div>
                             </div>
 
-                            <div class="message-msg">
+                            <div class="message_msg message_div">
                                 <label>Din Besked <span>*</span></label>
                                 <div class="input">
-                                    <textarea name="message-msg" id="message-msg"></textarea>
+                                    <textarea name="message_msg" id="message_msg"></textarea>
+                                    <div id="message_msg_feedback"></div>
                                 </div>
                             </div>
 
-                            <div class="message-how-to-contact">
+                            <div class="message_how_to_contact message_div">
                                 <label>Hvordan vil du helst kontaktes? <span>*</span></label><br>
 
                                 <select>
@@ -110,13 +111,13 @@
                                 <div class="call sms box">
                                     <label>Dit Telefonnummer <span>*</span></label>
                                     <div class="input">
-                                        <input type="text" name="phone-input">
+                                        <input type="text" name="phone_input">
                                     </div>
                                 </div>
                                 <div class="email box">
                                     <label>Din Email <span>*</span></label>
                                     <div class="input">
-                                        <input type="text" name="email-input">
+                                        <input type="text" name="email_input">
                                     </div>
                                 </div>
 
@@ -124,8 +125,9 @@
                         </form>
 
                         <div class="button">
-                            <button id="send-message">Send Besked</button>
+                            <button id="send-contact-message">Send Besked</button>
                         </div>
+
                     </div> <!-- .new-message end -->
                 </div> <!-- #new-message end -->
 
