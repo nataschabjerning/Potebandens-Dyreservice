@@ -12,6 +12,8 @@
     <div class="container">
 
         <?php
+            include("php-partials/components/confirmation/confirm-update/confirm-update.php");
+            include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
             include("php-partials/admin-blocks/block-upload-about/block-upload-about.php");
         ?>
 

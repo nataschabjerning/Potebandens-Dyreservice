@@ -1,11 +1,11 @@
-#confirmation-user-delete, #confirmation-service-delete, #confirmation-service-update, #confirmation-image-delete, #confirmation-about-delete, #confirmation-about-update  {
+#confirmation-delete, #confirmation-update, #confirmation-about-delete, #confirmation-about-update  {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    display:none;
     border-radius: 25px;
     height: fit-content;
     width: fit-content;

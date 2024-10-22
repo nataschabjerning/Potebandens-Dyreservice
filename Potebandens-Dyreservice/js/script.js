@@ -22,22 +22,14 @@ $(document).ready(function(){
 
     // ----- CONFIRMATION BOXES - FORMS -----
     // errors
-    function confirmationNo(message) {
-        $("#errorconfirm").show();
-        $(".errormessage").append(message);
-        $(".error-confirm").click(function () {
-            $(this).parent("#errorconfirm").hide();
-            window.location.reload();
-        });
+    function confirmationDelete(message) {
+        $("#confirmation-delete").show();
+        $(".deletemessage").append(message);
     }
     // success
-    function confirmationYes(message) {
-        $("#successconfirm").show();
-        $(".successmessage").append(message);
-        $(".success-confirm").click(function () {
-            $(this).parent("#successconfirm").hide();
-            window.location.reload();
-        });
+    function confirmationUpdate(message) {
+        $("#confirmation-update").show();
+        $(".updatemessage").append(message);
     }
 
 
@@ -264,9 +256,6 @@ $(document).ready(function(){
             else {
                 // if all checks have cleared
                 successAlert("Ydelse oprettet!");
-                
-                // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
-
             }
 		})
     });
@@ -289,15 +278,16 @@ $(document).ready(function(){
         let $important_note = $section.find("#important_note").val();
 
         // show confirmaiton box
-        $("#confirmation-service-update").show();
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne ydelse?");
 
-        // if cancel_update (no)
+        // CONFIRMATION
+        // if cancel_delete (no)
         $('.cancel_update').click(function() {
-            successAlert("Ingen ydelse blev opdateret!");
-            $("#confirmation-service-update").hide();
+            $("#confirmation-update").hide();
+            errorAlert("Ingen ydelse blev opdateret!");
         });
-        // if confirm_update (yes)
-        $('.confirm_update').click(function(){
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
                 method: "POST",
@@ -318,21 +308,19 @@ $(document).ready(function(){
                 // if one or more fields is empty
                 if($service_name  === "" || $service_description_one  === "") {
                     $request.abort();
-                    window.location.reload();
                     $("#confirmation-update").hide();
-                    alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                    errorAlert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                 }
                 // if 'service_name' contains numbers
                 else if ($service_name.match(".*\\d.*")) {
                     $request.abort();
-                    window.location.reload();
                     $("#confirmation-update").hide();
-                    alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
+                    errorAlert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
                 }
                 else {
                     // if all checks have cleared
                     // hide confirmation box
-                    $("#confirmation-service-update").hide();
+                    $("#confirmation-update").hide();
                     successAlert("Ydelse " + $serviceId + " opdateret!");
                 }
             })  
@@ -347,17 +335,13 @@ $(document).ready(function(){
         var $serviceId   = $section.attr('attr-service_id');
 
         // show confirmaiton box
-        $("#confirmation-service-delete").show();
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne ydelse?");
 
         // CONFIRMATION
-        var buttonclicked;
         // if cancel_delete (no)
         $('.cancel_delete').click(function(){ 
-            if(buttonclicked != false) {
-                window.location.reload();
-                $("#confirmation-service-delete").hide();
-                alert("Ingen ydelse blev slettet!");
-            } 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen ydelse blev slettet!");
         });
         // if confirm_delete (yes)
         $('.confirm_delete').click(function(){
@@ -375,12 +359,9 @@ $(document).ready(function(){
             .done(function() {
                 // remove the table row
                 $section.remove();
-                // hide confirmation box
-                $("#confirmation-service-delete").hide();
-                // reload page
-                window.location.reload();
+                $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                alert("Ydelse " + $serviceId + " slettet!");
+                successAlert("Ydelse " + $serviceId + " slettet!");
             })
         });
     })
@@ -393,20 +374,19 @@ $(document).ready(function(){
         var imageId   = $section.attr('attr-image_id');
 
         // show confirmaiton box
-        $("#confirmation-image-delete").show();
+        confirmationDelete("Er du sikker på, at du gerne vil slette dette billede?");
 
         // CONFIRMATION
         var buttonclicked;
         // if cancel_delete (no)
-        $('.cancel_image_delete').click(function(){ 
+        $('.cancel_delete').click(function(){ 
             if(buttonclicked != false) {
-                window.location.reload();
-                $("#confirmation-image-delete").hide();
-                alert("Intet billede blev slettet!");
-            } 
+                $("#confirmation-delete").hide();
+                errorAlert("Intet billede blev slettet!");
+            }
         });
         // if confirm_delete (yes)
-        $('.confirm_image_delete').click(function(){
+        $('.confirm_delete').click(function(){
             // Ajax config
             $.ajax({
                 //we are using GET method to get data from server side
@@ -421,12 +401,9 @@ $(document).ready(function(){
             .done(function() {
                 // remove the table row
                 $section.remove();
-                // hide confirmation box
-                $("#confirmation-image-delete").hide();
-                // reload page
-                window.location.reload();
+                $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                alert("Billede slettet!");
+                successAlert("Billede slettet!");
             })
         });
     })
@@ -484,16 +461,16 @@ $(document).ready(function(){
         let $about_text_seven = $section.find("#about_text_seven").val();
 
         // show confirmaiton box
-        $("#confirmation-about-update").show();
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne infoboks?");
 
-        // if cancel_update (no)
-        $('.cancel_about_update').click(function(){ 
-            window.location.reload();
-            alert("Ingen infoboks blev opdateret!");
-            $("#confirmation-about-update").hide();
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen infoboks blev opdateret!");
         });
-        // if confirm_update (yes)
-        $('.confirm_about_update').click(function(){
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
                 method: "POST",
@@ -517,17 +494,20 @@ $(document).ready(function(){
                 // if one or more fields is empty
                 if($about_name  === "") {
                     $request.abort();
-                    window.location.reload();
-                    alert("Obs! Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
                     $("#confirmation-update").hide();
+                    errorAlert("Obs! Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
+                }
+                // if 'about_name' contains numbers
+                else if ($about_name.match(".*\\d.*")) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! Det ser ud som om at der ikke kun er bogstaver i det indtastede navn.");
                 }
                 else {
                     // if all checks have cleared
                     // hide confirmation box
-                    $("#confirmation-about-update").hide();
-                    alert("Infoboks " + $aboutId + " opdateret!");
-                    // reload page to show update
-                    window.location.reload();
+                    $("#confirmation-update").hide();
+                    successAlert("Infoboks " + $aboutId + " opdateret!");
                 }
             })  
         });
@@ -542,20 +522,19 @@ $(document).ready(function(){
         let $about_name = $section.find("#about_name").val();
 
         // show confirmaiton box
-        $("#confirmation-about-delete").show();
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
 
         // CONFIRMATION
         var buttonclicked;
         // if cancel_delete (no)
-        $('.cancel_about_delete').click(function(){ 
+        $('.cancel_delete').click(function(){ 
             if(buttonclicked != false) {
-                window.location.reload();
-                $("#confirmation-about-delete").hide();
-                alert("Ingen infoblok blev slettet!");
-            } 
+                $("#confirmation-delete").hide();
+                errorAlert("Ingen blok blev slettet!");
+            }
         });
         // if confirm_delete (yes)
-        $('.confirm_about_delete').click(function(){
+        $('.confirm_delete').click(function(){
             // Ajax config
             $.ajax({
                 //we are using GET method to get data from server side
@@ -571,12 +550,9 @@ $(document).ready(function(){
             .done(function() {
                 // remove the table row
                 $section.remove();
-                // hide confirmation box
-                $("#confirmation-about-delete").hide();
-                // reload page
-                window.location.reload();
+                $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                alert("Blok med navn '" + $about_name + "' slettet!");
+                successAlert("Blok med navn '" + $about_name + "' slettet!");
             })
         });
     })
@@ -592,20 +568,19 @@ $(document).ready(function(){
             let $username = $section.find("#user_username").val();
 
             // show confirmaiton box
-            $("#confirmation-user-delete").show();
+            confirmationDelete("Er du sikker på, at du gerne vil slette denne bruger?");
 
             // CONFIRMATION
             var buttonclicked;
             // if cancel_delete (no)
-            $('.cancel_user_delete').click(function(){
+            $('.cancel_delete').click(function(){ 
                 if(buttonclicked != false) {
-                    window.location.reload();
-                    $("#confirmation-user-delete").hide();
-                    alert("Ingen bruger blev slettet!");
-                } 
+                    $("#confirmation-delete").hide();
+                    errorAlert("Ingen bruger blev slettet!");
+                }
             });
             // if confirm_delete (yes)
-            $('.confirm_user_delete').click(function(){
+            $('.confirm_delete').click(function(){
                 // Ajax config
                 $.ajax({
                     //we are using GET method to get data from server side
@@ -621,12 +596,9 @@ $(document).ready(function(){
                 .done(function() {
                     // remove the table row
                     $section.remove();
-                    // hide confirmation box
-                    $("#confirmation-user-delete").hide();
-                    // reload page
-                    window.location.reload();
+                    $("#confirmation-delete").hide();
                     // alert that the row has been successfully removed
-                    alert("Bruger: '" + $username + "' blev slettet!");
+                    successAlert("Bruger: '" + $username + "' blev slettet!");
                 })
             });
         })

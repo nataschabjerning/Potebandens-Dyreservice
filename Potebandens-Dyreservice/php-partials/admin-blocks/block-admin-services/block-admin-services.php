@@ -3,6 +3,8 @@
         <div class="all-services">
 
             <?php
+                include("php-partials/components/confirmation/confirm-update/confirm-update.php");
+                include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
                 include("includes/connect.inc.php");
 
                 $sql = "SELECT * FROM services ORDER BY id DESC;";
