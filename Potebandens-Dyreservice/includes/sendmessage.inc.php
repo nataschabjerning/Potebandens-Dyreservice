@@ -10,29 +10,34 @@
     $message_name       = $_POST['message_name'];
     $message_subject    = $_POST['message_subject'];
     $message_msg        = $_POST['message_msg'];
-    $message_phone        = $_POST['phone_input'];
-    $message_email        = $_POST['email_input'];
+    $message_contact    = $_POST['message_contact'];
+    $message_phone      = $_POST['message_phone'];
+    $message_email      = $_POST['message_email'];
 
     // if not filled out
-    if(empty($message_name) || empty($message_subject) || empty($message_msg)) {
+    if(empty($message_name) || empty($message_subject) || empty($message_msg) || empty($message_contact)) {
         exit;
     }
     // if there is numbers in service_name
     if(preg_match("/\d/", $message_name)) {
         exit;
     }
+    // if call or sms is selected but no phone number is given
+    if ($message_contact == "call" && empty($message_phone) || $message_contact == "sms" && empty($message_phone)) {
+        exit;
+    }
+    // if email is selected but no email is given
+    if ($message_contact == "email" && empty($message_email)) {
+        exit;
+    }
     
-    $sql = "INSERT INTO inbox (message_name, message_subject, message_msg, message_phone, message_email) 
-    VALUES ('$message_name', '$message_subject', '$message_msg', '$message_phone', '$message_email')";
+    $sql = "INSERT INTO inbox (message_name, message_subject, message_msg, message_contact, message_phone, message_email) 
+    VALUES ('$message_name', '$message_subject', '$message_msg', '$message_contact', '$message_phone', '$message_email')";
 
     // Process the query so row is created in table and db
     if (!$conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    // ob_start(); ?>
-        <!-- <table></table> -->
-    <!-- <?php // $sHTML = ob_get_clean(); -->
 
     // Close the connection after using it
     $conn->close();

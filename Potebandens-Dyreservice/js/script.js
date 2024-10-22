@@ -1,5 +1,46 @@
 $(document).ready(function(){
 
+    // ----- ALERT BOXES - FORMS -----
+    // errors
+    function errorAlert(message) {
+        $("#erroralert").show();
+        $(".errormessage").append(message);
+        $(".error-ok").click(function () {
+            $(this).parent("#erroralert").hide();
+            window.location.reload();
+        });
+    }
+    // success
+    function successAlert(message) {
+        $("#successalert").show();
+        $(".successmessage").append(message);
+        $(".success-ok").click(function () {
+            $(this).parent("#successalert").hide();
+            window.location.reload();
+        });
+    }
+
+    // ----- CONFIRMATION BOXES - FORMS -----
+    // errors
+    function confirmationNo(message) {
+        $("#errorconfirm").show();
+        $(".errormessage").append(message);
+        $(".error-confirm").click(function () {
+            $(this).parent("#errorconfirm").hide();
+            window.location.reload();
+        });
+    }
+    // success
+    function confirmationYes(message) {
+        $("#successconfirm").show();
+        $(".successmessage").append(message);
+        $(".success-confirm").click(function () {
+            $(this).parent("#successconfirm").hide();
+            window.location.reload();
+        });
+    }
+
+
     // ----- USER INTERFACE -----
 
     // ----- CREATOR DIV -----
@@ -22,7 +63,7 @@ $(document).ready(function(){
         });
     }).change();
 
-    // ----- WRITE MESSAGE TO ADMIN INBOX -----
+    // ----- USER CONTACT FORM -----
     // ----- show how many characters are left in textarea -----
     var text_max = 255;
     $('#message_msg_feedback').html(text_max + ' tegn tilbage');
@@ -40,8 +81,9 @@ $(document).ready(function(){
         $message_name = $('input[name=message_name]').val();
         $message_subject = $('input[name=message_subject]').val();
         $message_msg = $('textarea[name=message_msg]').val();
-        $phone_input = $('input[name=phone_input]').val();
-        $email_input = $('input[name=email_input]').val();
+        $message_contact = $('#selected').val();
+        $message_phone = $('input[name=message_phone]').val();
+        $message_email = $('input[name=message_email]').val();
         
         var $request = $.ajax({
             type: 'POST',
@@ -50,27 +92,35 @@ $(document).ready(function(){
                 message_name: $message_name,
                 message_subject: $message_subject,
                 message_msg: $message_msg,
-                phone_input: $phone_input,
-                email_input: $email_input
+                message_contact: $message_contact,
+                message_phone: $message_phone,
+                message_email: $message_email
             }
         })
         .done(function() {
             // if one or more fields is empty
-            if(!$message_name || !$message_subject || !$message_msg) {
+            if(!$message_name || !$message_subject || !$message_msg || $message_contact === "choose") {
                 $request.abort();
-                window.location.reload();
-                alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if call or sms is selected but no phone number is given
+            else if ($message_contact === "call" && !$message_phone || $message_contact === "sms" && !$message_phone) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os dit telefonnummer!");
+            }
+            // if email is selected but no email is given
+            else if ($message_contact === "email" && !$message_email) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os din email!");
             }
             // if 'service_name' contains numbers
             else if ($message_name.match(".*\\d.*")) {
                 $request.abort();
-                window.location.reload();
-                alert("Obs! Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
             else {
                 // if all checks have cleared
-                alert("Besked sendt!");
-                window.location.reload();
+                successAlert("Din besked blev sendt!");
             }
 		})
     });
@@ -204,22 +254,19 @@ $(document).ready(function(){
             // if one or more fields is empty
             if(!$service_name || !$service_short_description || !$service_description_one) {
                 $request.abort();
-                window.location.reload();
-                alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                errorAlert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
             // if 'service_name' contains numbers
             else if ($service_name.match(".*\\d.*")) {
                 $request.abort();
-                window.location.reload();
-                alert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+                errorAlert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
             else {
                 // if all checks have cleared
-                alert("Ydelse oprettet!");
+                successAlert("Ydelse oprettet!");
                 
                 // WORK ON APPEND TO TABLE INSTEAD OF RELOADING PAGE SO #ALERTMESSAGE KEEPS BEING ON PAGE AFTER ADDING NEW SERVICE
 
-                window.location.reload();
             }
 		})
     });
@@ -245,9 +292,8 @@ $(document).ready(function(){
         $("#confirmation-service-update").show();
 
         // if cancel_update (no)
-        $('.cancel_update').click(function(){ 
-            window.location.reload();
-            alert("Ingen ydelse blev opdateret!");
+        $('.cancel_update').click(function() {
+            successAlert("Ingen ydelse blev opdateret!");
             $("#confirmation-service-update").hide();
         });
         // if confirm_update (yes)
@@ -273,23 +319,21 @@ $(document).ready(function(){
                 if($service_name  === "" || $service_description_one  === "") {
                     $request.abort();
                     window.location.reload();
-                    alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                     $("#confirmation-update").hide();
+                    alert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                 }
                 // if 'service_name' contains numbers
                 else if ($service_name.match(".*\\d.*")) {
                     $request.abort();
                     window.location.reload();
-                    alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
                     $("#confirmation-update").hide();
+                    alert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
                 }
                 else {
                     // if all checks have cleared
                     // hide confirmation box
                     $("#confirmation-service-update").hide();
-                    alert("Ydelse " + $serviceId + " opdateret!");
-                    // reload page to show update
-                    window.location.reload();
+                    successAlert("Ydelse " + $serviceId + " opdateret!");
                 }
             })  
         });

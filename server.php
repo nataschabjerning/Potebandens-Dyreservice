@@ -60,11 +60,12 @@ gallery
 - image_text (VARCHAR 100)
 
 inbox
-- id (INT AUTO_INCREMENT)           ------ NOT NULL
-- message_name (VARCHAR 100)        ------ NOT NULL
-- message_subject	 (VARCHAR 50)   ------ NOT NULL
-- message_msg (VARCHAR 255)         ------ NOT NULL
-- message_phone (INT 11)
+- id (INT AUTO_INCREMENT)               ------ NOT NULL
+- message_name (VARCHAR 100)            ------ NOT NULL
+- message_subject	 (VARCHAR 50)       ------ NOT NULL
+- message_msg (VARCHAR 255)             ------ NOT NULL
+- message_contact (VARCHAR 50)  ------ NOT NULL
+- message_phone (VARCHAR 15)
 - message_email (VARCHAR 255)
 
 services

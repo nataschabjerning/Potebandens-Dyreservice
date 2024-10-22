@@ -98,11 +98,11 @@
                                 </div>
                             </div>
 
-                            <div class="message_how_to_contact message_div">
+                            <div class="message_contact message_div">
                                 <label>Hvordan vil du helst kontaktes? <span>*</span></label><br>
 
-                                <select>
-                                    <option selected class="selected">--- Vælg ---</option>
+                                <select id="selected">
+                                    <option value="choose" selected class="selected">--- Vælg ---</option>
                                     <option value="call">Telefonopkald</option>
                                     <option value="sms">SMS</option>
                                     <option value="email">Email</option>
@@ -111,13 +111,13 @@
                                 <div class="call sms box">
                                     <label>Dit Telefonnummer <span>*</span></label>
                                     <div class="input">
-                                        <input type="text" name="phone_input">
+                                        <input type="text" name="message_phone">
                                     </div>
                                 </div>
                                 <div class="email box">
                                     <label>Din Email <span>*</span></label>
                                     <div class="input">
-                                        <input type="text" name="email_input">
+                                        <input type="text" name="message_email">
                                     </div>
                                 </div>
 
@@ -170,7 +170,7 @@
                     </div>
                 </div> <!-- .time end -->
             </div> <!-- .phone-time end -->
-        </div>
+        </div> <!-- .contact-phone end -->
 
     </div> <!-- .container end -->
 
