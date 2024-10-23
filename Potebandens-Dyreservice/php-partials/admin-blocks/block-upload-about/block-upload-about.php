@@ -38,7 +38,7 @@
             <div id="insert-about">
                 <form action="includes/createabout.inc.php" method="post" enctype="multipart/form-data">
                     <h2>Tilføj 'Om Mig' Boks</h2>
-                    <p><span>*</span> SKAL udfyldes</p>
+                    <p class="span"><span>*</span> SKAL udfyldes</p>
                     
                     <div class="addaboutform">
                         

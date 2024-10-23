@@ -1,9 +1,6 @@
 <div class="block create-update_user">
     <div class="container">
-<?php
-    include("php-partials/components/confirmation/confirm-update/confirm-update.php");
-    include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
-?>
+
         <div class="create-update_user-messages">
             <?php
                 if (isset($_GET["error"])) {

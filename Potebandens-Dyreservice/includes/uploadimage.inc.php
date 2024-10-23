@@ -69,7 +69,7 @@
 <div id="insert-image">
     <form action="includes/uploadimage.inc.php" method="post" enctype="multipart/form-data">
         <h2>Tilføj Billede</h2>
-        <p><span>*</span> SKAL udfyldes</p>
+        <p class="span"><span>*</span> SKAL udfyldes</p>
         <div class="addimageform">
             <div class="image_link">
                 <label for="link">Vælg Fil <span>*</span></label>

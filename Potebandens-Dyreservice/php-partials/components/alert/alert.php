@@ -1,9 +1,13 @@
 <div id="erroralert">
    <div class="errormessage"></div>
-   <button class="error-ok">Prøv igen</button>
+   <div class="button">
+      <button class="error-ok">OK</button>
+   </div>
 </div>
 
 <div id="successalert">
    <div class="successmessage"></div>
-   <button class="success-ok">OK</button>
+   <div class="button">
+      <button class="success-ok">OK</button>
+   </div>
 </div>

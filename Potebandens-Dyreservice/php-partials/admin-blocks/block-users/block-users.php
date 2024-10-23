@@ -1,5 +1,8 @@
 <?php
     include("includes/connect.inc.php");
+    
+    include("php-partials/components/confirmation/confirm-update/confirm-update.php");
+    include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
 
     $sql = "SELECT * FROM users ORDER BY id DESC;";
     $stmt = $conn->prepare($sql);
@@ -11,21 +14,6 @@
     
     <div class="all-users">
         <div class="container">
-            <div id="confirmation-user-delete">
-                <div class="content">
-                    <h2>Er du sikker på, at du gerne vil slette denne bruger?</h2>
-                    <div class="buttons">
-                        <button class="confirm_user_delete">
-                            <img src="../../../../Images/References/grønpotebtn.png" alt="">
-                            <h4>Ja</h4>
-                        </button>
-                        <button class="cancel_user_delete">
-                            <img src="../../../../Images/References/rødpotebtn.png" alt="">
-                            <h4>Nej</h4>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
             <hr>
 

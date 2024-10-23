@@ -2,22 +2,12 @@
     .container {
         h2 {
             text-align: center;
+            margin: 0 0 2rem;
         }
         .list-items {
             padding: 4rem 0;
-            ul {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-                padding: 0;
-                @media (max-width: 768px) {
-                    grid-template-columns: 1fr 1fr;
-                }
-                @media (max-width: 450px) {
-                    grid-template-columns: 1fr;
-                    row-gap: 2rem;
-                }
-                li {
+            .ul {
+                .li {
                     position: relative;
                     background-size:cover;
                     background-position: center;
@@ -45,13 +35,50 @@
                         }
                     }
                 }
-                li:hover {
+                .li:hover {
                     background-image: linear-gradient(
                         to bottom,
                         rgba(255, 255, 253, .8) 0%,
                         rgba(255, 255, 255, 0.8) 100%),
                         url('../../../../../Images/References/rødpote.png'
                     );
+                }
+                .private {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                    padding: 0 0 2rem;
+                    margin: 0 0 2rem;
+                    border-bottom: 1px dotted #3f48cc;
+                    @media (max-width: 450px) {
+                        grid-template-columns: 1fr;
+                        row-gap: 2rem;
+                    }
+                    .li {
+                        height: 200px;
+                        @media (max-width: 450px) {
+                            height: fit-content;
+                        }
+                        a {
+                            padding: 2rem 0;
+                            @media (max-width: 450px) {
+                                padding: 1rem 0;
+                            }
+                        }
+                    }
+                }
+                .website {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1rem;
+                    padding: 0;
+                    @media (max-width: 850px) {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                    @media (max-width: 450px) {
+                        grid-template-columns: 1fr;
+                        row-gap: 2rem;
+                    }
                 }
             }
         }

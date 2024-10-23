@@ -3,7 +3,6 @@
 </head>
 
 <?php
-    include("../components/jAlert/jalert.php");
     include_once("php-partials/blocks/block-header/block-header.php");
 ?>
 

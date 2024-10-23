@@ -18,7 +18,7 @@
     $important_note             = $_REQUEST['important_note'];
 
     // if not filled out
-    if(!$service_name || !$service_description_one) {
+    if(empty($service_name) || empty($service_description_one)) {
         exit;
     }
     // if there is numbers in service_name

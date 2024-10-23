@@ -57,14 +57,15 @@ $(document).ready(function(){
 
     // ----- USER CONTACT FORM -----
     // ----- show how many characters are left in textarea -----
+    var text_min = 0;
     var text_max = 255;
-    $('#message_msg_feedback').html(text_max + ' tegn tilbage');
+    $('#message_msg_feedback').html(text_min + ' / 255');
 
     $('#message_msg').keyup(function() {
         var text_length = $('#message_msg').val().length;
-        var text_remaining = text_max - text_length;
+        var text_remaining = text_min + text_length;
 
-        $('#message_msg_feedback').html(text_remaining + ' tegn tilbage');
+        $('#message_msg_feedback').html(text_remaining + ' / 255');
     });
 
     // ---------- USER SEND MESSAGE TO ADMIN INBOX (block-contact.php) ----------
@@ -76,6 +77,9 @@ $(document).ready(function(){
         $message_contact = $('#selected').val();
         $message_phone = $('input[name=message_phone]').val();
         $message_email = $('input[name=message_email]').val();
+
+        // to check if string only contains numbers
+        let isnum = /^\d+$/.test($message_phone);
         
         var $request = $.ajax({
             type: 'POST',
@@ -90,6 +94,7 @@ $(document).ready(function(){
             }
         })
         .done(function() {
+            var regex = /^\d*$/;
             // if one or more fields is empty
             if(!$message_name || !$message_subject || !$message_msg || $message_contact === "choose") {
                 $request.abort();
@@ -100,12 +105,17 @@ $(document).ready(function(){
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at give os dit telefonnummer!");
             }
+            // if 'message_phone' contains letters
+            else if ($message_contact === "call" && !isnum || $message_contact === "sms" && !isnum) {
+                $request.abort();
+                errorAlert("Obs! <br> Dit telefonnummer kan ikke indeholde bogstaver!");
+            }
             // if email is selected but no email is given
             else if ($message_contact === "email" && !$message_email) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at give os din email!");
             }
-            // if 'service_name' contains numbers
+            // if 'message_name' contains numbers
             else if ($message_name.match(".*\\d.*")) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
@@ -187,35 +197,41 @@ $(document).ready(function(){
     // ----- ADMIN FUNCTIONS -----
 
     // ----- SHOW FORMS FOR INSERTING IN DB -----
-    // show/hide 'change password' form
+    // show/hide 'change password' form  on 'admin-profile' page
     $(".change_password").click(function () {
         $("#change-password").slideToggle();
         $(this).children("#show_password").toggle();
         $(this).children("#hide_password").toggle();
     });
-    // show/hide 'new user' form
+    // show/hide 'new user' form on 'admin-profile' page
     $(".new_user").click(function () {
         $("#create-user").slideToggle();
         $(this).children("#show_new_user").toggle();
         $(this).children("#hide_new_user").toggle();
     });
-    // show/hide 'new service' form
+    // show/hide 'new service' form on 'admin-services' page
     $(".add_service").click(function () {
         $("#new_service").slideToggle();
         $(this).children("#show_add_form").toggle();
         $(this).children("#hide_add_form").toggle();
     });
-    // show/hide 'add image' form
+    // show/hide 'add image' form on 'admin-gallery' page
     $(".add_image").click(function () {
         $("#insert-image").slideToggle();
         $(this).children("#show_add_image").toggle();
         $(this).children("#hide_add_image").toggle();
     });
-    // show/hide 'add about' form on 'about' page
+    // show/hide 'add about' form on 'admin-about' page
     $(".add_about").click(function () {
         $("#insert-about").slideToggle();
         $(this).children("#show_add_about").toggle();
         $(this).children("#hide_add_about").toggle();
+    });
+    // show/hide 'add contact' form on 'admin-contact' page
+    $(".add_contact").click(function () {
+        $("#new_contact").slideToggle();
+        $(this).children("#show_add_contact").toggle();
+        $(this).children("#hide_add_contact").toggle();
     });
 
     // ---------- CREATE SERVICE ----------
@@ -246,12 +262,12 @@ $(document).ready(function(){
             // if one or more fields is empty
             if(!$service_name || !$service_short_description || !$service_description_one) {
                 $request.abort();
-                errorAlert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
             // if 'service_name' contains numbers
             else if ($service_name.match(".*\\d.*")) {
                 $request.abort();
-                errorAlert("Obs! Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
             else {
                 // if all checks have cleared
@@ -309,13 +325,13 @@ $(document).ready(function(){
                 if($service_name  === "" || $service_description_one  === "") {
                     $request.abort();
                     $("#confirmation-update").hide();
-                    errorAlert("Obs! Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                 }
                 // if 'service_name' contains numbers
                 else if ($service_name.match(".*\\d.*")) {
                     $request.abort();
                     $("#confirmation-update").hide();
-                    errorAlert("Obs! Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
+                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
                 }
                 else {
                     // if all checks have cleared
@@ -366,11 +382,164 @@ $(document).ready(function(){
         });
     })
 
+    // ---------- CREATE CONTACT ----------
+    $('#create-contact').click(function() {
+
+        $contact_name = $('input[name=contact_name]').val();
+        $contact_work_title = $('input[name=contact_work_title]').val();
+        $contact_phone = $('input[name=contact_phone]').val();
+        $contact_email = $('input[name=contact_email]').val();
+
+        // to check if string only contains numbers
+        let isnum = /^\d+$/.test($contact_phone);
+        
+        var $request = $.ajax({
+            type: 'POST',
+            url: 'includes/createcontact.inc.php',
+            data: {
+                contact_name: $contact_name,
+                contact_work_title: $contact_work_title,
+                contact_phone: $contact_phone,
+                contact_email: $contact_email
+            }
+        })
+        .done(function() {
+            // if one or more fields is empty
+            if(!$contact_name || !$contact_work_title || !$contact_phone || !$contact_email) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if 'service_name' contains numbers
+            else if ($contact_name.match(".*\\d.*")) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i navnet. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+            }
+            // if 'contact_phone' contains letters
+            else if (!isnum) {
+                $request.abort();
+                errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
+            }
+            else {
+                // if all checks have cleared
+                successAlert("Kontakt oprettet!");
+            }
+		})
+    });
+
+    // ---------- UPDATE CONTACT ----------
+    $('.update-contact').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID from section attr class
+        var $contactId   = $section.attr('attr-contact_id');
+
+        // Get inputs from contact
+        let $contact_name = $section.find("#contact_name").val();
+        let $contact_work_title = $section.find("#contact_work_title").val();
+        let $contact_phone = $section.find("#contact_phone").val();
+        let $contact_email = $section.find("#contact_email").val();
+
+        // to check if string only contains numbers
+        let isnum = /^\d+$/.test($contact_phone);
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne kontakt?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen kontakt blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updatecontact.inc.php',
+                // data to send
+                data: {
+                    contact_id: $contactId,
+                    contact_name: $contact_name,
+                    contact_work_title: $contact_work_title,
+                    contact_phone: $contact_phone,
+                    contact_email: $contact_email
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if(!$contact_name || !$contact_work_title || !$contact_phone || !$contact_email) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                // if 'contact_phone' contains letters
+                else if (!isnum) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
+                }
+                // if 'service_name' contains numbers
+                else if ($contact_name.match(".*\\d.*")) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    successAlert("Kontakt " + $contactId + " opdateret!");
+                }
+            })  
+        });
+    })
+
+    // ---------- DELETE CONTACT ----------
+    $('.delete-contact').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID
+        var $contactId   = $section.attr('attr-contact_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne kontakt?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen kontakt blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deletecontact.inc.php',
+                // data to send
+                data: {
+                    contact_id: $contactId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Kontakt " + $contactId + " slettet!");
+            })
+        });
+    })
+
     // ---------- DELETE IMAGE ----------
     $('.delete-image').click(function() {
 
         let $section  = jQuery(this).closest("section");
-        // get the service ID
+        // get the image ID
         var imageId   = $section.attr('attr-image_id');
 
         // show confirmaiton box
@@ -446,7 +615,7 @@ $(document).ready(function(){
 
         // select the closest section to the clicked update button
         let $section  = jQuery(this).closest("section");
-        // get the service ID from section attr class
+        // get the about ID from section attr class
         var $aboutId   = $section.attr('attr-about_id');
 
         // Get inputs from abouts
@@ -495,13 +664,13 @@ $(document).ready(function(){
                 if($about_name  === "") {
                     $request.abort();
                     $("#confirmation-update").hide();
-                    errorAlert("Obs! Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
                 }
                 // if 'about_name' contains numbers
                 else if ($about_name.match(".*\\d.*")) {
                     $request.abort();
                     $("#confirmation-update").hide();
-                    errorAlert("Obs! Det ser ud som om at der ikke kun er bogstaver i det indtastede navn.");
+                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver i det indtastede navn.");
                 }
                 else {
                     // if all checks have cleared
@@ -517,7 +686,7 @@ $(document).ready(function(){
     $('.delete-about').click(function() {
 
         let $section  = jQuery(this).closest("section");
-        // get the service ID
+        // get the about ID
         var $aboutId   = $section.attr('attr-about_id');
         let $about_name = $section.find("#about_name").val();
 
@@ -562,9 +731,9 @@ $(document).ready(function(){
 	    $(document).delegate(".delete-user", "click", function() {
 
             let $section  = jQuery(this).closest("section");
-            // get the service ID
+            // get the user ID
             var $userId   = $section.attr('attr-user_id');
-            // FIND USERNAME AND DISPLAY ON DELETE CONFIRMATION
+            // find username from input field
             let $username = $section.find("#user_username").val();
 
             // show confirmaiton box

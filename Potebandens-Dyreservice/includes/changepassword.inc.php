@@ -50,18 +50,20 @@
 
 <div id="change-password">
     <form action="./includes/changepassword.inc.php" method="post">
+
+        <p class="span"><span>*</span> SKAL udfyldes</p>
         <h2>Skift Kodeord</h2>
 
         <div class="passwordform">
-            <label for="username">Nuværende kodeord</label>
+            <label for="username">Nuværende kodeord <span>*</span></label>
             <div class="input">
                 <input type="password" name="currentPassword">
             </div>
-            <label for="password">Nyt kodeord</label>
+            <label for="password">Nyt kodeord <span>*</span></label>
             <div class="input">
                 <input type="password" name="newPassword">
             </div>
-            <label for="password">Gentag nyt kodeord</label>
+            <label for="password">Gentag nyt kodeord <span>*</span></label>
             <div class="input">
                 <input type="password" name="repeatNewPassword">
             </div>

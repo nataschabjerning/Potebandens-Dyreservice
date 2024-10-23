@@ -53,32 +53,33 @@
 <div id="create-user">
     <form action="./includes/signup.inc.php" method="post">
         
+        <p class="span"><span>*</span> SKAL udfyldes</p>
         <h2>Opret Bruger</h2>
 
         <div class="newuserform">
-                <div class="email">
-                    <label for="email">Email</label>
-                    <div class="input">
-                        <input type="email" name="email" placeholder="natascha@email.dk">
-                    </div>
+            <div class="email">
+                <label for="email">Email <span>*</span></label>
+                <div class="input">
+                    <input type="email" name="email" placeholder="natascha@email.dk">
                 </div>
+            </div>
             <div class="bottom-fields">
                 <div class="name">
-                    <label for="name">Fulde navn</label>
+                    <label for="name">Fulde navn  <span>*</span></label>
                     <div class="input">
                         <input type="text" name="name" placeholder="Natascha Bjerning">
                     </div>
-                    <label for="username">Brugernavn</label>
+                    <label for="username">Brugernavn  <span>*</span></label>
                     <div class="input">
                         <input type="text" name="username" placeholder="Natascha1234">
                     </div>
                 </div>
                 <div class="password">
-                    <label for="pw">Kodeord</label>
+                    <label for="pw">Kodeord  <span>*</span></label>
                     <div class="input">
                         <input type="password" name="password">
                     </div>
-                    <label for="pwrepeat">Gentag kodeord</label>
+                    <label for="pwrepeat">Gentag kodeord  <span>*</span></label>
                     <div class="input">
                         <input type="password" name="repeat_password">
                     </div>  

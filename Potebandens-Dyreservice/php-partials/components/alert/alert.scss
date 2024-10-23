@@ -1,9 +1,7 @@
 #erroralert, #successalert {
     display: none;
     background-color: #fff;
-    color: green;
     border: 1px solid green;
-    text-align: center;
     padding: 2rem;
     position: fixed;
     top: 50%;
@@ -11,12 +9,31 @@
     transform: translate(-50%, -50%);
     z-index: 99;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+    .errormessage, .successmessage {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: green;
+        margin: 0 0 1rem;
+    }
+    .button {
+        text-align: center;
+        button {
+            width: fit-content;
+            padding: .6rem 2rem;
+        }
+    }
 }
 
 #erroralert {
-    color: red;
     border: 1px solid red;
+    .errormessage {
+        color: red;
+    }
     button {
         background-color: red;
+    }
+    button:hover {
+        background-color: rgb(199, 3, 3);
     }
 }

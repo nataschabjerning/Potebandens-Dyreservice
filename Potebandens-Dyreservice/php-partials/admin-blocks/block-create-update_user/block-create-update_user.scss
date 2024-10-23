@@ -77,6 +77,13 @@
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 2rem;
+                    position: relative;
+                    .span {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-weight: 600;
+                    }
                     h2 {
                         margin-bottom: 2rem;
                     }

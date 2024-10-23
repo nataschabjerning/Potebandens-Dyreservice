@@ -18,12 +18,16 @@
     if(empty($message_name) || empty($message_subject) || empty($message_msg) || empty($message_contact)) {
         exit;
     }
-    // if there is numbers in service_name
+    // if there is numbers in message_name
     if(preg_match("/\d/", $message_name)) {
         exit;
     }
     // if call or sms is selected but no phone number is given
     if ($message_contact == "call" && empty($message_phone) || $message_contact == "sms" && empty($message_phone)) {
+        exit;
+    }
+    // if there is letters in message_phone
+    if($message_contact == "call" && !is_numeric( $message_phone) || $message_contact == "sms" && !is_numeric( $message_phone)) {
         exit;
     }
     // if email is selected but no email is given

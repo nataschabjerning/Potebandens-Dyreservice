@@ -1,10 +1,15 @@
 <?php
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM contact;";
-    $stmt = $conn->prepare($sql);
-    mysqli_stmt_execute($stmt);
-    $resultData = mysqli_stmt_get_result($stmt);
+    $sql1 = "SELECT * FROM contact;";
+    $stmt1 = $conn->prepare($sql1);
+    mysqli_stmt_execute($stmt1);
+    $resultData1 = mysqli_stmt_get_result($stmt1);
+
+    $sql2 = "SELECT * FROM openinghours;";
+    $stmt2 = $conn->prepare($sql2);
+    mysqli_stmt_execute($stmt2);
+    $resultData2 = mysqli_stmt_get_result($stmt2);
 ?>
 
 <div class="block contact">
@@ -22,7 +27,7 @@
                 </div>
 
                 <div class="contact-blocks">
-                    <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                    <?php while($row = mysqli_fetch_assoc($resultData1)) { ?>
                         <div class="contact-wrapper">
                             <div class="contact-options">
                 
@@ -99,8 +104,8 @@
                             </div>
 
                             <div class="message_contact message_div">
-                                <label>Hvordan vil du helst kontaktes? <span>*</span></label><br>
 
+                                <label>Hvordan vil du helst kontaktes? <span>*</span></label><br>
                                 <select id="selected">
                                     <option value="choose" selected class="selected">--- Vælg ---</option>
                                     <option value="call">Telefonopkald</option>
@@ -108,13 +113,13 @@
                                     <option value="email">Email</option>
                                 </select>
 
-                                <div class="call sms box">
+                                <div class="call sms box message_div">
                                     <label>Dit Telefonnummer <span>*</span></label>
                                     <div class="input">
                                         <input type="text" name="message_phone">
                                     </div>
                                 </div>
-                                <div class="email box">
+                                <div class="email box message_div">
                                     <label>Din Email <span>*</span></label>
                                     <div class="input">
                                         <input type="text" name="message_email">
@@ -134,42 +139,67 @@
             </div> <!-- .message-form end -->
         </div> <!-- .contact-grid end -->
 
+
         <div class="contact-phone">
-                <div class="phone-title">
-                    <h3>Telefontider</h3>
-                </div>
-            <div class="phone-time">
-                <div class="time">
-                    <div class="day">
-                        <p>Mandag:</p>
-                        <span>9:00 - 15:00</span>
-                    </div>
-                    <div class="day">
-                        <p>Tirsdag:</p>
-                        <span>9:00 - 15:00</span>
-                    </div>
-                    <div class="day">
-                        <p>Onsdag:</p>
-                        <span>9:00 - 15:00</span>
-                    </div>
-                    <div class="day">
-                        <p>Torsdag:</p>
-                        <span>9:00 - 15:00</span>
-                    </div>
-                    <div class="day">
-                        <p>Fredag:</p>
-                        <span>9:00 - 15:00</span>
-                    </div>
-                    <div class="day">
-                        <p>Lørdag:</p>
-                        <span>Lukket</span>
-                    </div>
-                    <div class="day">
-                        <p>Søndag:</p>
-                        <span>Lukket</span>
-                    </div>
-                </div> <!-- .time end -->
-            </div> <!-- .phone-time end -->
+            <div class="phone-title">
+                <h3>Telefontider</h3>
+            </div>
+            <?php while($row = mysqli_fetch_assoc($resultData2)) { ?>
+                <div class="phone-time">
+                    <div class="time">
+
+                        <?php if (!empty($row['monday'])) { ?>
+                            <div class="day">
+                                <p>Mandag</p>
+                                <h4><?php echo $row['monday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['tuesday'])) { ?>
+                            <div class="day">
+                                <p>Tirsdag</p>
+                                <h4><?php echo $row['tuesday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['wednesday'])) { ?>
+                            <div class="day">
+                                <p>Onsdag</p>
+                                <h4><?php echo $row['wednesday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['thursday'])) { ?>
+                            <div class="day">
+                                <p>Torsdag</p>
+                                <h4><?php echo $row['thursday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['friday'])) { ?>
+                            <div class="day">
+                                <p>Fredag</p>
+                                <h4><?php echo $row['friday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['saturday'])) { ?>
+                            <div class="day">
+                                <p>Lørdag</p>
+                                <h4><?php echo $row['saturday']; ?></h4>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($row['sunday'])) { ?>
+                            <div class="day">
+                                <p>Søndag</p>
+                                <h4><?php echo $row['sunday']; ?></h4>
+                            </div>
+                        <?php } ?>
+                        
+                    </div> <!-- .time end -->
+                </div> <!-- .phone-time end -->
+            <?php } ?>
         </div> <!-- .contact-phone end -->
 
     </div> <!-- .container end -->

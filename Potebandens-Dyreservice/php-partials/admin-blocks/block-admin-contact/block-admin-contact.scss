@@ -1,0 +1,325 @@
+.admin-contact {
+    padding: 6rem 0 6rem;
+    .container {
+
+        h3 {
+            text-align: center;
+            margin: 0 0 2rem;
+            text-transform: uppercase;
+            @media (max-width: 600px) {
+                text-align: left;
+                font-size: 1.2rem;
+            }
+        }
+
+        .form {
+            border-top: 1px solid #3f48cc;
+            border-bottom: 1px solid #3f48cc;
+            .add_contact {
+                margin: 2rem auto;
+                width: fit-content;
+                cursor: pointer;
+                background-color: rgba(71, 143, 84, .8);
+                width: fit-content;
+                border-radius: 10px;
+                border: 1px solid rgba(71, 143, 84, 1);
+                cursor: pointer;
+                #hide_add_contact {
+                    display:none;
+                    padding: .5rem 1rem;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 600;
+                    outline: 1px solid rgb(213,37,30);
+                }
+                #show_add_contact {
+                    padding: .5rem 1rem;
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+            .add_contact:hover {
+                background-color: rgba(71,143,84, 1);
+            }
+            #new_contact {
+                display: none;
+                margin: 2rem auto;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                width: 70%;
+                @media (max-width: 1024px) {
+                    width: 80%;
+                }
+                @media (max-width: 768px) {
+                    padding: 1rem;
+                }
+                .new_contact {
+                    outline: 1px dashed #478f54;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    position: relative;
+                    @media (max-width: 768px) {
+                        padding: 1rem;
+                    }
+                    h2 {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                        @media (max-width: 768px) {
+                            margin-bottom: 1rem;
+                            font-size: 1.3rem;
+                            text-align: left;
+                            width: 50%;
+                        }
+                    }
+                    form {
+                        text-align: center;
+                        label {
+                            font-weight: 600;
+                        }
+                        .contact-top, .contact-bottom {
+                            display: flex;
+                            gap: 1rem;
+                            @media (max-width: 768px) {
+                                flex-direction: column;
+                                gap: 0;
+                            }
+                            .contact-box {
+                                width: 100%;
+                                margin: 0 0 1rem;
+                                @media (max-width: 768px) {
+                                    margin: 0 0 .5rem;
+                                }
+                            }
+                            input {
+                                font-size: 1rem;
+                                padding: 1rem;
+                                height: 40px;
+                                border: 1px solid black;
+                                border-radius: 5px;
+                                margin: .5rem 0;
+                                width: 100%;
+                                @media (max-width: 768px) {
+                                    padding: .5rem;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+            position: relative;
+            .update-info {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: .3rem;
+                margin: .5rem 0;
+                text-align: center;
+                border: 2px solid rgb(236, 126, 0);
+                background-color:rgba(199, 80, 0, .3);
+                @media (max-width: 850px) {
+                    font-size: .8rem;
+                }
+            }
+            .contact-blocks {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                @media (max-width: 800px) {
+                    grid-template-columns: 1fr;
+                }
+                section {
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                    .contact-options {
+                        position: relative;
+                        outline: 1px dashed #478f54;
+                        border-radius: 10px;
+                        padding: 1rem;
+                        text-align: center;
+                        .contact-box {
+                            margin: .5rem 0;
+                        }
+                        .contact_id {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: flex;
+                            margin: .2rem 0 0 .5rem;
+                            h4 {
+                                border: none;
+                            }
+                        }
+                        label {
+                            font-weight: 600;
+                        }
+                        input {
+                            width: 100%;
+                            height: 30px;
+                        }
+                    }
+                    .buttons {
+                        display: flex;
+                        border-bottom: 1px solid black;
+                        border-radius: 10px;
+                        .update-contact, .delete-contact {
+                            width: 100%;
+                            button {
+                                margin: 0;
+                                background-color: rgba(253, 156, 29, 1);
+                                padding: .5rem;
+                                border-radius: 0;
+                                border-bottom-left-radius: 10px;
+                                color: white;
+                                font-weight: 600;
+                                cursor: pointer;
+                            }
+                            button:hover {
+                                background-color: rgb(223, 138, 27);
+                            }
+                        }
+                        .delete-contact {
+                            button {
+                                border-radius: 0;
+                                border-bottom-right-radius: 10px;
+                                background-color: rgba(221, 0, 0, 1);
+                            }
+                            button:hover {
+                                background-color: rgb(199, 3, 3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-phone {
+            padding: 2rem 0;
+            border-top: 1px solid #3f48cc;
+            border-bottom: 1px solid #3f48cc;
+            .phone-time {
+                padding:1rem;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                .time {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                    gap: 1rem;
+                    text-align: center;
+                    outline: 1px dashed #478f54;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    @media (max-width: 1024px) {
+                        grid-template-columns: repeat(4, 1fr);
+                        .day:nth-of-type(5) {
+                            display: flex;
+                            gap: 2rem;
+                            justify-content: center;
+                            grid-column: 2/4;
+                            grid-row: 2/3;
+                        }
+                        .day:nth-of-type(6) {
+                            display: flex;
+                            gap: 2rem;
+                            justify-content: center;
+                            grid-column: 1/3;
+                            grid-row: 3/4;
+                        }
+                        .day:nth-of-type(7) {
+                            display: flex;
+                            gap: 2rem;
+                            justify-content: center;
+                            grid-column: 3/5;
+                            grid-row: 3/4;
+                        }
+                    }
+                    @media (max-width: 550px) {
+                        grid-template-columns: repeat(2, 1fr);
+                        .day {
+                            padding: 0;
+                        }
+                        .day:nth-of-type(4) {
+                            display: block;
+                            grid-column: 2/3;
+                            grid-row: 2/3;
+                        }
+                        .day:nth-of-type(5) {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            grid-column: 1/3;
+                            grid-row: 3/4;
+                        }
+                        .day:nth-of-type(6) {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            grid-column: 1/2;
+                            grid-row: 4/5;
+                        }
+                        .day:nth-of-type(7) {
+                            display: flex;
+                            gap: .5rem;
+                            justify-content: center;
+                            grid-column: 2/3;
+                            grid-row: 4/5;
+                        }
+                    }
+                    @media (max-width: 420px) {
+                        grid-template-columns: 1fr;
+                        .day {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .day:nth-of-type(4) {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            grid-column: 1/2;
+                            grid-row: 4/5;
+                        }
+                        .day:nth-of-type(5) {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            grid-column: 1/2;
+                            grid-row: 5/6;
+                        }
+                        .day:nth-of-type(6) {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            grid-column: 1/2;
+                            grid-row: 6/7;
+                        }
+                        .day:nth-of-type(7) {
+                            display: flex;
+                            gap: .5rem;
+                            justify-content: center;
+                            grid-column: 1/2;
+                            grid-row: 7/8;
+                        }
+                    }
+                    .day {
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        border-radius: 10px;
+                        padding: .5rem;
+                        span {
+                            color: black;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
