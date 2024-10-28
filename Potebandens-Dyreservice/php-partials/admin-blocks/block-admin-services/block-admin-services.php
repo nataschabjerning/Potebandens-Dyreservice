@@ -114,8 +114,6 @@
                                         <h4>Vigtig Note</h4>
                                         <textarea name="important_note" id="important_note"><?php echo $row['important_note']?></textarea>
                                     </div>
-                                    <div class="info">
-                                    </div>
                                     <div class="buttons">
                                         <div class="update-service">
                                             <button id="update-service">Opdatér</button>

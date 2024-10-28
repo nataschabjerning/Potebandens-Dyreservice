@@ -9,7 +9,7 @@
                 
                 <div class="private">
                     <div class="li">
-                        <a href="profile.php">
+                        <a href="admin-profile.php">
                             <div class="title">
                                 <h4>Profil</h4>
                             </div>

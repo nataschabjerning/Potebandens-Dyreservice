@@ -107,13 +107,13 @@
 
                                 <label>Hvordan vil du helst kontaktes? <span>*</span></label><br>
                                 <select id="selected">
-                                    <option value="choose" selected class="selected">--- Vælg ---</option>
-                                    <option value="call">Telefonopkald</option>
-                                    <option value="sms">SMS</option>
-                                    <option value="email">Email</option>
+                                    <option value="vælg" selected>--- Vælg ---</option>
+                                    <option value="Telefonopkald">Telefonopkald</option>
+                                    <option value="SMS">SMS</option>
+                                    <option value="Email">Email</option>
                                 </select>
 
-                                <div class="call sms box message_div">
+                                <div class="telefonopkald sms box message_div">
                                     <label>Dit Telefonnummer <span>*</span></label>
                                     <div class="input">
                                         <input type="text" name="message_phone">
@@ -146,56 +146,98 @@
             </div>
             <?php while($row = mysqli_fetch_assoc($resultData2)) { ?>
                 <div class="phone-time">
+                    
+                    <?php if (!empty($row['vacation'])) { ?>
+                        <div class="vacation day">
+                            <h4><?php echo $row['vacation']; ?></h4>
+                        </div>
+                    <?php } ?>
+                    
                     <div class="time">
 
-                        <?php if (!empty($row['monday'])) { ?>
-                            <div class="day">
-                                <p>Mandag</p>
-                                <h4><?php echo $row['monday']; ?></h4>
-                            </div>
-                        <?php } ?>
+                        <div class="day">
+                            <p>Mandag</p>
+                            <h4>
+                                <?php if (!empty($row['mondayfrom'])) { ?>
+                                    <?php echo $row['mondayfrom']; ?>
+                                <?php } ?>
+                                <?php if (!empty($row['mondayto'])) { ?>
+                                    - <?php echo $row['mondayto']; ?>
+                                <?php } ?>
+                            </h4>
+                        </div>
 
-                        <?php if (!empty($row['tuesday'])) { ?>
                             <div class="day">
                                 <p>Tirsdag</p>
-                                <h4><?php echo $row['tuesday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['tuesdayfrom'])) { ?>
+                                        <?php echo $row['tuesdayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['tuesdayto'])) { ?>
+                                        - <?php echo $row['tuesdayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
 
-                        <?php if (!empty($row['wednesday'])) { ?>
                             <div class="day">
                                 <p>Onsdag</p>
-                                <h4><?php echo $row['wednesday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['wednesdayfrom'])) { ?>
+                                        <?php echo $row['wednesdayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['wednesdayto'])) { ?>
+                                        - <?php echo $row['wednesdayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
 
-                        <?php if (!empty($row['thursday'])) { ?>
                             <div class="day">
                                 <p>Torsdag</p>
-                                <h4><?php echo $row['thursday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['thursdayfrom'])) { ?>
+                                        <?php echo $row['thursdayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['thursdayto'])) { ?>
+                                        - <?php echo $row['thursdayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
 
-                        <?php if (!empty($row['friday'])) { ?>
                             <div class="day">
                                 <p>Fredag</p>
-                                <h4><?php echo $row['friday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['fridayfrom'])) { ?>
+                                        <?php echo $row['fridayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['fridayto'])) { ?>
+                                        - <?php echo $row['fridayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
 
-                        <?php if (!empty($row['saturday'])) { ?>
                             <div class="day">
                                 <p>Lørdag</p>
-                                <h4><?php echo $row['saturday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['saturdayfrom'])) { ?>
+                                        <?php echo $row['saturdayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['saturdayto'])) { ?>
+                                        - <?php echo $row['saturdayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
 
-                        <?php if (!empty($row['sunday'])) { ?>
                             <div class="day">
                                 <p>Søndag</p>
-                                <h4><?php echo $row['sunday']; ?></h4>
+                                <h4>
+                                    <?php if (!empty($row['sundayfrom'])) { ?>
+                                        <?php echo $row['sundayfrom']; ?>
+                                    <?php } ?>
+                                    <?php if (!empty($row['sundayto'])) { ?>
+                                        - <?php echo $row['sundayto']; ?>
+                                    <?php } ?>
+                                </h4>
                             </div>
-                        <?php } ?>
                         
                     </div> <!-- .time end -->
                 </div> <!-- .phone-time end -->

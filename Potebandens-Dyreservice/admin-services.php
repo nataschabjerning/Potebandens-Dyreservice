@@ -11,7 +11,7 @@
     <div class="subhero">
         <div class="overlay"></div>
         <div class="page-title">
-            <h1>Ydelser</h1>
+            <h1>Admin | Ydelser</h1>
         </div>
     </div>
 

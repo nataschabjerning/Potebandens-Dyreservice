@@ -19,11 +19,11 @@
         
         if (password_verify($currentPassword,$row['password'])) {
             if($repeatNewPassword =='') {
-                header("location: ../profile.php?error=repeatnewpassword");
+                header("location: ../admin-profile.php?error=repeatnewpassword");
                 exit();
             }
             if($newPassword != $repeatNewPassword) {
-                header("location: ../profile.php?error=newpasswordsdoesntmatch");
+                header("location: ../admin-profile.php?error=newpasswordsdoesntmatch");
                 exit();
             }
             if(!isset($errors)) {
@@ -33,16 +33,16 @@
                 $result = mysqli_query($conn,"UPDATE users SET password='$newPassword' WHERE id='$userId'");
 
                 if($result) {
-                    header("location: ../profile.php?passwordupdated");
+                    header("location: ../admin-profile.php?passwordupdated");
                 }
                 else {
-                    header("location: ../profile.php?error=stmtfailed");
+                    header("location: ../admin-profile.php?error=stmtfailed");
                     exit();
                 }
             }
         }
         else {
-            header("location: ../profile.php?error=currentpassworddoesnotmatch");
+            header("location: ../admin-profile.php?error=currentpassworddoesnotmatch");
             exit();
         }
     }

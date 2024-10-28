@@ -7,7 +7,7 @@
 
     include_once("connect.inc.php");
 
-    // get the input values from updateService() function in script.js
+    // get the input values from update contact in script.js
     $contact_id         = $_REQUEST['contact_id'];
     $contact_name       = $_REQUEST['contact_name'];
     $contact_work_title = $_REQUEST['contact_work_title'];

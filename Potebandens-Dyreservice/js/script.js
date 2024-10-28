@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     // ----- USER CONTACT FORM -----
     // show input field when user selects either phone or email
-    $("select").change(function(){
+    $("#selected").change(function(){
         $(this).find("option:selected").each(function(){
             var optionValue = $(this).attr("value");
             if(optionValue){
@@ -58,7 +58,6 @@ $(document).ready(function(){
     // ----- USER CONTACT FORM -----
     // ----- show how many characters are left in textarea -----
     var text_min = 0;
-    var text_max = 255;
     $('#message_msg_feedback').html(text_min + ' / 255');
 
     $('#message_msg').keyup(function() {
@@ -94,24 +93,28 @@ $(document).ready(function(){
             }
         })
         .done(function() {
-            var regex = /^\d*$/;
             // if one or more fields is empty
-            if(!$message_name || !$message_subject || !$message_msg || $message_contact === "choose") {
+            if(!$message_name || !$message_subject || !$message_msg) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
+            // if no contact method has been chosen
+            if($message_contact === "vælg") {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud til, at du har glemt at fortælle os hvordan du vil kontaktes. Vælg hvordan i drop down menuen.");
+            }
             // if call or sms is selected but no phone number is given
-            else if ($message_contact === "call" && !$message_phone || $message_contact === "sms" && !$message_phone) {
+            else if ($message_contact === "Telefonopkald" && !$message_phone || $message_contact === "SMS" && !$message_phone) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at give os dit telefonnummer!");
             }
             // if 'message_phone' contains letters
-            else if ($message_contact === "call" && !isnum || $message_contact === "sms" && !isnum) {
+            else if ($message_contact === "Telefonopkald" && !isnum || $message_contact === "SMS" && !isnum) {
                 $request.abort();
                 errorAlert("Obs! <br> Dit telefonnummer kan ikke indeholde bogstaver!");
             }
             // if email is selected but no email is given
-            else if ($message_contact === "email" && !$message_email) {
+            else if ($message_contact === "Email" && !$message_email) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at give os din email!");
             }
@@ -233,156 +236,56 @@ $(document).ready(function(){
         $(this).children("#show_add_contact").toggle();
         $(this).children("#hide_add_contact").toggle();
     });
+    // show/hide 'add openinghours' form on 'admin-contact' page
+    $(".add_openinghours").click(function () {
+        $("#new_openinghours").slideToggle();
+        $(this).children("#show_add_openinghours").toggle();
+        $(this).children("#hide_add_openinghours").toggle();
+    });
+    // show/hide 'message' on 'admin-inbox' page
+    $(".message-from").click(function () {
+        $(this).next(".message-msg").slideToggle();
+        $(this).children("#arrow_down").toggle();
+        $(this).children("#arrow_up").toggle();
+    });
 
-    // ---------- CREATE SERVICE ----------
-    $('#create-service').click(function() {
 
-        $service_name = $('input[name=service_name]').val();
-        $service_short_description = $('textarea[name=service_short_description]').val();
-        $service_description_one = $('textarea[name=service_description_one]').val();
-        $service_description_two = $('textarea[name=service_description_two]').val();
-        $service_description_three = $('textarea[name=service_description_three]').val();
-        $service_description_four = $('textarea[name=service_description_four]').val();
-        $important_note = $('textarea[name=important_note]').val();
+
+    // ---------------------- CREATE FORMS ----------------------
+
+    // ---------- ABOUT ----------
+    $('#upload-about').click(function() {
+
+        $about_image_link = $('#about_image_link').val();
+        $about_name = $('input[name=about_name]').val();
+        $about_work_title = $('input[name=about_work_title]').val();
+        $about_text_one = $('textarea[name=about_text_one]').val();
+        $about_text_two = $('textarea[name=about_text$about_text_two]').val();
+        $about_text_three = $('textarea[name=about_$about_text_three]').val();
+        $about_text_four = $('textarea[name=about_$about_text_four]').val();
+        $about_text_five = $('textarea[name=about_$about_text_five]').val();
+        $about_text_six = $('textarea[name=about_$about_text_six]').val();
+        $about_text_seven = $('textarea[name=about_$about_text_seven]').val();
         
-        var $request = $.ajax({
+        $.ajax({
             type: 'POST',
-            url: 'includes/createservice.inc.php',
+            url: 'includes/createabout.inc.php',
             data: {
-                service_name: $service_name,
-                service_short_description: $service_short_description,
-                service_description_one: $service_description_one,
-                service_description_two: $service_description_two,
-                service_description_three: $service_description_three,
-                service_description_four: $service_description_four,
-                important_note: $important_note
+                about_image_link: $$about_image_link,
+                about_name: $about_name,
+                about_work_title: $about_work_title,
+                about_text_one: $about_text_one,
+                about_text_two: $about_text_two,
+                about_text_three: $about_text_three,
+                about_text_four: $about_text_four,
+                about_text_five: $about_text_five,
+                about_text_six: $about_text_six,
+                about_text_seven: $about_text_seven
             }
         })
-        .done(function() {
-            // if one or more fields is empty
-            if(!$service_name || !$service_short_description || !$service_description_one) {
-                $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-            }
-            // if 'service_name' contains numbers
-            else if ($service_name.match(".*\\d.*")) {
-                $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
-            }
-            else {
-                // if all checks have cleared
-                successAlert("Ydelse oprettet!");
-            }
-		})
     });
-    
-    // ---------- UPDATE SERVICE ----------
-    $('.update-service').click(function() {
 
-        // select the closest section to the clicked update button
-        let $section  = jQuery(this).closest("section");
-        // get the service ID from section attr class
-        var $serviceId   = $section.attr('attr-service_id');
-
-        // Get inputs from services
-        let $service_name = $section.find("#service_name").val();
-        let $service_short_description = $section.find("#service_short_description").val();
-        let $service_description_one = $section.find("#service_description_one").val();
-        let $service_description_two = $section.find("#service_description_two").val();
-        let $service_description_three = $section.find("#service_description_three").val();
-        let $service_description_four = $section.find("#service_description_four").val();
-        let $important_note = $section.find("#important_note").val();
-
-        // show confirmaiton box
-        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne ydelse?");
-
-        // CONFIRMATION
-        // if cancel_delete (no)
-        $('.cancel_update').click(function() {
-            $("#confirmation-update").hide();
-            errorAlert("Ingen ydelse blev opdateret!");
-        });
-        // if confirm_delete (yes)
-        $('.confirm_update').click(function() {
-            // Ajax config
-            var $request = $.ajax({
-                method: "POST",
-                // get the url to send to, when btn is clicked
-                url: 'includes/updateservice.inc.php',
-                // data to send
-                data: {
-                    service_id: $serviceId,
-                    service_name: $service_name,
-                    service_short_description: $service_short_description,
-                    service_description_one: $service_description_one,
-                    service_description_two: $service_description_two,
-                    service_description_three: $service_description_three,
-                    service_description_four: $service_description_four,important_note: $important_note,
-                },
-            })
-            .done(function() {
-                // if one or more fields is empty
-                if($service_name  === "" || $service_description_one  === "") {
-                    $request.abort();
-                    $("#confirmation-update").hide();
-                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-                }
-                // if 'service_name' contains numbers
-                else if ($service_name.match(".*\\d.*")) {
-                    $request.abort();
-                    $("#confirmation-update").hide();
-                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
-                }
-                else {
-                    // if all checks have cleared
-                    // hide confirmation box
-                    $("#confirmation-update").hide();
-                    successAlert("Ydelse " + $serviceId + " opdateret!");
-                }
-            })  
-        });
-    })
-
-    // ---------- DELETE SERVICE ----------
-    $('.delete-service').click(function() {
-
-        let $section  = jQuery(this).closest("section");
-        // get the service ID
-        var $serviceId   = $section.attr('attr-service_id');
-
-        // show confirmaiton box
-        confirmationDelete("Er du sikker på, at du gerne vil slette denne ydelse?");
-
-        // CONFIRMATION
-        // if cancel_delete (no)
-        $('.cancel_delete').click(function(){ 
-            $("#confirmation-delete").hide();
-            errorAlert("Ingen ydelse blev slettet!");
-        });
-        // if confirm_delete (yes)
-        $('.confirm_delete').click(function(){
-            // Ajax config
-            $.ajax({
-                //we are using GET method to get data from server side
-                type: "GET",
-                // get the url to send to, when btn is clicked
-                url: 'includes/deleteservice.inc.php',
-                // data to send
-                data: {
-                    service_id: $serviceId
-                }
-            })
-            .done(function() {
-                // remove the table row
-                $section.remove();
-                $("#confirmation-delete").hide();
-                // alert that the row has been successfully removed
-                successAlert("Ydelse " + $serviceId + " slettet!");
-            })
-        });
-    })
-
-    // ---------- CREATE CONTACT ----------
+    // ---------- CONTACT ----------
     $('#create-contact').click(function() {
 
         $contact_name = $('input[name=contact_name]').val();
@@ -426,191 +329,98 @@ $(document).ready(function(){
 		})
     });
 
-    // ---------- UPDATE CONTACT ----------
-    $('.update-contact').click(function() {
+    // ---------- OPENINGHOURS ----------
+    $('#create-openinghours').click(function() {
 
-        // select the closest section to the clicked update button
-        let $section  = jQuery(this).closest("section");
-        // get the contact ID from section attr class
-        var $contactId   = $section.attr('attr-contact_id');
-
-        // Get inputs from contact
-        let $contact_name = $section.find("#contact_name").val();
-        let $contact_work_title = $section.find("#contact_work_title").val();
-        let $contact_phone = $section.find("#contact_phone").val();
-        let $contact_email = $section.find("#contact_email").val();
-
-        // to check if string only contains numbers
-        let isnum = /^\d+$/.test($contact_phone);
-
-        // show confirmaiton box
-        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne kontakt?");
-
-        // CONFIRMATION
-        // if cancel_delete (no)
-        $('.cancel_update').click(function() {
-            $("#confirmation-update").hide();
-            errorAlert("Ingen kontakt blev opdateret!");
-        });
-        // if confirm_delete (yes)
-        $('.confirm_update').click(function() {
-            // Ajax config
-            var $request = $.ajax({
-                method: "POST",
-                // get the url to send to, when btn is clicked
-                url: 'includes/updatecontact.inc.php',
-                // data to send
-                data: {
-                    contact_id: $contactId,
-                    contact_name: $contact_name,
-                    contact_work_title: $contact_work_title,
-                    contact_phone: $contact_phone,
-                    contact_email: $contact_email
-                },
-            })
-            .done(function() {
-                // if one or more fields is empty
-                if(!$contact_name || !$contact_work_title || !$contact_phone || !$contact_email) {
-                    $request.abort();
-                    $("#confirmation-update").hide();
-                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
-                }
-                // if 'contact_phone' contains letters
-                else if (!isnum) {
-                    $request.abort();
-                    errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
-                }
-                // if 'service_name' contains numbers
-                else if ($contact_name.match(".*\\d.*")) {
-                    $request.abort();
-                    $("#confirmation-update").hide();
-                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver ydelsens navn.");
-                }
-                else {
-                    // if all checks have cleared
-                    // hide confirmation box
-                    $("#confirmation-update").hide();
-                    successAlert("Kontakt " + $contactId + " opdateret!");
-                }
-            })  
-        });
-    })
-
-    // ---------- DELETE CONTACT ----------
-    $('.delete-contact').click(function() {
-
-        let $section  = jQuery(this).closest("section");
-        // get the contact ID
-        var $contactId   = $section.attr('attr-contact_id');
-
-        // show confirmaiton box
-        confirmationDelete("Er du sikker på, at du gerne vil slette denne kontakt?");
-
-        // CONFIRMATION
-        // if cancel_delete (no)
-        $('.cancel_delete').click(function(){ 
-            $("#confirmation-delete").hide();
-            errorAlert("Ingen kontakt blev slettet!");
-        });
-        // if confirm_delete (yes)
-        $('.confirm_delete').click(function(){
-            // Ajax config
-            $.ajax({
-                //we are using GET method to get data from server side
-                type: "GET",
-                // get the url to send to, when btn is clicked
-                url: 'includes/deletecontact.inc.php',
-                // data to send
-                data: {
-                    contact_id: $contactId
-                }
-            })
-            .done(function() {
-                // remove the table row
-                $section.remove();
-                $("#confirmation-delete").hide();
-                // alert that the row has been successfully removed
-                successAlert("Kontakt " + $contactId + " slettet!");
-            })
-        });
-    })
-
-    // ---------- DELETE IMAGE ----------
-    $('.delete-image').click(function() {
-
-        let $section  = jQuery(this).closest("section");
-        // get the image ID
-        var imageId   = $section.attr('attr-image_id');
-
-        // show confirmaiton box
-        confirmationDelete("Er du sikker på, at du gerne vil slette dette billede?");
-
-        // CONFIRMATION
-        var buttonclicked;
-        // if cancel_delete (no)
-        $('.cancel_delete').click(function(){ 
-            if(buttonclicked != false) {
-                $("#confirmation-delete").hide();
-                errorAlert("Intet billede blev slettet!");
-            }
-        });
-        // if confirm_delete (yes)
-        $('.confirm_delete').click(function(){
-            // Ajax config
-            $.ajax({
-                //we are using GET method to get data from server side
-                type: "GET",
-                // get the url to send to, when btn is clicked
-                url: 'includes/deleteimage.inc.php',
-                // data to send
-                data: {
-                    image_id: imageId
-                }
-            })
-            .done(function() {
-                // remove the table row
-                $section.remove();
-                $("#confirmation-delete").hide();
-                // alert that the row has been successfully removed
-                successAlert("Billede slettet!");
-            })
-        });
-    })
-
-
-    // ---------- CREATE ABOUT ----------
-    $('#upload-about').click(function() {
-
-        $about_image_link = $('#about_image_link').val();
-        $about_name = $('input[name=about_name]').val();
-        $about_work_title = $('input[name=about_work_title]').val();
-        $about_text_one = $('textarea[name=about_text_one]').val();
-        $about_text_two = $('textarea[name=about_text$about_text_two]').val();
-        $about_text_three = $('textarea[name=about_$about_text_three]').val();
-        $about_text_four = $('textarea[name=about_$about_text_four]').val();
-        $about_text_five = $('textarea[name=about_$about_text_five]').val();
-        $about_text_six = $('textarea[name=about_$about_text_six]').val();
-        $about_text_seven = $('textarea[name=about_$about_text_seven]').val();
+        $vacationform = $('#vacationform').val();
+        $mondayfromform = $('#mondayfromform').val();
+        $mondaytoform = $('#mondaytoform').val();
+        $tuesdayfromform = $('#tuesdayfromform').val();
+        $tuesdaytoform = $('#tuesdaytoform').val();
+        $wednesdayfromform = $('#wednesdayfromform').val();
+        $wednesdaytoform = $('#wednesdaytoform').val();
+        $thursdayfromform = $('#thursdayfromform').val();
+        $thursdaytoform = $('#thursdaytoform').val();
+        $fridayfromform = $('#fridayfromform').val();
+        $fridaytoform = $('#fridaytoform').val();
+        $saturdayfromform = $('#saturdayfromform').val();
+        $saturdaytoform = $('#saturdaytoform').val();
+        $sundayfromform = $('#sundayfromform').val();
+        $sundaytoform = $('#sundaytoform').val();
         
         $.ajax({
             type: 'POST',
-            url: 'includes/createabout.inc.php',
+            url: 'includes/createopeninghours.inc.php',
             data: {
-                about_image_link: $$about_image_link,
-                about_name: $about_name,
-                about_work_title: $about_work_title,
-                about_text_one: $about_text_one,
-                about_text_two: $about_text_two,
-                about_text_three: $about_text_three,
-                about_text_four: $about_text_four,
-                about_text_five: $about_text_five,
-                about_text_six: $about_text_six,
-                about_text_seven: $about_text_seven
+                vacationform: $vacationform,
+                mondayfromform: $mondayfromform,
+                mondaytoform: $mondaytoform,
+                tuesdayfromform: $tuesdayfromform,
+                tuesdaytoform: $tuesdaytoform,
+                wednesdayfromform: $wednesdayfromform,
+                wednesdaytoform: $wednesdaytoform,
+                thursdayfromform: $thursdayfromform,
+                thursdaytoform: $thursdaytoform,
+                fridayfromform: $fridayfromform,
+                fridaytoform: $fridaytoform,
+                saturdayfromform: $saturdayfromform,
+                saturdaytoform: $saturdaytoform,
+                sundayfromform: $sundayfromform,
+                sundaytoform: $sundaytoform
             }
         })
+        .done(function() {
+            successAlert("Åbningstider oprettet!");
+		})
     });
 
-    // ---------- UPDATE ABOUT ----------
+    // ---------- SERVICE ----------
+    $('#create-service').click(function() {
+
+        $service_name = $('input[name=service_name]').val();
+        $service_short_description = $('textarea[name=service_short_description]').val();
+        $service_description_one = $('textarea[name=service_description_one]').val();
+        $service_description_two = $('textarea[name=service_description_two]').val();
+        $service_description_three = $('textarea[name=service_description_three]').val();
+        $service_description_four = $('textarea[name=service_description_four]').val();
+        $important_note = $('textarea[name=important_note]').val();
+        
+        var $request = $.ajax({
+            type: 'POST',
+            url: 'includes/createservice.inc.php',
+            data: {
+                service_name: $service_name,
+                service_short_description: $service_short_description,
+                service_description_one: $service_description_one,
+                service_description_two: $service_description_two,
+                service_description_three: $service_description_three,
+                service_description_four: $service_description_four,
+                important_note: $important_note
+            }
+        })
+        .done(function() {
+            // if one or more fields is empty
+            if(!$service_name || !$service_short_description || !$service_description_one) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if 'service_name' contains numbers
+            else if ($service_name.match(".*\\d.*")) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i ydelsens navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+            }
+            else {
+                // if all checks have cleared
+                successAlert("Ydelse oprettet!");
+            }
+		})
+    });
+
+    
+
+    // ---------------------- UPDATE FORMS ----------------------
+
+    // ---------- ABOUT ----------
     $('.update-about').click(function() {
 
         // select the closest section to the clicked update button
@@ -661,7 +471,7 @@ $(document).ready(function(){
             })
             .done(function() {
                 // if one or more fields is empty
-                if($about_name  === "") {
+                if(!$about_name) {
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at indtaste et navn. Udfyld dette felt og prøv igen!");
@@ -682,7 +492,217 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- DELETE ABOUT ----------
+    // ---------- CONTACT ----------
+    $('.update-contact').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID from section attr class
+        var $contactId   = $section.attr('attr-contact_id');
+
+        // Get inputs from contact
+        let $contact_name = $section.find(".contact_name").val();
+        let $contact_work_title = $section.find(".contact_work_title").val();
+        let $contact_phone = $section.find(".contact_phone").val();
+        let $contact_email = $section.find(".contact_email").val();
+
+        // to check if string only contains numbers
+        let isnum = /^\d+$/.test($contact_phone);
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne kontakt?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen kontakt blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updatecontact.inc.php',
+                // data to send
+                data: {
+                    contact_id: $contactId,
+                    contact_name: $contact_name,
+                    contact_work_title: $contact_work_title,
+                    contact_phone: $contact_phone,
+                    contact_email: $contact_email
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if(!$contact_name || !$contact_work_title || !$contact_phone || !$contact_email) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                // if 'contact_phone' contains letters
+                else if (!isnum) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
+                }
+                // if 'service_name' contains numbers
+                else if ($contact_name.match(".*\\d.*")) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver i navnet.");
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    successAlert("Kontakt " + $contactId + " opdateret!");
+                }
+            })  
+        });
+    })
+
+    // ---------- OPENINGHOURS ----------
+    $('.update-openinghours').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the openinghours ID from section attr class
+        var $openinghoursId   = $section.attr('attr-openinghours_id');
+
+        // Get inputs from openinghours
+        let $vacation = $section.find(".vacation").val();
+        let $mondayfrom = $section.find(".mondayfrom").val();
+        let $mondayto = $section.find(".mondayto").val();
+        let $tuesdayfrom = $section.find(".tuesdayfrom").val();
+        let $tuesdayto = $section.find(".tuesdayto").val();
+        let $wednesdayfrom = $section.find(".wednesdayfrom").val();
+        let $wednesdayto = $section.find(".wednesdayto").val();
+        let $thursdayfrom = $section.find(".thursdayfrom").val();
+        let $thursdayto = $section.find(".thursdayto").val();
+        let $fridayfrom = $section.find(".fridayfrom").val();
+        let $fridayto = $section.find(".fridayto").val();
+        let $saturdayfrom = $section.find(".saturdayfrom").val();
+        let $saturdayto = $section.find(".saturdayto").val();
+        let $sundayfrom = $section.find(".sundayfrom").val();
+        let $sundayto = $section.find(".sundayto").val();
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere disse åbningstider?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen åbningstider blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateopeninghours.inc.php',
+                // data to send
+                data: {
+                    openinghours_id: $openinghoursId,
+                    vacation: $vacation,
+                    mondayfrom: $mondayfrom,
+                    mondayto: $mondayto,
+                    tuesdayfrom: $tuesdayfrom,
+                    tuesdayto: $tuesdayto,
+                    wednesdayfrom: $wednesdayfrom,
+                    wednesdayto: $wednesdayto,
+                    thursdayfrom: $thursdayfrom,
+                    thursdayto: $thursdayto,
+                    fridayfrom: $fridayfrom,
+                    fridayto: $fridayto,
+                    saturdayfrom: $saturdayfrom,
+                    saturdayto: $saturdayto,
+                    sundayfrom: $sundayfrom,
+                    sundayto: $sundayto,
+                },
+            })
+            .done(function() {
+                // hide confirmation box
+                $("#confirmation-update").hide();
+                successAlert("Åbningstider opdateret!");
+            })  
+        });
+    })
+
+    // ---------- SERVICE ----------
+    $('.update-service').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the service ID from section attr class
+        var $serviceId   = $section.attr('attr-service_id');
+
+        // Get inputs from services
+        let $service_name = $section.find("#service_name").val();
+        let $service_short_description = $section.find("#service_short_description").val();
+        let $service_description_one = $section.find("#service_description_one").val();
+        let $service_description_two = $section.find("#service_description_two").val();
+        let $service_description_three = $section.find("#service_description_three").val();
+        let $service_description_four = $section.find("#service_description_four").val();
+        let $important_note = $section.find("#important_note").val();
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne ydelse?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen ydelse blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateservice.inc.php',
+                // data to send
+                data: {
+                    service_id: $serviceId,
+                    service_name: $service_name,
+                    service_short_description: $service_short_description,
+                    service_description_one: $service_description_one,
+                    service_description_two: $service_description_two,
+                    service_description_three: $service_description_three,
+                    service_description_four: $service_description_four,important_note: $important_note,
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if(!$service_name|| !$service_description_one) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                // if 'service_name' contains numbers
+                else if ($service_name.match(".*\\d.*")) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver i ydelsens navn.");
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    successAlert("Ydelse " + $serviceId + " opdateret!");
+                }
+            })  
+        });
+    })
+
+
+
+    // ---------------------- DELETE FORMS ----------------------
+
+    // ---------- ABOUT ----------
     $('.delete-about').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -726,7 +746,209 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- DELETE USER ----------
+    // ---------- CONTACT ----------
+    $('.delete-contact').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID
+        var $contactId   = $section.attr('attr-contact_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne kontakt?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen kontakt blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deletecontact.inc.php',
+                // data to send
+                data: {
+                    contact_id: $contactId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Kontakt " + $contactId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- IMAGE ----------
+    $('.delete-image').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the image ID
+        var imageId   = $section.attr('attr-image_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette dette billede?");
+
+        // CONFIRMATION
+        var buttonclicked;
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            if(buttonclicked != false) {
+                $("#confirmation-delete").hide();
+                errorAlert("Intet billede blev slettet!");
+            }
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteimage.inc.php',
+                // data to send
+                data: {
+                    image_id: imageId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Billede slettet!");
+            })
+        });
+    })
+
+    // ---------- MESSAGE (INBOX) ----------
+    $('.delete-message').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the image ID
+        var messageId   = $section.attr('attr-message_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne besked?");
+
+        // CONFIRMATION
+        var buttonclicked;
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            if(buttonclicked != false) {
+                $("#confirmation-delete").hide();
+                errorAlert("Ingen besked blev slettet!");
+            }
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deletemessage.inc.php',
+                // data to send
+                data: {
+                    message_id: messageId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Besked slettet!");
+            })
+        });
+    })
+
+    // ---------- OPENINGHOURS ----------
+    $('.delete-openinghours').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the openinghours ID from section attr class
+        var $openinghoursId   = $section.attr('attr-openinghours_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette disse åbningstider?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen åbningstider blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteopeninghours.inc.php',
+                // data to send
+                data: {
+                    openinghours_id: $openinghoursId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Åbningstider " + $openinghoursId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- SERVICE ----------
+    $('.delete-service').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the service ID
+        var $serviceId   = $section.attr('attr-service_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne ydelse?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen ydelse blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteservice.inc.php',
+                // data to send
+                data: {
+                    service_id: $serviceId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Ydelse " + $serviceId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- USER ----------
     function deleteUser() {
 	    $(document).delegate(".delete-user", "click", function() {
 

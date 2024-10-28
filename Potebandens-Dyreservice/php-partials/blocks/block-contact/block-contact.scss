@@ -153,9 +153,15 @@
             padding: 0 0 2rem;
             border-bottom: 1px solid #3f48cc;
             .phone-time {
-                padding:1rem;
+                margin: 1rem 0;
+                padding: 1rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                .vacation {
+                    text-align: center;
+                    margin: 0 0 1rem;
+                    text-transform: uppercase;
+                }
                 .time {
                     display: grid;
                     grid-template-columns: repeat(7, 1fr);

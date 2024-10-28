@@ -11,7 +11,7 @@
 
     <div class="subhero">
         <div class="page-title">
-            <h1>Kontakt os</h1>
+            <h1>Admin | Kontakt os</h1>
         </div>
     </div>
 

@@ -7,13 +7,14 @@
 
     include_once("connect.inc.php");
 
-    // get the service_id from delete contact in script.js
-    $id = $_REQUEST['contact_id'];
+    // get the image_id from delete message in script.js
+    $id = $_REQUEST['message_id'];
 
     // Set the DELETE SQL data
-	$sql = "DELETE FROM contact WHERE id='".$id."'";
+	$sql = "DELETE FROM inbox WHERE id='".$id."'";
+    unset($id);
 
-	// Process the query so row is deleted from table and db
+	// Process the query so section is deleted from table and db
 	if (!$conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
 	}

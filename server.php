@@ -60,13 +60,30 @@ gallery
 - image_text (VARCHAR 100)
 
 inbox
-- id (INT AUTO_INCREMENT)               ------ NOT NULL
-- message_name (VARCHAR 100)            ------ NOT NULL
-- message_subject	 (VARCHAR 50)       ------ NOT NULL
-- message_msg (VARCHAR 255)             ------ NOT NULL
-- message_contact (VARCHAR 50)  ------ NOT NULL
+- id (INT AUTO_INCREMENT)           ------ NOT NULL
+- message_name (VARCHAR 100)        ------ NOT NULL
+- message_subject	 (VARCHAR 50)   ------ NOT NULL
+- message_msg (VARCHAR 255)         ------ NOT NULL
+- message_contact (VARCHAR 50)      ------ NOT NULL
 - message_phone (VARCHAR 15)
 - message_email (VARCHAR 255)
+
+openinghours
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- mondayfrom (VARCHAR 100)
+- mondayto (VARCHAR 100)
+- tuesdayfrom (VARCHAR 100)
+- tuesdayto (VARCHAR 100)
+- wednesdayfrom (VARCHAR 100)
+- wednesdayto (VARCHAR 100)
+- thursdayfrom (VARCHAR 100)
+- thursdayto (VARCHAR 100)
+- fridayfrom (VARCHAR 100)
+- fridayto (VARCHAR 100)
+- saturdayfrom (VARCHAR 100)
+- saturdayto (VARCHAR 100)
+- sundayfrom (VARCHAR 100)
+- sundayto (VARCHAR 100)
 
 services
 - id (INT AUTO_INCREMENT)                   ------ NOT NULL

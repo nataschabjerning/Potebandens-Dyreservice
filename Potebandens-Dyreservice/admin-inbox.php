@@ -11,7 +11,7 @@
 
     <div class="subhero">
         <div class="page-title">
-            <h1>Indbakke</h1>
+            <h1>Admin | Indbakke</h1>
         </div>
     </div>
 

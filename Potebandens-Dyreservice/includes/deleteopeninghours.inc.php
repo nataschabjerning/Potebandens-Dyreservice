@@ -7,11 +7,11 @@
 
     include_once("connect.inc.php");
 
-    // get the service_id from delete contact in script.js
-    $id = $_REQUEST['contact_id'];
+    // get the service_id from delete openinghours in script.js
+    $id = $_REQUEST['openinghours_id'];
 
     // Set the DELETE SQL data
-	$sql = "DELETE FROM contact WHERE id='".$id."'";
+	$sql = "DELETE FROM openinghours WHERE id='".$id."'";
 
 	// Process the query so row is deleted from table and db
 	if (!$conn->query($sql)) {

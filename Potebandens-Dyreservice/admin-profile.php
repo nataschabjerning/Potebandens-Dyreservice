@@ -11,7 +11,7 @@
     <div class="subhero">
         <div class="overlay"></div>
         <div class="page-title">
-            <h1>Profil</h1>
+            <h1>Admin | Profil</h1>
         </div>
     </div>
     

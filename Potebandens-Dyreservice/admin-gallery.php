@@ -11,7 +11,7 @@
 
     <div class="subhero">
         <div class="page-title">
-            <h1>Galleri</h1>
+            <h1>Admin | Galleri</h1>
         </div>
     </div>
 

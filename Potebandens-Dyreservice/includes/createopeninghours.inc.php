@@ -1,0 +1,36 @@
+<?php
+
+    // show errors if any
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    include_once("connect.inc.php");
+
+    $vacationform   = $_POST['vacationform'];
+    $mondayfromform     = $_POST['mondayfromform'];
+    $mondaytoform     = $_POST['mondaytoform'];
+    $tuesdayfromform     = $_POST['tuesdayfromform'];
+    $tuesdaytoform     = $_POST['tuesdaytoform'];
+    $wednesdayfromform     = $_POST['wednesdayfromform'];
+    $wednesdaytoform     = $_POST['wednesdaytoform'];
+    $thursdayfromform     = $_POST['thursdayfromform'];
+    $thursdaytoform     = $_POST['thursdaytoform'];
+    $fridayfromform     = $_POST['fridayfromform'];
+    $fridaytoform     = $_POST['fridaytoform'];
+    $saturdayfromform     = $_POST['saturdayfromform'];
+    $saturdaytoform     = $_POST['saturdaytoform'];
+    $sundayfromform     = $_POST['sundayfromform'];
+    $sundaytoform     = $_POST['sundaytoform'];
+
+    $sql = "INSERT INTO openinghours (vacation, mondayfrom, mondayto, tuesdayfrom, tuesdayto, wednesdayfrom, wednesdayto, thursdayfrom, thursdayto, fridayfrom, fridayto, saturdayfrom, saturdayto, sundayfrom, sundayto) 
+    VALUES ('$vacationform', '$mondayfromform', '$mondaytoform', '$tuesdayfromform', '$tuesdaytoform', '$wednesdayfromform', '$wednesdaytoform', '$thursdayfromform', '$thursdaytoform', '$fridayfromform', '$fridaytoform', '$saturdayfromform', '$saturdaytoform', '$sundayfromform', '$sundaytoform')";
+
+    // Process the query so row is created in table and db
+    if (!$conn->query($sql)) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    // Close the connection after using it
+    $conn->close();
+    
