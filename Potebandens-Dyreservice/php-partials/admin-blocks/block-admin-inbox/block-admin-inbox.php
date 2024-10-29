@@ -12,21 +12,18 @@
 <div class="block admin-inbox">
     <div class="container">
         <div class="inbox">
-            <h2>Beskeder</h2>
+
+            <h2 class="admin-titles">Beskeder</h2>
+            
             <div class="inbox-messages">
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+            
                     <section attr-message_id="<?php echo $row['id']; ?>">
                         <div class="message">
                             <div class="button">
                                 <button class="delete-message">Slet Besked</button>
                             </div>
                             <div class="message-from">
-                                <div class="message_id">
-                                    <h5 class="border-bottom">ID</h5>
-                                    <?php if(!empty($row['id'])) { ?>
-                                        <h4><?php echo $row['id']?></h4>
-                                    <?php } ?>
-                                </div>
                                 <div class="message_subject">
                                     <h5 class="border-bottom">Emne</h5>
                                     <div class="subject">
@@ -36,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="message_name">
-                                    <h5 class="border-bottom">Fra</h5>
+                                    <h5 class="border-bottom">Afsender</h5>
                                     <div class="name">
                                         <?php if(!empty($row['message_name'])) { ?>
                                             <h4><?php echo $row['message_name']?></h4>
@@ -55,11 +52,10 @@
                                 <div class="message-top">
                                     <div class="message_contact">
                                         <h5>
-                                            Kontakt 
+                                            Kontakt<br>
                                             <?php if(!empty($row['message_name'])) { ?>
                                                 <span><?php echo $row['message_name']?></span>
                                             <?php } ?>
-                                             Via
                                         </h5>
                                         <div class="how_to_contact">
                                             <?php if(!empty($row['message_contact'])) { ?>
@@ -85,7 +81,7 @@
                                     <div class="message_msg">
                                         <div class="msg">
                                             <?php if(!empty($row['message_msg'])) { ?>
-                                                <h4><?php echo $row['message_msg']?></h4>
+                                                <p><?php echo $row['message_msg']?></p>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -93,6 +89,7 @@
                             </div> <!-- </div>--.message-msg end -->
                         </div> <!-- </div>--.message end -->
                     </section>
+
                 <?php } ?>
             </div> <!-- </div>--.inbox-messages end -->
         </div> <!-- </div>--.inbox end -->

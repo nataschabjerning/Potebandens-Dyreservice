@@ -1,14 +1,7 @@
 .users {
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 0;
+    padding-top: 2rem;
     .all-users {
-        text-align: center;
         .container {
-            h2 {
-                text-transform: uppercase;
-                margin: 2rem 0;
-            }
             .display-users {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

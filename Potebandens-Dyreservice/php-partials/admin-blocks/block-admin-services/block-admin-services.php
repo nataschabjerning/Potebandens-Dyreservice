@@ -13,8 +13,6 @@
                 $resultData = mysqli_stmt_get_result($stmt);
             ?>
 
-            <hr>
-
             <div class="form">
 
                 <div class="add_service">
@@ -69,14 +67,14 @@
                         </div>
                     </div> <!-- .new_service end -->
                 </div>
-                
 
-                <hr>
+            </div> <!-- .form end -->
 
                 <div class="table">
-                    <h2>Oversigt over alle ydelser</h2>
 
-                    <p class="update-info">Vil du opdatere en ydelse?<br>- Ret i det ønskede tekstfelt<br>og tryk herefter på 'opdatér'</p>
+                    <p class="update-info">Vil du opdatere en ydelse?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+
+                    <h2 class="admin-titles">Oversigt over alle ydelser</h2>
 
                     <div class="display-service">
                         <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
@@ -128,7 +126,7 @@
                     </div> <!-- .display-service end -->
                 </div>
 
-            </div> <!-- .form end -->
+            
 
         </div> <!-- .all-services end -->
     </div> <!-- .container end -->

@@ -1,6 +1,9 @@
 .admin-gallery {
     padding-top: 0;
     .container {
+        .admin-titles {
+            margin-top: 2rem;
+        }
         .images {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

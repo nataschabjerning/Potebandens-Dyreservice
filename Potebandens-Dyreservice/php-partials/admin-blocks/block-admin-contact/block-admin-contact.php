@@ -139,7 +139,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="mondaytoform" class="ifclosed">
+                                        <select id="mondaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -178,7 +178,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="tuesdaytoform" class="ifclosed">
+                                        <select id="tuesdaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -217,7 +217,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="wednesdaytoform" class="ifclosed">
+                                        <select id="wednesdaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -256,7 +256,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="thursdaytoform" class="ifclosed">
+                                        <select id="thursdaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="Lukket">Lukket</option>
                                             <option value="8:00">8:00</option>
@@ -296,7 +296,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="fridaytoform" class="ifclosed">
+                                        <select id="fridaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -335,7 +335,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="saturdaytoform" class="ifclosed">
+                                        <select id="saturdaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -374,7 +374,7 @@
                                             <option value="19:00">19:00</option>
                                             <option value="20:00">20:00</option>
                                         </select>
-                                        <select id="sundaytoform" class="ifclosed">
+                                        <select id="sundaytoform">
                                             <option value="Til" selected disabled>--- Til ---</option>
                                             <option value="8:00">8:00</option>
                                             <option value="9:00">9:00</option>
@@ -407,12 +407,12 @@
 
 
 
-        <p class="update-info">Vil du opdatere en kontakt eller åbningstider? - Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+        <p class="update-info">Vil du opdatere en kontakt eller åbningstider?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
         <div class="contact-grid">
 
             <div class="contact-info">
 
-                <h3>Kontakter</h3>
+                <h2 class="admin-titles">Kontakter</h2>
 
                 <?php while($row = mysqli_fetch_assoc($resultData1)) { ?>
                     <section attr-contact_id="<?php echo $row['id']; ?>">
@@ -468,7 +468,7 @@
 
             <div class="contact-phone">
                 <div class="phone-title">
-                    <h3>Telefontider</h3>
+                    <h2 class="admin-titles">Telefontider</h2>
                 </div>
 
                 <?php while($row = mysqli_fetch_assoc($resultData2)) { ?>

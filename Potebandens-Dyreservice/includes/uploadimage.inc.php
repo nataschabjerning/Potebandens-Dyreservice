@@ -72,7 +72,7 @@
         <p class="span"><span>*</span> SKAL udfyldes</p>
         <div class="addimageform">
             <div class="image_link">
-                <label for="link">Vælg Fil <span>*</span></label>
+                <label for="image-link">Vælg Fil <span>*</span></label>
                 <div class="input">
                     <input type="file" name="file">
                 </div>

@@ -1,17 +1,6 @@
 .admin-contact {
     padding: 6rem 0 6rem;
     .container {
-
-        h3 {
-            text-align: center;
-            margin: 0 0 2rem;
-            text-transform: uppercase;
-            @media (max-width: 600px) {
-                text-align: left;
-                font-size: 1.2rem;
-            }
-        }
-
         .form {
             .buttons {
                 display: grid;
@@ -65,7 +54,7 @@
                             padding: 2rem;
                             position: relative;
                             @media (max-width: 768px) {
-                                padding: 1rem;
+                                padding: 2rem 1rem 1rem;
                             }
                             h2 {
                                 text-align: center;
@@ -73,8 +62,6 @@
                                 @media (max-width: 768px) {
                                     margin-bottom: 1rem;
                                     font-size: 1.3rem;
-                                    text-align: left;
-                                    width: 50%;
                                 }
                             }
                             .openinghours-info {
@@ -174,17 +161,6 @@
             }
         }
 
-        .update-info {
-            margin: 1rem auto;
-            padding: .3rem;
-            width: 90%;
-            text-align: center;
-            border: 2px solid rgb(236, 126, 0);
-            background-color:rgba(199, 80, 0, .3);
-            @media (max-width: 850px) {
-                font-size: .8rem;
-            }
-        }
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -193,9 +169,6 @@
                 grid-template-columns: 1fr;
             }
             .contact-info, .contact-phone {
-                h3 {
-                    text-align: center;
-                }
                 section {
                     margin: 1rem 0;
                     padding: 1.5rem;

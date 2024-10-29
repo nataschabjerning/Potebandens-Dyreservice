@@ -1,16 +1,18 @@
 .admin-services {
+    padding-top: 6rem;
     .container {
         .all-services {
             .form {
+                padding: 2rem 0;
+                border-top: 1px solid #3f48cc;
+                border-bottom: 1px solid #3f48cc;
                 .add_service {
-                    margin: 2rem auto;
-                    width: fit-content;
-                    cursor: pointer;
-                    background-color: rgba(71,143,84, .8);
-                    width: fit-content;
-                    border-radius: 10px;
-                    border: 1px solid rgba(71,143,84, 1);
-                    cursor: pointer;
+                    margin: 0 auto;
+                background-color: rgba(71,143,84, .8);
+                width: fit-content;
+                border-radius: 10px;
+                border: 1px solid rgba(71,143,84, 1);
+                cursor: pointer;
                     #hide_add_form {
                         display:none;
                         padding: .5rem 1rem;
@@ -30,15 +32,21 @@
                 }
                 #new_service {
                     display: none;
-                    margin: 2rem auto;
+                    margin-top: 2rem;
                     padding: 2rem;
                     border-radius: 10px;
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                    @media (max-width: 768px) {
+                        padding: 1rem;
+                    }
                     .new_service {
                         outline: 1px dashed #478f54;
                         border-radius: 10px;
                         padding: 2rem;
                         position: relative;
+                        @media (max-width: 768px) {
+                            padding: 2rem 1rem 1rem;
+                        }
                         h2 {
                             text-align: center;
                             margin-bottom: 2rem;
@@ -46,6 +54,9 @@
                         form {
                             label {
                                 font-weight: 600;
+                                @media (max-width: 450px) {
+                                    font-size: 1rem;
+                                }
                             }
                             textarea::placeholder {
                                 text-align: center;
@@ -59,66 +70,65 @@
                                 margin: .5rem 0;
                                 width: 100%;
                                 text-indent: 10px;
+                                @media (max-width: 450px) {
+                                    font-size: .8rem;
+                                    text-indent: 5px;
+                                }
+                            }
+                            input {
+                                @media (max-width: 800px) {
+                                    height: 40px;
+                                }
                             }
                             .top {
                                 display: flex;
                                 gap: 1rem;
+                                @media (max-width: 800px) {
+                                    flex-direction: column;
+                                    text-align: center;
+                                    gap: .5rem;
+                                    textarea::placeholder {
+                                        text-align: left;
+                                    }
+                                }
                                 .name, .short_description, .notes {
                                     width: 100%;
                                 }
                             }
                             .descriptions {
                                 margin-top: 1rem;
-                                    #service_description {
-                                        position: relative;
-                                        .star {
-                                            position: absolute;
-                                            width: 10px;
-                                            top: .5rem;
-                                            left: 2px;
-                                            color: red;
-                                            font-weight: 900;
+                                @media (max-width: 800px) {
+                                    .input {
+                                        textarea {
+                                            height: 70px;
                                         }
                                     }
-                                    textarea::placeholder {
-                                        text-align: left;
+                                }
+                                @media (max-width: 450px) {
+                                    p {
+                                        font-size: .8rem;
                                     }
-                            
-                                
+                                }
+                                #service_description {
+                                    position: relative;
+                                    .star {
+                                        position: absolute;
+                                        width: 10px;
+                                        top: .5rem;
+                                        left: 2px;
+                                        color: red;
+                                        font-weight: 900;
+                                    }
+                                }
+                                textarea::placeholder {
+                                    text-align: left;
+                                }    
                             }
                         }
                     }
                 }
             }
             .table {
-                position: relative;
-                padding-top: 2rem;
-                h2 {
-                    text-align: center;
-                    text-transform: uppercase;
-                    margin: 0 0 2rem;
-                    @media (max-width: 850px) {
-                        width: 60%;
-                        text-align: left;
-                    }
-                    @media (max-width: 400px) {
-                        width: 50%;
-                        font-size: 1rem;
-                    }
-                }
-                .update-info {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    padding: .3rem;
-                    margin: .5rem 0;
-                    text-align: center;
-                    border: 2px solid rgb(236, 126, 0);
-                    background-color:rgba(199, 80, 0, .3);
-                    @media (max-width: 850px) {
-                        font-size: .8rem;
-                    }
-                }
                 .display-service {
                     display: grid;
                     grid-template-columns: 1fr 1fr;

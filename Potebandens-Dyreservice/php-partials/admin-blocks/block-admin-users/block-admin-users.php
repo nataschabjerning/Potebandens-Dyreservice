@@ -11,16 +11,12 @@
 ?>
 
 <div class="block users">
-    
     <div class="all-users">
         <div class="container">
 
-            <hr>
-
-            <h2>Oversigt over alle brugere</h2>
+            <h2 class="admin-titles">Oversigt over alle brugere</h2>
 
             <div class="display-users">
-
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
 
                     <section attr-user_id="<?php echo $row['id']; ?>">
@@ -49,11 +45,7 @@
                     </section>
 
                 <?php } ?>
-
             </div> <!-- .display-users end -->
-
         </div> <!-- .container end -->
-
     </div> <!-- .all-users end -->
-
 </div> <!-- .block .users end -->

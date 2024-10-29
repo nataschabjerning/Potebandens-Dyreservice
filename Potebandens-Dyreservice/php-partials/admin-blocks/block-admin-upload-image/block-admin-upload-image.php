@@ -52,8 +52,6 @@
             ?>
         </div>
 
-        <hr>
-
         <div class="new_images">
             <div class="add_image">
                 <div id="show_add_image">Tilføj Billede</div>

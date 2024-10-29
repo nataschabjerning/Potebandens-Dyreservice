@@ -27,8 +27,6 @@
             ?>
         </div>
 
-        <hr>
-
         <div class="new_about">
             <div class="add_about">
                 <div id="show_add_about">Tilføj 'Om mig' Blok</div>
@@ -65,6 +63,8 @@
                         </div>
                         
                         <div class="about_text_one">
+                            <label>Tekstfelter</label>
+                            <p>Vil du dele tekst op i sektioner, kan du gøre det ved at skrive det i hvert sit tekstfelt. Som minimum skal første tekstfelt udfyldes.</p>
                             <div class="about_text_one">
                                 <p class="star">*</p>
                                 <textarea name="about_text_one" id="about_text_one" placeholder="Tekstfelt 1"></textarea>
@@ -114,6 +114,5 @@
                 </form>
             </div>
         </div>
-
     </div>
 </div>

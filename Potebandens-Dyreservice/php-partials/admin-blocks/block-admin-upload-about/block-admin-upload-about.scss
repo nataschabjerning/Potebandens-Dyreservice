@@ -1,6 +1,10 @@
 .upload-about {
     padding: 6rem 0 0;
     .container {
+        padding: 0;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
         .upload-about-messages {
             width: 100%;
             .error {
@@ -24,11 +28,11 @@
             }
         }
         .new_about {
-            margin: 0 auto;
+            padding: 2rem 0;
+            border-top: 1px solid #3f48cc;
+            border-bottom: 1px solid #3f48cc;
             .add_about {
-                margin: 2rem auto;
-                width: fit-content;
-                cursor: pointer;
+                margin: 0 auto;
                 background-color: rgba(71,143,84, .8);
                 width: fit-content;
                 border-radius: 10px;
@@ -53,24 +57,24 @@
             }
             #insert-about {
                 display: none;
-                margin: 2rem auto;
+                margin: 2rem auto 0;
                 text-align: center;
                 padding: 2rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-                max-width: 70%;
+                @media (max-width: 768px) {
+                    padding: 1rem;
+                }
                 form {
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 2rem;
                     position: relative;
+                    @media (max-width: 768px) {
+                        padding: 2rem 1rem 1rem;
+                    }
                     h2 {
                         margin-bottom: 2rem;
-                    }
-                    p {
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
                     }
                     .addaboutform {
                         .about_text_one {
@@ -87,6 +91,18 @@
                         label {
                             font-weight: 600;
                         }
+                        p {
+                            text-align: left;
+                            @media (max-width: 768px) {
+                                font-size: .8rem;
+                            }
+                        }
+                        .descriptionslabel {
+                            display: none;
+                            @media (max-width: 768px) {
+                                display: block;
+                            }
+                        }
                         input {
                             margin: .5rem 0;
                             border: 1px solid black;
@@ -97,6 +113,7 @@
                             height: 40px;
                             @media (max-width: 768px) {
                                 font-size: .8rem;
+                                height: 35px;
                             }
                         }
                         textarea {
@@ -108,6 +125,9 @@
                             margin: .5rem 0;
                             width: 100%;
                             text-indent: 10px;
+                            @media (max-width: 768px) {
+                                height: 70px;
+                            }
                         }
                         textarea::placeholder {
                             text-align: center;
@@ -116,9 +136,16 @@
                             display: flex;
                             gap: 1rem;
                             width: 100%;
+                            @media (max-width: 768px) {
+                                flex-direction: column;
+                                gap: 0;
+                            }
                             .about_image_link, .about_name, .about_work_title, .about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
                                 width: 100%;
                             }
+                        }
+                        .about-top {
+                            margin-bottom: 1rem;
                         }
                         input[type="file"] {
                             text-align: center;
@@ -136,6 +163,11 @@
                             padding: 10px 20px;
                             margin-right: 10px;
                             cursor: pointer;
+                            @media (max-width: 550px) {
+                                width: 25%;
+                                padding: 10px 0;
+                                margin: 0;
+                            }
                         }
                         input[type=file]::file-selector-button:hover {
                             background-color: rgb(223, 138, 27);

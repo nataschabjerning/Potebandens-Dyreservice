@@ -1,5 +1,7 @@
 <?php
     include("includes/connect.inc.php");
+    include("php-partials/components/confirmation/confirm-update/confirm-update.php");
+    include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
 
     $sql = "SELECT * FROM about;";
     $stmt = $conn->prepare($sql);
@@ -12,17 +14,15 @@
     <div class="container">
 
         <?php
-            include("php-partials/components/confirmation/confirm-update/confirm-update.php");
-            include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
-            include("php-partials/admin-blocks/block-upload-about/block-upload-about.php");
+            // add button and form to upload new 'about' block
+            include("php-partials/admin-blocks/block-admin-upload-about/block-admin-upload-about.php");
         ?>
-
-        <hr>
 
         <div class="about-blocks">
 
-            <p class="update-about-info">Vil du opdatere info i en af boksene?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+            <p class="update-info">Vil du opdatere info i en af boksene?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
 
+            <h2 class="admin-titles">'Om Mig' Blokke</h2>
 
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <?php if (!empty($row['id'])) { ?>

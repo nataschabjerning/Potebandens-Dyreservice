@@ -32,8 +32,8 @@
             </div>
 
             <?php
-                include("php-partials/admin-blocks/block-create-update_user/block-create-update_user.php");
-                include("php-partials/admin-blocks/block-users/block-users.php");
+                include("php-partials/admin-blocks/block-admin-crud_user/block-admin-crud_user.php");
+                include("php-partials/admin-blocks/block-admin-users/block-admin-users.php");
             ?>
             
 

@@ -245,8 +245,11 @@ $(document).ready(function(){
     // show/hide 'message' on 'admin-inbox' page
     $(".message-from").click(function () {
         $(this).next(".message-msg").slideToggle();
+        let $section  = jQuery(this).closest("section");
+        $section.addClass("read");
         $(this).children("#arrow_down").toggle();
         $(this).children("#arrow_up").toggle();
+        localStorage.setItem('activeClass', 'read');
     });
 
 

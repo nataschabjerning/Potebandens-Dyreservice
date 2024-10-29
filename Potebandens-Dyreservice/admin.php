@@ -29,7 +29,7 @@
             
             <!-- include php blocks here -->
             <?php
-                include("php-partials/admin-blocks/block-list/block-list.php");      
+                include("php-partials/admin-blocks/block-admin-list/block-admin-list.php");      
             ?>
         
         <?php } // if (isset($_SESSION["id"])) end

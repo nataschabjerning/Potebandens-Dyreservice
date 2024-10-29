@@ -30,7 +30,9 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #3f48cc;
+            border-bottom: 1px solid #3f48cc;
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
@@ -73,11 +75,17 @@
                 padding: 2rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                @media (max-width: 768px) {
+                    padding: 1rem;
+                }
                 form {
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 2rem;
                     position: relative;
+                    @media (max-width: 768px) {
+                        padding: 2rem 1rem 1rem;
+                    }
                     .span {
                         position: absolute;
                         top: 10px;

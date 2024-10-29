@@ -82,9 +82,7 @@
                     echo "</script>";
                 }
             ?>
-        </div>
-
-        <hr>
+        </div> <!-- .create-update_user-messages end -->
 
         <div class="buttons">
             <div>
@@ -107,7 +105,6 @@
                     include("includes/signup.inc.php");
                 ?>
             </div>
-        </div>
-
-    </div>
-</div>
+        </div> <!-- .buttons end -->
+    </div> <!-- .container end -->
+</div> <!-- .create-update_user end -->
