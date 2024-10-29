@@ -24,6 +24,16 @@
                     }
                     .message-msg {
                         display: none;
+                        .message-top {
+                            display: flex;
+                            justify-content: space-evenly;
+                            text-align: center;
+                        }
+                        .message-bottom {
+                            .msg {
+                                padding: 2rem;
+                            }
+                        }
                     }
                 }
 
