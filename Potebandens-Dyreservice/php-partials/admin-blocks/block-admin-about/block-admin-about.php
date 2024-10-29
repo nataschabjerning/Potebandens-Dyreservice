@@ -10,7 +10,6 @@
 ?>
 
 <div class="block admin-about">
-
     <div class="container">
 
         <?php
@@ -26,6 +25,7 @@
 
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <?php if (!empty($row['id'])) { ?>
+
                     <section attr-about_id="<?php echo $row['id']; ?>">
                         <div class="me">
                             <div class="about_id">
@@ -74,15 +74,11 @@
                                     <button id="delete-about">Slet</button>
                                 </div>
                             </div>
-                            
                         </div> <!-- .me end -->
-
                     </section>
+
                 <?php }
             } ?>
-
         </div> <!-- .about-blocks end -->
-    
     </div> <!-- .container end -->
-
 </div> <!-- .block .admin-about end -->

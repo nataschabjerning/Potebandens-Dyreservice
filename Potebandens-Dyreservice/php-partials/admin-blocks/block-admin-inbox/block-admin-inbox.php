@@ -16,6 +16,33 @@
             <h2 class="admin-titles">Beskeder</h2>
             
             <div class="inbox-messages">
+                
+            <div class="table">
+                <div class="thead">
+                    <div class="th">Emne</div>
+                    <div class="th">Afsender</div>
+                </div>
+                <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                <div class="tbody message-from">
+                    <div class="td"><?php echo $row['message_subject']?></div>
+                    <div class="td"><?php echo $row['message_name']?></div>
+                </div>
+                <div class="message-msg">
+                    <div class="message-top">
+                        <div class="td"><?php echo $row['message_contact']?></div>
+                        <div class="td"><?php echo $row['message_phone']?></div>
+                        <div class="td"><?php echo $row['message_email']?></div>
+                    </div>
+                    <div class="message-bottom">
+                        <div class="td"><?php echo $row['message_msg']?></div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+                
+
+
+
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
             
                     <section attr-message_id="<?php echo $row['id']; ?>">
@@ -51,12 +78,9 @@
                             <div class="message-msg">
                                 <div class="message-top">
                                     <div class="message_contact">
-                                        <h5>
-                                            Kontakt<br>
-                                            <?php if(!empty($row['message_name'])) { ?>
-                                                <span><?php echo $row['message_name']?></span>
-                                            <?php } ?>
-                                        </h5>
+                                        <h5>Kontakt<br><?php if(!empty($row['message_name'])) { ?>
+                                            <span><?php echo $row['message_name']?></span>
+                                        <?php } ?></h5>
                                         <div class="how_to_contact">
                                             <?php if(!empty($row['message_contact'])) { ?>
                                                 <h4><?php echo $row['message_contact']?></h4>
