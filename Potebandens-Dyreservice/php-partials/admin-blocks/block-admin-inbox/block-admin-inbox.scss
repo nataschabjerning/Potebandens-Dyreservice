@@ -4,162 +4,155 @@
         .inbox {
             .inbox-messages {
                 border: 1px dashed #478f54;
-                margin: 1rem 0;
-                
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                .read {
+                    background-color: none;
+                }
+                .newmessage {
+                    background-color: rgba(217, 168, 0, .2);
+                }
+                .open {
+                    background-color: rgb(240, 240, 240);
+                }
                 .table {
-                    .thead, .tbody {
+                    .thead, .theadmessage {
                         display: grid;
-                        grid-template-columns: 1fr 200px;
+                        grid-template-columns: 1fr 200px auto;
                         padding: 1rem;
-                        border-bottom: 1px dashed #478f54;
+                        border-bottom: 1px solid #478f54;
+                        @media (max-width: 550px) {
+                            grid-template-columns: 1fr 100px;
+                        }
                     }
                     .thead {
                         text-align: center;
-                    }
-                    .tbody {
-                        cursor: pointer;
-                        .td:last-of-type {
-                            text-align: center;
-                        }
-                    }
-                    .message-msg {
-                        display: none;
-                        .message-top {
-                            display: flex;
-                            justify-content: space-evenly;
-                            text-align: center;
-                        }
-                        .message-bottom {
-                            .msg {
-                                padding: 2rem;
-                            }
-                        }
-                    }
-                }
-
-
-                section {
-                    .message {
-                        position: relative;
-                        .border-bottom {
-                            border-bottom: 1px solid rgb(204, 204, 204);
-                        }
-                        h5 {
-                            text-align: center;
-                            height: 25px;
-                        }
-                        h4 {
-                            padding: .5rem 1rem 0;
-                            @media (max-width: 767px) {
-                                height: 50px;
-                            }
-                            @media (max-width: 450px) {
-                                height: fit-content;
-                                padding-bottom: .5rem;
-                            }
-                        }
-                        .newmessage {
-                            font-weight: 600;
-                        }
-                        .read {
-                            font-weight: 300;
-                        }
-                        .message-from {
-                            display: grid;
-                            grid-template-columns: 1fr 300px auto;
-                            padding: .5rem;
-                            align-items: center;
-                            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-                            cursor: pointer;
-                            @media (max-width: 800px) {
-                                grid-template-columns: 1fr 1fr auto;
-                            }
-                            @media (max-width: 450px) {
-                                position: relative;
-                                grid-template-columns: 1fr 1fr;
-                                .message_subject {
-                                    grid-column: 1 / 3;
-                                    grid-row: 1 / 2;
-                                }
-                                .message_name {
-                                    grid-column: 1 / 3;
-                                    grid-row: 2 / 3;
-                                }
-                                #arrow_up, #arrow_down {
-                                    position: absolute;
-                                    bottom: 0;
-                                    right: 0;
-                                }
-                            }
-                            .message_name {
-                                border-left: 1px solid rgb(204, 204, 204);
-                                @media (max-width: 450px) {
-                                    border:none;
-                                    border-top: 1px dashed #478f54;
-                                    padding-top: .5rem;
-                                }
-                            }
-                            #arrow_up, #arrow_down {
-                                padding: .5rem;
-                            }
-                            #arrow_up {
+                        font-weight: 600;
+                        background-color: rgba(63, 72, 204, .4);
+                        border: none;
+                        #arrow-up {
+                            visibility: hidden;
+                            padding-right: 2rem;
+                            @media (max-width: 550px) {
                                 display: none;
                             }
                         }
-                        .message-from:hover {
-                            background-color: rgb(245, 245, 245);
+                    }
+                    .theadmessage {
+                        cursor: pointer;
+                        position: relative;
+                        grid-template-columns: 1fr 200px auto;
+                        @media (max-width: 550px) {
+                            grid-template-columns: 1fr 100px;
                         }
-                        .message-msg {
-                            display: none;
-                            border-top: 1px dashed #478f54;
-                            background-color: rgba(71, 143, 84, .2);
-                            h4 {
-                                padding: 0;
-                            }
-                            .message-top {
-                                display: grid;
-                                grid-template-columns: 1fr 1fr;
-                                padding: .5rem;
-                                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-                                .how_to_contact, .message_phone, .message_email {
-                                    text-align: center;
-                                    h4 {
-                                        height: fit-content;
-                                    }
-                                    a {
-                                        margin: 0 auto;
-                                    }
-                                }
-                            }
-                            .message-bottom {
-                                .message_msg {
-                                    padding: 3rem;
-                                    height:  min-content;
-                                    @media (max-width: 800px) {
-                                        padding: 2rem;
-                                    }
-                                    @media (max-width: 450px) {
-                                        padding: 1rem;
-                                    }
-                                }
-                            }
+                        @media (max-width: 400px) {
+                            font-size: .8rem;
                         }
                         .button {
                             position: absolute;
-                            top: 0;
-                            right: 0;
+                            top: 50%;
+                            left: 98%;
+                            transform: translate(-50%, -50%);
+                            @media (max-width: 550px) {
+                                left: 96%;
+                            }
                             button {
                                 margin: 0;
-                                padding: .2rem .5rem;
+                                padding: .5rem;
                                 border: none;
                                 border-radius: 0;
-                                border-top-right-radius: 10px;
-                                border-bottom-left-radius: 10px;
-                                font-size: .8rem;
-                                background-color: rgba(221, 0, 0, 1);
+                                font-size: 1.2rem;
+                                color: rgba(221, 0, 0, 1);
+                                background-color: transparent;
                             }
                             button:hover {
-                                background-color: rgb(199, 3, 3);
+                                background-color: rgba(199, 3, 3, .4);
+                            }
+                        }
+                        .arrow-up, .arrow-down {
+                            padding-right: 2rem;
+                            @media (max-width: 550px) {
+                                visibility: hidden;
+                                width: 0;
+                                height: 0;
+                                padding:0;
+                            }
+                        }
+                        .arrow-up {
+                            display: none;
+                        }
+                        .message-name {
+                            text-align: center;
+                        }
+                    }
+                    .tbody {
+                        display: none;
+                        .message-content {
+                            display: grid;
+                            grid-template-columns: 40% 1fr;
+                            background-color: rgba(71, 143, 84, .2);
+                            @media (max-width: 768px) {
+                                grid-template-columns: 1fr;
+                            }
+                            h5 {
+                                text-align: center;
+                                text-transform: uppercase;
+                                @media (max-width: 400px) {
+                                    font-size: .6rem;
+                                }
+                            }
+                            .message-contact-options {
+                                padding: 1rem 2rem;
+                                border-bottom: 1px solid #478f54;
+                                @media (max-width: 768px) {
+                                    border: none;
+                                    display: flex;
+                                    justify-content: space-between;
+                                }
+                                @media (max-width: 550px) {
+                                    padding: 1rem;
+                                }
+                                @media (max-width: 450px) {
+                                    display: flex;
+                                    flex-direction: column;
+                                    padding: .5rem 1rem;
+                                }
+                                p, a {
+                                    text-align: center;
+                                    color: #d5251e;
+                                    margin: .5rem auto 0;
+                                    font-weight: 600;
+                                    @media (max-width: 400px) {
+                                        font-size: .6rem;
+                                    }
+                                }
+                                .td {
+                                    padding: 1rem 0;
+                                    @media (max-width: 400px) {
+                                        padding: .5rem;
+                                    }
+                                }
+                            }
+                            .message_msg {
+                                padding: 2rem 4rem;
+                                border-left: 1px solid #478f54;
+                                border-bottom: 1px solid #478f54;
+                                @media (max-width: 768px) {
+                                    border: none;
+                                    border-top: 1px solid #478f54;
+                                    text-align: center;
+                                }
+                                @media (max-width: 550px) {
+                                    padding: 1.5rem;
+                                }
+                                @media (max-width: 400px) {
+                                    font-size: .8rem;
+                                    padding: 1rem 2rem;
+                                }
+                                p {
+                                    margin: .5rem 0;
+                                }
                             }
                         }
                     }

@@ -242,14 +242,31 @@ $(document).ready(function(){
         $(this).children("#show_add_openinghours").toggle();
         $(this).children("#hide_add_openinghours").toggle();
     });
-    // show/hide 'message' on 'admin-inbox' page
+    // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
         $(this).next(".message-msg").slideToggle();
-        let $section  = jQuery(this).closest("section");
-        $section.addClass("read");
-        $(this).children("#arrow_down").toggle();
-        $(this).children("#arrow_up").toggle();
-        localStorage.setItem('activeClass', 'read');
+        $(this).children(".arrow-down").toggle();
+        $(this).children(".arrow-up").toggle();
+        $(this).toggleClass("open");
+        $(this).toggleClass("close");
+        $(this).removeClass("newmessage");
+        $(this).addClass("read");
+
+        let $section = jQuery(this).closest("section");
+        var $messageId   = $section.attr('attr-message_id');
+        $message_read = $('input[name=message_read]').val();
+
+        $.ajax({
+            method: "POST",
+            // get the url to send to, when btn is clicked
+            url: 'includes/messageread.inc.php',
+            // data to send
+            data: {
+                message_id: $messageId,
+                message_read: $message_read
+            },
+        })
+
     });
 
 
