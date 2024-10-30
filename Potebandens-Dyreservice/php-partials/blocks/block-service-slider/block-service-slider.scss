@@ -1,5 +1,5 @@
 .service-slider-block {
-    background-color: #478f54;
+    background-color: rgba(71, 143, 84, .8);
     .container {
         .top {
             display: flex;
@@ -69,8 +69,8 @@
             .slide {
                 background: linear-gradient(
                     to bottom,
-                    rgba(2, 2, 2, 0.4) 0%,
-                    rgba(0, 0, 0, 0.4) 100%
+                    rgba(2, 2, 2, 0.3) 0%,
+                    rgba(0, 0, 0, 0.3) 100%
                 );
                 min-height: 200px;
                 padding: 1rem 2rem;
@@ -89,7 +89,7 @@
                     .icon {
                         height: 40px;
                         padding: .5rem;
-                        border: 1px solid #3a7545;
+                        border: 1px solid #478f54;
                         border-radius: 50%;
                         img {
                             object-fit: contain;

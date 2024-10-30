@@ -67,6 +67,7 @@ inbox
 - message_contact (VARCHAR 50)      ------ NOT NULL
 - message_phone (VARCHAR 15)
 - message_email (VARCHAR 255)
+- message_read (VARCHAR 50)
 
 openinghours
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
