@@ -96,32 +96,32 @@ $(document).ready(function(){
             // if one or more fields is empty
             if(!$message_name || !$message_subject || !$message_msg) {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen! <br><br>");
             }
             // if no contact method has been chosen
             if($message_contact === "vælg") {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud til, at du har glemt at fortælle os hvordan du vil kontaktes. Vælg hvordan i drop down menuen.");
+                errorAlert("Obs! <br> Det ser ud til, at du har glemt at fortælle os hvordan du vil kontaktes. Vælg hvordan i drop down menuen. <br>");
             }
             // if call or sms is selected but no phone number is given
             else if ($message_contact === "Telefonopkald" && !$message_phone || $message_contact === "SMS" && !$message_phone) {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os dit telefonnummer!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os dit telefonnummer! <br>");
             }
             // if 'message_phone' contains letters
             else if ($message_contact === "Telefonopkald" && !isnum || $message_contact === "SMS" && !isnum) {
                 $request.abort();
-                errorAlert("Obs! <br> Dit telefonnummer kan ikke indeholde bogstaver!");
+                errorAlert("Obs! <br> Dit telefonnummer kan ikke indeholde bogstaver! <br>");
             }
             // if email is selected but no email is given
             else if ($message_contact === "Email" && !$message_email) {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os din email!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at give os din email! <br>");
             }
             // if 'message_name' contains numbers
             else if ($message_name.match(".*\\d.*")) {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen! <br>");
             }
             else {
                 // if all checks have cleared

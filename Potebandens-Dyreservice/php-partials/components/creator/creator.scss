@@ -8,11 +8,23 @@
     padding: 1rem;
     text-align: center;
     cursor: pointer;
+    @media (max-width: 450px) {
+        max-width: 95vw;
+    }
     #creator {
         display: none;
         border-top: 1px solid black;
         padding: 1rem;
         margin-top: 1rem;
-        text-align: left;
+        text-align: center;
+        .creator-description {
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .creator-contact {
+            .creator-when {
+                margin-top: .5rem;
+            }
+        }
     }
 }

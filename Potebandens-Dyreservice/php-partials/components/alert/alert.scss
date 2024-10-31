@@ -1,6 +1,7 @@
 #erroralert, #successalert {
     display: none;
     background-color: #fff;
+    border-radius: 10px;
     border: 1px solid green;
     padding: 2rem;
     position: fixed;
@@ -9,31 +10,55 @@
     transform: translate(-50%, -50%);
     z-index: 99;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-    .errormessage, .successmessage {
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: green;
-        margin: 0 0 1rem;
+    @media (max-width: 768px) {
+        padding: 1.5rem;
     }
-    .button {
-        text-align: center;
-        button {
-            width: fit-content;
-            padding: .6rem 2rem;
+    @media (max-width: 550px) {
+        padding: 1rem;
+    }
+    .error-content, .success-content {
+        outline: 1px dashed green;
+        padding: 2rem;
+        border-radius: 10px;
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+        }
+        @media (max-width: 550px) {
+            padding: 1rem;
+        }
+        .errormessage, .successmessage {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: green;
+            margin: 0 0 1rem;
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                margin: 0;
+            }
+        }
+        .button {
+            text-align: center;
+            button {
+                width: fit-content;
+                padding: .6rem 2rem;
+            }
         }
     }
 }
 
 #erroralert {
     border: 1px solid red;
-    .errormessage {
-        color: red;
-    }
-    button {
-        background-color: red;
-    }
-    button:hover {
-        background-color: rgb(199, 3, 3);
+    .error-content {
+        outline: 1px dashed red;
+        .errormessage {
+            color: red;
+        }
+        button {
+            background-color: red;
+        }
+        button:hover {
+            background-color: rgb(199, 3, 3);
+        }
     }
 }

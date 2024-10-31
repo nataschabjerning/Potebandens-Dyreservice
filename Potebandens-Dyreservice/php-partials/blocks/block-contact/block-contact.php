@@ -59,7 +59,7 @@
                     <!-- if no contacts in db table -->
                     <div class="empty">
                         <h2>Der ser ikke ud til at være kontaktoplysninger i øjeblikket</h2>
-                        <h1>Men du kan altid kontakte os ved at udfylde formen ved siden af</h1>
+                        <h1>Men du kan altid kontakte os ved at udfylde formen</h1>
                     </div>
                 <?php } ?>
             </div> <!-- .contact-info end -->
