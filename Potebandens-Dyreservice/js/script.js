@@ -140,7 +140,7 @@ $(document).ready(function(){
     // ----- FRONT PAGE SLIDERS -----
     // Slider on front page to diplay services
     $('.service-slider').slick({
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         dots: true,
@@ -148,14 +148,6 @@ $(document).ready(function(){
         prevArrow: $('.service-prev'),
         nextArrow: $('.service-next'),
         responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
             {
                 breakpoint: 768,
                 settings: {
@@ -169,7 +161,7 @@ $(document).ready(function(){
     
     // Slider on front page to diplay gallery
     $('.gallery-slider').slick({
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         dots: true,
@@ -177,14 +169,6 @@ $(document).ready(function(){
         prevArrow: $('.gallery-prev'),
         nextArrow: $('.gallery-next'),
         responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
             {
                 breakpoint: 768,
                 settings: {

@@ -1,16 +1,36 @@
 .service-slider-block {
     background-color: rgba(71, 143, 84, .8);
+    padding-bottom: 8rem;
     .container {
+        .admin-titles {
+            color: #d5251e;
+            text-shadow: 1px 1px 1px rgb(32, 32, 32);
+        }
+        .empty {
+            h1 {
+                display: flex;
+                justify-content: center;
+                gap: .5rem;
+                a {
+                    color: #fff;
+                    text-transform: uppercase;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
         .top {
             display: flex;
             justify-content: space-between;
-            padding: 0 0 1.5rem 0;
+            align-items: center;
+            padding: 1rem 0 1.5rem 0;
+            border-top: 1px solid #d5251e;
             .title {
                 display: flex;
                 align-items: center;
                 gap: 2rem;
                 color: #fff;
-                font-size: 1.5rem;
                 @media (max-width: 768px) {
                     justify-content: space-between;
                     width: 100%;
@@ -18,8 +38,8 @@
                 a {
                     color: #3f48cc;
                     text-decoration: none;
-                    font-size: 1rem;
-                    font-weight: 600;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
                 }
                 a:hover {
                     text-decoration: underline;
@@ -38,6 +58,7 @@
                     padding-left: 10px;
                 }
                 .service-prev, .service-next {
+                    margin: 0;
                     border: 1px solid #3a7545;
                     background-color: rgba(63, 72, 204, .3);
                     color: #3f48cc;

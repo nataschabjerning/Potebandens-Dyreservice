@@ -6,7 +6,7 @@
 
 /* subhero on each page (not index.php) */
 .subhero {
-    background-image: url('../../../Images/-Sub-Hero/background-paw.png');
+    background-image: url('../../../Images/backgrounds/subhero.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,6 +54,30 @@
     }
 }
 
+.index-block {
+    background-image: linear-gradient(
+            to bottom,
+            rgba(63, 72, 204, 1) 0%,
+            rgba(63, 72, 204, .8) 3%,
+            rgba(63, 72, 204, .6) 6%,
+            rgba(63, 72, 204, .4) 9%,
+            rgba(63, 72, 204, .2) 12%,
+            rgba(255, 255, 255, .9) 15%,
+            rgba(255, 255, 255, .9) 85%,
+            rgba(63, 72, 204, .2) 88%,
+            rgba(63, 72, 204, .4) 91%,
+            rgba(63, 72, 204, .6) 94%,
+            rgba(63, 72, 204, .8) 97%,
+            rgba(63, 72, 204, 1) 100%),
+            url('../../../Images/backgrounds/allpaws1.png'
+        );
+        background-size: contain;
+        color: rgba(63, 72, 204, 1);
+    a {
+        color: rgba(63, 72, 204, 1);
+    }
+}
+
 /* * SKAL udfyldes */
 .span {
     position: absolute;
@@ -95,8 +119,12 @@ span {
 }
 
 /* if admin is not logged in but tries to access an admin page */
-.no_session {
+/* if there is no services or images in db tables */
+.no_session, .empty {
     text-align: center;
+}
+.empty {
+    color: #fff;
 }
 
 /* subheader on each admin page (not admin.php) */
