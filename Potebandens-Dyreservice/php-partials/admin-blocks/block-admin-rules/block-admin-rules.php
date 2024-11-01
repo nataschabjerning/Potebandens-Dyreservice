@@ -1,3 +1,15 @@
+<?php
+    include("php-partials/components/confirmation/confirm-update/confirm-update.php");
+    include("php-partials/components/confirmation/confirm-delete/confirm-delete.php");
+
+    include("includes/connect.inc.php");
+
+    $sql = "SELECT * FROM rules;";
+    $stmt = $conn->prepare($sql);
+    mysqli_stmt_execute($stmt);
+    $resultData = mysqli_stmt_get_result($stmt);
+?>
+
 <div class="block admin-rules">
     <div class="container">
 
@@ -5,70 +17,60 @@
 
         <p class="subtitle">Lige som hos alle andre organisationer, har vi en kort række regler, der skal følges.</p>
 
-        <div class="rules-content">
-            <div class="general-rules">
-                <h4>Generelle Regler</h4>
-                <div class="bullet-points">
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Første regel med en masse tekst. Første regel med en masse tekst.</p>
+        <div class="all-rules">
+            <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
+                <section attr-rule_id="<?php echo $row['id']; ?>">
+                    <div class="rules-content">
+                        <div class="rule_id">
+                            <h4>ID:</h4>
+                            <h4><?php echo $row['id']?></h4>
+                        </div>
+                        <div class="rules">
+                            <h4><?php echo $row['rules']?></h4>
+                            <div class="bullet-points">
+                                <div class="point">
+                                    <input type="text" class="point_one" value="<?php echo $row['rules_point_one']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_two" value="<?php echo $row['rules_point_two']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_three" value="<?php echo $row['rules_point_three']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_four" value="<?php echo $row['rules_point_four']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_five" value="<?php echo $row['rules_point_five']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_six" value="<?php echo $row['rules_point_six']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_seven" value="<?php echo $row['rules_point_seven']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_eight" value="<?php echo $row['rules_point_eight']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_nine" value="<?php echo $row['rules_point_nine']?>">
+                                </div>
+                                <div class="point">
+                                    <input type="text" class="point_ten" value="<?php echo $row['rules_point_ten']?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="update-rule">
+                                <button id="update-rule">Opdatér</button>
+                            </div>                                    
+                            <div class="delete-rule">
+                                <button id="delete-rule">Slet</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Første regel med endnu mere tekst</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Første regel med en masse tekst. Første regel med en masse tekst.</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Første regel med en masse tekst. Første regel med en masse tekst.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="services-rules">
-                <h4>Ved deltagelse i Hundebørnehave</h4>
-                <div class="bullet-points">
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Anden regel med en masse tekst. Anden regel med en masse tekst.</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Anden regel med endnu mere tekst</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Anden regel med en masse tekst. Anden regel med en masse tekst.</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Anden regel med en masse tekst. Anden regel med en masse tekst.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="services-rules">
-                <h4>Ved deltagelse i Hundelegestue</h4>
-                <div class="bullet-points">
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Tredje regel med en masse tekst. Tredje regel med en masse tekst.</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Tredje regel med endnu mere tekst</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Tredje regel med en masse tekst. Tredje regel med en masse tekst.</p>
-                    </div>
-                    <div class="point">
-                        <img src="../../../../Images/backgrounds/redpaw.png" alt="">
-                        <p>Tredje regel med en masse tekst. Tredje regel med en masse tekst.</p>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- .rules-content end -->
+                </section>
+            <?php } ?>
+        </div>
     </div> <!-- .container end -->
 </div> <!-- .block-rules end -->

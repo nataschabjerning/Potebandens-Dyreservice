@@ -399,7 +399,7 @@ $(document).ready(function(){
         $point_nine = $('input[name=point_nine]').val();
         $point_ten = $('input[name=point_ten]').val();
         
-        $.ajax({
+        var $request = $.ajax({
             type: 'POST',
             url: 'includes/createrules.inc.php',
             data: {
