@@ -8,7 +8,7 @@
         .subtitle {
             margin: 1rem 0 1.5rem;
         }
-        .rules-content {
+        .all-rules {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1rem;
@@ -19,31 +19,68 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
-            .general-rules, .services-rules {
+            .rules-content {
                 outline: 1px dashed #478f54;
-                padding: 1rem;
+                padding: 2rem 1rem 1rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 2px;
-                h4 {
-                    margin-bottom: .5rem;
+                position: relative;
+                .rule_id {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    margin: .2rem 0 0 .5rem;
+                    h4 {
+                        border: none;
+                    }
                 }
-                .bullet-points {
+                .rule {
+                    .rules {
+                        text-align: center;
+                    }
                     .point {
-                        display: flex;
-                        text-align: left;
-                        img {
-                            height: 14px;
-                            margin-top: 4px;
-                        }
+                        display: grid;
+                        grid-template-columns: 22px 1fr;
+                        align-items: center;
+                    }
+                    input {
+                        font-size: 1rem;
+                        width: 100%;
+                        height: 35px;
+                        padding: .5rem;
                     }
                 }
             }
-            .general-rules {
-                @media (max-width: 1024px) {
-                    grid-column: 1 / 3;
+            .buttons {
+                display: flex;
+                border-bottom: 1px solid black;
+                border-radius: 10px;
+                .update-rule, .delete-rule {
+                    width: 100%;
+                    button {
+                        margin: 0;
+                        background-color: rgba(253, 156, 29, 1);
+                        padding: .5rem;
+                        border-radius: 0;
+                        border-bottom-left-radius: 10px;
+                        color: white;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: rgb(223, 138, 27);
+                    }
                 }
-                @media (max-width: 768px) {
-                    grid-column: 1 / 2;
+                .delete-rule {
+                    button {
+                        border-radius: 0;
+                        border-bottom-right-radius: 10px;
+                        background-color: rgba(221, 0, 0, 1);
+                    }
+                    button:hover {
+                        background-color: rgb(199, 3, 3);
+                    }
                 }
             }
         }
