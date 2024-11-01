@@ -13,9 +13,11 @@
 
             <form method="post">
 
-                <label for="rules">Hvor gælder disse regler? <span>*</span></label>
-                <div class="input">
-                    <input type="text" name="rules" placeholder="Generelle regler, Hundelegestuen, Hundebørnehaven etc.">
+                <div class="input-rules">
+                    <label for="rules">Hvor gælder disse regler? <span>*</span></label>
+                    <div class="input">
+                        <input type="text" name="rules" placeholder="Generelle regler, Hundelegestuen, Hundebørnehaven etc.">
+                    </div>
                 </div>
 
                 <label for="point_one">Regler</label>

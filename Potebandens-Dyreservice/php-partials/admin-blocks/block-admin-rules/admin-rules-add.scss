@@ -72,8 +72,10 @@
                         padding: .5rem;
                     }
                 }
-                input:nth-of-type(1) {
-                    margin: .5rem 0;
+                .input-rules {
+                    input {
+                        margin: .5rem 0;
+                    }
                 }
                 .point_rules {
                     display: grid;
@@ -84,7 +86,7 @@
                         .star {
                             position: absolute;
                             width: 10px;
-                            top: .5rem;
+                            top: 2px;
                             left: 2px;
                             color: red;
                             font-weight: 900;

@@ -86,6 +86,20 @@ openinghours
 - sundayfrom (VARCHAR 100)
 - sundayto (VARCHAR 100)
 
+rules
+- id (INT AUTO_INCREMENT)       ------ NOT NULL
+- rules (VARCHAR 100)           ------ NOT NULL
+- rules_point_one (VARCHAR 255) ------ NOT NULL
+- rules_point_two (VARCHAR 255)
+- rules_point_three (VARCHAR 255)
+- rules_point_four (VARCHAR 255)
+- rules_point_five (VARCHAR 255)
+- rules_point_six (VARCHAR 255)
+- rules_point_seven (VARCHAR 255)
+- rules_point_eight (VARCHAR 255)
+- rules_point_nine (VARCHAR 255)
+- rules_point_ten (VARCHAR 255)
+
 services
 - id (INT AUTO_INCREMENT)                   ------ NOT NULL
 - service_name (VARCHAR 100)                ------ NOT NULL
