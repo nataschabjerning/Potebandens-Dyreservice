@@ -32,8 +32,11 @@
             </div>
 
             <?php
-                // include admin php blocks here 
+                // include admin php blocks here
+                include("php-partials/admin-blocks/block-admin-contact/admin-contact-add.php");
+                include("php-partials/admin-blocks/block-admin-rules/admin-rules-add.php");
                 include("php-partials/admin-blocks/block-admin-contact/block-admin-contact.php");
+                include("php-partials/admin-blocks/block-admin-rules/block-admin-rules.php");
             ?>
 
         <?php } // if (isset($_SESSION["username"])) end

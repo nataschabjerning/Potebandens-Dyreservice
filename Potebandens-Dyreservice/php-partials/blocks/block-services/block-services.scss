@@ -8,10 +8,6 @@
     );
     padding-top: 8rem;
     .container {
-        @media (max-width: 768px) {
-            padding: 0;
-            width: 100%;
-        }
         .empty {
             h1 {
                 display: flex;

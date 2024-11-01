@@ -1,5 +1,8 @@
 .contact {
-    padding: 6rem 0 6rem;
+    padding: 6rem 0;
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
     .container {
 
         .contact-title, .message-title, .phone-title {

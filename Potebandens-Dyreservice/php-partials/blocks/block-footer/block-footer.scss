@@ -11,25 +11,17 @@
         hr {
             border: 1px solid #243a94;
         }
-        .contact-info {
-            color: #fff;
-            padding-top: 2rem;
+        .footer-content {
             display: flex;
             justify-content: space-evenly;
-            .contact-us {
-                a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-                a:hover {
-                    text-decoration: underline;
-                }
-                .week-hours {
-
-                }
+            color: #fff;
+            padding-top: 2rem;
+            a {
+                text-decoration: none;
+                color: #fff;
             }
-            .adress {
-
+            a:hover {
+                text-decoration: underline;
             }
         }
     }

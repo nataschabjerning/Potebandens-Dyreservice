@@ -1,0 +1,97 @@
+.admin-rules-add {
+    padding: 2rem 0;
+    border-bottom: 1px solid #3f48cc;
+    .add_rule {
+        margin: 0 auto;
+        width: fit-content;
+        cursor: pointer;
+        background-color: rgba(71, 143, 84, .8);
+        width: fit-content;
+        border-radius: 10px;
+        border: 1px solid rgba(71, 143, 84, 1);
+        cursor: pointer;
+        #hide_add_rule {
+            display:none;
+            padding: .5rem 1rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            outline: 1px solid rgb(213,37,30);
+        }
+        #show_add_rule {
+            padding: .5rem 1rem;
+            color: white;
+            font-weight: 600;
+        }
+    }
+    .add_rule:hover:hover {
+        background-color: rgba(71,143,84, 1);
+    }
+    #new_rule  {
+        display: none;
+        margin: 2rem auto 0;
+        width: 70%;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+        @media (max-width: 768px) {
+            padding: 1rem;
+        }
+        .new_rule {
+            outline: 1px dashed #478f54;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            @media (max-width: 768px) {
+                padding: 2rem 1rem 1rem;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 2rem;
+                @media (max-width: 768px) {
+                    margin-bottom: 1rem;
+                    font-size: 1.3rem;
+                }
+            }
+            form {
+                text-align: center;
+                p {
+                    margin-bottom: .5rem;
+                }
+                label {
+                    font-weight: 600;
+                }
+                input {
+                    font-size: 1rem;
+                    padding: 1rem;
+                    height: 30px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    width: 100%;
+                    @media (max-width: 768px) {
+                        padding: .5rem;
+                    }
+                }
+                input:nth-of-type(1) {
+                    margin: .5rem 0;
+                }
+                .point_rules {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    .one {
+                        position: relative;
+                        .star {
+                            position: absolute;
+                            width: 10px;
+                            top: .5rem;
+                            left: 2px;
+                            color: red;
+                            font-weight: 900;
+                        }
+                    }                
+                }
+            }
+        }
+    }
+}

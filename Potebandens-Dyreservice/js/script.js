@@ -226,6 +226,12 @@ $(document).ready(function(){
         $(this).children("#show_add_openinghours").toggle();
         $(this).children("#hide_add_openinghours").toggle();
     });
+    // show/hide 'add rules' form on 'admin-contact' page
+    $(".add_rule").click(function () {
+        $("#new_rule").slideToggle();
+        $(this).children("#show_add_rule").toggle();
+        $(this).children("#hide_add_rule").toggle();
+    });
     // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
         $(this).next(".message-msg").slideToggle();
@@ -375,6 +381,51 @@ $(document).ready(function(){
         })
         .done(function() {
             successAlert("Åbningstider oprettet!");
+		})
+    });
+
+    // ---------- RULES ----------
+    $('#create-rules').click(function() {
+
+        $rules = $('input[name=rules]').val();
+        $point_one = $('input[name=point_one]').val();
+        $point_two = $('input[name=point_two]').val();
+        $point_three = $('input[name=point_three]').val();
+        $point_four = $('input[name=point_four]').val();
+        $point_five = $('input[name=point_five]').val();
+        $point_six = $('input[name=point_six]').val();
+        $point_seven = $('input[name=point_seven]').val();
+        $point_eight = $('input[name=point_eight]').val();
+        $point_nine = $('input[name=point_nine]').val();
+        $point_ten = $('input[name=point_ten]').val();
+        
+        $.ajax({
+            type: 'POST',
+            url: 'includes/createrules.inc.php',
+            data: {
+                rules: $rules,
+                point_one: $point_one,
+                point_two: $point_two,
+                point_three: $point_three,
+                point_four: $point_four,
+                point_five: $point_five,
+                point_six: $point_six,
+                point_seven: $point_seven,
+                point_eight: $point_eight,
+                point_nine: $point_nine,
+                point_ten: $point_ten,
+            }
+        })
+        .done(function() {
+            // if one or more required fields is empty
+            if(!$rules || !$point_one) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde begge eller ét af de påkrævede felter!");
+            }
+            else {
+                // if all checks have cleared
+                successAlert("Regler oprettet!");
+            }
 		})
     });
 

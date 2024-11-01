@@ -15,6 +15,7 @@
 @import '../php-partials/blocks/block-header/block-header.scss';
 @import '../php-partials/blocks/block-info/block-info.scss';
 @import '../php-partials/blocks/block-questions/block-questions.scss';
+@import '../php-partials/blocks/block-rules/block-rules.scss';
 @import '../php-partials/blocks/block-service-slider/block-service-slider.scss';
 @import '../php-partials/blocks/block-us/block-us.scss';
 
@@ -22,12 +23,15 @@
 ------------------------------------------------------*/
 
 @import '../php-partials/admin-blocks/block-admin-about/block-admin-about.scss';
+@import '../php-partials/admin-blocks/block-admin-contact/admin-contact-add.scss';
 @import '../php-partials/admin-blocks/block-admin-contact/block-admin-contact.scss';
 @import '../php-partials/admin-blocks/block-admin-gallery/block-admin-gallery.scss';
 @import '../php-partials/admin-blocks/block-admin-inbox/block-admin-inbox.scss';
 @import '../php-partials/admin-blocks/block-admin-services/block-admin-services.scss';
 @import '../php-partials/admin-blocks/block-admin-crud_user/block-admin-crud_user.scss';
 @import '../php-partials/admin-blocks/block-admin-list/block-admin-list.scss';
+@import '../php-partials/admin-blocks/block-admin-rules/admin-rules-add.scss';
+@import '../php-partials/admin-blocks/block-admin-rules/block-admin-rules.scss';
 @import '../php-partials/admin-blocks/block-admin-upload-about/block-admin-upload-about.scss';
 @import '../php-partials/admin-blocks/block-admin-upload-image/block-admin-upload-image.scss';
 @import '../php-partials/admin-blocks/block-admin-users/block-admin-users.scss';

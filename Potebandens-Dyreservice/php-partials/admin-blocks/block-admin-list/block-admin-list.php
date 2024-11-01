@@ -75,7 +75,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du rette i de oplysninger, der er nødvendige for at kunne kontakte dig.</P>
+                                <P>Her kan du rette i de oplysninger, der er nødvendige for at kunne kontakte dig. Du kan også tilføje, rette eller slette åbningstider og regler.</P>
                             </div>
                         </a>
                     </div>
