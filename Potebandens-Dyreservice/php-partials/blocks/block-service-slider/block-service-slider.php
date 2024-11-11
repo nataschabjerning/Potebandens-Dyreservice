@@ -26,7 +26,6 @@
 
         <!-- if there is services in db table -->
         <?php if (mysqli_num_rows($result) > 0) { ?>
-
             <div class="service-slider"> 
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="slide">
@@ -46,7 +45,6 @@
                     </div>
                 <?php } ?> <!--  while() end -->
             </div> <!-- .service-slider end -->
-
         <?php } 
         else { ?>
             <!-- if no services in db table -->
@@ -55,6 +53,5 @@
                 <h1>Men du kan altid kontakte os <a href="contact.php">her</a></h1>
             </div>
         <?php } ?>
-
     </div> <!-- .container end -->
 </div> <!-- .block .service-slider end -->

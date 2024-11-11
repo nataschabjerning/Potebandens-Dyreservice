@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once("includes/connect.inc.php");
+    include("php-partials/components/alert/alert.php");
 ?>
 
 <!DOCTYPE html>
@@ -37,11 +38,9 @@
 
         <div class="header">
             <div class="container">
-                
                 <?php
                     include("php-partials/components/logo/logo.php");
                 ?>
-
                 <nav class="site-navigation">
                     <ul class="nav-items">
                         <?php 
@@ -59,16 +58,13 @@
                         <li><a href="about.php">Om os</a></li>
                         <li><a href="contact.php">Kontakt</a></li>
                     </ul>
-
                     <div class="mobile-menu">
-                        
                         <div id="menu-btn">
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
-                        
                         <div class="menu-content">
                             <ul class="mobile-nav-items">
                                 <?php 
@@ -87,14 +83,7 @@
                                 <li><a href="contact.php">Kontakt</a></li>
                             </ul>
                         </div>
-
                     </div>
-
                 </nav>
-
             </div>
         </div>
-
-        <?php
-            include("php-partials/components/alert/alert.php");
-        ?>

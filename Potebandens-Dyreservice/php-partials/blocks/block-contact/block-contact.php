@@ -117,7 +117,5 @@
                 </div> <!-- #new-message end -->
             </div> <!-- .message-form end -->
         </div> <!-- .contact-grid end -->
-
     </div> <!-- .container end -->
-
 </div> <!-- .block .contact end -->

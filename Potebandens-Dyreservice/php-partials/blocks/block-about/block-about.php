@@ -8,13 +8,11 @@
 ?>
 
 <div class="block about">
-
     <div class="container">
-
+        
         <h1>Hele Holdet</h1>
 
         <div class="about-blocks">
-
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <section attr-about_id="<?php echo $row['id']; ?>">
                     <div class="me">
@@ -52,12 +50,8 @@
                             <?php } ?>
                         </div>
                     </div>  <!-- .me end -->
-
                 </section>
             <?php } ?>
-
         </div>  <!-- .about-blocks end -->
-
     </div> <!-- .container end -->
-
 </div> <!-- .block .about end -->
