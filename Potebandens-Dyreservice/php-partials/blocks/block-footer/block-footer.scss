@@ -12,10 +12,19 @@
             border: 1px solid #243a94;
         }
         .footer-content {
-            display: flex;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            justify-items: center;
             color: #fff;
             padding-top: 2rem;
+            @media (max-width: 460px) {
+                grid-template-columns: repeat(3, auto);
+                row-gap: 1rem;
+                .a-contact {
+                    grid-column: 2 / 3;
+                    grid-row: 2 / 3;
+                }
+            }
             a {
                 text-decoration: none;
                 color: #fff;
