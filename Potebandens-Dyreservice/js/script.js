@@ -686,6 +686,75 @@ $(document).ready(function(){
         });
     })
 
+    // ---------- RULES ----------
+    $('.update-rules').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the openinghours ID from section attr class
+        var $rulesId   = $section.attr('attr-rules_id');
+
+        // Get inputs from openinghours
+        let $rules = $section.find(".rules").val();
+        let $point_one = $section.find(".point_one").val();
+        let $point_two = $section.find(".point_two").val();
+        let $point_three = $section.find(".point_three").val();
+        let $point_four = $section.find(".point_four").val();
+        let $point_five = $section.find(".point_five").val();
+        let $point_six = $section.find(".point_six").val();
+        let $point_seven = $section.find(".point_seven").val();
+        let $point_eight = $section.find(".point_eight").val();
+        let $point_nine = $section.find(".point_nine").val();
+        let $point_ten = $section.find(".point_ten").val();
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere disse regler?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen regler blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updaterules.inc.php',
+                // data to send
+                data: {
+                    rules_id: $rulesId,
+                    rules: $rules,
+                    point_one: $point_one,
+                    point_two: $point_two,
+                    point_three: $point_three,
+                    point_four: $point_four,
+                    point_five: $point_five,
+                    point_six: $point_six,
+                    point_seven: $point_seven,
+                    point_eight: $point_eight,
+                    point_nine: $point_nine,
+                    point_ten: $point_ten
+                },
+            })
+            .done(function() {
+                // if one or more required fields is empty
+                if(!$rules || !$point_one) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde begge eller ét af de påkrævede felter!");
+                }
+                else {
+                    // if all checks have cleared
+                    $("#confirmation-update").hide();
+                    successAlert("Regler opdateret!");
+                }
+            })  
+        });
+    })
+
     // ---------- SERVICE ----------
     $('.update-service').click(function() {
 
@@ -960,6 +1029,46 @@ $(document).ready(function(){
                 $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
                 successAlert("Åbningstider " + $openinghoursId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- RULES ----------
+    $('.delete-rules').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the openinghours ID from section attr class
+        var $rulesId   = $section.attr('attr-rules_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette disse regler?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen regler blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleterules.inc.php',
+                // data to send
+                data: {
+                    rules_id: $rulesId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Regler " + $rulesId + " slettet!");
             })
         });
     })

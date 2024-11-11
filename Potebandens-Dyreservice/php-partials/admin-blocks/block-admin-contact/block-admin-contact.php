@@ -19,11 +19,8 @@
 
     <div class="container">
 
-        <?php
-            // include("admin-contact-add.php");
-        ?>
-
         <p class="update-info">Vil du opdatere en kontakt eller åbningstider?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+
         <div class="contact-grid">
 
             <div class="contact-info">

@@ -13,13 +13,13 @@
 <div class="block admin-rules">
     <div class="container">
 
-        <h3 class="admin-titles">Regler og retningslinjer</h3>
+        <p class="update-info">Vil du opdatere én eller flere regler?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
 
-        <p class="subtitle">Lige som hos alle andre organisationer, har vi en kort række regler, der skal følges.</p>
+        <h2 class="admin-titles">Regler og retningslinjer</h2>
 
         <div class="all-rules">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
-                <section attr-rule_id="<?php echo $row['id']; ?>">
+                <section attr-rules_id="<?php echo $row['id']; ?>">
                     <div class="rules-content">
                         <div class="rule_id">
                             <h4>ID:</h4>
@@ -71,10 +71,10 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <div class="update-rule">
+                            <div class="update-rules">
                                 <button id="update-rule">Opdatér</button>
                             </div>                                    
-                            <div class="delete-rule">
+                            <div class="delete-rules">
                                 <button id="delete-rule">Slet</button>
                             </div>
                         </div>

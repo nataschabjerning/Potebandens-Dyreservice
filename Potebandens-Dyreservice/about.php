@@ -19,6 +19,7 @@
        
        <?php
             include("php-partials/blocks/block-about/block-about.php");
+            include("php-partials/blocks/block-questions/block-questions.php");
         ?>
 
     </div>

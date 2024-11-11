@@ -19,6 +19,7 @@
 
         <?php
             include("php-partials/blocks/block-contact/block-contact.php");
+            include("php-partials/blocks/block-openinghours/block-openinghours.php");
             include("php-partials/components/creator/creator.php");
             include("php-partials/blocks/block-rules/block-rules.php");
         ?>
