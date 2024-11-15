@@ -25,6 +25,11 @@
     $sundayfrom     = $_REQUEST['sundayfrom'];
     $sundayto       = $_REQUEST['sundayto'];
 
+    // if not filled out
+    if(empty($mondayfrom) || empty($tuesdayfrom) || empty($wednesdayfrom) || empty($thursdayfrom) || empty($fridayfrom) ||  empty($saturdayfrom) || empty($sundayfrom)) {
+        exit;
+    }
+
     $sql = "UPDATE openinghours 
 	SET
     vacation='$vacation', 

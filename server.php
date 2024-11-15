@@ -70,20 +70,20 @@ inbox
 - message_read (VARCHAR 50)
 
 openinghours
-- id (INT AUTO_INCREMENT)   ------ NOT NULL
-- mondayfrom (VARCHAR 100)
+- id (INT AUTO_INCREMENT)       ------ NOT NULL
+- mondayfrom (VARCHAR 100)      ------ NOT NULL
 - mondayto (VARCHAR 100)
-- tuesdayfrom (VARCHAR 100)
+- tuesdayfrom (VARCHAR 100)     ------ NOT NULL
 - tuesdayto (VARCHAR 100)
-- wednesdayfrom (VARCHAR 100)
+- wednesdayfrom (VARCHAR 100)   ------ NOT NULL
 - wednesdayto (VARCHAR 100)
-- thursdayfrom (VARCHAR 100)
+- thursdayfrom (VARCHAR 100)    ------ NOT NULL
 - thursdayto (VARCHAR 100)
-- fridayfrom (VARCHAR 100)
+- fridayfrom (VARCHAR 100)      ------ NOT NULL
 - fridayto (VARCHAR 100)
-- saturdayfrom (VARCHAR 100)
+- saturdayfrom (VARCHAR 100)    ------ NOT NULL
 - saturdayto (VARCHAR 100)
-- sundayfrom (VARCHAR 100)
+- sundayfrom (VARCHAR 100)      ------ NOT NULL
 - sundayto (VARCHAR 100)
 
 rules

@@ -358,7 +358,7 @@ $(document).ready(function(){
         $sundayfromform = $('#sundayfromform').val();
         $sundaytoform = $('#sundaytoform').val();
         
-        $.ajax({
+        var $request = $.ajax({
             type: 'POST',
             url: 'includes/createopeninghours.inc.php',
             data: {
@@ -380,7 +380,14 @@ $(document).ready(function(){
             }
         })
         .done(function() {
-            successAlert("Åbningstider oprettet!");
+            // if one or more fields is empty
+            if(!$mondayfromform || !$tuesdayfromform || !$wednesdayfromform || !$thursdayfromform || !$fridayfromform || !$saturdayfromform || !$sundayfromform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            else {
+                successAlert("Åbningstider oprettet!");
+            }
 		})
     });
 
@@ -654,7 +661,7 @@ $(document).ready(function(){
         // if confirm_delete (yes)
         $('.confirm_update').click(function() {
             // Ajax config
-            $.ajax({
+            var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
                 url: 'includes/updateopeninghours.inc.php',
@@ -679,9 +686,16 @@ $(document).ready(function(){
                 },
             })
             .done(function() {
-                // hide confirmation box
-                $("#confirmation-update").hide();
-                successAlert("Åbningstider opdateret!");
+                // if one or more fields is empty
+                if(!$mondayfrom || !$tuesdayfrom || !$wednesdayfrom || !$thursdayfrom || !$fridayfrom || !$saturdayfrom || !$sundayfrom) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                else {
+                    $("#confirmation-update").hide();
+                    successAlert("Åbningstider opdateret!");
+                }
             })  
         });
     })

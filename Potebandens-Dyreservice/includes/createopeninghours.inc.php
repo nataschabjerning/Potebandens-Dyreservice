@@ -23,6 +23,11 @@
     $sundayfromform     = $_POST['sundayfromform'];
     $sundaytoform     = $_POST['sundaytoform'];
 
+    // if not filled out
+    if(empty($mondayfromform) || empty($tuesdayfromform) || empty($wednesdayfromform) || empty($thursdayfromform) || empty($fridayfromform) ||  empty($saturdayfromform) || empty($sundayfromform)) {
+        exit;
+    }
+
     $sql = "INSERT INTO openinghours (vacation, mondayfrom, mondayto, tuesdayfrom, tuesdayto, wednesdayfrom, wednesdayto, thursdayfrom, thursdayto, fridayfrom, fridayto, saturdayfrom, saturdayto, sundayfrom, sundayto) 
     VALUES ('$vacationform', '$mondayfromform', '$mondaytoform', '$tuesdayfromform', '$tuesdaytoform', '$wednesdayfromform', '$wednesdaytoform', '$thursdayfromform', '$thursdaytoform', '$fridayfromform', '$fridaytoform', '$saturdayfromform', '$saturdaytoform', '$sundayfromform', '$sundaytoform')";
 

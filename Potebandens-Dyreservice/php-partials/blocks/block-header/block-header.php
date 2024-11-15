@@ -1,7 +1,6 @@
 <?php
     session_start();
     include_once("includes/connect.inc.php");
-    include("php-partials/components/alert/alert.php");
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +38,8 @@
         <div class="header">
             <div class="container">
                 <?php
+                    // so alert messages can be shown when creating/updating/deleting or sending msg to admin inbox
+                    include("php-partials/components/alert/alert.php");
                     include("php-partials/components/logo/logo.php");
                 ?>
                 <nav class="site-navigation">
