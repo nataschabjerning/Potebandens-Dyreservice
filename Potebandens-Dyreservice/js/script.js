@@ -36,12 +36,13 @@ $(document).ready(function(){
     // ----- USER INTERFACE -----
 
     // ----- CREATOR DIV -----
-    // show/hide 'creator'
+    // show/hide 'creator' on 'contact.php' page
     $(".show-creator").click(function () {
         $("#creator").slideToggle();
     });
 
     // ----- USER CONTACT FORM -----
+    // For user when writing a msg to admin by using contact form on 'block-contact.php'
     // show input field when user selects either phone or email
     $("#selected").change(function(){
         $(this).find("option:selected").each(function(){
@@ -56,6 +57,7 @@ $(document).ready(function(){
     }).change();
 
     // ----- USER CONTACT FORM -----
+    // For user when writing a msg to admin by using contact form on 'block-contact.php'
     // ----- show how many characters are left in textarea -----
     var text_min = 0;
     $('#message_msg_feedback').html(text_min + ' / 255');
@@ -77,7 +79,7 @@ $(document).ready(function(){
         $message_phone = $('input[name=message_phone]').val();
         $message_email = $('input[name=message_email]').val();
 
-        // to check if string only contains numbers
+        // to check if phone number string only contains numbers
         let isnum = /^\d+$/.test($message_phone);
         
         var $request = $.ajax({
@@ -184,6 +186,7 @@ $(document).ready(function(){
     // ----- ADMIN FUNCTIONS -----
 
     // ----- SHOW FORMS FOR INSERTING IN DB -----
+
     // show/hide 'change password' form  on 'admin-profile' page
     $(".change_password").click(function () {
         $("#change-password").slideToggle();
@@ -237,9 +240,11 @@ $(document).ready(function(){
         $(this).next(".message-msg").slideToggle();
         $(this).children(".arrow-down").toggle();
         $(this).children(".arrow-up").toggle();
+        // toggle these classes to add a little color to messages that are open
         $(this).toggleClass("open");
         $(this).toggleClass("close");
         $(this).removeClass("newmessage");
+        // add this class when msg has been clicked, so it does not show as 'new message'
         $(this).addClass("read");
 
         let $section = jQuery(this).closest("section");

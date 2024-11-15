@@ -18,9 +18,9 @@
 
         <?php
             // <!-- include() php components here -->
-            include("php-partials/blocks/block-us/block-us.php");
+            include("php-partials/blocks/block-extraone/block-extraone.php");
             include("php-partials/blocks/block-service-slider/block-service-slider.php");
-            include("php-partials/blocks/block-info/block-info.php");
+            include("php-partials/blocks/block-extratwo/block-extratwo.php");
             include("php-partials/blocks/block-gallery-slider/block-gallery-slider.php");
             include("php-partials/blocks/block-questions/block-questions.php");
         ?>

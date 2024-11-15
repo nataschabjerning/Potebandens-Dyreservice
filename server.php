@@ -53,6 +53,30 @@ contact
 - adress_postal_code (INT 100)
 - adress_city (VARCHAR 255)
 
+extraone
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- extra_visibility (VARCHAR 50)
+- extra_title (VARCHAR 100)------ NOT NULL
+- extra_subtitle (VARCHAR 100)
+- extra_text_one (VARCHAR 255)
+- extra_text_two (VARCHAR 255)
+- extra_text_three (VARCHAR 255)
+- extra_text_link (VARCHAR 100)
+- extra_link_text (VARCHAR 50)
+- extra_link_url (VARCHAR 255)
+
+extratwo
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- extra_visibility (VARCHAR 50)
+- extra_title (VARCHAR 100)------ NOT NULL
+- extra_subtitle (VARCHAR 100)
+- extra_text_one (VARCHAR 255)
+- extra_text_two (VARCHAR 255)
+- extra_text_three (VARCHAR 255)
+- extra_text_link (VARCHAR 100)
+- extra_link_text (VARCHAR 50)
+- extra_link_url (VARCHAR 255)
+
 gallery
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
 - image_link (VARCHAR 255)  ------ NOT NULL

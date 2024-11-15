@@ -54,6 +54,7 @@
     }
 }
 
+/* div class that is included in block-info, block-questions, block-us */
 .index-block {
     background-image: linear-gradient(
             to bottom,
@@ -88,7 +89,7 @@
         font-size: .8rem;
     }
 }
-/* span * inside class .span */
+/* span '*' inside class .span */
 span {
     color: red;
     font-weight: 900;
@@ -106,7 +107,7 @@ span {
         font-size: 1rem;
     }
 }
-/* class on admin pages that can update something in a db table */
+/* div on admin pages that tells how to update a field */
 .update-info {
     margin: 1rem 0;
     padding: .3rem;
@@ -171,7 +172,8 @@ span {
     }
 }
 
-/* class inside every block that is inlcluded on pages */
+/* div with class inside every block that is inlcluded on pages */
+/* to frame content */
 .container {
     max-width: 1140px;
     margin: 0 auto;
