@@ -36,6 +36,17 @@
 
                 <div class="website">
                     <div class="li">
+                        <a href="admin-index.php">  
+                            <div class="title">
+                                <h4>Forside</h4>
+                            </div>
+                            <hr>
+                            <div class="todo">
+                                <P>Her kan du ændre i tekstbokse der er på forsiden.</P>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="li">
                         <a href="admin-services.php">  
                             <div class="title">
                                 <h4>Ydelser</h4>

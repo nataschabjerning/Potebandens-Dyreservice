@@ -7,14 +7,13 @@
 
     include_once("connect.inc.php");
 
-    // get the image_id from delete message in script.js
-    $id = $_REQUEST['message_id'];
+    // get the service_id from delete rules in script.js
+    $id = $_REQUEST['extraone_id'];
 
     // Set the DELETE SQL data
-	$sql = "DELETE FROM inbox WHERE id='".$id."'";
-    unset($id);
+	$sql = "DELETE FROM extraone WHERE id='".$id."'";
 
-	// Process the query so section is deleted from table and db
+	// Process the query so row is deleted from table and db
 	if (!$conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
 	}

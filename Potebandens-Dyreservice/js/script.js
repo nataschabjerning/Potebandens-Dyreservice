@@ -235,6 +235,18 @@ $(document).ready(function(){
         $(this).children("#show_add_rule").toggle();
         $(this).children("#hide_add_rule").toggle();
     });
+    // show/hide 'add extraone' form on 'admin-index' page
+    $(".add_extraone").click(function () {
+        $("#new_extraone").slideToggle();
+        $(this).children("#show_add_extraone").toggle();
+        $(this).children("#hide_add_extraone").toggle();
+    });
+    // show/hide 'add extratwo' form on 'admin-index' page
+    $(".add_extratwo").click(function () {
+        $("#new_extratwo").slideToggle();
+        $(this).children("#show_add_extratwo").toggle();
+        $(this).children("#hide_add_extratwo").toggle();
+    });
     // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
         $(this).next(".message-msg").slideToggle();
@@ -928,6 +940,84 @@ $(document).ready(function(){
         });
     })
 
+    // ---------- EXTRA ONE ----------
+    $('.delete-extraone').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID
+        var $extraoneId   = $section.attr('attr-extraone_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne ekstra blok 1?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen blok blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteextraone.inc.php',
+                // data to send
+                data: {
+                    extraone_id: $extraoneId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Blok " + $extraoneId + " slettet!");
+            })
+        });
+    })
+
+    // ---------- EXTRA TWO ----------
+    $('.delete-extratwo').click(function() {
+
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID
+        var $extratwoId   = $section.attr('attr-extratwo_id');
+
+        // show confirmaiton box
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne ekstra blok 2?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_delete').click(function(){ 
+            $("#confirmation-delete").hide();
+            errorAlert("Ingen blok blev slettet!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_delete').click(function(){
+            // Ajax config
+            $.ajax({
+                //we are using GET method to get data from server side
+                type: "GET",
+                // get the url to send to, when btn is clicked
+                url: 'includes/deleteextratwo.inc.php',
+                // data to send
+                data: {
+                    extratwo_id: $extratwoId
+                }
+            })
+            .done(function() {
+                // remove the table row
+                $section.remove();
+                $("#confirmation-delete").hide();
+                // alert that the row has been successfully removed
+                successAlert("Blok " + $extratwoId + " slettet!");
+            })
+        });
+    })
+
     // ---------- IMAGE ----------
     $('.delete-image').click(function() {
 
@@ -954,7 +1044,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteimage.inc.php',
+                url: 'includes/deletegalleryimage.inc.php',
                 // data to send
                 data: {
                     image_id: imageId

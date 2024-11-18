@@ -67,7 +67,7 @@
 ?>
 
 <div id="insert-image">
-    <form action="includes/uploadimage.inc.php" method="post" enctype="multipart/form-data">
+    <form action="includes/uploadgalleryimage.inc.php" method="post" enctype="multipart/form-data">
         <h2>Tilføj Billede</h2>
         <p class="span"><span>*</span> SKAL udfyldes</p>
         <div class="addimageform">

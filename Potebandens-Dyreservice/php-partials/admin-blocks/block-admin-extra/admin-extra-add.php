@@ -1,19 +1,18 @@
-<div class="block upload-image">
+<div class="block admin-extra-add">
     <div class="container">
-
-        <div class="upload-image-messages">
+        <div class="upload-extra-messages">
             <?php
                 if (isset($_GET["error"])) {
-                    // no file was selected to upload
-                    if ($_GET["error"] == "nofilewasselected") {
-                        echo "<div class='error'>";
-                        echo "<p class='caption'>- Ingen fil er valgt. Vælg en fil og prøv igen</p>";
-                        echo "</div>";
-                    }
                     // no file was selected to upload
                     if ($_GET["error"] == "altempty") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst. Husk at udfylde dette felt og prøv igen</p>";
+                        echo "</div>";
+                    }
+                    // no title input
+                    if ($_GET["error"] == "titleempty") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Der er ikke skrevet en titel. Husk at udfylde dette felt og prøv igen</p>";
                         echo "</div>";
                     }
                     // not matching the allowed file types
@@ -34,34 +33,38 @@
                         echo "<p class='caption'>- Der skete en fejl da filen skulle indsættes i databasen. Prøv igen</p>";
                         echo "</div>";
                     }
-                    // failed to insert into database
-                    if ($_GET["error"] == "imagealreadyuploaded") {
-                        echo "<div class='error'>";
-                        echo "<p class='caption'>- Det ser ud til at billedet deler filnavn med et billede der allerede er uploaded</p>";
-                        echo "<p class='caption'>- Omdøb billedfilen, eller tjek om billedet allerede er i galleriet</p>";
-                        echo "</div>";
-                    }
                 }
                 // if image was uploaded successfully
-                if (isset($_GET["imageuploaded"])) {
+                if (isset($_GET["extraoneuploaded"])) {
                     echo "<script type='text/javascript'>";
-                    // show alert box and redirect user to gallery when 'ok' is clicked
-                    echo "alert('Billede er tilføjet!');window.location.href = 'admin-gallery.php';";
+                    // show alert box and redirect user to admin index when 'ok' is clicked
+                    echo "alert('Blok 1 er tilføjet!');window.location.href = 'admin-index.php';";
                     echo "</script>";
                 }
             ?>
         </div>
 
-        <div class="new_images">
-            <div class="add_image">
-                <div id="show_add_image">Tilføj Billede</div>
-                <div id="hide_add_image">Skjul Formular</div>
-            </div>
+        <div class="buttons">
+            <div class="one">
+                <div class="add_extraone">
+                    <div id="show_add_extraone">Tilføj Ekstra Blok 1</div>
+                    <div id="hide_add_extraone">Skjul formular</div>
+                </div>
+                <?php
+                    include("includes/uploadextraone.inc.php");
+                ?>
+            </div> <!-- .one end -->
 
-            <?php
-                include("includes/uploadgalleryimage.inc.php");
-            ?>
-        </div>
+            <div class="two">
+                <div class="add_extratwo">
+                    <div id="show_add_extratwo">Tilføj Ekstra Blok 2</div>
+                    <div id="hide_add_extratwo">Skjul formular</div>
+                </div>
+                <?php
+                    include("includes/uploadextratwo.inc.php");
+                ?>
+            </div> <!-- .two end -->
+        </div> <!-- .buttons end -->
 
-    </div>
-</div>
+    </div> <!-- .container end -->
+</div> <!-- .admin-extra-add end -->
