@@ -14,8 +14,6 @@
     <div class="all-users">
         <div class="container">
 
-            <h2 class="admin-titles">Oversigt over alle brugere</h2>
-
             <div class="display-users">
                 <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
 

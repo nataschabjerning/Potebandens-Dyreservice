@@ -1,5 +1,6 @@
 <div class="block form">
     <div class="container">
+    <h2 class="admin-titles">Oversigt over kontaktmuligheder</h2>
     <div class="buttons">
         <div class="c">
             <div class="add_contact">

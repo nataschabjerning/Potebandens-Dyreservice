@@ -241,11 +241,23 @@ $(document).ready(function(){
         $(this).children("#show_add_extraone").toggle();
         $(this).children("#hide_add_extraone").toggle();
     });
+    // show/hide 'admin-extraone' blocks on 'admin-index' page
+    $(".admin_extraone").click(function () {
+        $(".admin-extraone").slideToggle();
+        $(this).children("#show_admin_extraone").toggle();
+        $(this).children("#hide_admin_extraone").toggle();
+    });
     // show/hide 'add extratwo' form on 'admin-index' page
     $(".add_extratwo").click(function () {
         $("#new_extratwo").slideToggle();
         $(this).children("#show_add_extratwo").toggle();
         $(this).children("#hide_add_extratwo").toggle();
+    });
+    // show/hide 'admin-extratwo' blocks on 'admin-index' page
+    $(".admin_extratwo").click(function () {
+        $(".admin-extratwo").slideToggle();
+        $(this).children("#show_admin_extratwo").toggle();
+        $(this).children("#hide_admin_extratwo").toggle();
     });
     // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
@@ -641,6 +653,138 @@ $(document).ready(function(){
         });
     })
 
+    // ---------- EXTRA ONE ----------
+    $('.update-extraone').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID from section attr class
+        var $extraoneId   = $section.attr('attr-extraone_id');
+
+        // Get inputs from extraone
+        let $extra_visibility = $section.find('.extra_visibility').val();
+        let $extra_title = $section.find('.extra_title').val();
+        let $extra_subtitle = $section.find('.extra_subtitle').val();
+        let $extra_text_one = $section.find('.extra_text_one').val();
+        let $extra_text_two = $section.find('.extra_text_two').val();
+        let $extra_text_three = $section.find('.extra_text_three').val();
+        let $extra_text_link = $section.find('.extra_text_link').val();
+        let $extra_link_text = $section.find('.extra_link_text').val();
+        let $extra_link_url = $section.find('.extraone_link_url').val();
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen blok blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateextraone.inc.php',
+                // data to send
+                data: {
+                    extraone_id: $extraoneId,
+                    extra_visibility: $extra_visibility,
+                    extra_title: $extra_title,
+                    extra_subtitle: $extra_subtitle,
+                    extra_text_one: $extra_text_one,
+                    extra_text_two: $extra_text_two,
+                    extra_text_three: $extra_text_three,
+                    extra_text_link: $extra_text_link,
+                    extra_link_text: $extra_link_text,
+                    extra_link_url: $extra_link_url
+                },
+            })
+            .done(function() {
+                // if one or more fields is empty
+                if(!$extra_title) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    successAlert("Blok 1 med ID " + $extraoneId + " opdateret!");
+                }
+            })  
+        });
+    })
+
+    // ---------- EXTRA TWO ----------
+    $('.update-extratwo').click(function() {
+
+        // select the closest section to the clicked update button
+        let $section  = jQuery(this).closest("section");
+        // get the contact ID from section attr class
+        var $extratwoId   = $section.attr('attr-extratwo_id');
+
+        // Get inputs from extratwo
+        let $extra_visibility = $section.find('.extra_visibility').val();
+        let $extra_title = $section.find('.extra_title').val();
+        let $extra_subtitle = $section.find('.extra_subtitle').val();
+        let $extra_text_one = $section.find('.extra_text_one').val();
+        let $extra_text_two = $section.find('.extra_text_two').val();
+        let $extra_text_three = $section.find('.extra_text_three').val();
+        let $extra_text_link = $section.find('.extra_text_link').val();
+        let $extra_link_text = $section.find('.extra_link_text').val();
+        let $extra_link_url = $section.find('.extratwo_link_url').val();
+
+        // show confirmaiton box
+        confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
+
+        // CONFIRMATION
+        // if cancel_delete (no)
+        $('.cancel_update').click(function() {
+            $("#confirmation-update").hide();
+            errorAlert("Ingen blok blev opdateret!");
+        });
+        // if confirm_delete (yes)
+        $('.confirm_update').click(function() {
+            // Ajax config
+            var $request = $.ajax({
+                method: "POST",
+                // get the url to send to, when btn is clicked
+                url: 'includes/updateextratwo.inc.php',
+                // data to send
+                data: {
+                    extratwo_id: $extratwoId,
+                    extra_visibility: $extra_visibility,
+                    extra_title: $extra_title,
+                    extra_subtitle: $extra_subtitle,
+                    extra_text_one: $extra_text_one,
+                    extra_text_two: $extra_text_two,
+                    extra_text_three: $extra_text_three,
+                    extra_text_link: $extra_text_link,
+                    extra_link_text: $extra_link_text,
+                    extra_link_url: $extra_link_url
+                },
+            })
+            .done(function() {
+                // if 'title' field is empty
+                if (!$extra_title) {
+                    $request.abort();
+                    $("#confirmation-update").hide();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
+                }
+                else {
+                    // if all checks have cleared
+                    // hide confirmation box
+                    $("#confirmation-update").hide();
+                    successAlert("Blok 2 med ID " + $extratwoId + " opdateret!");
+                }
+            })  
+        });
+    })
+
     // ---------- OPENINGHOURS ----------
     $('.update-openinghours').click(function() {
 
@@ -974,7 +1118,7 @@ $(document).ready(function(){
                 $section.remove();
                 $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                successAlert("Blok " + $extraoneId + " slettet!");
+                successAlert("Blok 1 med ID " + $extraoneId + " slettet!");
             })
         });
     })
@@ -1013,7 +1157,7 @@ $(document).ready(function(){
                 $section.remove();
                 $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                successAlert("Blok " + $extratwoId + " slettet!");
+                successAlert("Blok 2 med ID " + $extratwoId + " slettet!");
             })
         });
     })

@@ -1,5 +1,7 @@
 <div class="block admin-rules-add">
     <div class="container">
+        <hr>
+        <h2 class="admin-titles">Regler og retningslinjer</h2>
         <div class="form">
             <div class="add_rule">
                 <div id="show_add_rule">Tilføj Regler</div>

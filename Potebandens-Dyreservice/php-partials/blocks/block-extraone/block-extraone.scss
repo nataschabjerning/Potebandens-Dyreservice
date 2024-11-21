@@ -1,14 +1,41 @@
 .extraone {
-    font-weight: 600;
+    // font-weight: 600;
     text-align: center;
-    padding: 6rem 0;
+    padding: 4rem 0;
     text-shadow: 1px 1px 1px rgb(32, 32, 32);
     @media (max-height: 800px) {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     .container {
+        /* if extra_visibility is set to 'yes' or 'choose' in db table */
+        /* - add this class and show div */
+        .displayblock {
+            display: block;
+        }
+        /* if extra_visibility is set to 'no' in db table */
+        /* - add this class and do not show div */
+        .displaynone {
+            display: none;
+        }
         .extra-content {
+            padding: 2rem 0;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            /* if extra_image is not inserted into db table */
+            /* - add this class and display as block */
+            .extra-image-nogrid {
+                display: block;
+            }
+            /* if extra_image is inserted into db table */
+            /* - add this class and display in grid */
+            .extra-image-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                // RESPONSIVE
+            }
             .extra-text {
+                height: fit-content;
                 h1 {
                     font-size: 2.5rem;
                     margin-bottom: 2rem;
@@ -19,7 +46,11 @@
                         font-size: 1.8rem;
                     }
                 }
-                p, .a {
+                h2 {
+                    margin-bottom: 1rem;
+                }
+                p {
+                    margin: 0 0 1rem;
                     font-size: 1.5rem;
                     @media (max-width: 1024px) {
                         font-size: 1.3rem;
@@ -29,8 +60,20 @@
                     display: flex;
                     justify-content: center;
                     gap: .5rem;
+                    p {
+                        font-size: 1.2rem;
+                        margin: 1rem 0 0;
+                        @media (max-width: 1024px) {
+                            font-size: 1rem;
+                        }
+                    }
                     a {
+                        font-size: 1.2rem;
+                        margin: 1rem 0 0;
                         text-transform: uppercase;
+                        @media (max-width: 1024px) {
+                            font-size: 1rem;
+                        }
                     }
                     a:hover {
                         text-decoration: underline;
@@ -38,7 +81,12 @@
                 }
             }
             .extra-image {
-
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @media (max-width: 900px) {
+                    height: 400px;
+                }
             }
         }
     }

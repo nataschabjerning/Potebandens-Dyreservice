@@ -15,8 +15,6 @@
 
         <p class="update-info">Vil du opdatere én eller flere regler?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
 
-        <h2 class="admin-titles">Regler og retningslinjer</h2>
-
         <div class="all-rules">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <section attr-rules_id="<?php echo $row['id']; ?>">

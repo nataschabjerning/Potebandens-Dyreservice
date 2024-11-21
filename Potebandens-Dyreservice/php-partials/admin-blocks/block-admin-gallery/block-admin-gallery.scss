@@ -1,5 +1,4 @@
 .admin-gallery {
-    padding-top: 0;
     .container {
         .admin-titles {
             margin-top: 2rem;
@@ -9,7 +8,7 @@
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: auto;
             gap: 1rem;
-            margin: 2rem 0 0;
+            margin: 0;
             @media (max-width: 1024px) {
                 grid-template-columns: repeat(2, 1fr);
             }

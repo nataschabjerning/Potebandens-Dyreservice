@@ -5,7 +5,7 @@
         <h1>Spørgsmål?</h1>
 
         <div class="end-content">
-            <h2>Har du spørgsmål om vores ydelser, åbningstider eller noget helt andet?</h2>
+            <h2>Har du spørgsmål om vores ydelser, åbningstider eller noget helt tredje?</h2>
             <h3>Så kan du kontakte os via den metode du foretrækker. Skriv til os via vores kontaktformular, eller kontakt en medarbejder direkte på telefon eller email.</h3>
         </div>
         

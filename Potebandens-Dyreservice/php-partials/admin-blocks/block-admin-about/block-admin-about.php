@@ -12,6 +12,8 @@
 <div class="block admin-about">
     <div class="container">
 
+        <h2 class="admin-titles">'Om Mig' Blokke</h2>
+
         <?php
             // add button and form to upload new 'about' block
             include("php-partials/admin-blocks/block-admin-upload-about/block-admin-upload-about.php");
@@ -20,8 +22,6 @@
         <div class="about-blocks">
 
             <p class="update-info">Vil du opdatere info i en af boksene?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
-
-            <h2 class="admin-titles">'Om Mig' Blokke</h2>
 
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <?php if (!empty($row['id'])) { ?>
