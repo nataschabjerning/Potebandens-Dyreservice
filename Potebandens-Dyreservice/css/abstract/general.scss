@@ -54,28 +54,62 @@
     }
 }
 
-/* div class that is included in block-info, block-questions, block-us */
+/* div class that is included in block-extraone, block-extratwo, block-questions */
 .index-block {
-    background-image: linear-gradient(
-            to bottom,
-            rgba(63, 72, 204, 1) 0%,
-            rgba(63, 72, 204, .8) 3%,
-            rgba(63, 72, 204, .6) 6%,
-            rgba(63, 72, 204, .4) 9%,
-            rgba(63, 72, 204, .2) 12%,
-            rgba(255, 255, 255, .9) 15%,
-            rgba(255, 255, 255, .9) 85%,
-            rgba(63, 72, 204, .2) 88%,
-            rgba(63, 72, 204, .4) 91%,
-            rgba(63, 72, 204, .6) 94%,
-            rgba(63, 72, 204, .8) 97%,
-            rgba(63, 72, 204, 1) 100%),
-            url('../../../Images/backgrounds/allpaws1.png'
-        );
-        background-size: contain;
-        color: rgba(63, 72, 204, 1);
-    a {
-        color: rgba(63, 72, 204, 1);
+    background: linear-gradient(
+        to bottom, 
+        rgb(236, 217, 174) 0%,
+        rgba(233, 213, 171, 0.8) 10%,
+        rgba(226, 207, 166, .6) 35%,
+        rgba(226, 207, 166, .4) 50%,
+        rgba(226, 207, 166, .2) 70%,
+        rgba(226, 207, 166, 0) 90%,
+        rgba(226, 207, 166, 0) 100%
+    );
+    border: 2px solid rgb(86, 90, 77);
+    background-size: contain;
+    text-align: center;
+    .extra-border {
+        border: 10px solid rgb(147, 153, 131);
+        .extra-border-inner {
+            padding: 4rem 0;
+            border: 1px solid rgb(86, 90, 77);
+            @media (max-height: 800px) {
+                padding: 3rem 0;
+            }
+            h2 {
+                font-size: 2rem;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 1px rgb(32, 32, 32);
+                margin: 0 0 2rem;
+                @media (max-width: 768px) {
+                    font-size: 1.8rem;
+                }
+            }
+            h3, .a {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                @media (max-width: 1024px) {
+                    font-size: 1.3rem;
+                }
+            }
+            p {
+                margin: 0 0 1rem;
+                font-size: 1.3rem;
+                @media (max-width: 1024px) {
+                    font-size: 1rem;
+                }
+            }
+            a {
+                font-size: 1rem;
+                margin: 2rem auto 0;
+                text-transform: uppercase;
+                color: rgba(63, 72, 204, 1);
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 

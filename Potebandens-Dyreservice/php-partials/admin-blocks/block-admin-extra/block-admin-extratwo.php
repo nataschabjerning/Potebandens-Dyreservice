@@ -15,7 +15,7 @@
 
         <div class="two">
             <div class="two-button">
-                <h4 class="position">Alle blokke <u>under</u> slideshow af ydelser</h4>
+                <h2 class="admin-titles">Alle blokke <u>under</u> slideshow af ydelser</h2>
                 <div class="admin_extratwo">
                     <div id="show_admin_extratwo">
                         <i class="fa fa-chevron-down"></i>
@@ -71,7 +71,7 @@
                             </div> <!-- .extra_id end -->
                             <div class="extra-visibility border-left border-right green-border-bottom">
                                 <label>Skal blokken vises på forsiden?</label>
-                                <div class="input">
+                                <div class="input border-left">
                                     <select class="extra_visibility">
                                         <option value="<?php echo $row["extra_visibility"]; ?>" selected>--- <?php echo $extratwo_visibility; ?> ---</option>
                                         <option value="yes">Ja</option>
@@ -80,18 +80,24 @@
                                 </div>
                             </div> <!-- .extra-visibility end -->
                             <div class="extratwo-top green-border-bottom">
-                                <div class="extratwo-left">
-                                    <div class="extra-image">
-                                        <div class="input">
-                                            <?php if (!empty($row['extra_image'])) { ?>
-                                                <img src="includes/extra-images/<?php echo $row['extra_image']; ?>">
-                                            <?php }
-                                            else {
-                                                echo "Intet billede";
-                                            }?>
-                                        </div>
+                                <div class="extratwo-left border-left">
+                                <div class="extra-image border-bottom padding-top" style="<?php if (!empty($row['extra_image'])) { ?>
+                                        background-image: url('includes/extra-images/<?php echo $row['extra_image']?>');
+                                    <?php }
+                                    else { ?>
+                                        background-image: url('../../../../Images/backgrounds/indexnoimg.jpg');
+                                    <?php } ?>">
+                                        <!-- if no image is set * -->
+                                        <?php if (empty($row['extra_image'])) { ?>
+                                            <!-- * show label in middle of div -->
+                                            <label class="label-noimg">Intet Billede</label>
+                                        <?php }
+                                        // <!-- if image is set * -->
+                                        else { ?>
+                                            <!-- * show no label -->
+                                        <?php } ?>
                                     </div> <!-- .extra-image end -->
-                                    <div class="extra-titles border-left padding-top">
+                                    <div class="extra-titles padding-top">
                                         <div class="extra-title border-bottom">
                                             <label>Titel</label>
                                             <div class="input">
@@ -106,20 +112,20 @@
                                         </div> <!-- .extra-subtitle end -->
                                     </div> <!-- .extra-titles end -->
                                 </div> <!-- .extratwo-left end -->
-                                <div class="extratwo-right">
-                                    <div class="extra-text_one border-bottom border-right padding-top">
+                                <div class="extratwo-right border-black-left border-right">
+                                    <div class="extra-text_one border-bottom padding-top">
                                         <label>Tekst 1</label>
                                         <div class="input">
                                             <textarea class="extra_text_one" placeholder="Tekst 1"><?php echo $row['extra_text_one']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_one end -->
-                                    <div class="extra-text_two border-right border-bottom padding-top">
+                                    <div class="extra-text_two border-bottom padding-top">
                                         <label>Tekst 2</label>
                                         <div class="input">
                                             <textarea class="extra_text_two" placeholder="Tekst 2"><?php echo $row['extra_text_two']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_two end -->
-                                    <div class="extra-text_three border-right padding-top">
+                                    <div class="extra-text_three padding-top">
                                         <label>Teskt 3</label>
                                         <div class="input">
                                             <textarea class="extra_text_three" placeholder="Tekst 3"><?php echo $row['extra_text_three']?></textarea>
@@ -128,23 +134,15 @@
                                 </div> <!-- .extratwo-right end -->
                             </div> <!-- .extratwo-top end -->
                             <div class="extratwo-bottom border-left border-right">
-                                <div class="extra_link_div padding-top green-border-bottom">
-                                    <div class="extra-text_link border-right">
-                                        <label>Tekst sammen med link</label>
-                                        <div class="input">
-                                            <input type="text" value="<?php echo $row['extra_text_link']?>" class="extra_text_link">
-                                        </div>
-                                    </div> <!-- .extra-text_link end -->
-                                    <div class="extra-link_text">
-                                        <label>Tekst der bliver til link</label>
-                                        <div class="input">
-                                            <input type="text" value="<?php echo $row['extra_link_text']?>" class="extra_link_text">
-                                        </div>
-                                    </div> <!-- .extra-link_text end -->
-                                </div> <!-- .extra_link_div end -->
+                                <div class="extra-text_link border-bottom">
+                                    <label>Tekst der bliver til link</label>
+                                    <div class="input border-left">
+                                        <input type="text" value="<?php echo $row['extra_text_link']?>" class="extra_text_link">
+                                    </div>
+                                </div> <!-- .extra-text_link end -->
                                 <div class="extra-link_url green-border-bottom">
                                     <label>Hvilken side skal linket føre hen til?</label>
-                                    <div class="input">
+                                    <div class="input border-left">
                                         <select class="extratwo_link_url">
                                             <option value="<?php echo $row['extra_link_url']?>" selected>--- <?php echo $extratwo_name; ?> ---</option>
                                             <option value="index.php">Forside</option>

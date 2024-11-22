@@ -16,7 +16,6 @@
     $extra_text_two     = $_REQUEST['extra_text_two'];
     $extra_text_three   = $_REQUEST['extra_text_three'];
     $extra_text_link    = $_REQUEST['extra_text_link'];
-    $extra_link_text    = $_REQUEST['extra_link_text'];
     $extra_link_url     = $_REQUEST['extra_link_url'];
 
     // if not filled out
@@ -33,7 +32,6 @@
     extra_text_two='$extra_text_two',
     extra_text_three='$extra_text_three',
     extra_text_link='$extra_text_link',
-    extra_link_text='$extra_link_text',
     extra_link_url='$extra_link_url'
     WHERE id='$extraone_id'";
 

@@ -16,7 +16,6 @@
         $extra_text_two = $_POST['extratwo_text_two_form'];
         $extra_text_three = $_POST['extratwo_text_three_form'];
         $extra_text_link = $_POST['extratwo_text_link_form'];
-        $extra_link_text = $_POST['extratwo_link_text_form'];
         $extra_link_url = $_POST['extratwo_link_url_form'];
 
         $targetFilePath = $targetDir . $extra_image;
@@ -52,7 +51,7 @@
         }
 
         // Insert all values into database (even if null)
-        $insert = $conn->query("INSERT INTO extratwo (extra_image, extra_image_alt, extra_visibility, extra_title, extra_subtitle, extra_text_one, extra_text_two, extra_text_three, extra_text_link, extra_link_text, extra_link_url) VALUES ('".$extra_image."', '".$extra_image_alt."', '".$extra_visibility."', '".$extra_title."', '".$extra_subtitle."', '".$extra_text_one."', '".$extra_text_two."', '".$extra_text_three."', '".$extra_text_link."', '".$extra_link_text."', '".$extra_link_url."')");
+        $insert = $conn->query("INSERT INTO extratwo (extra_image, extra_image_alt, extra_visibility, extra_title, extra_subtitle, extra_text_one, extra_text_two, extra_text_three, extra_text_link, extra_link_url) VALUES ('".$extra_image."', '".$extra_image_alt."', '".$extra_visibility."', '".$extra_title."', '".$extra_subtitle."', '".$extra_text_one."', '".$extra_text_two."', '".$extra_text_three."', '".$extra_text_link."', '".$extra_link_url."')");
 
         // IF ALL CHECKS CLEAR
         if ($insert) {
@@ -125,17 +124,11 @@
                 </div>
             </div> <!-- .extra-text_three end -->
             <div class="extra-text_link">
-                <label>Tekst sammen med link</label>
+                <label>Tekst der bliver til link</label>
                 <div class="input">
                     <input type="text" class="extratwo_text_link" name="extratwo_text_link_form">
                 </div>
             </div> <!-- .extra-text_link end -->
-            <div class="extra-link_text">
-                <label>Tekst der bliver til link</label>
-                <div class="input">
-                    <input type="text" name="extratwo_link_text_form" placeholder="1-2 ord">
-                </div>
-            </div> <!-- .extra-link_text end -->
             <div class="extra-link_url">
                 <label>Hvor skal linket føre hen?</label>
                 <div class="input">

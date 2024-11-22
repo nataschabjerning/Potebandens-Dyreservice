@@ -1,61 +1,17 @@
 .end {
-    background: linear-gradient(
-        to bottom,
-        rgba(252, 106, 101, 1) 0%,
-        rgba(252, 106, 101, .8) 3%,
-        rgba(252, 106, 101, .6) 6%,
-        rgba(252, 106, 101, .4) 9%,
-        rgba(252, 106, 101, .2) 12%,
-        rgba(255, 255, 255, .9) 15%,
-        rgba(255, 255, 255, .9) 85%,
-        rgba(252, 106, 101, .2) 88%,
-        rgba(252, 106, 101, .4) 91%,
-        rgba(252, 106, 101, .6) 94%,
-        rgba(252, 106, 101, .8) 97%,
-        rgba(252, 106, 101, 1) 100%),
-        url('../../../../Images/backgrounds/allpaws1.png'
-    );
-    color: rgba(213, 37, 30, 1);
-    text-align: center;
-    padding: 2rem 0;
-    text-shadow: 1px 1px 1px rgb(32, 32, 32);
-    .container {
-        h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            @media (max-width: 1024px) {
-                font-size: 2rem;
+    padding: 0;
+    .extra-border {
+        .extra-border-inner {
+            padding: 2rem 0;
+            .container {
+                h2 {
+                    color: rgba(213, 37, 30, 1);
+                    margin: 0 0 1rem;
+                }
+                a {
+                    color: rgba(213, 37, 30, 1);
+                }
             }
-            @media (max-width: 768px) {
-                font-size: 1.8rem;
-            }
-        }
-        h2, .a {
-            font-size: 1.5rem;
-            @media (max-width: 1024px) {
-                font-size: 1.3rem;
-            }
-        }
-        h3 {
-            font-size: 1.2rem;
-            @media (max-width: 1024px) {
-                font-size: 1rem;
-            }
-        }
-        .a {
-            display: flex;
-            justify-content: center;
-            gap: .5rem;
-            a {
-                text-transform: uppercase;
-                color: rgba(213, 37, 30, 1);
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        }
-        .end-content {
-            margin: 1rem 0;
         }
     }
 }

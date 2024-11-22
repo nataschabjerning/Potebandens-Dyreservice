@@ -1,11 +1,5 @@
 .extratwo {
-    // font-weight: 600;
-    text-align: center;
-    padding: 4rem 0;
-    text-shadow: 1px 1px 1px rgb(32, 32, 32);
-    @media (max-height: 800px) {
-        padding: 3rem 0;
-    }
+    padding: 0;
     .container {
         /* if extra_visibility is set to 'yes' or 'choose' in db table */
         /* - add this class and show div */
@@ -19,8 +13,8 @@
         }
         .extra-content {
             padding: 2rem 0;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
+            border-top: 2px dotted rgb(139, 129, 103);
+            border-bottom: 2px dotted rgb(139, 129, 103);
             /* if extra_image is not inserted into db table */
             /* - add this class and display as block */
             .extra-image-nogrid {
@@ -40,51 +34,6 @@
                 background-size: cover;
                 @media (max-width: 900px) {
                     height: 400px;
-                }
-            }
-            .extra-text {
-                h1 {
-                    font-size: 2.5rem;
-                    margin-bottom: 2rem;
-                    @media (max-width: 1024px) {
-                        font-size: 2rem;
-                    }
-                    @media (max-width: 768px) {
-                        font-size: 1.8rem;
-                    }
-                }
-                h2 {
-                    margin-bottom: 1rem;
-                }
-                p {
-                    margin: 0 0 1rem;
-                    font-size: 1.5rem;
-                    @media (max-width: 1024px) {
-                        font-size: 1.3rem;
-                    }
-                }
-                .a {
-                    display: flex;
-                    justify-content: center;
-                    gap: .5rem;
-                    p {
-                        font-size: 1.2rem;
-                        margin: 1rem 0 0;
-                        @media (max-width: 1024px) {
-                            font-size: 1rem;
-                        }
-                    }
-                    a {
-                        font-size: 1.2rem;
-                        margin: 1rem 0 0;
-                        text-transform: uppercase;
-                        @media (max-width: 1024px) {
-                            font-size: 1rem;
-                        }
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }
                 }
             }
         }

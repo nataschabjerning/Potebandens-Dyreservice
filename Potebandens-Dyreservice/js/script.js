@@ -669,7 +669,6 @@ $(document).ready(function(){
         let $extra_text_two = $section.find('.extra_text_two').val();
         let $extra_text_three = $section.find('.extra_text_three').val();
         let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_text = $section.find('.extra_link_text').val();
         let $extra_link_url = $section.find('.extraone_link_url').val();
 
         // show confirmaiton box
@@ -698,7 +697,6 @@ $(document).ready(function(){
                     extra_text_two: $extra_text_two,
                     extra_text_three: $extra_text_three,
                     extra_text_link: $extra_text_link,
-                    extra_link_text: $extra_link_text,
                     extra_link_url: $extra_link_url
                 },
             })
@@ -735,7 +733,6 @@ $(document).ready(function(){
         let $extra_text_two = $section.find('.extra_text_two').val();
         let $extra_text_three = $section.find('.extra_text_three').val();
         let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_text = $section.find('.extra_link_text').val();
         let $extra_link_url = $section.find('.extratwo_link_url').val();
 
         // show confirmaiton box
@@ -764,7 +761,6 @@ $(document).ready(function(){
                     extra_text_two: $extra_text_two,
                     extra_text_three: $extra_text_three,
                     extra_text_link: $extra_text_link,
-                    extra_link_text: $extra_link_text,
                     extra_link_url: $extra_link_url
                 },
             })

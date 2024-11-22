@@ -75,7 +75,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du rette/slette oplysninger om dig og/eller firmaet.</P>
+                                <P>Her kan du oprette, slette eller opdatere blokke, der indeholder billede og info om en person, eller firmaet.</P>
                             </div>
                         </a>
                     </div>

@@ -15,12 +15,7 @@
                 grid-template-columns: 1fr;
             }
             .image-card {
-                background-image: linear-gradient(
-                    to bottom,
-                    rgba(255, 255, 253, .9) 0%,
-                    rgba(255, 255, 255, 0.9) 100%),
-                    url('../../../../../Images/backgrounds/allepoter.png'
-                );
+                background-color: #ccd6bc;
                 background-position: center;
                 background-size: contain;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;

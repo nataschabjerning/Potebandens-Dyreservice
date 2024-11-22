@@ -24,61 +24,61 @@
                         <div class="bullet-points">
                             <div class="point">
                                 <?php if (!empty($row['rules_point_one'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_one']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_two'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_two']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_three'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_three']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_four'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_four']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_five'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_five']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_six'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_six']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_seven'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_seven']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_eight'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_eight']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_nine'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_nine']; ?></p>
                                 <?php } ?>
                             </div>
                             <div class="point">
                                 <?php if (!empty($row['rules_point_ten'])) { ?>
-                                    <img src="../../../../Images/backgrounds/redpaw.png" alt="">
+                                    <img src="../../../../Images/backgrounds/bulletpoint.png" alt="">
                                     <p><?php echo $row['rules_point_ten']; ?></p>
                                 <?php } ?>
                             </div>
