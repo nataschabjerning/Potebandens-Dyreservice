@@ -62,7 +62,6 @@ extraone
 - extra_text_two (VARCHAR 255)
 - extra_text_three (VARCHAR 255)
 - extra_text_link (VARCHAR 100)
-- extra_link_text (VARCHAR 50)
 - extra_link_url (VARCHAR 255)
 
 extratwo
@@ -74,7 +73,6 @@ extratwo
 - extra_text_two (VARCHAR 255)
 - extra_text_three (VARCHAR 255)
 - extra_text_link (VARCHAR 100)
-- extra_link_text (VARCHAR 50)
 - extra_link_url (VARCHAR 255)
 
 gallery
