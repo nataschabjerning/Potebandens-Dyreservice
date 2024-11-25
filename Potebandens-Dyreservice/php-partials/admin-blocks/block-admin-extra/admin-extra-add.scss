@@ -1,5 +1,8 @@
 .admin-extra-add {
+    /* remove padding form this .block */
     padding-bottom: 0;
+
+    /* if there is an error when uploading new extraone/extratwo block */
     .upload-extra-messages {
         width: 100%;
         .error {
@@ -11,9 +14,9 @@
             align-items: center;
             padding: .5rem 1rem;
             border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-            color: rgb(226, 3, 3);
-            border: 1px solid rgb(226, 3, 3);
+            box-shadow: #0000001a 0px 0px 50px 10px;
+            color: #e20303;
+            border: 1px solid #e20303;
             .blockextraone, .blockextratwo, .caption {
                 font-size: 1.2rem;
             }
@@ -22,6 +25,8 @@
             }
         }
     }
+
+    /* add buttons */
     .buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -34,10 +39,10 @@
                 margin: 0 auto;
                 width: fit-content;
                 cursor: pointer;
-                background-color: rgba(71, 143, 84, .8);
+                background-color: #478f54cc;
                 width: fit-content;
                 border-radius: 10px;
-                border: 1px solid rgba(71, 143, 84, 1);
+                border: 1px solid #478f54;
                 cursor: pointer;
                 #hide_add_extraone, #hide_add_extratwo {
                     display:none;
@@ -45,7 +50,7 @@
                     border-radius: 10px;
                     color: white;
                     font-weight: 600;
-                    outline: 1px solid rgb(213,37,30);
+                    outline: 1px solid #d5251e;
                 }
                 #show_add_extraone, #show_add_extratwo {
                     padding: .5rem 1rem;
@@ -54,14 +59,16 @@
                 }
             }
             .add_extraone:hover, .add_extratwo:hover {
-                background-color: rgba(71,143,84, 1);
+                background-color: #478f54;
             }
+
+            /* add forms */
             #new_extraone, #new_extratwo  {
                 display: none;
                 margin: 2rem auto 0;
                 padding: 2rem;
                 border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                box-shadow: #0000001a 0px 0px 50px 10px;
                 @media (max-width: 768px) {
                     padding: 1rem;
                 }
@@ -79,6 +86,8 @@
                             font-size: 1.3rem;
                         }
                     }
+
+                    /* text under h2 to explain where this block is shown on the front page */
                     .position {
                         margin-bottom: 2rem;
                         text-align: center;

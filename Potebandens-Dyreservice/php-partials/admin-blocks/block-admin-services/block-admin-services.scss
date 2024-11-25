@@ -8,10 +8,10 @@
                 border-bottom: 1px solid #3f48cc;
                 .add_service {
                     margin: 0 auto;
-                    background-color: rgba(71,143,84, .8);
+                    background-color: #478f54cc;
                     width: fit-content;
                     border-radius: 10px;
-                    border: 1px solid rgba(71,143,84, 1);
+                    border: 1px solid #478f54;
                     cursor: pointer;
                     #hide_add_form {
                         display:none;
@@ -19,23 +19,23 @@
                         border-radius: 10px;
                         color: white;
                         font-weight: 600;
-                        outline: 1px solid rgb(213,37,30);
+                        outline: 1px solid #d5251e;
                     }
                     #show_add_form {
                         padding: .5rem 1rem;
-                        color: white;
+                        color: #ffffff;
                         font-weight: 600;
                     }
                 }
                 .add_service:hover {
-                    background-color: rgba(71,143,84, 1);
+                    background-color: #478f54;
                 }
                 #new_service {
                     display: none;
                     margin-top: 2rem;
                     padding: 2rem;
                     border-radius: 10px;
-                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                    box-shadow: #0000001a 0px 0px 50px 10px;
                     @media (max-width: 768px) {
                         padding: 1rem;
                     }
@@ -65,7 +65,7 @@
                                 font-size: 1rem;
                                 padding: .5rem;
                                 height: 55px;
-                                border: 1px solid black;
+                                border: 1px solid #000000;
                                 border-radius: 5px;
                                 margin: .5rem 0;
                                 width: 100%;
@@ -116,7 +116,7 @@
                                         width: 10px;
                                         top: .5rem;
                                         left: 2px;
-                                        color: red;
+                                        color: #ff0000;
                                         font-weight: 900;
                                     }
                                 }
@@ -139,7 +139,7 @@
                     section {
                         padding: 1rem;
                         border-radius: 10px;
-                        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                        box-shadow: #0000001a 0px 0px 10px 5px;
                         .textareas {
                             position: relative;
                             outline: 1px dashed #478f54;
@@ -148,10 +148,10 @@
                             h4 {
                                 margin: 0 auto .3rem;
                                 width: fit-content;
-                                border-bottom: 1px solid black;
+                                border-bottom: 1px solid #000000;
                             }
                             .line {
-                                border-bottom: 4px solid rgb(2, 95, 2);
+                                border-bottom: 4px solid #025f02;
                                 padding-top: .5rem;
                             }
                             .service_id {
@@ -165,7 +165,7 @@
                                 }
                             }
                             .service_name {
-                                border-top: 1px solid black;
+                                border-top: 1px solid #000000;
                                 border-top-left-radius: 10px;
                                 border-top-right-radius: 10px;
                                 width: 100%;
@@ -180,38 +180,37 @@
                                 padding: .5rem;
                                 width: 100%;
                                 height: 80px;
-                                border-style: hidden;
-                                border-left: 1px solid rgb(212, 210, 210);
-                                border-right: 1px solid rgb(212, 210, 210);
+                                border-top: none;
+                                border-bottom: none;
                             }
                             .buttons {
                                 display: flex;
-                                border-bottom: 1px solid black;
+                                border-bottom: 1px solid #000000;
                                 border-radius: 10px;
                                 .update-service, .delete-service {
                                     width: 100%;
                                     button {
                                         margin: 0;
-                                        background-color: rgba(253, 156, 29, 1);
+                                        background-color: #fd9c1d;
                                         padding: .5rem;
                                         border-radius: 0;
                                         border-bottom-left-radius: 10px;
-                                        color: white;
+                                        color: #ffffff;
                                         font-weight: 600;
                                         cursor: pointer;
                                     }
                                     button:hover {
-                                        background-color: rgb(223, 138, 27);
+                                        background-color: #df8a1b;
                                     }
                                 }
                                 .delete-service {
                                     button {
                                         border-radius: 0;
                                         border-bottom-right-radius: 10px;
-                                        background-color: rgba(221, 0, 0, 1);
+                                        background-color: #dd0000;
                                     }
                                     button:hover {
-                                        background-color: rgb(199, 3, 3);
+                                        background-color: #c70303;
                                     }
                                 }
                             }

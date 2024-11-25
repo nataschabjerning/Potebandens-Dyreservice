@@ -1,10 +1,10 @@
 .service-slider-block {
-    background-color: rgba(71, 143, 84, .8);
+    background-color: #478f54cc;
     padding-bottom: 8rem;
     .container {
         .admin-titles {
             color: #d5251e;
-            text-shadow: 1px 1px 1px rgb(32, 32, 32);
+            text-shadow: 1px 1px 1px #202020;
         }
         .empty {
             h1 {
@@ -12,7 +12,7 @@
                 justify-content: center;
                 gap: .5rem;
                 a {
-                    color: #fff;
+                    color: #ffffff;
                     text-transform: uppercase;
                 }
                 a:hover {
@@ -60,7 +60,7 @@
                 .service-prev, .service-next {
                     margin: 0;
                     border: 1px solid #3a7545;
-                    background-color: rgba(63, 72, 204, .3);
+                    background-color: #3f48cc4d;
                     color: #3f48cc;
                     font-size: 1em;
                     font-weight: 200;
@@ -73,7 +73,7 @@
                     justify-content: center;
                 }
                 .service-prev:hover, .service-next:hover {
-                    background-color: rgba(63, 72, 204, .5);
+                    background-color: #3f48cc80;
                 }
             }
         }
@@ -90,14 +90,14 @@
             .slide {
                 background: linear-gradient(
                     to bottom,
-                    rgba(2, 2, 2, 0.3) 0%,
-                    rgba(0, 0, 0, 0.3) 100%
+                    #0202024d 0%,
+                    #0000004d 100%
                 );
                 min-height: 200px;
                 padding: 1rem 2rem;
                 text-align: center;
                 margin: 0 .3rem;
-                color: white;
+                color: #ffffff;
                 border-radius: 5px;
                 @media (max-width: 768px) {
                     min-height: 250px;

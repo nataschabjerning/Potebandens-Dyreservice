@@ -15,10 +15,10 @@
                 margin: 0 auto;
                 width: fit-content;
                 cursor: pointer;
-                background-color: rgba(71, 143, 84, .8);
+                background-color: #478f54cc;
                 width: fit-content;
                 border-radius: 10px;
-                border: 1px solid rgba(71, 143, 84, 1);
+                border: 1px solid #478f54;
                 cursor: pointer;
                 #hide_add_contact, #hide_add_openinghours {
                     display:none;
@@ -26,7 +26,7 @@
                     border-radius: 10px;
                     color: white;
                     font-weight: 600;
-                    outline: 1px solid rgb(213,37,30);
+                    outline: 1px solid #d5251e;
                 }
                 #show_add_contact, #show_add_openinghours {
                     padding: .5rem 1rem;
@@ -35,14 +35,14 @@
                 }
             }
             .add_contact:hover, .add_openinghours:hover {
-                background-color: rgba(71,143,84, 1);
+                background-color: #478f54;
             }
             #new_contact, #new_openinghours  {
                 display: none;
                 margin: 2rem auto 0;
                 padding: 2rem;
                 border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+                box-shadow: #0000001a 0px 0px 50px 10px;
                 @media (max-width: 768px) {
                     padding: 1rem;
                 }
@@ -67,7 +67,7 @@
                         .vacation-times, .ifclosed {
                             margin: 1rem 0;
                             padding: .5rem;
-                            border: 1px solid rgb(236, 126, 0);
+                            border: 1px solid #ec7e00;
                             p:first-of-type {
                                 text-align: center;
                                 margin: 0 0 .5rem;
@@ -84,7 +84,7 @@
                             display: grid;
                             grid-template-columns: 30% 1fr;
                             width: 100%;
-                            border-bottom: 1px solid black;
+                            border-bottom: 1px solid #000000;
                             margin: .5rem 0 0;
                             padding: .5rem 0;
                             align-items: center;
@@ -113,9 +113,8 @@
                                     height: 30px;
                                     font-size: 1rem;
                                     text-align: center;
-                                    border-style: hidden;
-                                    border-left: 1px solid rgb(212, 210, 210);
-                                    border-right: 1px solid rgb(212, 210, 210);
+                                    border-top: none;
+                                    border-bottom: none;
                                 }
                             }
                         }
@@ -137,7 +136,7 @@
                                 font-size: 1rem;
                                 padding: 1rem;
                                 height: 30px;
-                                border: 1px solid black;
+                                border: 1px solid #000000;
                                 border-radius: 5px;
                                 margin: .5rem 0;
                                 width: 100%;

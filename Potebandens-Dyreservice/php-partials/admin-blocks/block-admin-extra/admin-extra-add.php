@@ -1,6 +1,6 @@
 <div class="block admin-extra-add">
     <div class="container">
-        <h2 class="admin-titles">Oversigt over alle blokke på forsiden</h2>
+        <h2 class="admin-titles">Oversigt over alle ekstra blokke på forsiden</h2>
         <div class="upload-extra-messages">
             <?php
                 if (isset($_GET["error"])) {

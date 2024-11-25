@@ -86,7 +86,7 @@
                         <div id="openinghours">
                             <label>Hvilken ferieperiode</label>
                             <div class="input">
-                                <select id="vacationform">
+                                <select id="vacationform" class="border-left border-right">
                                     <option value="vælg" disabled selected>---- Vælg ----</option>
                                     <option value="Vinterferie">Vinterferie</option>
                                     <option value="Påskeferie">Påskeferie</option>
@@ -101,7 +101,7 @@
                         <div id="openinghours">
                             <label>Mandag</label>
                             <div class="input">
-                                <select id="mondayfromform">
+                                <select id="mondayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -118,7 +118,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="mondaytoform">
+                                <select id="mondaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -140,7 +140,7 @@
                         <div id="openinghours">
                             <label>Tirsdag</label>
                             <div class="input">
-                                <select id="tuesdayfromform">
+                                <select id="tuesdayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -157,7 +157,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="tuesdaytoform">
+                                <select id="tuesdaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -179,7 +179,7 @@
                         <div id="openinghours">
                             <label>Onsdag</label>
                             <div class="input">
-                                <select id="wednesdayfromform">
+                                <select id="wednesdayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -196,7 +196,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="wednesdaytoform">
+                                <select id="wednesdaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -218,7 +218,7 @@
                         <div id="openinghours">
                             <label>Torsdag</label>
                             <div class="input">
-                                <select id="thursdayfromform">
+                                <select id="thursdayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -235,7 +235,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="thursdaytoform">
+                                <select id="thursdaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -258,7 +258,7 @@
                         <div id="openinghours">
                             <label>Fredag</label>
                             <div class="input">
-                                <select id="fridayfromform">
+                                <select id="fridayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -275,7 +275,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="fridaytoform">
+                                <select id="fridaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -297,7 +297,7 @@
                         <div id="openinghours">
                             <label>Lørdag</label>
                             <div class="input">
-                                <select id="saturdayfromform">
+                                <select id="saturdayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -314,7 +314,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="saturdaytoform">
+                                <select id="saturdaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>
@@ -336,7 +336,7 @@
                         <div id="openinghours">
                             <label>Søndag</label>
                             <div class="input">
-                                <select id="sundayfromform">
+                                <select id="sundayfromform" class="border-left border-right">
                                     <option value="Fra" selected disabled>--- Fra ---</option>
                                     <option value="Lukket">Lukket</option>
                                     <option value="8:00">8:00</option>
@@ -353,7 +353,7 @@
                                     <option value="19:00">19:00</option>
                                     <option value="20:00">20:00</option>
                                 </select>
-                                <select id="sundaytoform">
+                                <select id="sundaytoform" class="border-left border-right">
                                     <option value="Til" selected disabled>--- Til ---</option>
                                     <option value="8:00">8:00</option>
                                     <option value="9:00">9:00</option>

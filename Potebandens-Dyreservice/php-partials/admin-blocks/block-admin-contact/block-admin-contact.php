@@ -40,28 +40,28 @@
                             <div class="name contact-box">
                                 <label>Navn</label>
                                 <div class="input">
-                                    <input type="text" value="<?php echo $row['name']?>" class="contact_name">
+                                    <input type="text" value="<?php echo $row['name']?>" class="contact_name border-left border-right">
                                 </div>
                             </div>
 
                             <div class="work_title contact-box">
                                 <label>Arbejdstitel</label>
                                 <div class="input">
-                                    <input type="text" value="<?php echo $row['work_title']?>" class="contact_work_title">
+                                    <input type="text" value="<?php echo $row['work_title']?>" class="contact_work_title border-left border-right">
                                 </div>
                             </div>
 
                             <div class="phone contact-box">
                                 <label>Mobil</label>
                                 <div class="input">
-                                    <input type="text" value="<?php echo $row['phone']?>" class="contact_phone">
+                                    <input type="text" value="<?php echo $row['phone']?>" class="contact_phone border-left border-right">
                                 </div>
                             </div>
 
                             <div class="email contact-box">
                                 <label>Email</label>
                                 <div class="input">
-                                    <input type="text" value="<?php echo $row['email']?>" class="contact_email">
+                                    <input type="text" value="<?php echo $row['email']?>" class="contact_email border-left border-right">
                                 </div>
                             </div>
 
@@ -97,7 +97,7 @@
                             <div class="day">
                                 <label>Hvilken ferieperiode</label>
                                 <div class="input">
-                                    <select class="vacation">
+                                    <select class="vacation border-left border-right">
                                         <option value="<?php echo $row['vacation'];?>" class="selected"><?php echo $row['vacation'];?></option>
                                         <option value="">Ingen ferie</option>
                                         <option value="Vinterferie">Vinterferie</option>
@@ -113,7 +113,7 @@
                             <div class="day">
                                 <h4>Mandag</h4>
                                 <div class="input">
-                                    <select class="mondayfrom">
+                                    <select class="mondayfrom border-left border-right">
                                         <option value="<?php echo $row['mondayfrom'];?>" class="selected"><?php echo $row['mondayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -130,7 +130,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="mondayto">
+                                    <select class="mondayto border-left border-right">
                                         <option value="<?php echo $row['mondayto'];?>" class="selected"><?php echo $row['mondayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -154,7 +154,7 @@
                             <div class="day">
                                 <h4>Tirsdag</h4>
                                 <div class="input">
-                                    <select class="tuesdayfrom">
+                                    <select class="tuesdayfrom border-left border-right">
                                         <option value="<?php echo $row['tuesdayfrom'];?>" class="selected"><?php echo $row['tuesdayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -171,7 +171,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="tuesdayto">
+                                    <select class="tuesdayto border-left border-right">
                                         <option value="<?php echo $row['tuesdayto'];?>" class="selected"><?php echo $row['tuesdayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -194,7 +194,7 @@
                             <div class="day">
                                 <h4>Onsdag</h4>
                                 <div class="input">
-                                    <select class="wednesdayfrom">
+                                    <select class="wednesdayfrom border-left border-right">
                                         <option value="<?php echo $row['wednesdayfrom'];?>" class="selected"><?php echo $row['wednesdayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -211,7 +211,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="wednesdayto">
+                                    <select class="wednesdayto border-left border-right">
                                         <option value="<?php echo $row['wednesdayto'];?>" class="selected"><?php echo $row['wednesdayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -234,7 +234,7 @@
                             <div class="day">
                                 <h4>Torsdag</h4>
                                 <div class="input">
-                                    <select class="thursdayfrom">
+                                    <select class="thursdayfrom border-left border-right">
                                         <option value="<?php echo $row['thursdayfrom'];?>" class="selected"><?php echo $row['thursdayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -251,7 +251,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="thursdayto">
+                                    <select class="thursdayto border-left border-right">
                                         <option value="<?php echo $row['thursdayto'];?>" class="selected"><?php echo $row['thursdayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -274,7 +274,7 @@
                             <div class="day">
                                 <h4>Fredag</h4>
                                 <div class="input">
-                                    <select class="fridayfrom">
+                                    <select class="fridayfrom border-left border-right">
                                         <option value="<?php echo $row['fridayfrom'];?>" class="selected"><?php echo $row['fridayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -291,7 +291,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="fridayto">
+                                    <select class="fridayto border-left border-right">
                                         <option value="<?php echo $row['fridayto'];?>" class="selected"><?php echo $row['fridayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -314,7 +314,7 @@
                             <div class="day">
                                 <h4>Lørdag</h4>
                                 <div class="input">
-                                    <select class="saturdayfrom">
+                                    <select class="saturdayfrom border-left border-right">
                                         <option value="<?php echo $row['saturdayfrom'];?>" class="selected"><?php echo $row['saturdayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -331,7 +331,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="saturdayto">
+                                    <select class="saturdayto border-left border-right">
                                         <option value="<?php echo $row['saturdayto'];?>" class="selected"><?php echo $row['saturdayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -354,7 +354,7 @@
                             <div class="day">
                                 <h4>Søndag</h4>
                                 <div class="input">
-                                    <select class="sundayfrom">
+                                    <select class="sundayfrom border-left border-right">
                                         <option value="<?php echo $row['sundayfrom'];?>" class="selected"><?php echo $row['sundayfrom'];?></option>
                                         <option value="Lukket">Lukket</option>
                                         <option value="8:00">8:00</option>
@@ -371,7 +371,7 @@
                                         <option value="19:00">19:00</option>
                                         <option value="20:00">20:00</option>
                                     </select>
-                                    <select class="sundayto">
+                                    <select class="sundayto border-left border-right">
                                         <option value="<?php echo $row['sundayto'];?>" class="selected"><?php echo $row['sundayto'];?></option>
                                         <option value="">Lukket</option>
                                         <option value="8:00">8:00</option>

@@ -86,31 +86,31 @@
                                     </div>
                                     <div class="line service_name">
                                         <h4>Ydelsens Navn</h4>
-                                        <textarea name="service_name" id="service_name"><?php echo $row['service_name']?></textarea>
+                                        <textarea class="border-left border-right" name="service_name" id="service_name"><?php echo $row['service_name']?></textarea>
                                     </div>
                                     <div class="line service_short_description">
                                         <h4>Kort beskrivelse</h4>
-                                        <textarea name="service_short_description" id="service_short_description"><?php echo $row['service_short_description']?></textarea>
+                                        <textarea class="border-left border-right"  name="service_short_description" id="service_short_description"><?php echo $row['service_short_description']?></textarea>
                                     </div>
                                     <div class="line service_description_one">
                                         <h4>Tekstfelt 1</h4>
-                                        <textarea name="service_description_one" id="service_description_one"><?php echo $row['service_description_one']?></textarea>
+                                        <textarea class="border-left border-right" name="service_description_one" id="service_description_one"><?php echo $row['service_description_one']?></textarea>
                                     </div>
                                     <div class="line service_description_two">
                                         <h4>Tekstfelt 2</h4>
-                                        <textarea name="service_description_two" id="service_description_two"><?php echo $row['service_description_two']?></textarea>
+                                        <textarea class="border-left border-right" name="service_description_two" id="service_description_two"><?php echo $row['service_description_two']?></textarea>
                                     </div>
                                     <div class="line service_description_three">
                                         <h4>Tekstfelt 3</h4>
-                                        <textarea name="service_description_three" id="service_description_three"><?php echo $row['service_description_three']?></textarea>
+                                        <textarea class="border-left border-right" name="service_description_three" id="service_description_three"><?php echo $row['service_description_three']?></textarea>
                                     </div>
                                     <div class="line service_description_four">
                                         <h4>Tekstfelt 4</h4>
-                                        <textarea name="service_description_four" id="service_description_four"><?php echo $row['service_description_four']?></textarea>
+                                        <textarea class="border-left border-right" name="service_description_four" id="service_description_four"><?php echo $row['service_description_four']?></textarea>
                                     </div>
                                     <div class="line important_note">
                                         <h4>Vigtig Note</h4>
-                                        <textarea name="important_note" id="important_note"><?php echo $row['important_note']?></textarea>
+                                        <textarea class="border-left border-right" name="important_note" id="important_note"><?php echo $row['important_note']?></textarea>
                                     </div>
                                     <div class="buttons">
                                         <div class="update-service">

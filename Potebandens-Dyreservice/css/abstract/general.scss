@@ -58,29 +58,29 @@
 .index-block {
     background: linear-gradient(
         to bottom, 
-        rgb(236, 217, 174) 0%,
-        rgba(233, 213, 171, 0.8) 10%,
-        rgba(226, 207, 166, .6) 35%,
-        rgba(226, 207, 166, .4) 50%,
-        rgba(226, 207, 166, .2) 70%,
-        rgba(226, 207, 166, 0) 90%,
-        rgba(226, 207, 166, 0) 100%
+        #ecd9ae 0%,
+        #e9d5abcc 10%,
+        #e2cfa699 35%,
+        #e2cfa666 50%,
+        #e2cfa633 70%,
+        #e2cfa600 90%,
+        #e2cfa600 100%
     );
-    border: 2px solid rgb(86, 90, 77);
+    border: 2px solid #565a4d;
     background-size: contain;
     text-align: center;
     .extra-border {
-        border: 10px solid rgb(147, 153, 131);
+        border: 10px solid #939983;
         .extra-border-inner {
             padding: 4rem 0;
-            border: 1px solid rgb(86, 90, 77);
+            border: 1px solid #565a4d;
             @media (max-height: 800px) {
                 padding: 3rem 0;
             }
             h2 {
                 font-size: 2rem;
                 text-transform: uppercase;
-                text-shadow: 1px 1px 1px rgb(32, 32, 32);
+                text-shadow: 1px 1px 1px #202020;
                 margin: 0 0 2rem;
                 @media (max-width: 768px) {
                     font-size: 1.8rem;
@@ -104,7 +104,7 @@
                 font-size: 1rem;
                 margin: 2rem auto 0;
                 text-transform: uppercase;
-                color: rgba(63, 72, 204, 1);
+                color: #3f48cc;
             }
             a:hover {
                 text-decoration: underline;
@@ -125,7 +125,7 @@
 }
 /* span '*' inside class .span */
 span {
-    color: red;
+    color: #ff0000;
     font-weight: 900;
 }
 
@@ -146,8 +146,8 @@ span {
     margin: 1rem 0;
     padding: .3rem;
     text-align: center;
-    border: 2px solid rgb(236, 126, 0);
-    background-color:rgba(199, 80, 0, .3);
+    border: 2px solid #ec7e00;
+    background-color:#c750004d;
     @media (max-width: 850px) {
         font-size: .8rem;
     }
@@ -166,7 +166,7 @@ span {
 .subheader {
     position: relative;
     .logged-in {
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
+        box-shadow: #0000001a 0px 0px 50px 10px;
         text-align: center;
         padding: 2rem;
         h3 {
@@ -181,12 +181,12 @@ span {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: rgba(36,58,148, .6);
+        background-color: #243a9499;
         width: fit-content;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        border: 1px solid rgba(36,58,148, 1);
+        border: 1px solid #243a94;
         margin: .5rem;
         @media (max-width: 450px) {
             margin: .2rem;
@@ -202,7 +202,7 @@ span {
         }
     }
     .back:hover {
-        background-color: rgba(36,58,148, 1);
+        background-color: #243a94;
     }
 }
 
@@ -220,6 +220,26 @@ span {
     }
 }
 
+/* classes to add in html elements */
+.green-border-bottom {
+    border-bottom: 4px solid #025f02;
+}
+.border-black-left {
+    border-left: 1px solid #000000;
+}
+.border-bottom {
+    border-bottom: 1px solid #000000;
+}
+.border-left {
+    border-left: 1px solid #d4d2d2;
+}
+.border-right {
+    border-right: 1px solid #d4d2d2;
+}
+.padding-top {
+    padding-top: .5rem;
+}
+
 /* general button style for all buttons */
 button {
     margin-top: 1rem;
@@ -229,10 +249,10 @@ button {
     color: white;
     font-size: 1rem;
     font-weight: 600;
-    background-color: green;
+    background-color: #008000;
     width: 100%;
     cursor: pointer;
 }
 button:hover {
-    background-color: rgb(2, 95, 2);
+    background-color: #025f02;
 }

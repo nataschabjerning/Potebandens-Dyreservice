@@ -89,7 +89,7 @@
                                     <?php } ?>">
                                         <!-- if no image is set * -->
                                         <?php if (empty($row['extra_image'])) { ?>
-                                            <!-- * show label in middle of div -->
+                                            <!-- * show label -->
                                             <label class="label-noimg">Intet Billede</label>
                                         <?php }
                                         // <!-- if image is set * -->

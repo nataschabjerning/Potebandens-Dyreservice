@@ -44,9 +44,8 @@
                             height: 40px;
                             margin: .3rem 0 0;
                             padding: .5rem;
-                            border-style: hidden;
-                            border-left: 1px solid rgb(212, 210, 210);
-                            border-right: 1px solid rgb(212, 210, 210);
+                            border-top: none;
+                            border-bottom: none;
                         }
                         .day {
                             display: grid;
@@ -81,9 +80,8 @@
                                     height: 30px;
                                     font-size: 1rem;
                                     text-align: center;
-                                    border-style: hidden;
-                                    border-left: 1px solid rgb(212, 210, 210);
-                                    border-right: 1px solid rgb(212, 210, 210);
+                                    border-top: none;
+                                    border-bottom: none;
                                     .selected {
                                         color: grey;
                                     }

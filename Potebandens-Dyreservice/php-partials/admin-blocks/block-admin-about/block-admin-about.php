@@ -39,29 +39,29 @@
                                     <input type="text" name="about_name" id="about_name" value="<?php echo $row['about_name']?>">
                                 </div>
                                 <div class="about_work_title">
-                                    <input type="text" name="about_work_title" id="about_work_title" value="<?php echo $row['about_work_title']?>">
+                                    <input type="text" name="about_work_title" id="about_work_title" value="<?php echo $row['about_work_title']?>" placeholder="Arbejdstitel">
                                 </div>
                                 <div class="about_text_one">
-                                    <textarea name="about_text_one" id="about_text_one"><?php echo $row['about_text_one']?></textarea>
+                                    <textarea name="about_text_one" id="about_text_one" placeholder="Tekst 1"><?php echo $row['about_text_one']?></textarea>
                                 </div>
                                 
                                 <div class="about_text_two">
-                                    <textarea name="about_text_two" id="about_text_two"><?php echo $row['about_text_two']?></textarea>
+                                    <textarea name="about_text_two" id="about_text_two" placeholder="Tekst 2"><?php echo $row['about_text_two']?></textarea>
                                 </div>
                                 <div class="about_text_three">
-                                    <textarea name="about_text_three" id="about_text_three"><?php echo $row['about_text_three']?></textarea>
+                                    <textarea name="about_text_three" id="about_text_three" placeholder="Tekst 3"><?php echo $row['about_text_three']?></textarea>
                                 </div>
                                 <div class="about_text_four">
-                                    <textarea name="about_text_four" id="about_text_four"><?php echo $row['about_text_four']?></textarea>
+                                    <textarea name="about_text_four" id="about_text_four" placeholder="Tekst 4"><?php echo $row['about_text_four']?></textarea>
                                 </div>
                                 <div class="about_text_five">
-                                    <textarea name="about_text_five" id="about_text_five"><?php echo $row['about_text_five']?></textarea>
+                                    <textarea name="about_text_five" id="about_text_five" placeholder="Tekst 5"><?php echo $row['about_text_five']?></textarea>
                                 </div>
                                 <div class="about_text_six">
-                                    <textarea name="about_text_six" id="about_text_six"><?php echo $row['about_text_six']?></textarea>
+                                    <textarea name="about_text_six" id="about_text_six" placeholder="Tekst 6"><?php echo $row['about_text_six']?></textarea>
                                 </div>
                                 <div class="about_text_seven">
-                                    <textarea name="about_text_seven" id="about_text_seven"><?php echo $row['about_text_seven']?></textarea>
+                                    <textarea name="about_text_seven" id="about_text_seven" placeholder="Tekst 7"><?php echo $row['about_text_seven']?></textarea>
                                 </div>
                             </div>
 

@@ -1,5 +1,90 @@
 <!-- 
 
+# COLOR CODES
+
+--- general ---
+    og-red:                     #d5251e,
+    og-green:                   #478f54,
+    og-blue:                    #3f48cc,
+    og-yellow:                  #d9a800,
+
+    box-shadow:                 #0000001a 0px 0px 50px 10px,
+
+--- text ---
+    og-red:                     #d5251e,
+    og-blue:                    #3f48cc,
+
+    white:                      #ffffff,
+    dark-yellow:                #997602,
+    red:                        #ff0000,
+
+    text-shadow-black:          1px 1px 1px #202020,
+    text-shadow-blue:           1px 1px 2px #000d7e;
+
+--- backgrounds ---
+    og-yellow:                  #d9a800,
+    
+    green:                      #478f54cc,
+    light-orange:               #c750004d,
+    dark-overlay:               linear-gradient(
+                                    to bottom,
+                                    #0202024d 0%,
+                                    #0000004d 100%
+                                );
+    yellow-to-white:            linear-gradient(
+                                    to bottom, 
+                                    #ecd9ae 0%,
+                                    #e9d5abcc 10%,
+                                    #e2cfa699 35%,
+                                    #e2cfa666 50%,
+                                    #e2cfa633 70%,
+                                    #e2cfa600 90%,
+                                    #e2cfa600 100%
+                                );
+
+--- borders ---
+    og-red:                     #d5251e,
+    og-green:                   #478f54,
+    og-blue:                    #3f48cc,
+
+    dark-brown:                 #565a4d,
+    middle-brown (dotted):      #8b8167,
+    light-brown:                #939983,
+    dark-orange:                #ec7e00,
+    light-grey:                 #d4d2d2,
+    fat-green:                  #025f02,
+    black:                      #000000,
+    red:                        #e20303,
+
+    og-red-outline:             #d5251e,
+    og-green-outline:           #478f54,
+
+--- buttons ---
+- prev and next (slider)
+    background:                 #3f48cc4d,
+    border:                     #3a7545,
+    og-blue-text-color:         #3f48cc,
+    hover-bg:                   #3f48cc80,
+- add
+    background:                 #478f54cc,
+    og-green-border:            #478f54,
+    og-green-hover-bg:          #478f54,
+    og-red-outline:             #d5251e,
+- back
+    background:                 #243a9499,
+    border:                     #243a94,
+    hover-bg:                   #243a94,
+- default
+    background:                 #008000,
+    hover-bg:                   #025f02,
+- delete
+    background:                 #dd0000,
+    hover-bg:                   #c70303,
+- update
+    background:                 #fd9c1d,
+    hover-bg:                   #df8a1b,
+
+
 # HOME DATABASE
 
 $serverName = "localhost";

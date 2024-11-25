@@ -89,7 +89,7 @@
                                     <?php } ?>">
                                         <!-- if no image is set * -->
                                         <?php if (empty($row['extra_image'])) { ?>
-                                            <!-- * show label in middle of div -->
+                                            <!-- * show label -->
                                             <label class="label-noimg">Intet Billede</label>
                                         <?php }
                                         // <!-- if image is set * -->
@@ -157,7 +157,7 @@
                             <div class="update-delete-buttons">
                                 <div class="update-extraone">
                                     <button id="update-extraone">Opdatér</button>
-                                </div>                                    
+                                </div>
                                 <div class="delete-extraone">
                                     <button id="delete-extraone">Slet</button>
                                 </div>
