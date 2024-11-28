@@ -11,8 +11,9 @@
         /* arrows to close and open extraone+two display */
         .one-button, .two-button {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 2rem;
             .admin-titles {
                 margin: 0;
             }

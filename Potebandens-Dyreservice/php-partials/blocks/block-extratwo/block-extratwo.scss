@@ -1,24 +1,60 @@
 .extratwo {
+    position: relative;
     padding: 0;
+    .branchtop {
+        background-image: url('../../../../Images/backgrounds/branchtop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        top: -40px;
+        height: 125px;
+        width: 100%;
+        @media (max-width: 1024px) {
+            height: 120px;
+        }
+        @media (max-width: 800px) {
+            height: 115px;
+        }
+        @media (max-width: 380px) {
+            height: 110px;
+        }
+    }
+    /* if extra_visibility is set to 'yes' or 'choose' in db table */
+    /* - add this class and show div */
+    .displayblock {
+        display: block;
+    }
+    /* if extra_visibility is set to 'no' in db table */
+    /* - add this class and do not show div */
+    .displaynone {
+        display: none;
+    }
     .container {
-        /* if extra_visibility is set to 'yes' or 'choose' in db table */
-        /* - add this class and show div */
-        .displayblock {
-            display: block;
-        }
-        /* if extra_visibility is set to 'no' in db table */
-        /* - add this class and do not show div */
-        .displaynone {
-            display: none;
-        }
         .extra-content {
             padding: 2rem 0;
             border-top: 2px dotted rgb(139, 129, 103);
             border-bottom: 2px dotted rgb(139, 129, 103);
+            .extra-text {
+                height: fit-content;
+                h2 {
+                    @media (max-width: 450px) {
+                        font-size: 1.5rem;
+                    }
+                }
+                h3 {
+                    @media (max-width: 450px) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
             /* if extra_image is not inserted into db table */
             /* - add this class and display as block */
             .extra-image-nogrid {
                 display: block;
+                .extra-image {
+                    height: 0;
+                }
             }
             /* if extra_image is inserted into db table */
             /* - add this class and display in grid */
@@ -26,14 +62,20 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
-                // RESPONSIVE
-            }
-            .extra-image {
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                @media (max-width: 900px) {
-                    height: 400px;
+                @media (max-width: 800px) {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto 1fr;
+                }
+                .extra-image {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    @media (max-width: 800px) {
+                        height: 400px;
+                    }
+                    @media (max-width: 450px) {
+                        height: 300px;
+                    }
                 }
             }
         }

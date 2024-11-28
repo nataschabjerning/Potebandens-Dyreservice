@@ -6,8 +6,18 @@
     width: 100%;
     padding: 2rem 0;
     z-index: 999;
-    @media (max-width: 380px) {
-        padding: 1.5rem 0;
+    @media (max-width: 768px) {
+        padding: 1.5rem 0 2rem;
+    }
+    .fallleavesbottom {
+        background-image: url('../../../../Images/backgrounds/fallleavesbottom.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        bottom: -35px;
+        height: 50%;
+        width: 100%;
     }
     .container {
         display: flex;

@@ -1,6 +1,6 @@
 <!-- 
 
-# COLOR CODES
+### COLOR CODES ###
 
 --- general ---
     og-red:                     #d5251e,
@@ -84,8 +84,11 @@
     background:                 #fd9c1d,
     hover-bg:                   #df8a1b,
 
+    ------------------------------------------------------------
 
-# HOME DATABASE
+### DATABASES AND TABLES ###
+
+--- home database ---
 
 $serverName = "localhost";
 $dbName = "potebandens_dyreservice_db";
@@ -93,8 +96,7 @@ $dbusername = "root";
 $dbpassword = "";
 
 
-
-# LAPTOP DATABASE
+--- laptop database ---
 
 $serverName = "localhost";
 ---- CHECK THIS ----
@@ -103,8 +105,7 @@ $dbusername = "root";
 $dbpassword = "";
 
 
-
-# WORK DATABASE
+--- work database ---
 
 $serverName = "local.potebandens-dyreservice.dk";
 $dbName = "potebandens_dyreservice_db";
@@ -112,8 +113,7 @@ $dbusername = "root";
 $dbpassword = "root";
 
 
-
-# DATABASE - TABLES
+--- tables ---
 
 about
 - id (INT AUTO_INCREMENT)           ------ NOT NULL
@@ -223,7 +223,6 @@ users
 - username (VARCHAR 50)     ------ NOT NULL
 - email (VARCHAR 100)       ------ NOT NULL
 - password (VARCHAR 255)    ------ NOT NULL
-
 
 
 -->

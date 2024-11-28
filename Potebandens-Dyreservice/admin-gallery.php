@@ -33,6 +33,7 @@
 
             <!-- include admin php blocks here -->
             <?php
+                include("php-partials/admin-blocks/block-admin-upload-image/block-admin-upload-image.php");
                 include("php-partials/admin-blocks/block-admin-gallery/block-admin-gallery.php");
             ?>
 

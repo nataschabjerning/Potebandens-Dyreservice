@@ -54,6 +54,20 @@
     }
 }
 
+/* div with class inside every block that is inlcluded on pages */
+/* to frame content */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (max-height: 800px) {
+        max-width: 1000px;
+    }
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+
 /* div class that is included in block-extraone, block-extratwo, block-questions */
 .index-block {
     background: linear-gradient(
@@ -67,47 +81,46 @@
         #e2cfa600 100%
     );
     border: 2px solid #565a4d;
-    background-size: contain;
     text-align: center;
     .extra-border {
         border: 10px solid #939983;
         .extra-border-inner {
-            padding: 4rem 0;
-            border: 1px solid #565a4d;
-            @media (max-height: 800px) {
-                padding: 3rem 0;
-            }
-            h2 {
-                font-size: 2rem;
-                text-transform: uppercase;
-                text-shadow: 1px 1px 1px #202020;
-                margin: 0 0 2rem;
-                @media (max-width: 768px) {
-                    font-size: 1.8rem;
+            .container {
+                .extra-content {
+                    margin: 4rem 0;
+                    h2 {
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                        text-shadow: 1px 1px 1px #202020;
+                        margin: 0 0 2rem;
+                        @media (max-width: 768px) {
+                            font-size: 1.8rem;
+                        }
+                    }
+                    h3, .a {
+                        margin-bottom: 1rem;
+                        font-size: 1.5rem;
+                        @media (max-width: 1024px) {
+                            font-size: 1.3rem;
+                        }
+                    }
+                    p {
+                        margin: 0 0 1rem;
+                        font-size: 1.3rem;
+                        @media (max-width: 1024px) {
+                            font-size: 1rem;
+                        }
+                    }
+                    a {
+                        font-size: 1rem;
+                        margin: 2rem auto 0;
+                        text-transform: uppercase;
+                        color: #3f48cc;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
                 }
-            }
-            h3, .a {
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-                @media (max-width: 1024px) {
-                    font-size: 1.3rem;
-                }
-            }
-            p {
-                margin: 0 0 1rem;
-                font-size: 1.3rem;
-                @media (max-width: 1024px) {
-                    font-size: 1rem;
-                }
-            }
-            a {
-                font-size: 1rem;
-                margin: 2rem auto 0;
-                text-transform: uppercase;
-                color: #3f48cc;
-            }
-            a:hover {
-                text-decoration: underline;
             }
         }
     }
@@ -203,20 +216,6 @@ span {
     }
     .back:hover {
         background-color: #243a94;
-    }
-}
-
-/* div with class inside every block that is inlcluded on pages */
-/* to frame content */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-    @media (max-height: 800px) {
-        max-width: 1000px;
-    }
-    @media (max-width: 768px) {
-        width: 90%;
     }
 }
 

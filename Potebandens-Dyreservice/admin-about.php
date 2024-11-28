@@ -6,7 +6,6 @@
     include_once("php-partials/blocks/block-header/block-header.php");
 ?>
 
-
 <div class="page-about">
 
     <div class="subhero">

@@ -12,13 +12,6 @@
 <div class="block admin-gallery">
     <div class="container">
 
-        <h2 class="admin-titles">Alle billeder</h2>
-    
-        <?php
-            // add button and form to upload new photos to gallery
-            include("php-partials/admin-blocks/block-admin-upload-image/block-admin-upload-image.php");
-        ?>
-
         <div class="images">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
 

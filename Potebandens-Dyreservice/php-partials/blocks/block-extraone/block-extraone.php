@@ -6,20 +6,23 @@
 ?>
 
 <div class="block index-block extraone">
+    
     <div class="extra-border">
         <div class="extra-border-inner">
-            <div class="container">
 
-                <?php while($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="extra-content 
-                        <?php echo $row['extra_visibility']; ?>
-                        <?php if($row["extra_visibility"] == "yes" || $row["extra_visibility"] == "choose") { ?>
-                            displayblock
-                        <?php }
-                        else { ?>
-                            displaynone
-                        <?php } ?>"
-                    >
+            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="container <?php echo $row['extra_visibility']; ?>
+                    <?php if($row["extra_visibility"] == "yes" || $row["extra_visibility"] == "choose") { ?>
+                        displayblock
+                    <?php }
+                    else { ?>
+                        displaynone
+                    <?php } ?>">
+
+                    <div class="flowerleft"></div>
+                    <div class="flowerright"></div>
+
+                    <div class="extra-content">
 
                         <div class="<?php if(!empty($row["extra_image"])) { ?>
                                 extra-image-grid
@@ -53,11 +56,11 @@
                                 <?php } ?>
                             </div> <!-- .extra-text end -->
 
-                            <div class="extra-image" style="<?php if (!empty($row['extra_image'])) { ?>background-image: url('includes/extra-images/<?php echo $row['extra_image']?>');<?php } ?>"></div> <!-- .extra-image end -->
+                            <div class="extra-image" style="<?php if (!empty($row['extra_image'])) { ?>background-image: url('includes/extra-images/<?php echo $row['extra_image']?>'); border: 2px solid #565a4d;<?php } ?>"></div> <!-- .extra-image end -->
                         </div> <!-- .extra-image-grid/.extra-image-nogrid end -->
-                    </div> <!-- .extra-content .displayblock/.displaynone end -->
-                <?php } ?>
-            </div> <!-- .container end -->
-        </div>
-    </div>
+                    </div> <!-- .extra-content end -->
+                </div> <!-- .container .displayblock/.displaynone end -->
+            <?php } ?>
+        </div> <!-- .block .extra-border-inner end -->
+    </div>  <!-- .block .extra-border end -->
 </div> <!-- .block .index-block .extraone end -->

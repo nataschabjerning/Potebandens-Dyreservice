@@ -1,6 +1,8 @@
 <div class="block upload-image">
     <div class="container">
 
+        <h2 class="admin-titles">Alle billeder</h2>
+
         <div class="upload-image-messages">
             <?php
                 if (isset($_GET["error"])) {
