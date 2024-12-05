@@ -1,6 +1,20 @@
 .service-slider-block {
+    position: relative;
     background-color: #478f54cc;
     padding-bottom: 8rem;
+    .flowerleft {
+        background-image: url('../../../../images/components/whiteflowerleft.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        top: -50px;
+        height: 100%;
+        width: 180px;
+        @media (max-width: 768px) {
+            top: -20px;
+        }
+    }
     .container {
         .admin-titles {
             color: #d5251e;

@@ -22,61 +22,63 @@
                 grid-template-columns: 1fr;
             }
             .card {
-                background-image: linear-gradient(
-                    to bottom,
-                    rgba(255, 255, 255, 0.4) 0%,
-                    rgba(255, 255, 255, 0.4) 100%),
-                    url('../../../../Images/backgrounds/servicesbackground.png'
-                );
+                background-color: #b4bb9f;
+                border: 2px solid #565a4d;
                 background-position: center;
                 background-repeat: no-repeat;
                 position: relative;
-                border-radius: 10px;
-                border-bottom: 2px solid #d5251e;
-                border-top: 2px solid #d5251e;
                 min-height: 300px;
-                padding: 2rem;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-                @media (max-width: 768px) {
-                    padding: 1rem;
-                }
-                .contact {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    padding: .2rem .5rem;
-                    font-size: 1rem;
-                    color: white;
-                    background-color: rgba(63, 72, 204, .6);
-                    border-top-left-radius: 10px;
-                    border-bottom-right-radius: 10px;
-                }
-                .contact:hover {
-                    background-color: rgba(63, 72, 204, 1);
-                }
-                .title {
-                    text-align: center;
-                    h2 {
-                        text-transform: uppercase;
-                        @media (max-width: 768px) {
-                            font-size: 1.4rem;
+                padding: 1rem;
+                .card-border {
+                    background-color: #FFFFFF;
+                    border: 1px solid #565a4d;
+                    height: 100%;
+                    .contact {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        padding: .2rem .5rem;
+                        font-size: 1rem;
+                        color: white;
+                        background-color: rgba(63, 72, 204, .6);
+                        border-top-left-radius: 10px;
+                    }
+                    .contact:hover {
+                        background-color: rgba(63, 72, 204, 1);
+                    }
+                    .title {
+                        background: linear-gradient(
+                            to bottom,
+                            #f1deb1 0%, 
+                            #f1e4c4 10%, 
+                            #f8efd6 35%, 
+                            #f8f0df 50%, 
+                            #f8f5ee 70%, 
+                            #ffffff 90%, 
+                            #ffffff 100%
+                        );
+                        padding: 1rem;
+                        text-align: center;
+                        border-bottom: 1px solid #565a4d;
+                        h2 {
+                            text-transform: uppercase;
+                            @media (max-width: 768px) {
+                                font-size: 1.4rem;
+                            }
                         }
                     }
-                }
-                hr {
-                    margin: 1rem 0;
-                    border: 1px solid #d5251e;
-                }
-                .description {
-                    font-size: 1.1rem;
-                    @media (max-width: 768px) {
-                        font-size: 1rem;
-                    }
-                    p {
-                        margin: 1rem 0;
-                    }
-                    .important_note {
-                        font-weight: 600;
+                    .description {
+                        padding: 0 1rem;
+                        font-size: 1.1rem;
+                        @media (max-width: 768px) {
+                            font-size: 1rem;
+                        }
+                        p {
+                            margin: 1rem 0;
+                        }
+                        .important_note {
+                            font-weight: 600;
+                        }
                     }
                 }
             }

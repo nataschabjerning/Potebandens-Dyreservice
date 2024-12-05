@@ -6,6 +6,7 @@
 ?>
 
 <div class="block service-slider-block">
+    <div class="flowerleft"></div>
     <div class="container">
 
         <h2 class="admin-titles">Hvad tilbyder vi?</h2>
@@ -51,7 +52,7 @@
             <div class="empty">
                 <h2>Der ser ikke ud til at være nogle ydelser slået op i øjeblikket</h2>
                 <h1>Men du kan altid kontakte os <a href="contact.php">her</a></h1>
-            </div>
+         </div>
         <?php } ?>
     </div> <!-- .container end -->
 </div> <!-- .block .service-slider end -->

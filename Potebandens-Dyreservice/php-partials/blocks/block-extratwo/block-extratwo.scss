@@ -1,71 +1,115 @@
 .extratwo {
     position: relative;
-    padding: 0;
+    background-color: #b4bb9f;
+    border: 2px solid #565a4d;
+    padding: 1rem;
     .branchtop {
         background-image: url('../../../../images/borders/branchtop.png');
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
         left: 0;
-        top: -40px;
+        top: -30px;
         height: 125px;
         width: 100%;
     }
-    /* if extra_visibility is set to 'yes' or 'choose' in db table */
-    /* - add this class and show div */
-    .displayblock {
-        display: block;
-    }
-    /* if extra_visibility is set to 'no' in db table */
-    /* - add this class and do not show div */
-    .displaynone {
-        display: none;
-    }
-    .container {
-        .extra-content {
-            padding: 2rem 0;
-            border-top: 2px dotted rgb(139, 129, 103);
-            border-bottom: 2px dotted rgb(139, 129, 103);
-            .extra-text {
-                height: fit-content;
-                h2 {
-                    @media (max-width: 450px) {
-                        font-size: 1.5rem;
-                    }
-                }
-                h3 {
-                    @media (max-width: 450px) {
-                        font-size: 1.2rem;
-                    }
-                }
-            }
-            /* if extra_image is not inserted into db table */
-            /* - add this class and display as block */
-            .extra-image-nogrid {
+    .extra-border {
+        background: linear-gradient(
+            to bottom,
+            #f1deb1 0%, 
+            #f1e4c4 10%, 
+            #f8efd6 35%, 
+            #f8f0df 50%, 
+            #f8f5ee 70%, 
+            #ffffff 90%, 
+            #ffffff 100%
+        );
+        border: 1px solid #565a4d;
+        .container {
+            /* if extra_visibility is set to 'yes' or 'choose' in db table */
+            /* - add this class and show div */
+            .displayblock {
                 display: block;
-                .extra-image {
-                    height: 0;
-                }
             }
-            /* if extra_image is inserted into db table */
-            /* - add this class and display in grid */
-            .extra-image-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                @media (max-width: 800px) {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto 1fr;
-                }
-                .extra-image {
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    @media (max-width: 800px) {
-                        height: 400px;
+            /* if extra_visibility is set to 'no' in db table */
+            /* - add this class and do not show div */
+            .displaynone {
+                display: none;
+            }
+            .extra-content {
+                border-top: 2px dotted #8b8167;
+                border-bottom: 2px dotted #8b8167;
+                padding: 2rem 0;
+                margin: 4rem 0;
+                text-align: center;
+                .extra-text {
+                    h2 {
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                        text-shadow: 1px 1px 1px #202020;
+                        margin: 0 0 2rem;
+                        @media (max-width: 768px) {
+                            font-size: 1.8rem;
+                        }
+                        @media (max-width: 450px) {
+                            font-size: 1.5rem;
+                        }
                     }
-                    @media (max-width: 450px) {
-                        height: 300px;
+                    h3 {
+                        margin-bottom: 1rem;
+                        font-size: 1.5rem;
+                        @media (max-width: 1024px) {
+                            font-size: 1.3rem;
+                        }
+                        @media (max-width: 450px) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                    p {
+                        margin: 0 0 1rem;
+                        font-size: 1.3rem;
+                        @media (max-width: 1024px) {
+                            font-size: 1rem;
+                        }
+                    }
+                    a {
+                        font-size: 1rem;
+                        margin: 2rem auto 0;
+                        text-transform: uppercase;
+                        color: #3f48cc;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+                /* if extra_image is not inserted into db table */
+                /* - add this class and display as block */
+                .extra-image-nogrid {
+                    display: block;
+                    .extra-image {
+                        height: 0;
+                    }
+                }
+                /* if extra_image is inserted into db table */
+                /* - add this class and display in grid */
+                .extra-image-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    @media (max-width: 800px) {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: auto 1fr;
+                    }
+                    .extra-image {
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        @media (max-width: 800px) {
+                            height: 400px;
+                        }
+                        @media (max-width: 450px) {
+                            height: 300px;
+                        }
                     }
                 }
             }

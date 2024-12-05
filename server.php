@@ -53,14 +53,14 @@
                                     #ffffff 100%
                                 );
 
-------------------- Borders -------------------
+------------------- Borders / Padding -------------------
     og-red:                     #d5251e,
     og-green:                   #478f54,
     og-blue:                    #3f48cc,
 
     dark-brown:                 #565a4d,
     middle-brown (dotted):      #8b8167,
-    light-brown:                #939983,
+    light-brown:                #b4bb9f,
     dark-orange:                #ec7e00,
     light-grey:                 #d4d2d2,
     fat-green:                  #025f02,

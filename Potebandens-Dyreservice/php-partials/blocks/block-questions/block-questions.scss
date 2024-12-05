@@ -1,6 +1,8 @@
 .end {
     position: relative;
-    padding: 0;
+    background-color: #b4bb9f;
+    border: 2px solid #565a4d;
+    padding: 1rem;
     .flowertop {
         background-image: url('../../../../Images/borders/blueflowersbordertop.png');
         background-size: cover;
@@ -11,34 +13,47 @@
         height: 100px;
         width: 100%;
         @media (max-width: 1024px) {
+            top: -40px;
             height: 90px;
         }
-        @media (max-width: 800px) {
-            top: -35px;
+        @media (max-width: 768px) {
+            top: -30px;
             height: 80px;
         }
         @media (max-width: 380px) {
-            top: -30px;
+            top: -25px;
             height: 70px;
         }
     }
     .extra-border {
-        .extra-border-inner {
-            padding: 2rem 0;
+        background: linear-gradient(
+            to bottom,
+            #f1deb1 0%, 
+            #f1e4c4 10%, 
+            #f8efd6 35%, 
+            #f8f0df 50%, 
+            #f8f5ee 70%, 
+            #ffffff 90%, 
+            #ffffff 100%
+        );
+        border: 1px solid #565a4d;
             .container {
-                h2 {
-                    color: rgba(213, 37, 30, 1);
-                    margin: 0 0 1rem;
-                }
                 .end-content {
-                    margin: 1rem 0;
-                }
-                a {
-                    margin: 0 auto;
-                    color: rgba(213, 37, 30, 1);
-                    text-transform: uppercase;
+                    padding: 2rem 0;
+                    text-align: center;
+                    h2 {
+                        color: rgba(213, 37, 30, 1);
+                        margin: 0 0 1rem;
+                    }
+                    .end-text {
+                        margin: 1rem 0;
+                    }
+                    a {
+                        margin: 0 auto;
+                        color: rgba(213, 37, 30, 1);
+                        text-transform: uppercase;
+                    }
                 }
             }
-        }
     }
 }
