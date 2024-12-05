@@ -18,6 +18,12 @@
                         echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst. Husk at udfylde dette felt og prøv igen</p>";
                         echo "</div>";
                     }
+                    // no file was selected to upload
+                    if ($_GET["error"] == "titletoolong") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Den valgte titel til billedet er for lang. Den kan max være på 40 tegn.</p>";
+                        echo "</div>";
+                    }
                     // not matching the allowed file types
                     if ($_GET["error"] == "wrongfiletype") {
                         echo "<div class='error'>";

@@ -10,6 +10,7 @@
 <div class="page-contact">
 
     <div class="subhero">
+        <!-- <div class="flowersbottom"></div> -->
         <div class="page-title">
             <h1>Admin | Galleri</h1>
         </div>

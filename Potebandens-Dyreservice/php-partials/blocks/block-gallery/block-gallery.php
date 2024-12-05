@@ -12,16 +12,11 @@
             <div class="images">
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="image-card">
-                        <div class="image">
-                            <img 
-                                src="includes/gallery-uploads/<?php if (!empty($row['image_link'])) {
-                                    echo $row['image_link']?>"
-                                <?php } ?>
-                                alt="<?php if (!empty($row['image_alt'])) {
-                                    echo $row['image_alt']?>"
-                                <?php } ?>
-                            >
-                        </div> <!-- .image end -->
+                        <?php if (!empty($row['image_link'])) { ?>    
+                            <div class="image" style="<?php if (!empty($row['image_link'])) { ?>
+                                background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>');<?php } ?>">
+                            </div> <!-- .image end -->
+                        <?php } ?>
                         <?php if (!empty($row['image_text'])) { ?>
                             <div class="text">
                                 <h3><?php echo $row['image_text']?></h3>

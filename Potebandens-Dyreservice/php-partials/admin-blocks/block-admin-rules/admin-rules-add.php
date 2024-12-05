@@ -24,57 +24,61 @@
                         </div>
 
                         <label for="point_one">Regler</label>
-                        <p>Hvert tekstfelt kan indeholde 1 regel. Som minimum skal det første felt udfyldes.</p>
+                        <p>Hvert tekstfelt kan indeholde 1 regel på max 250 tegn.<br>Som minimum skal det første felt udfyldes.</p>
                         <div class="point_rules">
-                            <div class="one">
-                                <div class="input">
-                                    <p class="star">*</p>
-                                    <input type="text" name="point_one" placeholder="1">
+                            <div class="row-one">
+                                <div class="one">
+                                    <div class="input">
+                                        <p class="star">*</p>
+                                        <input type="text" name="point_one" placeholder="1">
+                                    </div>
+                                </div>
+                                <div class="two">
+                                    <div class="input">
+                                        <input type="text" name="point_two" placeholder="2">
+                                    </div>
+                                </div>
+                                <div class="three">
+                                    <div class="input">
+                                        <input type="text" name="point_three" placeholder="3">
+                                    </div>
+                                </div>
+                                <div class="four">
+                                    <div class="input">
+                                        <input type="text" name="point_four" placeholder="4">
+                                    </div>
+                                </div>
+                                <div class="five">
+                                    <div class="input">
+                                        <input type="text" name="point_five" placeholder="5">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="two">
-                                <div class="input">
-                                    <input type="text" name="point_two" placeholder="2">
+                            <div class="row-two">
+                                <div class="six">
+                                    <div class="input">
+                                        <input type="text" name="point_six" placeholder="6">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="three">
-                                <div class="input">
-                                    <input type="text" name="point_three" placeholder="3">
+                                <div class="seven">
+                                    <div class="input">
+                                        <input type="text" name="point_seven" placeholder="7">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="four">
-                                <div class="input">
-                                    <input type="text" name="point_four" placeholder="4">
+                                <div class="eight">
+                                    <div class="input">
+                                        <input type="text" name="point_eight" placeholder="8">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="five">
-                                <div class="input">
-                                    <input type="text" name="point_five" placeholder="5">
+                                <div class="nine">
+                                    <div class="input">
+                                        <input type="text" name="point_nine" placeholder="9">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="six">
-                                <div class="input">
-                                    <input type="text" name="point_six" placeholder="6">
-                                </div>
-                            </div>
-                            <div class="seven">
-                                <div class="input">
-                                    <input type="text" name="point_seven" placeholder="7">
-                                </div>
-                            </div>
-                            <div class="eight">
-                                <div class="input">
-                                    <input type="text" name="point_eight" placeholder="8">
-                                </div>
-                            </div>
-                            <div class="nine">
-                                <div class="input">
-                                    <input type="text" name="point_nine" placeholder="9">
-                                </div>
-                            </div>
-                            <div class="ten">
-                                <div class="input">
-                                    <input type="text" name="point_ten" placeholder="10">
+                                <div class="ten">
+                                    <div class="input">
+                                        <input type="text" name="point_ten" placeholder="10">
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@
 <div class="page-about">
 
     <div class="subhero">
+        <!-- <div class="flowersbottom"></div> -->
         <div class="page-title">
             <h1>Admin | Om os</h1>
         </div>

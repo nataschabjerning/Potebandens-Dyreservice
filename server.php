@@ -2,7 +2,7 @@
 
 ### COLOR CODES ###
 
---- general ---
+------------------- General -------------------
     og-red:                     #d5251e,
     og-green:                   #478f54,
     og-blue:                    #3f48cc,
@@ -10,7 +10,7 @@
 
     box-shadow:                 #0000001a 0px 0px 50px 10px,
 
---- text ---
+------------------- Text -------------------
     og-red:                     #d5251e,
     og-blue:                    #3f48cc,
 
@@ -21,9 +21,10 @@
     text-shadow-black:          1px 1px 1px #202020,
     text-shadow-blue:           1px 1px 2px #000d7e;
 
---- backgrounds ---
+------------------- Backgrounds -------------------
     og-yellow:                  #d9a800,
     
+    light-green:                #ccd6bc,
     green:                      #478f54cc,
     light-orange:               #c750004d,
     dark-overlay:               linear-gradient(
@@ -31,7 +32,7 @@
                                     #0202024d 0%,
                                     #0000004d 100%
                                 );
-    yellow-to-white:            linear-gradient(
+    yellow-to-transparent:      linear-gradient(
                                     to bottom, 
                                     #ecd9ae 0%,
                                     #e9d5abcc 10%,
@@ -41,8 +42,18 @@
                                     #e2cfa600 90%,
                                     #e2cfa600 100%
                                 );
+    yellow-to-white:            linear-gradient(
+                                    to bottom,
+                                    #f1deb1 0%, 
+                                    #f1e4c4 10%, 
+                                    #f8efd6 35%, 
+                                    #f8f0df 50%, 
+                                    #f8f5ee 70%, 
+                                    #ffffff 90%, 
+                                    #ffffff 100%
+                                );
 
---- borders ---
+------------------- Borders -------------------
     og-red:                     #d5251e,
     og-green:                   #478f54,
     og-blue:                    #3f48cc,
@@ -59,7 +70,7 @@
     og-red-outline:             #d5251e,
     og-green-outline:           #478f54,
 
---- buttons ---
+------------------- Buttons -------------------
 - prev and next (slider)
     background:                 #3f48cc4d,
     border:                     #3a7545,
@@ -84,11 +95,11 @@
     background:                 #fd9c1d,
     hover-bg:                   #df8a1b,
 
-    ------------------------------------------------------------
+------------------------------------------------------------
 
 ### DATABASES AND TABLES ###
 
---- home database ---
+------------------- Home Database -------------------
 
 $serverName = "localhost";
 $dbName = "potebandens_dyreservice_db";
@@ -96,7 +107,7 @@ $dbusername = "root";
 $dbpassword = "";
 
 
---- laptop database ---
+------------------- Laptop Database -------------------
 
 $serverName = "localhost";
 ---- CHECK THIS ----
@@ -105,7 +116,7 @@ $dbusername = "root";
 $dbpassword = "";
 
 
---- work database ---
+------------------- Work Database -------------------
 
 $serverName = "local.potebandens-dyreservice.dk";
 $dbName = "potebandens_dyreservice_db";
@@ -113,7 +124,7 @@ $dbusername = "root";
 $dbpassword = "root";
 
 
---- tables ---
+------------------- Tables -------------------
 
 about
 - id (INT AUTO_INCREMENT)           ------ NOT NULL
@@ -163,8 +174,8 @@ extratwo
 gallery
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
 - image_link (VARCHAR 255)  ------ NOT NULL
-- image_alt (VARCHAR 50)    ------ NOT NULL
-- image_text (VARCHAR 100)
+- image_alt (VARCHAR 255)   ------ NOT NULL
+- image_text (VARCHAR 40)   ------ NOT NULL
 
 inbox
 - id (INT AUTO_INCREMENT)           ------ NOT NULL

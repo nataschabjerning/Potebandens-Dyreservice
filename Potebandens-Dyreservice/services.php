@@ -9,6 +9,7 @@
 <div class="page-services">
 
     <div class="subhero">
+        <!-- <div class="flowersbottom"></div> -->
         <div class="overlay"></div>
         <div class="page-title">
             <h1>Ydelser</h1>
@@ -16,6 +17,8 @@
     </div>
 
     <div class="page-content">
+
+        <div class="leavestop"></div>
 
         <?php
             include("php-partials/blocks/block-services/block-services.php");

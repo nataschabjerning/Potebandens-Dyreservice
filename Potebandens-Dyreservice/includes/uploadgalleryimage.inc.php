@@ -23,6 +23,12 @@
             header("location: ../admin-gallery.php?error=altempty");
             exit();
         }
+        // If 'alt' text field is empty
+        $maxLength = 40;
+        if (strlen($image_text) > $maxLength) {
+            header("location: ../admin-gallery.php?error=titletoolong");
+            exit();
+        }
         // if image file is selected
         if (!empty($_FILES["file"]["name"])) {
             $targetFilePath = $targetDir . $image_link;

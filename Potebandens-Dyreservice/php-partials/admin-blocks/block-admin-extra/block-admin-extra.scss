@@ -8,7 +8,8 @@
         border: none;
         border-bottom: 1px solid #3f48cc;
 
-        /* arrows to close and open extraone+two display */
+        /* MARK: HEADER
+        ------------------------------------------- */
         .one-button, .two-button {
             display: flex;
             justify-content: center;
@@ -17,6 +18,8 @@
             .admin-titles {
                 margin: 0;
             }
+            /* MARK: ARROWS
+            ---------------------------------------- */
             .admin_extraone, .admin_extratwo {
                 background-color: #d9a800cc;
                 width: fit-content;
@@ -43,33 +46,74 @@
             }
         }
 
-        /* display db table content */
+        /* MARK: FORM START
+        ------------------------------------------- */
+        /* display db table content in section */
         .admin-extraone, .admin-extratwo {
             section {
                 margin: 1rem 0;
                 padding: 1.5rem;
                 border-radius: 10px;
                 box-shadow: #0000001a 0px 0px 10px 5px;
+                @media (max-width: 768px) {
+                    padding: 1rem;
+                }
                 .admin-extraone-content, .admin-extratwo-content {
                     position: relative;
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 1.5rem 1rem 1rem;
                     text-align: center;
+                    @media (max-width: 768px) {
+                        padding: 1.5rem .8rem .8rem;
+                    }
 
+                    /* MARK: GENERAL STYLE
+                    ------------------------------------------- */
                     /* general for label and input */
                     label {
                         font-weight: 600;
+                        padding: .3rem;
                     }
                     input {
                         font-size: 1rem;
                         width: 100%;
-                        height: 40px;
                         padding: .5rem;
                         border-style: hidden;
                         border-top: 1px solid #d4d2d2;
                     }
+                    select {
+                        width: 100%;
+                        padding: .5rem;
+                        font-size: 1rem;
+                        text-align: center;
+                        border-style: hidden;
+                        border-left: 1px solid #d4d2d2;
+                        @media (max-width: 768px) {
+                            border-left: none;
+                            border-top: 1px solid #d4d2d2;
+                        }
+                    }
+                    textarea {
+                        font-size: 1rem;
+                        padding: .5rem;
+                        min-width: 100%;
+                        resize: vertical;
+                        min-height: min-content;
+                        height: 120px;
+                        border-style: hidden;
+                        border-top: 1px solid #d4d2d2;
+                        border-bottom: 1px solid #d4d2d2;
+                        @media (max-width: 450px) {
+                            font-size: .8rem;
+                        }
+                        @media (max-width: 350px) {
+                            height: 100px;
+                        }
+                    }
 
+                    /* MARK: SPECIFIC DIVS
+                    ------------------------------------------- */
                     .extra_id {
                         position: absolute;
                         top: 0;
@@ -84,20 +128,79 @@
                         border-top: 1px solid #000000;
                         border-top-left-radius: 10px;
                         border-top-right-radius: 10px;
+                        border-left: 1px solid #000000;
+                        border-right: 1px solid #000000;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        align-items: center;
+                        @media (max-width: 768px) {
+                            grid-template-columns: none;
+                            grid-template-rows: auto auto;
+                            text-align: center;
+                        }
+                    }
+                    .extra-subtitle {
+                        @media (max-width: 768px) {
+                            border-bottom: 1px solid #000000;
+                        }
+                    }
+                    .extra-title, .extra-subtitle, .extra-text_one, .extra-text_two, .extra-text_three {
+                        padding-top: .3rem;
+                        .input {
+                            padding-top: .3rem;
+                        }
+                    }
+                    .extra-text_one, .extra-text_two, .extra-text_three {
+                        .input {
+                            position: relative;
+                            .pull-tab {
+                                height: 0px;
+                                width: 0px;
+                                border-top: 15px solid #478f54;
+                                border-left: 15px solid transparent;
+                                border-right: 15px solid transparent;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                bottom: -2px;
+                                right: -10px;
+                                pointer-events: none;
+                                z-index: 2;
+                            }
+                        }
                     }
 
+                    /* MARK: .EXTRA-TOP
+                    ------------------------------------------- */
+                    /*
+                    divided in
+                    - left | right -    
+                    - left | right -
+                    - left | right -
+                    */
                     .extraone-top, .extratwo-top {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
+                        border: 1px solid #000000;
+                        @media (max-width: 768px) {
+                            grid-template-columns: 1fr;
+                        }
 
-                        /* left - .extra-image, .extra-title, .extra-subtitle */
-                        /* right - .extra-text_one, .extra-text_two, .extra-text_three */
+                        /* MARK: .LEFT/RIGHT
+                        ------------------------------------------- */
+                        /*
+                        left            |   right
+                        .extra-image    |   .extra-text_one
+                        .extra-title    |   .extra-text_two
+                        .extra-subtitle |   .extra-text_three
+                        */
                         .extraone-left, .extraone-right, .extratwo-left, .extratwo-right {
                             display: grid;
-                            grid-template-rows: 150px 150px 150px;
+                            grid-template-rows: 300px 75px 75px;
+                            @media (max-width: 350px) {
+                                grid-template-rows: 200px 70px 70px;
+                            }
                             .extra-image {
                                 position: relative;
-                                grid-row: 1 / 3;
                                 background-position: center;
                                 background-repeat: no-repeat;
                                 background-size: cover;
@@ -110,51 +213,64 @@
                                     transform: translate(-50%, -50%);
                                 }
                             }
-                            textarea {
-                                font-size: 1rem;
-                                padding: .5rem;
-                                width: 100%;
-                                height: 85%;
-                                border-style: hidden;
-                                border-top: 1px solid #d4d2d2;
-                                @media (max-width: 450px) {
-                                    font-size: .8rem;
-                                    text-indent: 5px;
+                            .extra-image, .extra-title, .extra-text_one, .extra-text_two {
+                                border-bottom: 1px solid #000000;
+                            }
+                        }
+                        .extraone-left, .extratwo-left {
+                            input {
+                                height: 45px;
+                                @media (max-width: 350px) {
+                                    height: 38px;
                                 }
+                            }
+                        }
+                        .extraone-right, .extratwo-right {
+                            border-left: 1px solid #000000;
+                            grid-template-rows: minmax(150px, max-content) minmax(150px, max-content) minmax(150px, max-content);
+                            @media (max-width: 768px) {
+                                border: none;
+                            }
+                            @media (max-width: 350px) {
+                                grid-template-rows: minmax(100px, max-content) minmax(100px, max-content) minmax(100px, max-content);
                             }
                         }
                     }
 
+                    /* MARK: .EXTRA-BOTTOM
+                    ------------------------------------------- */
                     /* .extra-text_link, .extra-link_url */
                     .extraone-bottom, .extratwo-bottom {
-                        .extra-text_link {
-                            width: 100%;
-                            input {
+                        border-left: 1px solid #000000;
+                        border-right: 1px solid #000000;
+                        .extra-text_link, .extra-link_url {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            align-items: center;
+                            @media (max-width: 768px) {
+                                grid-template-columns: none;
+                                grid-template-rows: auto auto;
                                 text-align: center;
                             }
                         }
-                    }
-                    .extra-visibility, .extra-text_link, .extra-link_url {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        align-items: center;
-                        @media (max-width: 950px) {
-                            grid-template-columns: none;
-                            grid-template-rows: auto auto;
-                            text-align: center;
-                        }
-                        select {
+                        .extra-text_link, .extra-link_url {
                             width: 100%;
-                            height: 30px;
-                            font-size: 1rem;
-                            text-align: center;
-                            border-style: hidden;
-                            @media (max-width: 950px) {
-                                border: none;
+                            border-bottom: 1px solid #000000;
+                            input, select {
+                                text-align: center;
+                                border-left: 1px solid #d4d2d2;
+                                @media (max-width: 768px) {
+                                    border-left: none;
+                                    border-top: 1px solid #d4d2d2;
+                                }
                             }
                         }
                     }
+                    
                 }
+
+                /* MARK: UPDATE/DELETE
+                ------------------------------------------- */
                 .update-delete-buttons {
                     display: flex;
                     border-bottom: 1px solid black;
@@ -189,10 +305,12 @@
             }
         }
     }
+    /* divide .update orange textbox from display of extra blocks */
     .one {
         border-top: 1px solid #3f48cc;
     }
 }
+/* set padding at bottom to create air between block and footer */
 .block-admin-extratwo {
     padding: 0 0 6rem;
 }

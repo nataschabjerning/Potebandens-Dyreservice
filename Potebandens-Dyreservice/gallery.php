@@ -10,12 +10,15 @@
 <div class="page-contact">
 
     <div class="subhero">
+        <!-- <div class="flowersbottom"></div> -->
         <div class="page-title">
             <h1>Galleri</h1>
         </div>
     </div>
 
     <div class="page-content">
+
+        <div class="leavestop"></div>
                 
         <?php
             include("php-partials/blocks/block-gallery/block-gallery.php");

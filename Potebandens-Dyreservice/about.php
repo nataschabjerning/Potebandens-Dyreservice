@@ -10,12 +10,15 @@
 <div class="page-about">
 
     <div class="subhero">
+        <!-- <div class="flowersbottom"></div> -->
         <div class="page-title">
             <h1>Om os</h1>
         </div>
     </div>
 
     <div class="page-content">
+
+        <div class="leavestop"></div>
        
        <?php
             include("php-partials/blocks/block-about/block-about.php");

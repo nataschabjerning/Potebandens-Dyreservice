@@ -1,18 +1,21 @@
-/* overall styling for everywhere on website */
+/* MARK: GENERAL
+- overall styling for everywhere on website */
 * {
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* subhero on each page (not index.php) */
+/* MARK: .SUBHERO
+- subhero on each page (not index.php) */
 .subhero {
-    background-image: url('../../../Images/backgrounds/subhero.png');
+    background-image: url('../../../images/backgrounds/subhero.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 40vh;
     display: flex;
     align-items: center;
+    position: relative;
     @media (max-width: 768px) and (max-height: 800px), (max-width: 768px) {
         height: 30vh;
     }
@@ -43,19 +46,37 @@
     }
 }
 
-/* every block that is included on pages */
-.block {
-    padding: 6rem 0;
-    @media (max-height: 800px) {
-        padding: 4rem 0;
-    }
-    @media (max-width: 768px) and (max-height: 800px), (max-width: 768px) {
-        padding: 3rem 0;
+/* MARK: SUBHERO IMG
+- leaves img under every subhero */
+.page-content {
+    position: relative;
+    .leavestop {
+        background-image: url('../../../../images/borders/leavesbordertop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        top: -40px;
+        height: 120px;
+        width: 100%;
+        @media (max-width: 768px) and (max-height: 800px), (max-width: 768px) {
+            height: 100px;
+        }
     }
 }
 
-/* div with class inside every block that is inlcluded on pages */
-/* to frame content */
+/* MARK: .BLOCK
+- every block that is included on pages */
+.block {
+    padding: 8rem 0;
+    @media (max-width: 768px) and (max-height: 800px), (max-width: 768px) {
+        padding: 6rem 0;
+    }
+}
+
+/* MARK: .CONTAINER
+- div with class inside every block that is inlcluded on pages
+- to frame content */
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -68,17 +89,18 @@
     }
 }
 
-/* div class that is included in block-extraone, block-extratwo, block-questions */
+/* MARK: EXTRA BLOCKS
+- div class that is included in block-extraone, block-extratwo, block-questions */
 .index-block {
     background: linear-gradient(
-        to bottom, 
-        #ecd9ae 0%,
-        #e9d5abcc 10%,
-        #e2cfa699 35%,
-        #e2cfa666 50%,
-        #e2cfa633 70%,
-        #e2cfa600 90%,
-        #e2cfa600 100%
+        to bottom,
+        #f1deb1 0%, 
+        #f1e4c4 10%, 
+        #f8efd6 35%, 
+        #f8f0df 50%, 
+        #f8f5ee 70%, 
+        #ffffff 90%, 
+        #ffffff 100%
     );
     border: 2px solid #565a4d;
     text-align: center;
@@ -126,7 +148,8 @@
     }
 }
 
-/* * SKAL udfyldes */
+/* MARK: .SPAN *
+ * SKAL udfyldes */
 .span {
     position: absolute;
     top: 10px;
@@ -142,7 +165,8 @@ span {
     font-weight: 900;
 }
 
-/* titles on every admin page */
+/* MARK: .ADMIN-TITLES
+- titles/headers on every admin page */
 .admin-titles {
     text-align: center;
     text-transform: uppercase;
@@ -154,7 +178,8 @@ span {
         font-size: 1rem;
     }
 }
-/* div on admin pages that tells how to update a field */
+/* MARK: .UPDATE-INFO
+- div on admin pages that tells how to update a field */
 .update-info {
     margin: 1rem 0;
     padding: .3rem;
@@ -166,8 +191,9 @@ span {
     }
 }
 
-/* if admin is not logged in but tries to access an admin page */
-/* if there is no services or images in db tables */
+/* MARK: NO SESSION
+- if admin is not logged in but tries to access an admin page
+- if there is no services or images in db tables */
 .no_session, .empty {
     text-align: center;
 }
@@ -175,7 +201,9 @@ span {
     color: #fff;
 }
 
-/* subheader on each admin page (not admin.php) */
+/* MARK: LOGIN NAME
+- subheader on each admin page (not admin.php) 
+- this displays the username you are logged in with */
 .subheader {
     position: relative;
     .logged-in {
@@ -219,27 +247,8 @@ span {
     }
 }
 
-/* classes to add in html elements */
-.green-border-bottom {
-    border-bottom: 4px solid #025f02;
-}
-.border-black-left {
-    border-left: 1px solid #000000;
-}
-.border-bottom {
-    border-bottom: 1px solid #000000;
-}
-.border-left {
-    border-left: 1px solid #d4d2d2;
-}
-.border-right {
-    border-right: 1px solid #d4d2d2;
-}
-.padding-top {
-    padding-top: .5rem;
-}
-
-/* general button style for all buttons */
+/* MARK: Buttons
+- general button style for all buttons */
 button {
     margin-top: 1rem;
     padding: .5rem;

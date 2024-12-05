@@ -31,7 +31,7 @@
                     <div class="slide">
                         <div class="service-content">
                             <div class="icon">
-                                <img src="../../../Images/Logo/logo-multicolor.png" alt="Potebandens Dyreservice Logo">
+                                <img src="../../../images/logo/logo-multicolor.png" alt="Potebandens Dyreservice Logo">
                             </div>
                             <div class="text">
                                 <?php if (!empty($row['service_name'])) { ?>

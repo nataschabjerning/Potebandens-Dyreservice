@@ -6,6 +6,8 @@
 ?>
 
 <div class="block index-block extraone">
+
+    <div class="flowertop"></div>
     
     <div class="extra-border">
         <div class="extra-border-inner">
@@ -18,9 +20,6 @@
                     else { ?>
                         displaynone
                     <?php } ?>">
-
-                    <div class="flowerleft"></div>
-                    <div class="flowerright"></div>
 
                     <div class="extra-content">
 

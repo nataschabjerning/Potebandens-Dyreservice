@@ -2,7 +2,7 @@
     position: relative;
     padding: 0;
     .branchtop {
-        background-image: url('../../../../Images/backgrounds/branchtop.png');
+        background-image: url('../../../../images/borders/branchtop.png');
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -10,15 +10,6 @@
         top: -40px;
         height: 125px;
         width: 100%;
-        @media (max-width: 1024px) {
-            height: 120px;
-        }
-        @media (max-width: 800px) {
-            height: 115px;
-        }
-        @media (max-width: 380px) {
-            height: 110px;
-        }
     }
     /* if extra_visibility is set to 'yes' or 'choose' in db table */
     /* - add this class and show div */

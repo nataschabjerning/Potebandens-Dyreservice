@@ -1,54 +1,15 @@
 .extraone {
     position: relative;
     padding: 0;
-    .flowerleft {
-        background-image: url('../../../../Images/backgrounds/purpleflowerleft.png');
-        background-size: contain;
+    .flowertop {
+        background-image: url('../../../../images/borders/whiteflowersbordertop.png');
+        background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
         left: 0;
-        top: -120px;
-        height: 300px;
-        width: 140px;
-        @media (max-width: 1024px) {
-            height: 240px;
-            width: 110px;
-        }
-        @media (max-width: 800px) {
-            top: -90px;
-            height: 180px;
-            width: 80px;
-        }
-        @media (max-width: 380px) {
-            top: -70px;
-            height: 160px;
-            width: 70px;
-        }
-    }
-    .flowerright {
-        background-image: url('../../../../Images/backgrounds/purpleflowerright.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        right: 0;
-        bottom: -120px;
-        height: 300px;
-        width: 140px;
-        @media (max-width: 1024px) {
-            bottom: -100px;
-            height: 240px;
-            width: 110px;
-        }
-        @media (max-width: 800px) {
-            bottom: -70px;
-            height: 180px;
-            width: 80px;
-        }
-        @media (max-width: 380px) {
-            bottom: -60px;
-            height: 160px;
-            width: 70px;
-        }
+        top: -30px;
+        height: 110px;
+        width: 100%;
     }
     /* if extra_visibility is set to 'yes' or 'choose' in db table */
     /* - add this class and show div */
@@ -63,8 +24,8 @@
     .container {
         .extra-content {
             padding: 2rem 0;
-            border-top: 2px dotted rgb(139, 129, 103);
-            border-bottom: 2px dotted rgb(139, 129, 103);
+            border-top: 2px dotted #8b8167;
+            border-bottom: 2px dotted #8b8167;
             .extra-text {
                 height: fit-content;
                 h2 {

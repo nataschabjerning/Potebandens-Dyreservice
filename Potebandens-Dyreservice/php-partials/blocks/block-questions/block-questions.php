@@ -1,5 +1,7 @@
 <div class="block index-block end">
 
+    <div class="flowertop"></div>
+    
     <div class="extra-border">
         <div class="extra-border-inner">
             <div class="container">

@@ -81,7 +81,7 @@
                 </div>
             </div> <!-- .extra-image_file end -->
             <div class="line extra-image_alt">
-                <label>Alt Tekst (påkrævet hvis billedefil er valgt)</label>
+                <label>Alt Tekst ( <span>*</span> påkrævet hvis billedfil er valgt)</label>
                 <div class="input">
                     <input type="text" name="extratwo_image_alt_form" placeholder="Tekst hvis fil ikke kan vises">
                 </div>
@@ -96,18 +96,20 @@
                     </select>
                 </div>
             </div> <!-- .extra-visibility end -->
-            <div class="extra-title">
-                <label>Titel <span>*</span></label>
-                <div class="input">
-                    <input type="text" class="extratwo_title" name="extratwo_title_form">
-                </div>
-            </div> <!-- .extra-title end -->
-            <div class="extra-subtitle">
-                <label>Undertitel</label>
-                <div class="input">
-                    <input type="text" class="extratwo_subtitle" name="extratwo_subtitle_form">
-                </div>
-            </div> <!-- .extra-subtitle end -->
+            <div class="flex-titles">
+                <div class="extra-title">
+                    <label>Titel <span>*</span></label>
+                    <div class="input">
+                        <input type="text" class="extratwo_title" name="extratwo_title_form">
+                    </div>
+                </div> <!-- .extra-title end -->
+                <div class="extra-subtitle">
+                    <label>Undertitel</label>
+                    <div class="input">
+                        <input type="text" class="extratwo_subtitle" name="extratwo_subtitle_form">
+                    </div>
+                </div> <!-- .extra-subtitle end -->
+            </div> <!-- .flex-titles end -->
             <div class="extra-text_one">
                 <div class="input">
                     <textarea name="extratwo_text_one_form" placeholder="Tekst 1"></textarea>
@@ -123,25 +125,27 @@
                     <textarea name="extratwo_text_three_form" placeholder="Tekst 3"></textarea>
                 </div>
             </div> <!-- .extra-text_three end -->
-            <div class="extra-text_link">
-                <label>Tekst der bliver til link</label>
-                <div class="input">
-                    <input type="text" class="extratwo_text_link" name="extratwo_text_link_form">
-                </div>
-            </div> <!-- .extra-text_link end -->
-            <div class="extra-link_url">
-                <label>Hvor skal linket føre hen?</label>
-                <div class="input">
-                    <select name="extratwo_link_url_form">
-                        <option value="Vælg" selected disabled>--- Vælg ---</option>
-                        <option value="index.php">Forside</option>
-                        <option value="services.php">Ydelser</option>
-                        <option value="gallery.php">Galleri</option>
-                        <option value="about.php">Om Os</option>
-                        <option value="contact.php">Kontakt</option>
-                    </select>
-                </div>
-            </div> <!-- .extra-link_url end -->
+            <div class="flex-link">
+                <div class="extra-text_link">
+                    <label>Tekst der bliver til link</label>
+                    <div class="input">
+                        <input type="text" class="extratwo_text_link" name="extratwo_text_link_form">
+                    </div>
+                </div> <!-- .extra-text_link end -->
+                <div class="extra-link_url">
+                    <label>Hvor skal linket føre hen?</label>
+                    <div class="input">
+                        <select name="extratwo_link_url_form">
+                            <option value="Vælg" selected disabled>--- Vælg ---</option>
+                            <option value="index.php">Forside</option>
+                            <option value="services.php">Ydelser</option>
+                            <option value="gallery.php">Galleri</option>
+                            <option value="about.php">Om Os</option>
+                            <option value="contact.php">Kontakt</option>
+                        </select>
+                    </div>
+                </div> <!-- .extra-link_url end -->
+            </div> <!-- .flex-link end -->
             <div class="button">
                 <button name="add-extratwo">Tilføj Ekstra Blok 2</button>
             </div>

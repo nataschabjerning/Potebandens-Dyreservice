@@ -1,5 +1,27 @@
 .end {
+    position: relative;
     padding: 0;
+    .flowertop {
+        background-image: url('../../../../Images/borders/blueflowersbordertop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        top: -45px;
+        height: 100px;
+        width: 100%;
+        @media (max-width: 1024px) {
+            height: 90px;
+        }
+        @media (max-width: 800px) {
+            top: -35px;
+            height: 80px;
+        }
+        @media (max-width: 380px) {
+            top: -30px;
+            height: 70px;
+        }
+    }
     .extra-border {
         .extra-border-inner {
             padding: 2rem 0;
@@ -8,8 +30,13 @@
                     color: rgba(213, 37, 30, 1);
                     margin: 0 0 1rem;
                 }
+                .end-content {
+                    margin: 1rem 0;
+                }
                 a {
+                    margin: 0 auto;
                     color: rgba(213, 37, 30, 1);
+                    text-transform: uppercase;
                 }
             }
         }
