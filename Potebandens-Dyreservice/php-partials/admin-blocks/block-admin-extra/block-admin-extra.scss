@@ -70,7 +70,7 @@
 
                     /* MARK: GENERAL STYLE
                     ------------------------------------------- */
-                    /* general for label and input */
+                    /* general for label, input, select and textarea */
                     label {
                         font-weight: 600;
                         padding: .3rem;
@@ -170,8 +170,7 @@
                     }
 
                     /* MARK: .EXTRA-TOP
-                    ------------------------------------------- */
-                    /*
+                    -------------------------------------------
                     divided in
                     - left | right -    
                     - left | right -
@@ -186,8 +185,7 @@
                         }
 
                         /* MARK: .LEFT/RIGHT
-                        ------------------------------------------- */
-                        /*
+                        -------------------------------------------
                         left            |   right
                         .extra-image    |   .extra-text_one
                         .extra-title    |   .extra-text_two
@@ -238,8 +236,8 @@
                     }
 
                     /* MARK: .EXTRA-BOTTOM
-                    ------------------------------------------- */
-                    /* .extra-text_link, .extra-link_url */
+                    -------------------------------------------
+                    .extra-text_link, .extra-link_url */
                     .extraone-bottom, .extratwo-bottom {
                         border-left: 1px solid #000000;
                         border-right: 1px solid #000000;

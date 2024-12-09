@@ -15,11 +15,8 @@
         <div class="about-blocks">
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <section attr-about_id="<?php echo $row['id']; ?>">
-                    <div class="me">
-                        <?php if (!empty($row['about_image_link'])) { ?>
-                            <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
-                        <?php } ?>
-
+                    <div class="me <?php if (!empty($row['about_image_link'])) { ?>me-grid<?php } else { ?>me-nogrid<?php } ?>">
+                        <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
                         <div class="intro">
                             <?php if (!empty($row['about_name'])) { ?>
                                 <h1><?php echo $row['about_name']?></h1>

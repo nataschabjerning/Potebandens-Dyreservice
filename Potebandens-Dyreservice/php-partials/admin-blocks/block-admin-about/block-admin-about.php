@@ -25,56 +25,98 @@
 
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <?php if (!empty($row['id'])) { ?>
-
                     <section attr-about_id="<?php echo $row['id']; ?>">
+                        <div class="about_id">
+                            <h4>ID: <?php echo $row['id']?></h4>
+                        </div>
                         <div class="me">
-                            <div class="about_id">
-                                <h4>ID: <?php echo $row['id']?></h4>
-                            </div>
-
-                            <div class="image" style="<?php if (isset($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
-                            
-                            <div class="intro">
-                                <div class="about_name">
-                                    <input type="text" name="about_name" id="about_name" value="<?php echo $row['about_name']?>">
+                            <div class="me-left">
+                                <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>
+                                    background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');
+                                <?php } else { ?>
+                                    background-image: url('../../../../images/backgrounds/aboutnoimg.png');
+                                    background-size: contain;
+                                <?php } ?>">
+                                    <!-- if no image is set * -->
+                                    <?php if (empty($row['about_image_link'])) { ?>
+                                        <!-- * show label -->
+                                        <label class="label-noimg">Intet Billede</label>
+                                    <?php }
+                                    // <!-- if image is set * -->
+                                    else { ?>
+                                        <!-- * show no label -->
+                                    <?php } ?>
                                 </div>
-                                <div class="about_work_title">
-                                    <input type="text" name="about_work_title" id="about_work_title" value="<?php echo $row['about_work_title']?>" placeholder="Arbejdstitel">
+                                <div class="about-name">
+                                    <label>Navn</label>
+                                    <input type="text" name="about_name" class="about_name" value="<?php echo $row['about_name']?>">
                                 </div>
-                                <div class="about_text_one">
-                                    <textarea name="about_text_one" id="about_text_one" placeholder="Tekst 1"><?php echo $row['about_text_one']?></textarea>
+                                <div class="about-work_title">
+                                    <label>Arbejdstitel</label>
+                                    <input type="text" name="about_work_title" class="about_work_title" value="<?php echo $row['about_work_title']?>" placeholder="Arbejdstitel">
                                 </div>
-                                
-                                <div class="about_text_two">
-                                    <textarea name="about_text_two" id="about_text_two" placeholder="Tekst 2"><?php echo $row['about_text_two']?></textarea>
+                                <div class="about-text_one">
+                                    <label>Tekst 1</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_one" class="about_text_one" placeholder="Tekst 1"><?php echo $row['about_text_one']?></textarea>
+                                    </div>
                                 </div>
-                                <div class="about_text_three">
-                                    <textarea name="about_text_three" id="about_text_three" placeholder="Tekst 3"><?php echo $row['about_text_three']?></textarea>
+                                <div class="about-text_two">
+                                    <label>Tekst 2</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_two" class="about_text_two" placeholder="Tekst 2"><?php echo $row['about_text_two']?></textarea>
+                                    </div>
                                 </div>
-                                <div class="about_text_four">
-                                    <textarea name="about_text_four" id="about_text_four" placeholder="Tekst 4"><?php echo $row['about_text_four']?></textarea>
+                            </div> <!-- .me-left end -->
+                            <div class="me-right">
+                                <div class="about-text_three">
+                                    <label>Tekst 3</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_three" class="about_text_three" placeholder="Tekst 3"><?php echo $row['about_text_three']?></textarea>
+                                    </div>
                                 </div>
-                                <div class="about_text_five">
-                                    <textarea name="about_text_five" id="about_text_five" placeholder="Tekst 5"><?php echo $row['about_text_five']?></textarea>
+                                <div class="about-text_four">
+                                    <label>Tekst 4</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_four" class="about_text_four" placeholder="Tekst 4"><?php echo $row['about_text_four']?></textarea>
+                                    </div>
                                 </div>
-                                <div class="about_text_six">
-                                    <textarea name="about_text_six" id="about_text_six" placeholder="Tekst 6"><?php echo $row['about_text_six']?></textarea>
+                                <div class="about-text_five">
+                                    <label>Tekst 5</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_five" class="about_text_five" placeholder="Tekst 5"><?php echo $row['about_text_five']?></textarea>
+                                    </div>
                                 </div>
-                                <div class="about_text_seven">
-                                    <textarea name="about_text_seven" id="about_text_seven" placeholder="Tekst 7"><?php echo $row['about_text_seven']?></textarea>
+                                <div class="about-text_six">
+                                    <label>Tekst 6</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_six" class="about_text_six" placeholder="Tekst 6"><?php echo $row['about_text_six']?></textarea>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="buttons">
-                                <div class="update-about">
-                                    <button id="update-about">Opdatér</button>
+                                <div class="about-text_seven">
+                                    <label>Tekst 7</label>
+                                    <div class="input">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="about_text_seven" class="about_text_seven" placeholder="Tekst 7"><?php echo $row['about_text_seven']?></textarea>
+                                    </div>
                                 </div>
-
-                                <div class="delete-about">
-                                    <button id="delete-about">Slet</button>
-                                </div>
-                            </div>
+                            </div> <!-- .me-right end -->
                         </div> <!-- .me end -->
+                        <div class="buttons">
+                            <div class="update-about">
+                                <button id="update-about">Opdatér</button>
+                            </div>
+
+                            <div class="delete-about">
+                                <button id="delete-about">Slet</button>
+                            </div>
+                        </div>
                     </section>
 
                 <?php }

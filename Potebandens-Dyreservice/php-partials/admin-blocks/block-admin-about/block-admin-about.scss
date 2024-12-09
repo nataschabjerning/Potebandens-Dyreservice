@@ -4,132 +4,193 @@
             section:first-of-type {
                 margin-top: 0;
             }
-            section:nth-child(odd) {
+            section {
+                position: relative;
+                margin-top: 4rem;
+                padding: 1.5rem 1rem 1rem;
+                background-color: #ccd6bc;
+                border: 2px solid #565a4d;
+                text-align: center;
+                .about_id {
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    margin: .2rem 0 0 .5rem;
+                }
+                /* MARK: .ME
+                -------------------------------------------
+                divided in
+                    - left | right -
+                    - left | right -
+                    - left | right -
+                */
                 .me {
-                    .image {
-                        grid-column: 2/3;
-                        grid-row: 1/2;
-                        border-radius: 0;
-                        border-top-right-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                        @media (max-width: 900px) {
-                            height: 400px;
-                            grid-column: 1/2;
-                            grid-row: 1/2;
-                            border-radius: 0;
-                            border-top-right-radius: 10px;
-                            border-top-left-radius: 10px;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    background-color: #ffffff;
+                    border: 1px solid #565a4d;
+                    height: fit-content;
+                    @media (max-width: 900px) {
+                        grid-template-columns: 1fr;
+                        gap: 1rem;
+                    }
+                    
+                    /* MARK: GENERAL STYLE
+                    ------------------------------------------- */
+                    /* general for label, input and textarea */
+                    label {
+                        font-weight: 600;
+                        margin: 0 auto;
+                    }
+                    input {
+                        font-size: 1rem;
+                        width: 100%;
+                        padding: .5rem;
+                        border-style: hidden;
+                        border-top: 1px solid #d4d2d2;
+                    }
+                    textarea {
+                        font-size: 1rem;
+                        padding: .5rem;
+                        min-width: 100%;
+                        resize: vertical;
+                        min-height: min-content;
+                        height: 110px;
+                        border-style: hidden;
+                        border-top: 1px solid #d4d2d2;
+                        border-bottom: 1px solid #d4d2d2;
+                        @media (max-width: 450px) {
+                            font-size: .8rem;
+                        }
+                        @media (max-width: 350px) {
+                            height: 100px;
                         }
                     }
-                    .intro {
-                        grid-column: 1/2;
-                        grid-row: 1/2;
+
+                    /* MARK: SPECIFIC DIVS
+                    ------------------------------------------- */
+                    .about-name, .about-work_title, .about-text_one, .about-text_two, .about-text_three, .about-text_four, .about-text_five, .about-text_six, .about-text_seven {
+                        padding-top: .3rem;
+                        border-top: 1px solid #000000;
+                        .input {
+                            position: relative;
+                            padding-top: .3rem;
+                            .pull-tab {
+                                height: 0px;
+                                width: 0px;
+                                border-top: 15px solid #478f54;
+                                border-left: 15px solid transparent;
+                                border-right: 15px solid transparent;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                bottom: -2px;
+                                right: -10px;
+                                pointer-events: none;
+                                z-index: 2;
+                            }
+                        }
+                    }
+                    .about-text_three {
+                        border: none;
+                    }
+                    
+                    /* MARK: .ME - LEFT
+                    ------------------------------------------- 
+                    .image
+                    .about-name
+                    .about-work_title
+                    .about-text_one
+                    .about-text_two
+                    */
+                    .me-left {
+                        display: grid;
+                        grid-template-rows: minmax(280px, max-content) minmax(70px, max-content) minmax(70px, max-content) minmax(120px, max-content) minmax(120px, max-content);
+                        border-right: 1px solid black;
+                        .image {
+                            position: relative;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            @media (max-width: 900px) {
+                                height: 400px;
+                                grid-column: 1/2;
+                                grid-row: 1/2;
+                            }
+                            /* if no image - show this label */
+                            .label-noimg {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-weight: 600;
+                            }
+                        }
+                        .about_name {
+                            text-align: center;
+                            height: 40px;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            padding: .5rem;
+                            width: 100%;
+                            margin: 0;
+                        }
+                        .about_work_title {
+                            text-align: center;
+                            height: 40px;
+                            font-size: 1.3rem;
+                            padding: .5rem;
+                            width: 100%;
+                            margin: 0;
+                        }
+                    }
+
+                    /* MARK: .ME - RIGHT
+                    ------------------------------------------- 
+                    .about-text_three
+                    .about-text_four
+                    .about-text_five
+                    .about-text_six
+                    .about-text_seven
+                    */
+                    .me-right {
+                        display: grid;
+                        grid-template-rows: minmax(140px, max-content) minmax(140px, max-content) minmax(120px, max-content) minmax(120px, max-content) minmax(120px, max-content);
                         @media (max-width: 900px) {
                             grid-column: 1/2;
                             grid-row: 2/3;
                         }
                     }
                 }
-            }
-            section {
-                margin-top: 4rem;
-                padding: 1rem;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-                .me {
-                    position: relative;
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2rem;
-                    outline: 1px dashed #478f54;
-                    border-radius: 10px;
-                    padding: 3rem 1rem 1rem;
-                    height: fit-content;
-                    @media (max-width: 900px) {
-                        grid-template-columns: 1fr;
-                        gap: 1rem;
-                    }
-                    .about_id {
-                        position: absolute;
-                        top:0;
-                        left: 0;
-                        margin: .5rem;
-                    }
-                    .image {
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        border-top-left-radius: 10px;
-                        border-bottom-left-radius: 10px;
-                        @media (max-width: 900px) {
-                            height: 400px;
-                            grid-column: 1/2;
-                            grid-row: 1/2;
-                            border-radius: 0;
-                            border-top-right-radius: 10px;
-                            border-top-left-radius: 10px;
-                        }
-                    }
-                    .intro {
-                        @media (max-width: 900px) {
-                            grid-column: 1/2;
-                            grid-row: 2/3;
-                        }
-                        #about_name {
-                            height: 40px;
-                            font-size: 2rem;
-                            font-weight: 600;
-                            padding: .5rem;
-                            width: 100%;
+                /* MARK: BUTTONS
+                -------------------------------------------
+                */
+                .buttons {
+                    display: flex;
+                    .update-about, .delete-about {
+                        width: 100%;
+                        border: 1px solid #565a4d;
+                        border-top: none;
+                        button {
                             margin: 0;
+                            background-color: rgba(253, 156, 29, 1);
+                            padding: .6rem 1rem;
+                            border-radius: 0;
+                            color: white;
+                            font-weight: 600;
+                            cursor: pointer;
                         }
-                        #about_work_title {
-                            height: 40px;
-                            font-size: 1.5rem;
-                            padding: .5rem;
-                            width: 100%;
-                            margin: .5rem 0 0;
-                        }
-                        textarea {
-                            margin: 1rem 0 0;
-                            height: 60px;
-                            width: 100%;
-                            font-size: 1rem;
-                            padding: .5rem;
-                            @media (max-width: 768px) {
-                                height: 70px;
-                            }
+                        button:hover {
+                            background-color: rgb(223, 138, 27);
                         }
                     }
-                    .buttons {
-                        position: absolute;
-                        top:0;
-                        right: 0;
-                        display: flex;
-                        .update-about, .delete-about {
-                            button {
-                                margin: 0;
-                                background-color: rgba(253, 156, 29, 1);
-                                padding: .6rem 1rem;
-                                border-radius: 0;
-                                border-bottom-left-radius: 10px;
-                                color: white;
-                                font-weight: 600;
-                                cursor: pointer;
-                            }
-                            button:hover {
-                                background-color: rgb(223, 138, 27);
-                            }
+                    .delete-about {
+                        border-left: none;
+                        #delete-about {
+                            border-radius: 0;
+                            background-color: rgba(221, 0, 0, 1);
                         }
-                        .delete-about {
-                            #delete-about {
-                                border-radius: 0;
-                                border-top-right-radius: 10px;
-                                background-color: rgba(221, 0, 0, 1);
-                            }
-                            #delete-about:hover {
-                                background-color: rgb(199, 3, 3);
-                            }
+                        #delete-about:hover {
+                            background-color: rgb(199, 3, 3);
                         }
                     }
                 }

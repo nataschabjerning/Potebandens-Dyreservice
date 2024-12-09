@@ -16,6 +16,17 @@
                         echo "<p class='caption'>- Du kan kun vælge .jpg, .jpeg, .png eller .gif filer.</p>";
                         echo "</div>";
                     }
+                    // failed to insert into database
+                    if ($_GET["error"] == "aboutinsertfailed") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Der skete en fejl da dataen skulle indsættes i databasen. Prøv igen</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "aboutmovingfilefailed") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Der skete en fejl da filen skulle flyttes til mappen. Prøv igen</p>";
+                        echo "</div>";
+                    }
                 }
                 // if image was uploaded successfully
                 if (isset($_GET["aboutuploaded"])) {
@@ -41,7 +52,7 @@
                     <div class="addaboutform">
                         
                         <div class="about_image_link">
-                            <label for="link">Vælg Fil <span>*</span></label>
+                            <label>Vælg Fil</label>
                             <div class="input">
                                 <input type="file" name="about_file" id="about_image_link">
                             </div>
@@ -49,13 +60,13 @@
                         
                         <div class="about-top">
                             <div class="about_name">
-                                <label for="about_name">Navn <span>*</span></label>
+                                <label>Navn <span>*</span></label>
                                 <div class="about_name">
                                     <input type="text" name="about_name" placeholder="Natascha Bjerning">
                                 </div>
                             </div>
                             <div class="about_work_title">
-                                <label for="about_work_title">Arbejdstitel</label>
+                                <label>Arbejdstitel</label>
                                 <div class="about_work_title">
                                     <input type="text" name="about_work_title" placeholder="Udvikler">
                                 </div>

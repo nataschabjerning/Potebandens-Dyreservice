@@ -520,15 +520,15 @@ $(document).ready(function(){
         var $aboutId   = $section.attr('attr-about_id');
 
         // Get inputs from abouts
-        let $about_name = $section.find("#about_name").val();
-        let $about_work_title = $section.find("#about_work_title").val();
-        let $about_text_one = $section.find("#about_text_one").val();
-        let $about_text_two = $section.find("#about_text_two").val();
-        let $about_text_three = $section.find("#about_text_three").val();
-        let $about_text_four = $section.find("#about_text_four").val();
-        let $about_text_five = $section.find("#about_text_five").val();
-        let $about_text_six = $section.find("#about_text_six").val();
-        let $about_text_seven = $section.find("#about_text_seven").val();
+        let $about_name = $section.find(".about_name").val();
+        let $about_work_title = $section.find(".about_work_title").val();
+        let $about_text_one = $section.find(".about_text_one").val();
+        let $about_text_two = $section.find(".about_text_two").val();
+        let $about_text_three = $section.find(".about_text_three").val();
+        let $about_text_four = $section.find(".about_text_four").val();
+        let $about_text_five = $section.find(".about_text_five").val();
+        let $about_text_six = $section.find(".about_text_six").val();
+        let $about_text_seven = $section.find(".about_text_seven").val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne infoboks?");
