@@ -51,18 +51,25 @@
         /* display db table content in section */
         .admin-extraone, .admin-extratwo {
             section {
+                position: relative;
                 margin: 1rem 0;
-                padding: 1.5rem;
-                border-radius: 10px;
-                box-shadow: #0000001a 0px 0px 10px 5px;
-                @media (max-width: 768px) {
-                    padding: 1rem;
+                padding: 1.5rem 1rem 1rem;
+                background-color: #ccd6bc;
+                border: 2px solid #565a4d;
+                .extra_id {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    margin: .2rem 0 0 .5rem;
+                    h4 {
+                        border: none;
+                    }
                 }
                 .admin-extraone-content, .admin-extratwo-content {
                     position: relative;
-                    outline: 1px dashed #478f54;
-                    border-radius: 10px;
-                    padding: 1.5rem 1rem 1rem;
+                    background-color: #ffffff;
+                    border: 1px solid #565a4d;
                     text-align: center;
                     @media (max-width: 768px) {
                         padding: 1.5rem .8rem .8rem;
@@ -114,22 +121,7 @@
 
                     /* MARK: SPECIFIC DIVS
                     ------------------------------------------- */
-                    .extra_id {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        display: flex;
-                        margin: .2rem 0 0 .5rem;
-                        h4 {
-                            border: none;
-                        }
-                    }
                     .extra-visibility {
-                        border-top: 1px solid #000000;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 10px;
-                        border-left: 1px solid #000000;
-                        border-right: 1px solid #000000;
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         align-items: center;
@@ -137,11 +129,6 @@
                             grid-template-columns: none;
                             grid-template-rows: auto auto;
                             text-align: center;
-                        }
-                    }
-                    .extra-subtitle {
-                        @media (max-width: 768px) {
-                            border-bottom: 1px solid #000000;
                         }
                     }
                     .extra-title, .extra-subtitle, .extra-text_one, .extra-text_two, .extra-text_three {
@@ -179,7 +166,6 @@
                     .extraone-top, .extratwo-top {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        border: 1px solid #000000;
                         @media (max-width: 768px) {
                             grid-template-columns: 1fr;
                         }
@@ -211,8 +197,8 @@
                                     transform: translate(-50%, -50%);
                                 }
                             }
-                            .extra-image, .extra-title, .extra-text_one, .extra-text_two {
-                                border-bottom: 1px solid #000000;
+                            .extra-image, .extra-title, .extra-subtitle, .extra-text_one, .extra-text_two, .extra-text_three {
+                                border-top: 1px solid #000000;
                             }
                         }
                         .extraone-left, .extratwo-left {
@@ -239,8 +225,7 @@
                     -------------------------------------------
                     .extra-text_link, .extra-link_url */
                     .extraone-bottom, .extratwo-bottom {
-                        border-left: 1px solid #000000;
-                        border-right: 1px solid #000000;
+                        border-top: 1px solid #000000;
                         .extra-text_link, .extra-link_url {
                             display: grid;
                             grid-template-columns: 1fr 1fr;
@@ -271,8 +256,6 @@
                 ------------------------------------------- */
                 .update-delete-buttons {
                     display: flex;
-                    border-bottom: 1px solid black;
-                    border-radius: 10px;
                     .update-extraone, .delete-extraone, .update-extratwo, .delete-extratwo {
                         width: 100%;
                         button {
@@ -280,7 +263,6 @@
                             background-color: #fd9c1d;
                             padding: .5rem;
                             border-radius: 0;
-                            border-bottom-left-radius: 10px;
                             color: #ffffff;
                             font-weight: 600;
                             cursor: pointer;
@@ -292,7 +274,6 @@
                     .delete-extraone, .delete-extratwo {
                         button {
                             border-radius: 0;
-                            border-bottom-right-radius: 10px;
                             background-color: #dd0000;
                         }
                         button:hover {

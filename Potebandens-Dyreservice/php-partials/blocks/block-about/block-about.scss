@@ -11,36 +11,39 @@
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
                 padding: 1rem;
-                margin-top: 3rem;
+                margin-top: 2rem;
                 /* MARK: .ME-GRID
                 */
                 .me-grid {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    @media (max-width: 900px) {
+                    @media (max-width: 767px) {
                         grid-template-columns: 1fr;
-                        gap: 0;
                     }
                     .intro {
                         border-left: 1px solid #565a4d;
-                        @media (max-width: 900px) {
+                        @media (max-width: 767px) {
                             grid-column: 1/2;
                             grid-row: 2/3;
                             padding: 1rem;
                             border-left: none;
                             border-top: 1px solid #565a4d;
+                            text-align: center;
                         }
                         p {
                             margin: 1rem 0;
                             text-align: justify;
+                            @media (max-width: 767px) {
+                                text-align: center;
+                            }
                         }
                     }
                     .image {
                         background-position: center;
                         background-repeat: no-repeat;
                         background-size: cover;
-                        @media (max-width: 900px) {
-                            height: 400px;
+                        @media (max-width: 767px) {
+                            height: 300px;
                             grid-column: 1/2;
                             grid-row: 1/2;
                         }
@@ -62,22 +65,22 @@
                 /* MARK: .ME
                 */
                 .me {
+                    background: linear-gradient(
+                            to bottom,
+                            #f1deb1 0%, 
+                            #f1e4c4 10%, 
+                            #f8efd6 35%, 
+                            #f8f0df 50%, 
+                            #f8f5ee 70%, 
+                            #ffffff 90%, 
+                            #ffffff 100%
+                        );
                     text-align: center;
                     border: 1px solid #565a4d;
                     .intro {
-                        background: linear-gradient(
-                        to bottom,
-                        #f1deb1 0%, 
-                        #f1e4c4 10%, 
-                        #f8efd6 35%, 
-                        #f8f0df 50%, 
-                        #f8f5ee 70%, 
-                        #ffffff 90%, 
-                        #ffffff 100%
-                    );
                         padding: 1rem 2rem;
-                        @media (max-width: 900px) {
-                            padding: 1rem;
+                        @media (max-width: 450px) {
+                            padding: .5rem 1rem;
                         }
                         h1 {
                             margin-bottom: .5rem;
@@ -102,7 +105,7 @@
                         border-right: 1px solid #565a4d;
                         grid-column: 1/2;
                         grid-row: 1/2;
-                        @media (max-width: 900px) {
+                        @media (max-width: 767px) {
                             grid-column: 1/2;
                             grid-row: 2/3;
                             border-right: none;
@@ -110,12 +113,15 @@
                         }
                         p {
                             text-align: justify;
+                            @media (max-width: 767px) {
+                                text-align: center;
+                            }
                         }
                     }
                     .image {
                         grid-column: 2/3;
                         grid-row: 1/2;
-                        @media (max-width: 900px) {
+                        @media (max-width: 767px) {
                             height: 400px;
                             grid-column: 1/2;
                             grid-row: 1/2;

@@ -64,11 +64,11 @@
                     } ?>
 
                     <section attr-extraone_id="<?php echo $row['id']; ?>">
+                        <div class="extra_id">
+                            <h4>ID:</h4>
+                            <h4><?php echo $row['id']?></h4>
+                        </div> <!-- .extra_id end -->
                         <div class="admin-extraone-content">
-                            <div class="extra_id">
-                                <h4>ID:</h4>
-                                <h4><?php echo $row['id']?></h4>
-                            </div> <!-- .extra_id end -->
                             <div class="extra-visibility">
                                 <label>Skal blokken vises på forsiden?</label>
                                 <div class="input">
@@ -85,7 +85,7 @@
                                         background-image: url('includes/extra-images/<?php echo $row['extra_image']?>');
                                     <?php }
                                     else { ?>
-                                        background-image: url('../../../../Images/backgrounds/indexnoimg.jpg');
+                                        background-image: url('../../../../images/backgrounds/noimg.jpg');
                                     <?php } ?>">
                                         <!-- if no image is set * -->
                                         <?php if (empty($row['extra_image'])) { ?>

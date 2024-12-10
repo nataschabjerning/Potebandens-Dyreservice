@@ -1,10 +1,4 @@
 <?php
-
-    // show errors if any
-    echo ini_set('display_errors', 1);
-    echo ini_set('display_startup_errors', 1);
-    echo error_reporting(E_ALL);
-
     include_once("connect.inc.php");
 
     // File upload directory
@@ -20,6 +14,7 @@
     $about_text_five = $_POST["about_text_five"];
     $about_text_six = $_POST["about_text_six"];
     $about_text_seven = $_POST["about_text_seven"];
+    $maxchar = 250;
 
     $targetFilePath = $targetDir . $about_image_link;
     // get image extension store it in variable
@@ -34,13 +29,41 @@
     }
     // if image is chosen and allowed file formats is selected
     if (!empty($about_image_link) && !in_array($fileType, $allowTypes)) {
-        header("Location: ../admin-index.php?error=aboutwrongfiletype");
+        header("Location: ../admin-about.php?error=aboutwrongfiletype");
         exit();
     }
     // if image is chosen but moving file to folder failed
     if (!empty($about_image_link) && !move_uploaded_file($_FILES["about_file"]["tmp_name"], $targetFilePath)) {
-            
-        header("Location: ../admin-index.php?error=aboutmovingfilefailed");
+        header("Location: ../admin-about.php?error=aboutmovingfilefailed");
+        exit();
+    }
+    // if text in textareas are over 250 characters
+    if (strlen($about_text_one) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext1");
+        exit();
+    }
+    if (strlen($about_text_two) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext2");
+        exit();
+    }
+    if (strlen($about_text_three) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext3");
+        exit();
+    }
+    if (strlen($about_text_four) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext4");
+        exit();
+    }
+    if (strlen($about_text_five) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext5");
+        exit();
+    }
+    if (strlen($about_text_six) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext6");
+        exit();
+    }
+    if (strlen($about_text_seven) > $maxchar) {
+        header("Location: ../admin-about.php?error=abouttext7");
         exit();
     }
 

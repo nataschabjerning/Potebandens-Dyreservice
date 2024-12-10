@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-    // ----- ALERT BOXES - FORMS -----
+    // MARK: ALERT
     // errors
     function errorAlert(message) {
         $("#erroralert").show();
@@ -20,7 +19,7 @@ $(document).ready(function(){
         });
     }
 
-    // ----- CONFIRMATION BOXES - FORMS -----
+    // MARK: CONFIRMATION
     // errors
     function confirmationDelete(message) {
         $("#confirmation-delete").show();
@@ -32,16 +31,83 @@ $(document).ready(function(){
         $(".updatemessage").append(message);
     }
 
+    // MARK: MOBILE ICON
+    // Mobile menu - click on hamburger menu icon to open menu
+    $('#menu-btn').click(function() {
+        $(this).toggleClass('open');
+        $('.menu-content').toggle("slide");
+    });
 
-    // ----- USER INTERFACE -----
 
-    // ----- CREATOR DIV -----
+
+// ------------------------------------------
+    // MARK: INDEX SLIDERS
+
+
+
+
+    // MARK: Services
+    $('.service-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: false,
+        prevArrow: $('.service-prev'),
+        nextArrow: $('.service-next'),
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+    
+    // MARK: Gallery
+    $('.gallery-slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        infinite: false,
+        prevArrow: $('.gallery-prev'),
+        nextArrow: $('.gallery-next'),
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    // MARK: CREATOR DIV
     // show/hide 'creator' on 'contact.php' page
     $(".show-creator").click(function () {
         $("#creator").slideToggle();
     });
 
-    // ----- USER CONTACT FORM -----
+
+
+// -------------------------------------------------------------------
+    // MARK: USER INTERFACE
+
+
+
+
+    // MARK: CONTACT FORM
+
+
+
+
+    // MARK: phone/email
     // For user when writing a msg to admin by using contact form on 'block-contact.php'
     // show input field when user selects either phone or email
     $("#selected").change(function(){
@@ -56,7 +122,8 @@ $(document).ready(function(){
         });
     }).change();
 
-    // ----- USER CONTACT FORM -----
+
+    // MARK: textarea chars
     // For user when writing a msg to admin by using contact form on 'block-contact.php'
     // ----- show how many characters are left in textarea -----
     var text_min = 0;
@@ -69,6 +136,7 @@ $(document).ready(function(){
         $('#message_msg_feedback').html(text_remaining + ' / 255');
     });
 
+    // MARK: send msg
     // ---------- USER SEND MESSAGE TO ADMIN INBOX (block-contact.php) ----------
     $('#send-contact-message').click(function() {
 
@@ -132,60 +200,15 @@ $(document).ready(function(){
 		})
     });
 
-    // ----- MOBILE MENU ICON -----
-    // Mobile menu - click on hamburger menu icon to open menu
-    $('#menu-btn').click(function() {
-        $(this).toggleClass('open');
-        $('.menu-content').toggle("slide");
-    });
-
-    // ----- FRONT PAGE SLIDERS -----
-    // Slider on front page to diplay services
-    $('.service-slider').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: false,
-        prevArrow: $('.service-prev'),
-        nextArrow: $('.service-next'),
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-    
-    // Slider on front page to diplay gallery
-    $('.gallery-slider').slick({
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: true,
-        infinite: false,
-        prevArrow: $('.gallery-prev'),
-        nextArrow: $('.gallery-next'),
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
 
 
-    // ----- ADMIN FUNCTIONS -----
+// ----------------------------------------------------------------
+    // MARK: ADMIN
+
 
     // ----- SHOW FORMS FOR INSERTING IN DB -----
+
+    // MARK: Show/Hide forms
 
     // show/hide 'change password' form  on 'admin-profile' page
     $(".change_password").click(function () {
@@ -290,9 +313,13 @@ $(document).ready(function(){
 
 
 
-    // ---------------------- CREATE FORMS ----------------------
+// ---------------------------------------------------------
+    // MARK: CREATE FORMS
 
-    // ---------- ABOUT ----------
+
+
+
+    // ---------- MARK: About ----------
     $('#upload-about').click(function() {
 
         $about_image_link = $('#about_image_link').val();
@@ -324,7 +351,7 @@ $(document).ready(function(){
         })
     });
 
-    // ---------- CONTACT ----------
+    // ---------- MARK: Contact ----------
     $('#create-contact').click(function() {
 
         $contact_name = $('input[name=contact_name]').val();
@@ -368,7 +395,7 @@ $(document).ready(function(){
 		})
     });
 
-    // ---------- OPENINGHOURS ----------
+    // ---------- MARK: Openinghours ----------
     $('#create-openinghours').click(function() {
 
         $vacationform = $('#vacationform').val();
@@ -420,7 +447,7 @@ $(document).ready(function(){
 		})
     });
 
-    // ---------- RULES ----------
+    // ---------- MARK: Rules ----------
     $('#create-rules').click(function() {
 
         $rules = $('input[name=rules]').val();
@@ -465,7 +492,7 @@ $(document).ready(function(){
 		})
     });
 
-    // ---------- SERVICE ----------
+    // ---------- MARK: Service ----------
     $('#create-service').click(function() {
 
         $service_name = $('input[name=service_name]').val();
@@ -509,9 +536,13 @@ $(document).ready(function(){
 
     
 
-    // ---------------------- UPDATE FORMS ----------------------
+// -----------------------------------------------------------
+    // MARK: UPDATE FORMS
 
-    // ---------- ABOUT ----------
+
+
+
+    // ---------- MARK: About ----------
     $('.update-about').click(function() {
 
         // select the closest section to the clicked update button
@@ -583,7 +614,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- CONTACT ----------
+    // ---------- MARK: Contact ----------
     $('.update-contact').click(function() {
 
         // select the closest section to the clicked update button
@@ -653,7 +684,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- EXTRA ONE ----------
+    // ---------- MARK: Extra One ----------
     $('.update-extraone').click(function() {
 
         // select the closest section to the clicked update button
@@ -717,7 +748,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- EXTRA TWO ----------
+    // ---------- MARK: Extra Two ----------
     $('.update-extratwo').click(function() {
 
         // select the closest section to the clicked update button
@@ -781,7 +812,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- OPENINGHOURS ----------
+    // ---------- MARK: Openinghours ----------
     $('.update-openinghours').click(function() {
 
         // select the closest section to the clicked update button
@@ -857,7 +888,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- RULES ----------
+    // ---------- MARK: Rules ----------
     $('.update-rules').click(function() {
 
         // select the closest section to the clicked update button
@@ -926,7 +957,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- SERVICE ----------
+    // ---------- MARK: Service ----------
     $('.update-service').click(function() {
 
         // select the closest section to the clicked update button
@@ -995,15 +1026,19 @@ $(document).ready(function(){
 
 
 
-    // ---------------------- DELETE FORMS ----------------------
+// -------------------------------------------------------------
+    // MARK: DELETE FORMS
 
-    // ---------- ABOUT ----------
+
+
+
+    // ---------- MARK: About ----------
     $('.delete-about').click(function() {
 
         let $section  = jQuery(this).closest("section");
         // get the about ID
         var $aboutId   = $section.attr('attr-about_id');
-        let $about_name = $section.find("#about_name").val();
+        let $about_name = $section.find(".about_name").val();
 
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
@@ -1041,7 +1076,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- CONTACT ----------
+    // ---------- MARK: Contact ----------
     $('.delete-contact').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1080,7 +1115,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- EXTRA ONE ----------
+    // ---------- MARK: Extra One ----------
     $('.delete-extraone').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1119,7 +1154,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- EXTRA TWO ----------
+    // ---------- MARK: Extra Two ----------
     $('.delete-extratwo').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1158,7 +1193,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- IMAGE ----------
+    // ---------- MARK: Gallery Image ----------
     $('.delete-image').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1200,7 +1235,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- MESSAGE (INBOX) ----------
+    // ---------- MARK: Msg (Inbox) ----------
     $('.delete-message').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1242,7 +1277,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- OPENINGHOURS ----------
+    // ---------- MARK: Openinghours ----------
     $('.delete-openinghours').click(function() {
 
         // select the closest section to the clicked update button
@@ -1282,7 +1317,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- RULES ----------
+    // ---------- MARK: Rules ----------
     $('.delete-rules').click(function() {
 
         // select the closest section to the clicked update button
@@ -1322,7 +1357,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- SERVICE ----------
+    // ---------- MARK: Service ----------
     $('.delete-service').click(function() {
 
         let $section  = jQuery(this).closest("section");
@@ -1361,7 +1396,7 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- USER ----------
+    // ---------- MARK: User ----------
     function deleteUser() {
 	    $(document).delegate(".delete-user", "click", function() {
 

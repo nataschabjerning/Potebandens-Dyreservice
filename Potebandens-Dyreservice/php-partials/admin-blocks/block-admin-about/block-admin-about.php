@@ -34,8 +34,7 @@
                                 <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>
                                     background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');
                                 <?php } else { ?>
-                                    background-image: url('../../../../images/backgrounds/aboutnoimg.png');
-                                    background-size: contain;
+                                    background-image: url('../../../../images/backgrounds/noimg.jpg');
                                 <?php } ?>">
                                     <!-- if no image is set * -->
                                     <?php if (empty($row['about_image_link'])) { ?>
