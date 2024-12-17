@@ -26,45 +26,79 @@
                         <div class="rule">
                             <input type="text" class="rules" value="<?php echo $row['rules']?>">
                             <div class="bullet-points">
-                                <div class="point">
-                                    <p>1)</p>
-                                    <input type="text" class="point_one" value="<?php echo $row['rules_point_one']?>">
+                                <div class="bullet-points-top">
+                                    <div class="point">
+                                        <p class="point-numb">1)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_one"><?php echo $row['rules_point_one']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">2)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_two"><?php echo $row['rules_point_two']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">3)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_three"><?php echo $row['rules_point_three']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">4)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_four"><?php echo $row['rules_point_four']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">5)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_five"><?php echo $row['rules_point_five']?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="point">
-                                    <p>2)</p>
-                                    <input type="text" class="point_two" value="<?php echo $row['rules_point_two']?>">
-                                </div>
-                                <div class="point">
-                                    <p>3)</p>
-                                    <input type="text" class="point_three" value="<?php echo $row['rules_point_three']?>">
-                                </div>
-                                <div class="point">
-                                    <p>4)</p>
-                                    <input type="text" class="point_four" value="<?php echo $row['rules_point_four']?>">
-                                </div>
-                                <div class="point">
-                                    <p>5)</p>
-                                    <input type="text" class="point_five" value="<?php echo $row['rules_point_five']?>">
-                                </div>
-                                <div class="point">
-                                    <p>6)</p>
-                                    <input type="text" class="point_six" value="<?php echo $row['rules_point_six']?>">
-                                </div>
-                                <div class="point">
-                                    <p>7)</p>
-                                    <input type="text" class="point_seven" value="<?php echo $row['rules_point_seven']?>">
-                                </div>
-                                <div class="point">
-                                    <p>8)</p>
-                                    <input type="text" class="point_eight" value="<?php echo $row['rules_point_eight']?>">
-                                </div>
-                                <div class="point">
-                                    <p>9)</p>
-                                    <input type="text" class="point_nine" value="<?php echo $row['rules_point_nine']?>">
-                                </div>
-                                <div class="point">
-                                    <p>10)</p>
-                                    <input type="text" class="point_ten" value="<?php echo $row['rules_point_ten']?>">
+                                <div class="bullet-points-bottom">
+                                    <div class="point">
+                                        <p class="point-numb">6)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_six"><?php echo $row['rules_point_six']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">7)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_seven"><?php echo $row['rules_point_seven']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">8)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_eight"><?php echo $row['rules_point_eight']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">9)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_nine"><?php echo $row['rules_point_nine']?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="point">
+                                        <p class="point-numb">10)</p>
+                                        <div class="input">
+                                            <div class="pull-tab"></div>
+                                            <textarea class="point_ten"><?php echo $row['rules_point_ten']?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

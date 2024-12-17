@@ -15,7 +15,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du skifte kodeord, oprette nye brugere og slette eksisterende brugere.</P>
+                                <p>Her kan du skifte kodeord på den bruger du er logget ind som nu, oprette nye brugere og slette eksisterende brugere.</p>
                             </div>
                         </a>
                     </div>
@@ -26,7 +26,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du se alle beskeder, der er sendt til dig fra besøgende på hjemmesiden.</P>
+                                <p>Her kan du se alle beskeder, der er sendt til dig fra besøgende på hjemmesiden.</p>
                             </div>
                         </a>
                     </div>
@@ -42,7 +42,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du ændre i tekstbokse der er på forsiden.</P>
+                                <p>Her kan du ændre i tekstbokse der er på forsiden.</p>
                             </div>
                         </a>
                     </div>
@@ -53,7 +53,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du oprette nye ydelser, eller opdater/slette eksisterende ydelser.</P>
+                                <p>Her kan du oprette nye ydelser, eller opdater/slette eksisterende ydelser.</p>
                             </div>
                         </a>
                     </div>
@@ -64,7 +64,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du tilføje og/eller slette billeder i galleriet.</P>
+                                <p>Her kan du tilføje og/eller slette billeder i galleriet.</p>
                             </div>
                         </a>
                     </div>
@@ -75,7 +75,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du oprette, slette eller opdatere blokke, der indeholder billede og info om en person, eller firmaet.</P>
+                                <p>Her kan du oprette, slette eller opdatere blokke, der indeholder billede og info om en person, eller firmaet.</p>
                             </div>
                         </a>
                     </div>
@@ -86,7 +86,7 @@
                             </div>
                             <hr>
                             <div class="todo">
-                                <P>Her kan du rette i de oplysninger, der er nødvendige for at kunne kontakte dig. Du kan også tilføje, rette eller slette åbningstider og regler.</P>
+                                <p>Her kan du rette i de oplysninger, der er nødvendige for at kunne kontakte dig. Du kan også tilføje, rette eller slette åbningstider og regler.</p>
                             </div>
                         </a>
                     </div>

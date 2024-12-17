@@ -1,5 +1,5 @@
 #rules {
-    padding: 2rem 0 6rem;
+    padding: 2rem 0 10rem;
     .container {
         text-align: center;
         .rules-title {
@@ -27,21 +27,28 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 1rem;
-            flex-wrap: wrap;
+            background-color: #ccd6bc;
+            border: 2px solid #565a4d;
+            padding: 1rem;
             @media (max-width: 1024px) {
                 grid-template-columns: 1fr 1fr;
             }
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
-            .subtitle {
-                margin: 1rem 0 1.5rem;
-            }
             .all-rules {
-                outline: 1px dashed #478f54;
+                background: linear-gradient(
+                    to bottom,
+                    #f1deb1 0%, 
+                    #f1e4c4 10%, 
+                    #f8efd6 35%, 
+                    #f8f0df 50%, 
+                    #f8f5ee 70%, 
+                    #ffffff 90%, 
+                    #ffffff 100%
+                );
+                border: 1px solid #565a4d;
                 padding: 1rem;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 2px;
                 @media (max-width: 1024px) {
                     grid-column: 1 / 3;
                 }

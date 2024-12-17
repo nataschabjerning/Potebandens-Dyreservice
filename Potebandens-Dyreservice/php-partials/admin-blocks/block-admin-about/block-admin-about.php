@@ -117,7 +117,6 @@
                             </div>
                         </div>
                     </section>
-
                 <?php }
             } ?>
         </div> <!-- .about-blocks end -->

@@ -37,7 +37,7 @@
                                 <h4><?php echo $row['email']?></h4>
                             </div>
                             <div class="delete-user">
-                                <button id="delete-user">Slet</button>
+                                <button id="delete-user">Slet Bruger</button>
                             </div>
                         </div>
                     </section>

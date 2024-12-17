@@ -23,6 +23,28 @@
     if(preg_match("/\d/", $service_name)) {
         exit;
     }
+    // if string length is too long
+    if(strlen($service_name) > 100) {
+        exit();
+    }
+    if(strlen($important_note) > 250) {
+        exit();
+    }
+    if(strlen($service_description_one) > 250) {
+        exit();
+    }
+    if(strlen($service_description_two) > 250) {
+        exit();
+    }
+    if(strlen($service_description_three) > 250) {
+        exit();
+    }
+    if(strlen($service_description_four) > 250) {
+        exit();
+    }
+    if(strlen($service_short_description) > 250) {
+        exit();
+    }
     
     $sql = "INSERT INTO services (service_name, service_short_description, service_description_one, service_description_two, service_description_three, service_description_four, important_note) 
     VALUES ('$service_name', '$service_short_description', '$service_description_one', '$service_description_two', '$service_description_three', '$service_description_four', '$important_note')";

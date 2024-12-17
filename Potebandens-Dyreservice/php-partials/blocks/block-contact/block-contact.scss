@@ -1,5 +1,5 @@
 .contact {
-    padding: 6rem 0 0;
+    padding: 8rem 0 0;
     .container {
         .contact-title, .message-title {
             text-align: center;
@@ -21,17 +21,21 @@
             color: black;
         }
 
+        /* MARK: GRID
+        */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             padding: 2rem 0;
             margin: 2rem 0 0;
-            border-top: 1px solid #3f48cc;
-            border-bottom: 1px solid #3f48cc;
+            border-top: 2px solid #565a4d;
+            border-bottom: 2px solid #565a4d;
             @media (max-width: 800px) {
                 grid-template-columns: 1fr;
             }
+            /* MARK: LEFT GRID
+            - Contact person info */
             .contact-info {
                 .contact-blocks {
                     display: flex;
@@ -41,18 +45,32 @@
                     .contact-wrapper {
                         width: 100%;
                         margin: 0 auto;
-                        padding: 1.5rem;
-                        border-radius: 10px;
-                        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                        background-color: #ccd6bc;
+                        border: 2px solid #565a4d;
+                        padding: 1rem;
                         .contact-options {
                             display: flex;
                             flex-direction: column;
                             justify-content: space-evenly;
-                            outline: 1px dashed #478f54;
-                            border-radius: 10px;
+                            background: linear-gradient(
+                                to bottom,
+                                #f1deb1 0%, 
+                                #f1e4c4 10%, 
+                                #f8efd6 35%, 
+                                #f8f0df 50%, 
+                                #f8f5ee 70%, 
+                                #ffffff 90%, 
+                                #ffffff 100%
+                            );
+                            border: 1px solid #565a4d;
                             padding: 1rem;
+                            /* MARK: Top fields
+                            */
                             .contact-top {
                                 margin: 0 0 1rem;
+
+                                /* MARK: .name/.work_title
+                                */
                                 .name {
                                     text-align: center;
                                 }
@@ -61,12 +79,16 @@
                                     text-align: center;
                                 }
                             }
+                            /* MARK: Bottom fields
+                            */
                             .contact-bottom {
                                 display: flex;
                                 justify-content: space-between;
                                 @media (max-width: 450px) {
                                     display: block;
                                 }
+                                /* MARK: .phone/.email
+                                */
                                 .phone, .email {
                                     text-align: center;
                                     a {
@@ -88,15 +110,26 @@
                 }
             }
 
+            /* MARK: RIGHT GRID
+            */
             .message-form {
                 #new-message {
-                    padding: 1.5rem;
-                    border-radius: 10px;
-                    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
+                    background-color: #ccd6bc;
+                    border: 2px solid #565a4d;
+                    padding: 1rem;
                     .new-message {
-                        outline: 1px dashed #478f54;
-                        border-radius: 10px;
-                        padding: 1.5rem;
+                        background: linear-gradient(
+                            to bottom,
+                            #f1deb1 0%, 
+                            #f1e4c4 10%, 
+                            #f8efd6 35%, 
+                            #f8f0df 50%, 
+                            #f8f5ee 70%, 
+                            #ffffff 90%, 
+                            #ffffff 100%
+                        );
+                        border: 1px solid #565a4d;
+                        padding: 1rem;
                         position: relative;
                         .span {
                             position: absolute;
@@ -104,27 +137,51 @@
                             right: 10px;
                             font-weight: 600;
                         }
+                        /* MARK: Form
+                        */
                         form {
                             label {
                                 font-weight: 600;
                             }
+                            /* MARK: Textarea, input
+                            */
                             textarea, input {
                                 font-size: 1rem;
                                 padding: .5rem;
-                                height: 70px;
+                                height: 100px;
                                 border: 1px solid black;
-                                border-radius: 5px;
                                 margin: .5rem 0 0;
                                 width: 100%;
+                                resize: vertical;
                                 @media (max-width: 768px) {
                                     margin: .2rem 0 0;
                                     font-size: .9rem;
+                                }
+                            }
+                            .input {
+                                position: relative;
+                                /* MARK: Textarea pulltab
+                                */
+                                .pull-tab {
+                                    height: 0px;
+                                    width: 0px;
+                                    border-top: 15px solid #478f54;
+                                    border-left: 15px solid transparent;
+                                    border-right: 15px solid transparent;
+                                    transform: rotate(-45deg);
+                                    position: absolute;
+                                    bottom: 18px;
+                                    right: -9px;
+                                    pointer-events: none;
+                                    z-index: 2;
                                 }
                             }
                             input {
                                 height: 30px;
                                 width: 100%;
                             }
+                            /* MARK: Specific divs
+                            */
                             .message_div {
                                 margin: 1rem 0;
                                 @media (max-width: 768px) {
@@ -132,6 +189,7 @@
                                 }
                             }
                             .message_msg {
+                                margin: 1rem 0 0;
                                 .input {
                                     #message_msg_feedback {
                                         color: grey;
@@ -141,6 +199,7 @@
                             }
                             .message_contact {
                                 text-align: center;
+                                margin: 0 0 1rem;
                                 select {
                                     width: 60%;
                                     text-align: center;
@@ -148,9 +207,29 @@
                                     height: 30px;
                                     margin: .5rem auto 0;
                                 }
+                                /* box containing inputs for phone and email */
                                 .box {
                                     display: none;
                                 }
+                            }
+                        }
+                        /* MARK: Button
+                        */
+                        .button {
+                            button {
+                                margin-top: .5rem;
+                                padding: .5rem;
+                                border-radius: 0;
+                                color: white;
+                                font-size: 1rem;
+                                font-weight: 600;
+                                background-color: #478f54;
+                                border: none;
+                                width: 100%;
+                                cursor: pointer;
+                            }
+                            button:hover {
+                                background-color: #008000;
                             }
                         }
                     }

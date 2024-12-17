@@ -140,6 +140,15 @@ $(document).ready(function(){
     // ---------- USER SEND MESSAGE TO ADMIN INBOX (block-contact.php) ----------
     $('#send-contact-message').click(function() {
 
+        $currentDate = new Date();
+        $day = $currentDate.getDate();
+        $month = $currentDate.getMonth() + 1;
+        $year = $currentDate.getFullYear();
+        $message_date = $day + '-' + $month + '-' + $year;
+
+        var $currentTime = new Date();
+        var $message_time = $currentTime.getHours() + ":" + $currentTime.getMinutes() + ":" + $currentTime.getSeconds();
+
         $message_name = $('input[name=message_name]').val();
         $message_subject = $('input[name=message_subject]').val();
         $message_msg = $('textarea[name=message_msg]').val();
@@ -154,6 +163,8 @@ $(document).ready(function(){
             type: 'POST',
             url: 'includes/sendmessage.inc.php',
             data: {
+                message_date: $message_date,
+                message_time: $message_time,
                 message_name: $message_name,
                 message_subject: $message_subject,
                 message_msg: $message_msg,
@@ -451,16 +462,16 @@ $(document).ready(function(){
     $('#create-rules').click(function() {
 
         $rules = $('input[name=rules]').val();
-        $point_one = $('input[name=point_one]').val();
-        $point_two = $('input[name=point_two]').val();
-        $point_three = $('input[name=point_three]').val();
-        $point_four = $('input[name=point_four]').val();
-        $point_five = $('input[name=point_five]').val();
-        $point_six = $('input[name=point_six]').val();
-        $point_seven = $('input[name=point_seven]').val();
-        $point_eight = $('input[name=point_eight]').val();
-        $point_nine = $('input[name=point_nine]').val();
-        $point_ten = $('input[name=point_ten]').val();
+        $point_one = $('textarea[name=point_one]').val();
+        $point_two = $('textarea[name=point_two]').val();
+        $point_three = $('textarea[name=point_three]').val();
+        $point_four = $('textarea[name=point_four]').val();
+        $point_five = $('textarea[name=point_five]').val();
+        $point_six = $('textarea[name=point_six]').val();
+        $point_seven = $('textarea[name=point_seven]').val();
+        $point_eight = $('textarea[name=point_eight]').val();
+        $point_nine = $('textarea[name=point_nine]').val();
+        $point_ten = $('textarea[name=point_ten]').val();
         
         var $request = $.ajax({
             type: 'POST',
@@ -484,6 +495,51 @@ $(document).ready(function(){
             if(!$rules || !$point_one) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde begge eller ét af de påkrævede felter!");
+            }
+            // if string length is too long
+            else if($rules.length > 100) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i 'Hvor gælder disse regler' er for langt. Der kan maks skrives 100 tegn.");
+            }
+            else if($point_one.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 1 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_two.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 2 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_three.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 3 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_four.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 4 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_five.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 5 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_six.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 6 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_seven.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 7 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_eight.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 8 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_nine.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 9 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            else if($point_ten.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i regelfelt 10 er for langt. Der kan maks skrives 250 tegn.");
             }
             else {
                 // if all checks have cleared
@@ -521,6 +577,41 @@ $(document).ready(function(){
             if(!$service_name || !$service_short_description || !$service_description_one) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+            }
+            // if string length is over 250 characters
+            else if($service_name.length > 100) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i Ydelsens Navn er for langt. Der kan maks skrives 100 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($service_description_one.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i tekstfelt 1 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($service_description_two.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i tekstfelt 2 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($service_description_three.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i tekstfelt 3 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($service_description_four.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($service_short_description.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn.");
+            }
+            // if string length is over 250 characters
+            else if($important_note.length > 250) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i 'Vigtig Note'-feltet er for langt. Der kan maks skrives 250 tegn.");
             }
             // if 'service_name' contains numbers
             else if ($service_name.match(".*\\d.*")) {
@@ -966,13 +1057,13 @@ $(document).ready(function(){
         var $serviceId   = $section.attr('attr-service_id');
 
         // Get inputs from services
-        let $service_name = $section.find("#service_name").val();
-        let $service_short_description = $section.find("#service_short_description").val();
-        let $service_description_one = $section.find("#service_description_one").val();
-        let $service_description_two = $section.find("#service_description_two").val();
-        let $service_description_three = $section.find("#service_description_three").val();
-        let $service_description_four = $section.find("#service_description_four").val();
-        let $important_note = $section.find("#important_note").val();
+        let $service_name = $section.find(".service_name").val();
+        let $service_short_description = $section.find(".service_short_description").val();
+        let $service_description_one = $section.find(".service_description_one").val();
+        let $service_description_two = $section.find(".service_description_two").val();
+        let $service_description_three = $section.find(".service_description_three").val();
+        let $service_description_four = $section.find(".service_description_four").val();
+        let $important_note = $section.find(".important_note").val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne ydelse?");

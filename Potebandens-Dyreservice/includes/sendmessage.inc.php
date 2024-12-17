@@ -7,6 +7,8 @@
 
     include_once("connect.inc.php");
 
+    $message_date       = $_POST['message_date'];
+    $message_time       = $_POST['message_time'];
     $message_name       = $_POST['message_name'];
     $message_subject    = $_POST['message_subject'];
     $message_msg        = $_POST['message_msg'];
@@ -39,8 +41,8 @@
         exit;
     }
     
-    $sql = "INSERT INTO inbox (message_name, message_subject, message_msg, message_contact, message_phone, message_email) 
-    VALUES ('$message_name', '$message_subject', '$message_msg', '$message_contact', '$message_phone', '$message_email')";
+    $sql = "INSERT INTO inbox (message_date, message_time, message_name, message_subject, message_msg, message_contact, message_phone, message_email) 
+    VALUES ('$message_date', '$message_time', '$message_name', '$message_subject', '$message_msg', '$message_contact', '$message_phone', '$message_email')";
 
     // Process the query so row is created in table and db
     if (!$conn->query($sql)) {

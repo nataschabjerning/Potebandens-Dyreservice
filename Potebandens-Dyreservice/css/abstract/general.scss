@@ -174,9 +174,6 @@ span {
     @media (max-width: 768px) {
         font-size: 1.3rem;
     }
-    @media (max-width: 400px) {
-        font-size: 1rem;
-    }
 }
 /* MARK: .UPDATE-INFO
 - div on admin pages that tells how to update a field */
@@ -247,7 +244,7 @@ span {
     }
 }
 
-/* MARK: Buttons
+/* MARK: BUTTONS
 - general button style for all buttons */
 button {
     margin-top: 1rem;

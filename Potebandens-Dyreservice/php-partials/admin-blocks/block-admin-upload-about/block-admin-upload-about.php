@@ -27,43 +27,55 @@
                         echo "<p class='caption'>- Der skete en fejl da filen skulle flyttes til mappen. Prøv igen</p>";
                         echo "</div>";
                     }
+                    // if name has too many characters
+                    if ($_GET["error"] == "aboutname") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Teksten i 'Navn' er for lang. Der kan maks skrives 100 tegn.</p>";
+                        echo "</div>";
+                    }
+                    // if work title has too many characters
+                    if ($_GET["error"] == "aboutworktitle") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Teksten i 'Arbejdstitel' er for lang. Der kan maks skrives 100 tegn.</p>";
+                        echo "</div>";
+                    }
                     // if textarea 1 has too many characters
                     if ($_GET["error"] == "abouttext1") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 1 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 2 has too many characters
                     if ($_GET["error"] == "abouttext2") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 2 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 3 has too many characters
                     if ($_GET["error"] == "abouttext3") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 3 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 4 has too many characters
                     if ($_GET["error"] == "abouttext4") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 4 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 5 has too many characters
                     if ($_GET["error"] == "abouttext5") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 5 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 6 has too many characters
                     if ($_GET["error"] == "abouttext6") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 6 er for lang. Der kan maks skrives 250 tegn.</p>";
                         echo "</div>";
                     }
-                    // if textarea 1 has too many characters
+                    // if textarea 7 has too many characters
                     if ($_GET["error"] == "abouttext7") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Teksten i tekstfelt 7 er for lang. Der kan maks skrives 250 tegn.</p>";

@@ -18,10 +18,16 @@
                         echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst. Husk at udfylde dette felt og prøv igen</p>";
                         echo "</div>";
                     }
-                    // no file was selected to upload
+                    // title has over 40 characters
                     if ($_GET["error"] == "titletoolong") {
                         echo "<div class='error'>";
                         echo "<p class='caption'>- Den valgte titel til billedet er for lang. Den kan max være på 40 tegn.</p>";
+                        echo "</div>";
+                    }
+                    // alt text has over 250 characters
+                    if ($_GET["error"] == "alttoolong") {
+                        echo "<div class='error'>";
+                        echo "<p class='caption'>- Den valgte alt tekst til billedet er for lang. Den kan max være på 250 tegn.</p>";
                         echo "</div>";
                     }
                     // not matching the allowed file types

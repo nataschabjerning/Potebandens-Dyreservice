@@ -30,54 +30,64 @@
                                 <div class="one">
                                     <div class="input">
                                         <p class="star">*</p>
-                                        <input type="text" name="point_one" placeholder="1">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_one" id="point_one" placeholder="1"></textarea>
                                     </div>
                                 </div>
                                 <div class="two">
                                     <div class="input">
-                                        <input type="text" name="point_two" placeholder="2">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_two" id="point_two" placeholder="2"></textarea>
                                     </div>
                                 </div>
                                 <div class="three">
                                     <div class="input">
-                                        <input type="text" name="point_three" placeholder="3">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_three" id="point_three" placeholder="3"></textarea>
                                     </div>
                                 </div>
                                 <div class="four">
                                     <div class="input">
-                                        <input type="text" name="point_four" placeholder="4">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_four" id="point_four" placeholder="4"></textarea>
                                     </div>
                                 </div>
                                 <div class="five">
                                     <div class="input">
-                                        <input type="text" name="point_five" placeholder="5">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_five" id="point_five" placeholder="5"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row-two">
                                 <div class="six">
                                     <div class="input">
-                                        <input type="text" name="point_six" placeholder="6">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_six" id="point_six" placeholder="6"></textarea>
                                     </div>
                                 </div>
                                 <div class="seven">
                                     <div class="input">
-                                        <input type="text" name="point_seven" placeholder="7">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_seven" id="point_seven" placeholder="7"></textarea>
                                     </div>
                                 </div>
                                 <div class="eight">
                                     <div class="input">
-                                        <input type="text" name="point_eight" placeholder="8">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_eight" id="point_eight" placeholder="8"></textarea>
                                     </div>
                                 </div>
                                 <div class="nine">
                                     <div class="input">
-                                        <input type="text" name="point_nine" placeholder="9">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_nine" id="point_nine" placeholder="9"></textarea>
                                     </div>
                                 </div>
                                 <div class="ten">
                                     <div class="input">
-                                        <input type="text" name="point_ten" placeholder="10">
+                                        <div class="pull-tab"></div>
+                                        <textarea name="point_ten" id="point_ten" placeholder="10"></textarea>
                                     </div>
                                 </div>
                             </div>

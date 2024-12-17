@@ -23,9 +23,15 @@
             header("location: ../admin-gallery.php?error=altempty");
             exit();
         }
-        // If 'alt' text field is empty
-        $maxLength = 40;
-        if (strlen($image_text) > $maxLength) {
+        // If text field has over 40 characters
+        $maxAltLength = 250;
+        if (strlen($image_alt) > $maxAltLength) {
+            header("location: ../admin-gallery.php?error=alttoolong");
+            exit();
+        }
+        // If text field has over 40 characters
+        $maxTextLength = 40;
+        if (strlen($image_text) > $maxTextLength) {
             header("location: ../admin-gallery.php?error=titletoolong");
             exit();
         }

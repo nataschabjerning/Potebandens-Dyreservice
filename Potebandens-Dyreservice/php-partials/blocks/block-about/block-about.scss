@@ -66,17 +66,17 @@
                 */
                 .me {
                     background: linear-gradient(
-                            to bottom,
-                            #f1deb1 0%, 
-                            #f1e4c4 10%, 
-                            #f8efd6 35%, 
-                            #f8f0df 50%, 
-                            #f8f5ee 70%, 
-                            #ffffff 90%, 
-                            #ffffff 100%
-                        );
-                    text-align: center;
+                        to bottom,
+                        #f1deb1 0%, 
+                        #f1e4c4 10%, 
+                        #f8efd6 35%, 
+                        #f8f0df 50%, 
+                        #f8f5ee 70%, 
+                        #ffffff 90%, 
+                        #ffffff 100%
+                    );
                     border: 1px solid #565a4d;
+                    text-align: center;
                     .intro {
                         padding: 1rem 2rem;
                         @media (max-width: 450px) {

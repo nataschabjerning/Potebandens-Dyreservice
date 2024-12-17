@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-border">
                             <a href="contact.php" class="contact">
-                                <p>Kontakt Lonni for mere info</p>
+                                <p>Kontakt os for mere info</p>
                             </a>
                             <?php if (!empty($row['service_name'])) { ?>
                                 <div class="title">

@@ -23,12 +23,12 @@
 
         .contact-phone {
             padding: 2rem 0;
-            border-bottom: 1px solid #3f48cc;
+            border-bottom: 2px solid #565a4d;
             .phone-time {
                 margin: 1rem 0 0;
+                background-color: #ccd6bc;
+                border: 2px solid #565a4d;
                 padding: 1rem;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
                 .vacation {
                     text-align: center;
                     margin: 0 0 1rem;
@@ -39,9 +39,6 @@
                     grid-template-columns: repeat(7, 1fr);
                     gap: 1rem;
                     text-align: center;
-                    outline: 1px dashed #478f54;
-                    border-radius: 10px;
-                    padding: 1rem;
                     @media (max-width: 1024px) {
                         grid-template-columns: repeat(4, 1fr);
                         .day:nth-of-type(5) {
@@ -136,9 +133,17 @@
                         }
                     }
                     .day {
-                        border-top: 1px solid black;
-                        border-bottom: 1px solid black;
-                        border-radius: 10px;
+                        background: linear-gradient(
+                            to bottom,
+                            #f1deb1 0%, 
+                            #f1e4c4 10%, 
+                            #f8efd6 35%, 
+                            #f8f0df 50%, 
+                            #f8f5ee 70%, 
+                            #ffffff 90%, 
+                            #ffffff 100%
+                        );
+                        border: 1px solid #565a4d;
                         padding: .5rem;
                         span {
                             color: black;

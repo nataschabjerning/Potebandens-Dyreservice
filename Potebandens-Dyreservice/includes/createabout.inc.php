@@ -14,7 +14,8 @@
     $about_text_five = $_POST["about_text_five"];
     $about_text_six = $_POST["about_text_six"];
     $about_text_seven = $_POST["about_text_seven"];
-    $maxchar = 250;
+    $maxNameLength = 100;
+    $maxTextLength = 250;
 
     $targetFilePath = $targetDir . $about_image_link;
     // get image extension store it in variable
@@ -37,32 +38,41 @@
         header("Location: ../admin-about.php?error=aboutmovingfilefailed");
         exit();
     }
+    // if text in name/work title are over 100 characters
+    if (strlen($about_name) > $maxNameLength) {
+        header("Location: ../admin-about.php?error=aboutname");
+        exit();
+    }
+    if (strlen($about_work_title) > $maxNameLength) {
+        header("Location: ../admin-about.php?error=aboutworktitle");
+        exit();
+    }
     // if text in textareas are over 250 characters
-    if (strlen($about_text_one) > $maxchar) {
+    if (strlen($about_text_one) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext1");
         exit();
     }
-    if (strlen($about_text_two) > $maxchar) {
+    if (strlen($about_text_two) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext2");
         exit();
     }
-    if (strlen($about_text_three) > $maxchar) {
+    if (strlen($about_text_three) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext3");
         exit();
     }
-    if (strlen($about_text_four) > $maxchar) {
+    if (strlen($about_text_four) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext4");
         exit();
     }
-    if (strlen($about_text_five) > $maxchar) {
+    if (strlen($about_text_five) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext5");
         exit();
     }
-    if (strlen($about_text_six) > $maxchar) {
+    if (strlen($about_text_six) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext6");
         exit();
     }
-    if (strlen($about_text_seven) > $maxchar) {
+    if (strlen($about_text_seven) > $maxTextLength) {
         header("Location: ../admin-about.php?error=abouttext7");
         exit();
     }

@@ -1,9 +1,14 @@
 .admin-rules-add {
     padding: 0;
     .container {
+        hr {
+            border: 2px solid #565a4d;
+        }
         .admin-titles {
             margin: 2rem 0;
         }
+        /* MARK: ADD Rule BTN
+        */
         .form {
             padding: 2rem 0;
             border-top: 1px solid #3f48cc;
@@ -17,6 +22,7 @@
                 border-radius: 10px;
                 border: 1px solid rgba(71, 143, 84, 1);
                 cursor: pointer;
+                /* show this when add form is open */
                 #hide_add_rule {
                     display:none;
                     padding: .5rem 1rem;
@@ -25,6 +31,7 @@
                     font-weight: 600;
                     outline: 1px solid rgb(213,37,30);
                 }
+                /* show this when add form is closed */
                 #show_add_rule {
                     padding: .5rem 1rem;
                     color: white;
@@ -34,23 +41,19 @@
             .add_rule:hover {
                 background-color: rgba(71,143,84, 1);
             }
+            /* MARK: ADD FORM
+            */
             #new_rule  {
                 display: none;
                 margin: 2rem auto 0;
-                padding: 2rem;
+                padding: 1rem;
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 10px;
-                @media (max-width: 768px) {
-                    padding: 1rem;
-                }
                 .new_rule {
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
-                    padding: 2rem;
+                    padding: 1rem;
                     position: relative;
-                    @media (max-width: 768px) {
-                        padding: 2rem 1rem 1rem;
-                    }
                     h2 {
                         text-align: center;
                         margin-bottom: 2rem;
@@ -59,29 +62,65 @@
                             font-size: 1.3rem;
                         }
                     }
+                    /* MARK: FORM
+                    */
                     form {
                         text-align: center;
+                        
+                        /* MARK: GENERAL
+                        */
                         p {
                             margin-bottom: .5rem;
                         }
                         label {
                             font-weight: 600;
                         }
-                        input {
+                        textarea, input {
                             font-size: 1rem;
-                            padding: 1rem;
-                            height: 30px;
-                            border: 1px solid black;
-                            border-radius: 5px;
-                            width: 100%;
-                            margin: .5rem 0;
+                            text-indent: 10px;
+                            padding: .5rem;
+                            min-width: 100%;
+                            resize: vertical;
+                            min-height: min-content;
+                            height: 90px;
+                            border-style: hidden;
+                            border: 1px solid #d4d2d2;
+                            @media (max-width: 450px) {
+                                font-size: .8rem;
+                            }
+                        }
+                        textarea::placeholder {
+                            text-align: right;
+                        }
+                        input {
+                            height: 40px;
                             @media (max-width: 768px) {
                                 padding: .5rem;
                             }
+                            @media (max-width: 350px) {
+                                height: 40px;
+                            }
                         }
-                        input::placeholder {
-                            text-align: right;
+                        /* MARK: .PULL-TAB
+                        */
+                        .input {
+                            position: relative;
+                            .pull-tab {
+                                height: 0px;
+                                width: 0px;
+                                border-top: 15px solid #478f54;
+                                border-left: 15px solid transparent;
+                                border-right: 15px solid transparent;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                bottom: -2px;
+                                right: -10px;
+                                pointer-events: none;
+                                z-index: 2;
+                            }
                         }
+                        /* MARK: SPECIFIC DIVS
+                        */
                         .input-rules {
                             input {
                                 margin: .5rem 0;
@@ -90,10 +129,11 @@
                                 text-align: center;
                             }
                         }
+                        /* MARK: BULLET-POINTS
+                        */
                         .point_rules {
                             display: grid;
                             grid-template-columns: 1fr 1fr;
-                            gap: 1rem;
                             @media (max-width: 768px) {
                                 grid-template-columns: 1fr;
                                 gap: 0;
@@ -102,8 +142,8 @@
                                 position: relative;
                                 .star {
                                     position: absolute;
-                                    width: 10px;
-                                    top: 2px;
+                                    width: 15px;
+                                    top: 10px;
                                     left: 2px;
                                     color: red;
                                     font-weight: 900;

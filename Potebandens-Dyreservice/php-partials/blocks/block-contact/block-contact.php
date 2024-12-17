@@ -84,6 +84,7 @@
                             <div class="message_msg message_div">
                                 <label>Din Besked <span>*</span></label>
                                 <div class="input">
+                                    <div class="pull-tab"></div>
                                     <textarea name="message_msg" id="message_msg"></textarea>
                                     <div id="message_msg_feedback"></div>
                                 </div>

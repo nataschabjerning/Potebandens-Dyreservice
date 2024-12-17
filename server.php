@@ -131,7 +131,7 @@ about
 - about_image_link (VARCHAR 255)    ------ NOT NULL
 - about_name (VARCHAR 100)          ------ NOT NULL
 - about_work_title (VARCHAR 100)
-- about_text_one (VARCHAR 100)      ------ NOT NULL
+- about_text_one (VARCHAR 255)      ------ NOT NULL
 - about_text_two (VARCHAR 255)
 - about_text_three (VARCHAR 255)
 - about_text_four (VARCHAR 255)
@@ -179,6 +179,8 @@ gallery
 
 inbox
 - id (INT AUTO_INCREMENT)           ------ NOT NULL
+- message_date (DATE)
+- message_time (TIME)
 - message_name (VARCHAR 100)        ------ NOT NULL
 - message_subject	 (VARCHAR 50)   ------ NOT NULL
 - message_msg (VARCHAR 255)         ------ NOT NULL

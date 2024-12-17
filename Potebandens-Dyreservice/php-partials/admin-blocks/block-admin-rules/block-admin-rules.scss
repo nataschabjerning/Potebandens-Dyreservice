@@ -1,57 +1,120 @@
 .admin-rules {
-    padding: 0 0 6rem;
+    padding: 0 0 8rem;
     .container {
-        .subtitle {
-            margin: 1rem 0 1.5rem;
-        }
         .all-rules {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 1rem;
-            flex-wrap: wrap;
-            @media (max-width: 1024px) {
-                grid-template-columns: 1fr 1fr;
-            }
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
             .rules-content {
-                outline: 1px dashed #478f54;
-                padding: 2rem 1rem 1rem;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 2px;
+                padding: 1.5rem 1rem 1rem;
+                background-color: #ccd6bc;
+                border: 2px solid #565a4d;
                 position: relative;
                 .rule_id {
                     position: absolute;
-                    top: 0;
+                    top: 3px;
                     left: 0;
+                    right: 0;
+                    margin-inline: auto;
+                    width: fit-content;
                     display: flex;
-                    margin: .2rem 0 0 .5rem;
                     h4 {
                         border: none;
                     }
                 }
+                /* MARK: GENERAL
+                */
+                textarea, input {
+                    font-size: 1rem;
+                    text-indent: 10px;
+                    padding: .5rem;
+                    min-width: 100%;
+                    resize: vertical;
+                    min-height: min-content;
+                    height: 90px;
+                    border-style: hidden;
+                    border-bottom: 1px solid #000000;
+                    @media (max-width: 450px) {
+                        font-size: .8rem;
+                    }
+                }
+                textarea::placeholder {
+                    text-align: right;
+                }
+                input {
+                    height: 40px;
+                    @media (max-width: 768px) {
+                        padding: .5rem;
+                    }
+                    @media (max-width: 350px) {
+                        height: 40px;
+                    }
+                }
                 .rule {
+                    background-color: #ffffff;
+                    border-top: 1px solid #000000;
+                    border-left: 1px solid #000000;         
+                    border-right: 1px solid #000000;
+                    /* MARK: RULE TITLE
+                    */
                     .rules {
                         text-align: center;
                     }
-                    .point {
+                    /* MARK: RULE POINT
+                    */
+                    .bullet-points {
                         display: grid;
-                        grid-template-columns: 22px 1fr;
-                        align-items: center;
-                    }
-                    input {
-                        font-size: 1rem;
-                        width: 100%;
-                        height: 35px;
-                        padding: .5rem;
+                        grid-template-columns: 1fr 1fr;
+                        @media (max-width: 768px) {
+                            grid-template-columns: 1fr;
+                        }
+                        /* MARK: .LEFT/.RIGHT
+                        */
+                        .bullet-points-top, .bullet-points-bottom {
+                            .point {
+                                position: relative;
+                                .point-numb {
+                                    position: absolute;
+                                    left: 4px;
+                                    z-index: 4;
+                                }
+                                /* MARK: .PULL-TAB
+                                */
+                                .input {
+                                    position: relative;
+                                    .pull-tab {
+                                        height: 0px;
+                                        width: 0px;
+                                        border-top: 15px solid #478f54;
+                                        border-left: 15px solid transparent;
+                                        border-right: 15px solid transparent;
+                                        transform: rotate(-45deg);
+                                        position: absolute;
+                                        bottom: -1px;
+                                        right: -10px;
+                                        pointer-events: none;
+                                        z-index: 2;
+                                    }
+                                }
+                            }
+                            /* MARK: SPECIFIC DIVS
+                            */
+                            .point_one, .point_two, .point_three, .point_four, .point_five {
+                                border-right: 1px solid #000000;
+                            }
+                        }
                     }
                 }
             }
+            /* MARK: BUTTONS
+            */
             .buttons {
                 display: flex;
-                border-bottom: 1px solid black;
-                border-radius: 10px;
+                border: 1px solid #000000;
+                border-top: none;
                 .update-rules, .delete-rules {
                     width: 100%;
                     button {
@@ -59,7 +122,6 @@
                         background-color: rgba(253, 156, 29, 1);
                         padding: .5rem;
                         border-radius: 0;
-                        border-bottom-left-radius: 10px;
                         color: white;
                         font-weight: 600;
                         cursor: pointer;
@@ -71,7 +133,6 @@
                 .delete-rules {
                     button {
                         border-radius: 0;
-                        border-bottom-right-radius: 10px;
                         background-color: rgba(221, 0, 0, 1);
                     }
                     button:hover {

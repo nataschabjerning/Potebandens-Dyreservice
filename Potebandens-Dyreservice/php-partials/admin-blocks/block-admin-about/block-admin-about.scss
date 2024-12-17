@@ -11,11 +11,18 @@
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
                 text-align: center;
+                @media (max-width: 768px) {
+                    margin-top: 2rem;
+                }
+                /* MARK: ID
+                */
                 .about_id {
                     position: absolute;
-                    top:0;
+                    top: 3px;
                     left: 0;
-                    margin: .2rem 0 0 .5rem;
+                    right: 0;
+                    margin-inline: auto;
+                    width: fit-content;
                 }
                 /* MARK: .ME
                 -------------------------------------------

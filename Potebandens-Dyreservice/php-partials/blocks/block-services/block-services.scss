@@ -26,10 +26,10 @@
                 border: 2px solid #565a4d;
                 background-position: center;
                 background-repeat: no-repeat;
-                position: relative;
                 min-height: 300px;
                 padding: 1rem;
                 .card-border {
+                    position: relative;
                     background-color: #FFFFFF;
                     border: 1px solid #565a4d;
                     height: 100%;
@@ -38,13 +38,13 @@
                         bottom: 0;
                         right: 0;
                         padding: .2rem .5rem;
-                        font-size: 1rem;
+                        text-transform: uppercase;
+                        font-size: .8rem;
                         color: white;
-                        background-color: rgba(63, 72, 204, .6);
-                        border-top-left-radius: 10px;
+                        background-color: #478f54;
                     }
                     .contact:hover {
-                        background-color: rgba(63, 72, 204, 1);
+                        background-color: #008000;
                     }
                     .title {
                         background: linear-gradient(
@@ -68,7 +68,7 @@
                         }
                     }
                     .description {
-                        padding: 0 1rem;
+                        padding: 0 1rem 1rem;
                         font-size: 1.1rem;
                         @media (max-width: 768px) {
                             font-size: 1rem;

@@ -70,16 +70,13 @@
             #new_extraone, #new_extratwo  {
                 display: none;
                 margin: 2rem auto 0;
-                padding: 2rem;
+                padding: 1rem;
                 border-radius: 10px;
                 box-shadow: #0000001a 0px 0px 50px 10px;
-                @media (max-width: 768px) {
-                    padding: 1rem;
-                }
                 .new_extraone, .new_extratwo {
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
-                    padding: 2rem;
+                    padding: 1rem;
                     position: relative;
                     @media (max-width: 768px) {
                         padding: 2rem 1rem 1rem;

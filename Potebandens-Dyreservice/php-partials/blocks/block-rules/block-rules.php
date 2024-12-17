@@ -10,7 +10,6 @@
 
         <div class="rules-title">
             <h3>Regler og retningslinjer</h3>
-            <p class="subtitle">Lige som hos alle andre organisationer, har vi en kort række regler, der skal følges.</p>
         </div>
 
         <div class="rules-content">
