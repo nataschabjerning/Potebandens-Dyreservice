@@ -8,10 +8,10 @@
     include_once("connect.inc.php");
 
     // get the service_id from delete rules in script.js
-    $id = $_REQUEST['extratwo_id'];
+    $id = $_REQUEST['blue_id'];
 
     // Set the DELETE SQL data
-	$sql = "DELETE FROM extratwo WHERE id='".$id."'";
+	$sql = "DELETE FROM blue WHERE id='".$id."'";
 
 	// Process the query so row is deleted from table and db
 	if (!$conn->query($sql)) {

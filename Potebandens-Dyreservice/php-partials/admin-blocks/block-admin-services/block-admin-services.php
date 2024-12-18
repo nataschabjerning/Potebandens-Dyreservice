@@ -47,19 +47,23 @@
                                     </div>
                                 </div> <!-- .notes end -->
                             </div> <!-- .top end -->
+                            <p class="descriptions-p">Vil du dele tekst op i sektioner, kan du gøre det ved at skrive det i hvert sit tekstfelt. Som minimum skal første tekstfelt udfyldes.</p>
                             <div class="descriptions">
-                                <p>Vil du dele tekst op i sektioner, kan du gøre det ved at skrive det i hvert sit tekstfelt. Som minimum skal første tekstfelt udfyldes.</p>
                                 <div class="input service_description">
                                     <p class="star">*</p>
+                                    <div class="pull-tab"></div>
                                     <textarea name="service_description_one" id="service_description_one" placeholder="Tekstfelt 1 (max 250 tegn)"></textarea>
                                 </div>
                                 <div class="input">
+                                    <div class="pull-tab"></div>
                                     <textarea name="service_description_two" id="service_description_two" placeholder="Tekstfelt 2 (max 250 tegn)"></textarea>
                                 </div>
                                 <div class="input">
+                                    <div class="pull-tab"></div>
                                     <textarea name="service_description_three" id="service_description_three" placeholder="Tekstfelt 3 (max 250 tegn)"></textarea>
                                 </div>
                                 <div class="input">
+                                    <div class="pull-tab"></div>
                                     <textarea name="service_description_four" id="service_description_four" placeholder="Tekstfelt 4 (max 250 tegn)"></textarea>
                                 </div>
                             </div> <!-- .descriptions end -->

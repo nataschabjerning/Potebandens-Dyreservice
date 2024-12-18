@@ -112,16 +112,19 @@
             </div> <!-- .flex-titles end -->
             <div class="extra-text_one">
                 <div class="input">
+                    <div class="pull-tab"></div>
                     <textarea name="blue_text_one_form" placeholder="Tekst 1"></textarea>
                 </div>
             </div> <!-- .extra-text_one end -->
             <div class="extra-text_two">
                 <div class="input">
+                    <div class="pull-tab"></div>
                     <textarea name="blue_text_two_form" placeholder="Tekst 2"></textarea>
                 </div>
             </div> <!-- .extra-text_two end -->
             <div class="extra-text_three">
                 <div class="input">
+                    <div class="pull-tab"></div>
                     <textarea name="blue_text_three_form" placeholder="Tekst 3"></textarea>
                 </div>
             </div> <!-- .extra-text_three end -->

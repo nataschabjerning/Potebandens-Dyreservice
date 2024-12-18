@@ -5,6 +5,8 @@
         @media (max-width: 768px) {
             width: 100%;
         }
+        /* MARK: MESSAGES
+        */
         .upload-about-messages {
             width: 100%;
             .error {
@@ -27,6 +29,8 @@
                 }
             }
         }
+        /* MARK: ADD BTN
+        */
         .new_about {
             padding: 2rem 0;
             border-top: 1px solid #3f48cc;
@@ -55,6 +59,8 @@
             .add_about:hover {
                 background-color: rgba(71,143,84, 1);
             }
+            /* MARK: ADD FORM
+            */
             #insert-about {
                 display: none;
                 margin: 2rem auto 0;
@@ -74,17 +80,8 @@
                         margin-bottom: 2rem;
                     }
                     .addaboutform {
-                        .about_text_one {
-                            position: relative;
-                            .star {
-                                position: absolute;
-                                width: 10px;
-                                top: .5rem;
-                                left: 2px;
-                                color: red;
-                                font-weight: 900;
-                            }
-                        }
+                        /* MARK: GENERAL
+                        */
                         label {
                             font-weight: 600;
                         }
@@ -113,37 +110,6 @@
                                 height: 35px;
                             }
                         }
-                        textarea {
-                            width: 100%;
-                            padding: .5rem;
-                            height: 55px;
-                            border: 1px solid black;
-                            border-radius: 5px;
-                            margin: .5rem 0;
-                            width: 100%;
-                            text-indent: 10px;
-                            @media (max-width: 768px) {
-                                height: 70px;
-                            }
-                        }
-                        textarea::placeholder {
-                            text-align: center;
-                        }
-                        .about-top, .about-middle, .about-bottom {
-                            display: flex;
-                            gap: 1rem;
-                            width: 100%;
-                            @media (max-width: 768px) {
-                                flex-direction: column;
-                                gap: 0;
-                            }
-                            .about_image_link, .about_name, .about_work_title, .about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
-                                width: 100%;
-                            }
-                        }
-                        .about-top {
-                            margin-bottom: 1rem;
-                        }
                         input[type="file"] {
                             text-align: center;
                             font-size: 1rem;
@@ -168,6 +134,87 @@
                         }
                         input[type=file]::file-selector-button:hover {
                             background-color: rgb(223, 138, 27);
+                        }
+                        textarea {
+                            font-size: 1rem;
+                            padding: .5rem;
+                            min-width: 100%;
+                            resize: vertical;
+                            min-height: min-content;
+                            height: 110px;
+                            border-style: hidden;
+                            border: 1px solid #000000;
+                            @media (max-width: 450px) {
+                                font-size: .8rem;
+                            }
+                            @media (max-width: 350px) {
+                                height: 100px;
+                            }
+                        }
+                        textarea::placeholder {
+                            text-align: center;
+                        }
+
+                        /* MARK: SPECIFIC DIVS
+                        */
+                        .about-top {
+                            display: flex;
+                            gap: .3rem;
+                            width: 100%;
+                            @media (max-width: 768px) {
+                                flex-direction: column;
+                                gap: 0;
+                            }
+                            .about_image_link, .about_name, .about_work_title, .about_text_two, .about_text_three, .about_text_four, .about_text_five, .about_text_six, .about_text_seven {
+                                width: 100%;
+                            }
+                        }
+                        .about_text_one {
+                            margin-bottom: .2rem;
+                        }
+                        .about-bottom {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            gap: .3rem;
+                            width: 100%;
+                            @media (max-width: 1024px) {
+                                grid-template-columns: 1fr 1fr;
+                            }
+                            @media (max-width: 768px) {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                        .about-top {
+                            margin-bottom: 1rem;
+                        }
+                        .about_text_one {
+                            position: relative;
+                            .star {
+                                position: absolute;
+                                width: 10px;
+                                top: .5rem;
+                                left: 2px;
+                                color: red;
+                                font-weight: 900;
+                            }
+                        }
+                        /* MARK: .pull-tab
+                        */
+                        .input {
+                            position: relative;
+                            .pull-tab {
+                                height: 0px;
+                                width: 0px;
+                                border-top: 15px solid #478f54;
+                                border-left: 15px solid transparent;
+                                border-right: 15px solid transparent;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                bottom: -2px;
+                                right: -10px;
+                                pointer-events: none;
+                                z-index: 2;
+                            }
                         }
                     }
                 }

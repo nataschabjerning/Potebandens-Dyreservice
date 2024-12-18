@@ -115,13 +115,13 @@
                         <div class="about-top">
                             <div class="about_name">
                                 <label>Navn <span>*</span></label>
-                                <div class="about_name">
+                                <div class="input about_name">
                                     <input type="text" name="about_name" placeholder="Natascha Bjerning">
                                 </div>
                             </div>
                             <div class="about_work_title">
                                 <label>Arbejdstitel</label>
-                                <div class="about_work_title">
+                                <div class="input about_work_title">
                                     <input type="text" name="about_work_title" placeholder="Udvikler">
                                 </div>
                             </div>
@@ -130,43 +130,47 @@
                         <div class="about_text_one">
                             <label>Tekstfelter</label>
                             <p>Vil du dele tekst op i sektioner, kan du gøre det ved at skrive det i hvert sit tekstfelt. Som minimum skal første tekstfelt udfyldes.</p>
-                            <div class="about_text_one">
+                            <div class="input about_text_one">
+                                <div class="pull-tab"></div>
                                 <p class="star">*</p>
                                 <textarea name="about_text_one" id="about_text_one" placeholder="Tekstfelt 1"></textarea>
                             </div>
                         </div>
 
-                        <div class="about-middle">
+                        <div class="about-bottom">
                             <div class="about_text_two">
-                                <div class="about_text_two">
+                                <div class="input about_text_two">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_two" id="about_text_two" placeholder="Tekstfelt 2"></textarea>
                                 </div>
                             </div>
                             <div class="about_text_three">
-                                <div class="about_text_three">
+                                <div class="input about_text_three">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_three" id="about_text_three" placeholder="Tekstfelt 3"></textarea>
                                 </div>
                             </div>
                             <div class="about_text_four">
-                                <div class="about_text_four">
+                                <div class="input about_text_four">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_four" id="about_text_four" placeholder="Tekstfelt 4"></textarea>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="about-bottom">
                             <div class="about_text_five">
-                                <div class="about_text_five">
+                                <div class="input about_text_five">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_five" id="about_text_five" placeholder="Tekstfelt 5"></textarea>
                                 </div>
                             </div>
                             <div class="about_text_six">
-                                <div class="about_text_six">
+                                <div class="input about_text_six">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_six" id="about_text_six" placeholder="Tekstfelt 6"></textarea>
                                 </div>
                             </div>
                             <div class="about_text_seven">
-                                <div class="about_text_seven">
+                                <div class="input about_text_seven">
+                                    <div class="pull-tab"></div>
                                     <textarea name="about_text_seven" id="about_text_seven" placeholder="Tekstfelt 7"></textarea>
                                 </div>
                             </div>

@@ -2,7 +2,8 @@
     /* remove padding form this .block */
     padding-bottom: 0;
 
-    /* if there is an error when uploading new white/blue block */
+    /* MARK: MESSAGES
+    - if there is an error when uploading new white/blue block */
     .upload-extra-messages {
         width: 100%;
         .error {
@@ -26,7 +27,8 @@
         }
     }
 
-    /* add buttons */
+    /* MARK: ADD BUTTONS
+    */
     .buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -66,7 +68,8 @@
                 background-color: #478f54;
             }
 
-            /* add forms */
+            /* MARK: ADD FORMS
+            */
             #new_white, #new_blue  {
                 display: none;
                 margin: 2rem auto 0;
@@ -93,25 +96,13 @@
                         margin-bottom: 2rem;
                         text-align: center;
                     }
+
                     form {
                         text-align: center;
+                        /* MARK: GENERAL
+                        */
                         label {
                             font-weight: 600;
-                        }
-                        .flex-titles, .flex-link {
-                            .extra-title, .extra-subtitle, .extra-text_link, .extra-link_url {
-                                width: 100%;
-                            }
-                            @media (max-width: 1024px) {
-                                display: flex;
-                                gap: 1rem;
-                            }
-                            @media (max-width: 530px) {
-                                display: block;
-                            }
-                        }
-                        .extra-text_three {
-                            margin: 0 0 1rem;
                         }
                         input, select {
                             margin: .2rem 0 1rem;
@@ -122,13 +113,20 @@
                             height: 40px;
                         }
                         textarea {
-                            border: 1px solid black;
-                            margin: .2rem 0;
-                            border-radius: 5px;
-                            text-align: center;
-                            width: 100%;
-                            height: 60px;
                             font-size: 1rem;
+                            padding: .5rem;
+                            min-width: 100%;
+                            resize: vertical;
+                            min-height: min-content;
+                            height: 110px;
+                            border-style: hidden;
+                            border: 1px solid #000000;
+                            @media (max-width: 450px) {
+                                font-size: .8rem;
+                            }
+                            @media (max-width: 350px) {
+                                height: 100px;
+                            }
                         }
                         input[type="text"] {
                             font-size: 1rem;
@@ -163,6 +161,41 @@
                         }
                         input[type=file]::file-selector-button:hover {
                             background-color: rgb(223, 138, 27);
+                        }
+
+                        /* MARK: SPECIFIC DIVS
+                        */
+                        .flex-titles, .flex-link {
+                            display: flex;
+                            gap: 1rem;
+                            .extra-title, .extra-subtitle, .extra-text_link, .extra-link_url {
+                                width: 100%;
+                            }
+                            @media (max-width: 768px) {
+                                display: block;
+                            }
+                        }
+                        .extra-text_one, .extra-text_two, .extra-text_three {
+                            .input {
+                                position: relative;
+                                margin-bottom: .3rem;
+                                .pull-tab {
+                                    height: 0px;
+                                    width: 0px;
+                                    border-top: 15px solid #478f54;
+                                    border-left: 15px solid transparent;
+                                    border-right: 15px solid transparent;
+                                    transform: rotate(-45deg);
+                                    position: absolute;
+                                    bottom: -2px;
+                                    right: -9px;
+                                    pointer-events: none;
+                                    z-index: 2;
+                                }
+                            }
+                        }
+                        .extra-text_three {
+                            margin: 0 0 1rem;
                         }
                     }
                 }

@@ -108,8 +108,20 @@
                             }
                             /* MARK: .DESCRIPTIONS
                             */
-                            .descriptions {
+                            .descriptions-p {
                                 margin-top: 1rem;
+                                text-align: center;
+                            }
+                            .descriptions {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 1rem;
+                                @media (max-width: 1024px) {
+                                    gap: .3rem;
+                                }
+                                @media (max-width: 768px) {
+                                    grid-template-columns: 1fr;
+                                }
                                 @media (max-width: 800px) {
                                     .input {
                                         textarea {
@@ -120,6 +132,42 @@
                                 @media (max-width: 450px) {
                                     p {
                                         font-size: .8rem;
+                                    }
+                                }
+                                /* MARK: .pull-tab
+                                */
+                                .input {
+                                    position: relative;
+                                    .pull-tab {
+                                        height: 0px;
+                                        width: 0px;
+                                        border-top: 15px solid #478f54;
+                                        border-left: 15px solid transparent;
+                                        border-right: 15px solid transparent;
+                                        transform: rotate(-45deg);
+                                        position: absolute;
+                                        bottom: -2px;
+                                        right: -10px;
+                                        pointer-events: none;
+                                        z-index: 2;
+                                    }
+                                }
+                                textarea {
+                                    margin:0;
+                                    font-size: 1rem;
+                                    padding: .5rem;
+                                    min-width: 100%;
+                                    resize: vertical;
+                                    min-height: min-content;
+                                    height: 110px;
+                                    border-radius: 0;
+                                    border-style: hidden;
+                                    border: 1px solid #000000;
+                                    @media (max-width: 450px) {
+                                        font-size: .8rem;
+                                    }
+                                    @media (max-width: 350px) {
+                                        height: 100px;
                                     }
                                 }
                                 /* MARK: .description_one

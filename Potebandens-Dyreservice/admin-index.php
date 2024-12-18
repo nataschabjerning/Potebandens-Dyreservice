@@ -26,10 +26,13 @@
                     <h3>Du er logget ind som</h3>
                     <h2><?php echo $_SESSION["username"]; ?></h2>
                 </div>
-
-                <div class="back">
-                    <a href="admin.php">Til Oversigten</a>
-                </div>
+            </div>
+            
+            <div class="back">
+                <a href="admin.php">
+                    <i class="fa fa-arrow-left"></i>
+                    <p>Til Oversigten</p>
+                </a>
             </div>
 
             <?php
