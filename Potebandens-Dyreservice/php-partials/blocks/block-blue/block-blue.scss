@@ -1,19 +1,22 @@
-.extraone {
+.blue {
     position: relative;
     background-color: #b4bb9f;
     border: 2px solid #565a4d;
     padding: 1rem;
-    .flowertop {
-        background-image: url('../../../../images/borders/whiteflowersbordertop.png');
+    .branchtop {
+        background-image: url('../../../../images/borders/blueflowersbordertop.png');
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
         left: 0;
-        top: -30px;
-        height: 110px;
+        top: -45px;
+        height: 115px;
         width: 100%;
+        @media (max-width: 1024px) {
+            height: 100px;
+        }
         @media (max-width: 768px) {
-            top: -20px;
+            top: -35px;
         }
     }
     .extra-border {

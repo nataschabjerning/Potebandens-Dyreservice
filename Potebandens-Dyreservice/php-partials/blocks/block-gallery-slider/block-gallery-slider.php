@@ -6,7 +6,6 @@
 ?>
 
 <div class="block gallery-slider-block">
-    <div class="flowerright"></div>
     <div class="container">
         <h2 class="admin-titles">Galleri</h2>
         <div class="top">

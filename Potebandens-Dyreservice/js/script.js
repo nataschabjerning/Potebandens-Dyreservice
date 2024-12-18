@@ -269,29 +269,29 @@ $(document).ready(function(){
         $(this).children("#show_add_rule").toggle();
         $(this).children("#hide_add_rule").toggle();
     });
-    // show/hide 'add extraone' form on 'admin-index' page
-    $(".add_extraone").click(function () {
-        $("#new_extraone").slideToggle();
-        $(this).children("#show_add_extraone").toggle();
-        $(this).children("#hide_add_extraone").toggle();
+    // show/hide 'add white' form on 'admin-index' page
+    $(".add_white").click(function () {
+        $("#new_white").slideToggle();
+        $(this).children("#show_add_white").toggle();
+        $(this).children("#hide_add_white").toggle();
     });
-    // show/hide 'admin-extraone' blocks on 'admin-index' page
-    $(".admin_extraone").click(function () {
-        $(".admin-extraone").slideToggle();
-        $(this).children("#show_admin_extraone").toggle();
-        $(this).children("#hide_admin_extraone").toggle();
+    // show/hide 'admin-white' blocks on 'admin-index' page
+    $(".admin_white").click(function () {
+        $(".admin-white").slideToggle();
+        $(this).children("#show_admin_white").toggle();
+        $(this).children("#hide_admin_white").toggle();
     });
-    // show/hide 'add extratwo' form on 'admin-index' page
-    $(".add_extratwo").click(function () {
-        $("#new_extratwo").slideToggle();
-        $(this).children("#show_add_extratwo").toggle();
-        $(this).children("#hide_add_extratwo").toggle();
+    // show/hide 'add blue' form on 'admin-index' page
+    $(".add_blue").click(function () {
+        $("#new_blue").slideToggle();
+        $(this).children("#show_add_blue").toggle();
+        $(this).children("#hide_add_blue").toggle();
     });
-    // show/hide 'admin-extratwo' blocks on 'admin-index' page
-    $(".admin_extratwo").click(function () {
-        $(".admin-extratwo").slideToggle();
-        $(this).children("#show_admin_extratwo").toggle();
-        $(this).children("#hide_admin_extratwo").toggle();
+    // show/hide 'admin-blue' blocks on 'admin-index' page
+    $(".admin_blue").click(function () {
+        $(".admin-blue").slideToggle();
+        $(this).children("#show_admin_blue").toggle();
+        $(this).children("#hide_admin_blue").toggle();
     });
     // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
@@ -499,47 +499,47 @@ $(document).ready(function(){
             // if string length is too long
             else if($rules.length > 100) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i 'Hvor gælder disse regler' er for langt. Der kan maks skrives 100 tegn.");
+                errorAlert("Obs! <br> Teksten i 'Hvor gælder disse regler' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
             }
             else if($point_one.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 1 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 1 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_two.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 2 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 2 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_three.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 3 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 3 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_four.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 4 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_five.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 5 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 5 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_six.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 6 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 6 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_seven.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 7 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 7 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_eight.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 8 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 8 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_nine.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 9 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 9 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else if($point_ten.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i regelfelt 10 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i regelfelt 10 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             else {
                 // if all checks have cleared
@@ -581,37 +581,37 @@ $(document).ready(function(){
             // if string length is over 250 characters
             else if($service_name.length > 100) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i Ydelsens Navn er for langt. Der kan maks skrives 100 tegn.");
+                errorAlert("Obs! <br> Teksten i Ydelsens Navn er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($service_description_one.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i tekstfelt 1 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i tekstfelt 1 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($service_description_two.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i tekstfelt 2 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i tekstfelt 2 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($service_description_three.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i tekstfelt 3 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i tekstfelt 3 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($service_description_four.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($service_short_description.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($important_note.length > 250) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i 'Vigtig Note'-feltet er for langt. Der kan maks skrives 250 tegn.");
+                errorAlert("Obs! <br> Teksten i 'Vigtig Note'-feltet er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if 'service_name' contains numbers
             else if ($service_name.match(".*\\d.*")) {
@@ -775,15 +775,15 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- MARK: Extra One ----------
-    $('.update-extraone').click(function() {
+    // ---------- MARK: White ----------
+    $('.update-white').click(function() {
 
         // select the closest section to the clicked update button
         let $section  = jQuery(this).closest("section");
         // get the contact ID from section attr class
-        var $extraoneId   = $section.attr('attr-extraone_id');
+        var $whiteId   = $section.attr('attr-white_id');
 
-        // Get inputs from extraone
+        // Get inputs from white
         let $extra_visibility = $section.find('.extra_visibility').val();
         let $extra_title = $section.find('.extra_title').val();
         let $extra_subtitle = $section.find('.extra_subtitle').val();
@@ -791,7 +791,7 @@ $(document).ready(function(){
         let $extra_text_two = $section.find('.extra_text_two').val();
         let $extra_text_three = $section.find('.extra_text_three').val();
         let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_url = $section.find('.extraone_link_url').val();
+        let $extra_link_url = $section.find('.white_link_url').val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
@@ -808,10 +808,10 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateextraone.inc.php',
+                url: 'includes/updatewhite.inc.php',
                 // data to send
                 data: {
-                    extraone_id: $extraoneId,
+                    white_id: $whiteId,
                     extra_visibility: $extra_visibility,
                     extra_title: $extra_title,
                     extra_subtitle: $extra_subtitle,
@@ -833,21 +833,21 @@ $(document).ready(function(){
                     // if all checks have cleared
                     // hide confirmation box
                     $("#confirmation-update").hide();
-                    successAlert("Blok 1 med ID " + $extraoneId + " opdateret!");
+                    successAlert("Blok 1 med ID " + $whiteId + " opdateret!");
                 }
             })  
         });
     })
 
-    // ---------- MARK: Extra Two ----------
-    $('.update-extratwo').click(function() {
+    // ---------- MARK: Blue ----------
+    $('.update-blue').click(function() {
 
         // select the closest section to the clicked update button
         let $section  = jQuery(this).closest("section");
         // get the contact ID from section attr class
-        var $extratwoId   = $section.attr('attr-extratwo_id');
+        var $blueId   = $section.attr('attr-blue_id');
 
-        // Get inputs from extratwo
+        // Get inputs from blue
         let $extra_visibility = $section.find('.extra_visibility').val();
         let $extra_title = $section.find('.extra_title').val();
         let $extra_subtitle = $section.find('.extra_subtitle').val();
@@ -855,7 +855,7 @@ $(document).ready(function(){
         let $extra_text_two = $section.find('.extra_text_two').val();
         let $extra_text_three = $section.find('.extra_text_three').val();
         let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_url = $section.find('.extratwo_link_url').val();
+        let $extra_link_url = $section.find('.blue_link_url').val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
@@ -872,10 +872,10 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateextratwo.inc.php',
+                url: 'includes/updateblue.inc.php',
                 // data to send
                 data: {
-                    extratwo_id: $extratwoId,
+                    blue_id: $blueId,
                     extra_visibility: $extra_visibility,
                     extra_title: $extra_title,
                     extra_subtitle: $extra_subtitle,
@@ -897,7 +897,7 @@ $(document).ready(function(){
                     // if all checks have cleared
                     // hide confirmation box
                     $("#confirmation-update").hide();
-                    successAlert("Blok 2 med ID " + $extratwoId + " opdateret!");
+                    successAlert("Blok 2 med ID " + $blueId + " opdateret!");
                 }
             })  
         });
@@ -1206,15 +1206,15 @@ $(document).ready(function(){
         });
     })
 
-    // ---------- MARK: Extra One ----------
-    $('.delete-extraone').click(function() {
+    // ---------- MARK: White ----------
+    $('.delete-white').click(function() {
 
         let $section  = jQuery(this).closest("section");
         // get the contact ID
-        var $extraoneId   = $section.attr('attr-extraone_id');
+        var $whiteId   = $section.attr('attr-white_id');
 
         // show confirmaiton box
-        confirmationDelete("Er du sikker på, at du gerne vil slette denne ekstra blok 1?");
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
 
         // CONFIRMATION
         // if cancel_delete (no)
@@ -1229,10 +1229,10 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteextraone.inc.php',
+                url: 'includes/deletewhite.inc.php',
                 // data to send
                 data: {
-                    extraone_id: $extraoneId
+                    white_id: $whiteId
                 }
             })
             .done(function() {
@@ -1240,20 +1240,20 @@ $(document).ready(function(){
                 $section.remove();
                 $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                successAlert("Blok 1 med ID " + $extraoneId + " slettet!");
+                successAlert("Hvid blok med ID " + $whiteId + " slettet!");
             })
         });
     })
 
-    // ---------- MARK: Extra Two ----------
-    $('.delete-extratwo').click(function() {
+    // ---------- MARK: Blue ----------
+    $('.delete-blue').click(function() {
 
         let $section  = jQuery(this).closest("section");
         // get the contact ID
-        var $extratwoId   = $section.attr('attr-extratwo_id');
+        var $blueId   = $section.attr('attr-blue_id');
 
         // show confirmaiton box
-        confirmationDelete("Er du sikker på, at du gerne vil slette denne ekstra blok 2?");
+        confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
 
         // CONFIRMATION
         // if cancel_delete (no)
@@ -1268,10 +1268,10 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteextratwo.inc.php',
+                url: 'includes/deleteblue.inc.php',
                 // data to send
                 data: {
-                    extratwo_id: $extratwoId
+                    blue_id: $blueId
                 }
             })
             .done(function() {
@@ -1279,7 +1279,7 @@ $(document).ready(function(){
                 $section.remove();
                 $("#confirmation-delete").hide();
                 // alert that the row has been successfully removed
-                successAlert("Blok 2 med ID " + $extratwoId + " slettet!");
+                successAlert("Blå blok med ID " + $blueId + " slettet!");
             })
         });
     })

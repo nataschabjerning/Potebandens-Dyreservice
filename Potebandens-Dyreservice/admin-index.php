@@ -35,8 +35,8 @@
             <?php
                 // include admin php blocks here
                 include("php-partials/admin-blocks/block-admin-extra/admin-extra-add.php");
-                include("php-partials/admin-blocks/block-admin-extra/block-admin-extraone.php");
-                include("php-partials/admin-blocks/block-admin-extra/block-admin-extratwo.php");
+                include("php-partials/admin-blocks/block-admin-extra/block-admin-white.php");
+                include("php-partials/admin-blocks/block-admin-extra/block-admin-blue.php");
             ?>
 
         <?php } // if (isset($_SESSION["username"])) end

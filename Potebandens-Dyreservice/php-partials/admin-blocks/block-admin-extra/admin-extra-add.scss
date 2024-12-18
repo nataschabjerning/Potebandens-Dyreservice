@@ -2,7 +2,7 @@
     /* remove padding form this .block */
     padding-bottom: 0;
 
-    /* if there is an error when uploading new extraone/extratwo block */
+    /* if there is an error when uploading new white/blue block */
     .upload-extra-messages {
         width: 100%;
         .error {
@@ -17,7 +17,7 @@
             box-shadow: #0000001a 0px 0px 50px 10px;
             color: #e20303;
             border: 1px solid #e20303;
-            .blockextraone, .blockextratwo, .caption {
+            .blockwhite, .blockblue, .caption {
                 font-size: 1.2rem;
             }
             @media (max-width: 768px) {
@@ -38,8 +38,8 @@
             grid-template-columns: 1fr;
             gap: 2rem;
         }
-        .one, .two {
-            .add_extraone, .add_extratwo {
+        .admin-white-add, .admin-blue-add {
+            .add_white, .add_blue {
                 margin: 0 auto;
                 width: fit-content;
                 cursor: pointer;
@@ -48,7 +48,7 @@
                 border-radius: 10px;
                 border: 1px solid #478f54;
                 cursor: pointer;
-                #hide_add_extraone, #hide_add_extratwo {
+                #hide_add_white, #hide_add_blue {
                     display:none;
                     padding: .5rem 1rem;
                     border-radius: 10px;
@@ -56,24 +56,24 @@
                     font-weight: 600;
                     outline: 1px solid #d5251e;
                 }
-                #show_add_extraone, #show_add_extratwo {
+                #show_add_white, #show_add_blue {
                     padding: .5rem 1rem;
                     color: white;
                     font-weight: 600;
                 }
             }
-            .add_extraone:hover, .add_extratwo:hover {
+            .add_white:hover, .add_blue:hover {
                 background-color: #478f54;
             }
 
             /* add forms */
-            #new_extraone, #new_extratwo  {
+            #new_white, #new_blue  {
                 display: none;
                 margin: 2rem auto 0;
                 padding: 1rem;
                 border-radius: 10px;
                 box-shadow: #0000001a 0px 0px 50px 10px;
-                .new_extraone, .new_extratwo {
+                .new_white, .new_blue {
                     outline: 1px dashed #478f54;
                     border-radius: 10px;
                     padding: 1rem;

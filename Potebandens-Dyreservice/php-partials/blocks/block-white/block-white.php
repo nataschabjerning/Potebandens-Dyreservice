@@ -1,11 +1,11 @@
 <?php
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM extraone;";
+    $sql = "SELECT * FROM white;";
     $result = mysqli_query($conn, $sql);
 ?>
 
-<div class="block extraone">
+<div class="block white">
 
     <div class="flowertop"></div>
     
@@ -59,4 +59,4 @@
             <?php } ?>
         </div> <!-- .container end -->
     </div> <!-- .extra-border end -->
-</div> <!-- .block .index-block .extraone end -->
+</div> <!-- .block .index-block .white end -->

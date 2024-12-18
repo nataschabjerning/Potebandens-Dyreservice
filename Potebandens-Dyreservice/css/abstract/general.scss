@@ -89,65 +89,6 @@
     }
 }
 
-/* MARK: EXTRA BLOCKS
-- div class that is included in block-extraone, block-extratwo, block-questions */
-.index-block {
-    background: linear-gradient(
-        to bottom,
-        #f1deb1 0%, 
-        #f1e4c4 10%, 
-        #f8efd6 35%, 
-        #f8f0df 50%, 
-        #f8f5ee 70%, 
-        #ffffff 90%, 
-        #ffffff 100%
-    );
-    border: 2px solid #565a4d;
-    text-align: center;
-    .extra-border {
-        border: 10px solid #939983;
-        .extra-border-inner {
-            .container {
-                .extra-content {
-                    margin: 4rem 0;
-                    h2 {
-                        font-size: 2rem;
-                        text-transform: uppercase;
-                        text-shadow: 1px 1px 1px #202020;
-                        margin: 0 0 2rem;
-                        @media (max-width: 768px) {
-                            font-size: 1.8rem;
-                        }
-                    }
-                    h3, .a {
-                        margin-bottom: 1rem;
-                        font-size: 1.5rem;
-                        @media (max-width: 1024px) {
-                            font-size: 1.3rem;
-                        }
-                    }
-                    p {
-                        margin: 0 0 1rem;
-                        font-size: 1.3rem;
-                        @media (max-width: 1024px) {
-                            font-size: 1rem;
-                        }
-                    }
-                    a {
-                        font-size: 1rem;
-                        margin: 2rem auto 0;
-                        text-transform: uppercase;
-                        color: #3f48cc;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* MARK: .SPAN *
  * SKAL udfyldes */
 .span {

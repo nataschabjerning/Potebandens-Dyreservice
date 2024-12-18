@@ -4,12 +4,12 @@
     border: 2px solid #565a4d;
     padding: 1rem;
     .flowertop {
-        background-image: url('../../../../Images/borders/blueflowersbordertop.png');
+        background-image: url('../../../../images/borders/pinkflowersbordertop.png');
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
         left: 0;
-        top: -45px;
+        top: -35px;
         height: 100px;
         width: 100%;
         @media (max-width: 1024px) {
@@ -19,10 +19,6 @@
         @media (max-width: 768px) {
             top: -30px;
             height: 80px;
-        }
-        @media (max-width: 380px) {
-            top: -25px;
-            height: 70px;
         }
     }
     .extra-border {
@@ -39,7 +35,7 @@
         border: 1px solid #565a4d;
             .container {
                 .end-content {
-                    padding: 2rem 0;
+                    padding: 3rem 0 2rem;
                     text-align: center;
                     h2 {
                         color: rgba(213, 37, 30, 1);

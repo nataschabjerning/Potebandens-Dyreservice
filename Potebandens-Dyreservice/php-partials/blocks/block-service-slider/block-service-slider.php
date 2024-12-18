@@ -6,7 +6,6 @@
 ?>
 
 <div class="block service-slider-block">
-    <div class="flowerleft"></div>
     <div class="container">
 
         <h2 class="admin-titles">Hvad tilbyder vi?</h2>
@@ -27,7 +26,7 @@
 
         <!-- if there is services in db table -->
         <?php if (mysqli_num_rows($result) > 0) { ?>
-            <div class="service-slider"> 
+            <div class="service-slider">
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="slide">
                         <div class="service-content">

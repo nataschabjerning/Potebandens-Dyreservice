@@ -1,17 +1,15 @@
-/* General
+/* MARK: General
 ------------------------------------------------------*/
 
 @import 'abstract/general.scss';
 
-/* Blocks
+/* MARK: Blocks
 ------------------------------------------------------*/
 
 @import '../php-partials/blocks/block-about/block-about.scss';
+@import '../php-partials/blocks/block-blue/block-blue.scss';
 @import '../php-partials/blocks/block-contact/block-contact.scss';
-@import '../php-partials/blocks/block-extraone/block-extraone.scss';
-@import '../php-partials/blocks/block-extratwo/block-extratwo.scss';
 @import '../php-partials/blocks/block-footer/block-footer.scss';
-@import '../php-partials/blocks/block-services/block-services.scss';
 @import '../php-partials/blocks/block-gallery/block-gallery.scss';
 @import '../php-partials/blocks/block-gallery-slider/block-gallery-slider.scss';
 @import '../php-partials/blocks/block-header/block-header.scss';
@@ -19,8 +17,10 @@
 @import '../php-partials/blocks/block-questions/block-questions.scss';
 @import '../php-partials/blocks/block-rules/block-rules.scss';
 @import '../php-partials/blocks/block-service-slider/block-service-slider.scss';
+@import '../php-partials/blocks/block-services/block-services.scss';
+@import '../php-partials/blocks/block-white/block-white.scss';
 
-/* Admin Blocks
+/* MARK: Admin Blocks
 ------------------------------------------------------*/
 
 @import '../php-partials/admin-blocks/block-admin-about/block-admin-about.scss';
@@ -39,7 +39,7 @@
 @import '../php-partials/admin-blocks/block-admin-upload-image/block-admin-upload-image.scss';
 @import '../php-partials/admin-blocks/block-admin-users/block-admin-users.scss';
 
-/* Components
+/* MARK: Components
 ------------------------------------------------------*/
 
 @import '../php-partials/components/alert/alert.scss';
@@ -47,7 +47,7 @@
 @import '../php-partials/components/logo/logo.scss';
 @import '../php-partials/components/creator/creator.scss';
 
-/* Pages
+/* MARK: Pages
 ------------------------------------------------------*/
 
 @import 'pages/about.scss';

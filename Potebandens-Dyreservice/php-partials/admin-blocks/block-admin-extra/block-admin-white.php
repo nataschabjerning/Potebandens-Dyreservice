@@ -4,84 +4,85 @@
 
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM extratwo;";
+    $sql = "SELECT * FROM white;";
     $stmt = $conn->prepare($sql);
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
 ?>
 
-<div class="block block-admin-extratwo">
+<div class="block block-admin-white">
     <div class="container">
-
-        <div class="two">
-            <div class="two-button">
-                <h2 class="admin-titles">Alle blokke <u>under</u> slideshow af ydelser</h2>
-                <div class="admin_extratwo">
-                    <div id="show_admin_extratwo">
+        <p class="update-info">Vil du opdatere en blok?<br>- Ret i det ønskede tekstfelt og tryk herefter på 'opdatér'</p>
+        <div class="one">
+            <div class="one-button">
+                <h2 class="admin-titles">Hvide Blokke</h2>
+                <div class="admin_white">
+                    <div id="show_admin_white">
                         <i class="fa fa-chevron-down"></i>
                     </div>
-                    <div id="hide_admin_extratwo">
+                    <div id="hide_admin_white">
                         <i class="fa fa-chevron-up"></i>
                     </div>
                 </div>
             </div>
+            <p>Alle blokke <u>over</u> slideshow af ydelser</p>
 
-            <div class="admin-extratwo">
+            <div class="admin-white">
                 <?php while($row = mysqli_fetch_assoc($resultData)) {
 
                     // set names of visibility options for easy read
-                    $extratwo_visibility;
+                    $white_visibility;
                     if ($row["extra_visibility"] == "yes") {
-                        $extratwo_visibility = "Ja";
+                        $white_visibility = "Ja";
                     }
                     else if ($row["extra_visibility"] == "no") {
-                        $extratwo_visibility = "Nej";
+                        $white_visibility = "Nej";
                     }
                     else {
                         // default
-                        $extratwo_visibility = "Ja";
+                        $white_visibility = "Ja";
                     }
 
                     // set names of links for easy read
-                    $extratwo_name;
+                    $white_name;
                     if ($row["extra_link_url"] == "index.php") {
-                        $extratwo_name = "Forside";
+                        $white_name = "Forside";
                     } 
                     else if($row["extra_link_url"] == "services.php") {
-                        $extratwo_name = "Ydelser";
+                        $white_name = "Ydelser";
                     } 
                     else if($row["extra_link_url"] == "gallery.php") {
-                        $extratwo_name = "Galleri";
+                        $white_name = "Galleri";
                     } 
                     else if($row["extra_link_url"] == "about.php") {
-                        $extratwo_name = "Om Os";
+                        $white_name = "Om Os";
                     } 
                     else if ($row["extra_link_url"] == "contact.php") {
-                        $extratwo_name = "Kontakt";
-                    } 
+                        $white_name = "Kontakt";
+                    }
                     else {
-                        $extratwo_name = "Intet URL valgt";
+                        $white_name = "Intet URL valgt";
                     } ?>
 
-                    <section attr-extratwo_id="<?php echo $row['id']; ?>">
+                    <section attr-white_id="<?php echo $row['id']; ?>">
                         <div class="extra_id">
                             <h4>ID:</h4>
                             <h4><?php echo $row['id']?></h4>
                         </div> <!-- .extra_id end -->
-                        <div class="admin-extratwo-content">
+                        <div class="admin-white-content">
                             <div class="extra-visibility">
                                 <label>Skal blokken vises på forsiden?</label>
                                 <div class="input">
                                     <select class="extra_visibility">
-                                        <option value="<?php echo $row["extra_visibility"]; ?>" selected>--- <?php echo $extratwo_visibility; ?> ---</option>
+                                        <option value="<?php echo $row["extra_visibility"]; ?>" selected>--- <?php echo $white_visibility; ?> ---</option>
                                         <option value="yes">Ja</option>
                                         <option value="no">Nej</option>
                                     </select>
                                 </div>
                             </div> <!-- .extra-visibility end -->
-                            <div class="extratwo-top">
-                                <div class="extratwo-left">
-                                <div class="extra-image" style="<?php if (!empty($row['extra_image'])) { ?>
+                            <div class="white-top">
+                                <div class="white-left">
+                                    <div class="extra-image" style="<?php if (!empty($row['extra_image'])) { ?>
                                         background-image: url('includes/extra-images/<?php echo $row['extra_image']?>');
                                     <?php }
                                     else { ?>
@@ -109,8 +110,8 @@
                                             <input type="text" value="<?php echo $row['extra_subtitle']?>" class="extra_subtitle">
                                         </div>
                                     </div> <!-- .extra-subtitle end -->
-                                </div> <!-- .extratwo-left end -->
-                                <div class="extratwo-right">
+                                </div> <!-- .white-left end -->
+                                <div class="white-right">
                                     <div class="extra-text_one">
                                         <label>Tekst 1</label>
                                         <div class="input">
@@ -132,9 +133,9 @@
                                             <textarea class="extra_text_three" placeholder="Tekst 3"><?php echo $row['extra_text_three']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_three end -->
-                                </div> <!-- .extratwo-right end -->
-                            </div> <!-- .extratwo-top end -->
-                            <div class="extratwo-bottom">
+                                </div> <!-- .white-right end -->
+                            </div> <!-- .white-top end -->
+                            <div class="white-bottom">
                                 <div class="extra-text_link">
                                     <label>Tekst der bliver til link</label>
                                     <div class="input">
@@ -144,8 +145,8 @@
                                 <div class="extra-link_url">
                                     <label>Hvilken side skal linket føre hen til?</label>
                                     <div class="input">
-                                        <select class="extratwo_link_url">
-                                            <option value="<?php echo $row['extra_link_url']?>" selected>--- <?php echo $extratwo_name; ?> ---</option>
+                                        <select class="white_link_url">
+                                            <option value="<?php echo $row['extra_link_url']?>" selected>--- <?php echo $white_name; ?> ---</option>
                                             <option value="index.php">Forside</option>
                                             <option value="services.php">Ydelser</option>
                                             <option value="gallery.php">Galleri</option>
@@ -154,19 +155,19 @@
                                         </select>
                                     </div>
                                 </div> <!-- .extra-link_url end -->
-                            </div> <!-- .extratwo-bottom end -->
+                            </div> <!-- .white-bottom end -->
                             <div class="update-delete-buttons">
-                                <div class="update-extratwo">
-                                    <button id="update-extratwo">Opdatér</button>
-                                </div>                                    
-                                <div class="delete-extratwo">
-                                    <button id="delete-extratwo">Slet</button>
+                                <div class="update-white">
+                                    <button id="update-white">Opdatér</button>
+                                </div>
+                                <div class="delete-white">
+                                    <button id="delete-white">Slet</button>
                                 </div>
                             </div> <!-- .update-delete-buttons end -->
-                        </div> <!-- .admin-extratwo-content end -->
+                        </div> <!-- .admin-white-content end -->
                     </section>
                 <?php } ?>
-            </div> <!-- .admin-extratwo end -->
-        </div> <!-- .two end -->
+            </div> <!-- .block .admin-white end -->
+        </div> <!-- .one end -->
     </div> <!-- .container end -->
-</div> <!-- .block .block-admin-extratwo end -->
+</div> <!-- .block .block-admin-white end -->

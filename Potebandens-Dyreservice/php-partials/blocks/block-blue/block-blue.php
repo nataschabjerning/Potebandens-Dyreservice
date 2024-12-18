@@ -1,11 +1,11 @@
 <?php
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM extratwo;";
+    $sql = "SELECT * FROM blue;";
     $result = mysqli_query($conn, $sql);
 ?>
 
-<div class="block extratwo">
+<div class="block blue">
     
     <div class="branchtop"></div>
     

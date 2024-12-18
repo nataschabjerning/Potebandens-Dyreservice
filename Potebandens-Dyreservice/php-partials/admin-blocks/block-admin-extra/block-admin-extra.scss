@@ -1,8 +1,8 @@
-.block-admin-extraone, .block-admin-extratwo {
+.block-admin-white, .block-admin-blue {
     padding: 0;
 
-    /* .one = content from extraone table */
-    /* .two = content from extratwo table */
+    /* .one = content from white table */
+    /* .two = content from blue table */
     .one, .two {
         padding: 1rem 0;
         border: none;
@@ -20,36 +20,40 @@
             }
             /* MARK: ARROWS
             ---------------------------------------- */
-            .admin_extraone, .admin_extratwo {
+            .admin_white, .admin_blue {
                 background-color: #d9a800cc;
                 width: fit-content;
                 border-radius: 10px;
                 font-weight: 600;
                 font-size: 1rem;
                 cursor: pointer;
-                #show_admin_extraone, #show_admin_extratwo {
+                #show_admin_white, #show_admin_blue {
                     display:none;
                     color: #478f54;
                     padding: .3rem .5rem;
                     border-radius: 10px;
                     border: 1px solid #478f54;
                 }
-                #hide_admin_extraone, #hide_admin_extratwo {
+                #hide_admin_white, #hide_admin_blue {
                     border-radius: 10px;
                     color: #d5251e;
                     padding: .3rem .5rem;
                     border: 1px solid #d5251e;
                 }
             }
-            .admin_extraone:hover, .admin_extratwo:hover {
+            .admin_white:hover, .admin_blue:hover {
                 background-color: #d9a800;
             }
+        }
+
+        p {
+            text-align: center;
         }
 
         /* MARK: FORM START
         ------------------------------------------- */
         /* display db table content in section */
-        .admin-extraone, .admin-extratwo {
+        .admin-white, .admin-blue {
             section {
                 position: relative;
                 margin: 1rem 0;
@@ -68,7 +72,7 @@
                         border: none;
                     }
                 }
-                .admin-extraone-content, .admin-extratwo-content {
+                .admin-white-content, .admin-blue-content {
                     position: relative;
                     background-color: #ffffff;
                     border: 1px solid #565a4d;
@@ -165,7 +169,7 @@
                     - left | right -
                     - left | right -
                     */
-                    .extraone-top, .extratwo-top {
+                    .white-top, .blue-top {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         @media (max-width: 768px) {
@@ -179,7 +183,7 @@
                         .extra-title    |   .extra-text_two
                         .extra-subtitle |   .extra-text_three
                         */
-                        .extraone-left, .extraone-right, .extratwo-left, .extratwo-right {
+                        .white-left, .white-right, .blue-left, .blue-right {
                             display: grid;
                             grid-template-rows: 300px 75px 75px;
                             @media (max-width: 350px) {
@@ -203,7 +207,7 @@
                                 border-top: 1px solid #000000;
                             }
                         }
-                        .extraone-left, .extratwo-left {
+                        .white-left, .blue-left {
                             input {
                                 height: 45px;
                                 @media (max-width: 350px) {
@@ -211,7 +215,7 @@
                                 }
                             }
                         }
-                        .extraone-right, .extratwo-right {
+                        .white-right, .blue-right {
                             border-left: 1px solid #000000;
                             grid-template-rows: minmax(150px, max-content) minmax(150px, max-content) minmax(150px, max-content);
                             @media (max-width: 768px) {
@@ -226,7 +230,7 @@
                     /* MARK: .EXTRA-BOTTOM
                     -------------------------------------------
                     .extra-text_link, .extra-link_url */
-                    .extraone-bottom, .extratwo-bottom {
+                    .white-bottom, .blue-bottom {
                         border-top: 1px solid #000000;
                         .extra-text_link, .extra-link_url {
                             display: grid;
@@ -258,7 +262,7 @@
                 ------------------------------------------- */
                 .update-delete-buttons {
                     display: flex;
-                    .update-extraone, .delete-extraone, .update-extratwo, .delete-extratwo {
+                    .update-white, .delete-white, .update-blue, .delete-blue {
                         width: 100%;
                         button {
                             margin: 0;
@@ -273,7 +277,7 @@
                             background-color: #df8a1b;
                         }
                     }
-                    .delete-extraone, .delete-extratwo {
+                    .delete-white, .delete-blue {
                         button {
                             border-radius: 0;
                             background-color: #dd0000;
@@ -292,6 +296,6 @@
     }
 }
 /* set padding at bottom to create air between block and footer */
-.block-admin-extratwo {
-    padding: 0 0 6rem;
+.block-admin-blue {
+    padding: 0 0 8rem;
 }

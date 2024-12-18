@@ -7,8 +7,8 @@
 
     include_once("connect.inc.php");
 
-    // get the input values from update extraone in script.js
-    $extraone_id        = $_REQUEST['extraone_id'];
+    // get the input values from update blue in script.js
+    $blue_id        = $_REQUEST['blue_id'];
     $extra_visibility   = $_REQUEST['extra_visibility'];
     $extra_title        = $_REQUEST['extra_title'];
     $extra_subtitle     = $_REQUEST['extra_subtitle'];
@@ -23,7 +23,7 @@
         exit;
     }
 
-    $sql = "UPDATE extraone 
+    $sql = "UPDATE blue 
 	SET 
     extra_visibility='$extra_visibility',
     extra_title='$extra_title',
@@ -33,7 +33,7 @@
     extra_text_three='$extra_text_three',
     extra_text_link='$extra_text_link',
     extra_link_url='$extra_link_url'
-    WHERE id='$extraone_id'";
+    WHERE id='$blue_id'";
 
     // Process the query so row is updated in table and db
 	if (!$conn->query($sql)) {
