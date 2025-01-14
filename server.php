@@ -1,5 +1,48 @@
 <!-- 
 
+### CODE EXAMPLES ###
+
+------------------- Keyframe Animation -------------------
+
+.class {
+    animation: wobble 15s ease-in-out alternate infinite;
+}
+@keyframes wobble {
+    50% {
+        border-radius: 92% 8% 94% 6% / 5% 96% 4% 95%;
+    }
+    100% {
+        border-radius: 97% 3% 97% 3% / 3% 97% 3% 97%;
+    }
+}
+
+------------- Border Radius (blob / drawn) -------------
+
+------A--B-----------
+-                   -
+a                   -
+-                   -
+d                   -
+-                   b
+-                   -
+-                   c
+-                   -
+-----------D--C------
+
+Forming a diagonal oval
+
+border-radius: 26% 64% 22% 71% / 24% 67% 25% 68%;
+                            A - a
+border-top-left-radius:     26% 24%;
+                            B - b
+border-top-right-radius:    64% 67%;
+                            C - c
+border-bottom-right-radius: 22% 25%;
+                            D - d
+border-bottom-left-radius:  71% 68%;
+
+------------------------------------------------------------
+                       
 ### COLOR CODES ###
 
 ------------------- General -------------------

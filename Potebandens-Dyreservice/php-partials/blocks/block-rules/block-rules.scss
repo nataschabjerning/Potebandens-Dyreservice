@@ -48,6 +48,7 @@
                     #ffffff 100%
                 );
                 border: 1px solid #565a4d;
+                border-radius: 97% 3% 97% 3% / 3% 97% 3% 97%;
                 padding: 1rem;
                 @media (max-width: 1024px) {
                     grid-column: 1 / 3;

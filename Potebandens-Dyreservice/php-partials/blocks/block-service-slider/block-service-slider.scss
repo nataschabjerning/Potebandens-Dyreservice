@@ -1,7 +1,244 @@
 .service-slider-block {
     position: relative;
     background-color: #478f54cc;
-    padding-bottom: 8rem;
+
+    /* MARK: PAW PRINTS
+    */
+    .pawprints {
+        /* position and animate */
+        .paw {
+            background-image: url('../../../../images/backgrounds/pawprint.png');
+            width: 26px;
+            height: 28px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0;
+            position: absolute;
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+        .paw-print-1 {
+            right: 350px;
+            bottom: 30px;
+            transform: rotate(-40deg);
+            /* keyframe animation name - duration - repeat */
+            animation: walk 40s infinite;
+            @media (max-width: 1024px) {
+                right: 250px;
+            }
+            @media (max-width: 900px) {
+                right: 150px;
+            }
+        }
+        .paw-print-2 {
+            right: 420px;
+            bottom: 40px;
+            transform: rotate(-40deg);
+            /* keyframe animation name - duration - repeat - delay */
+            animation: walk 40s infinite .5s;
+            @media (max-width: 1024px) {
+                right: 320px;
+            }
+            @media (max-width: 900px) {
+                right: 220px;
+            }
+        }
+        .paw-print-3 {
+            right: 400px;
+            bottom: 100px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 1s;
+            @media (max-width: 1024px) {
+                right: 300px;
+            }
+            @media (max-width: 900px) {
+                right: 200px;
+            }
+        }
+        .paw-print-4 {
+            right: 470px;
+            bottom: 110px;
+            transform: rotate(-40deg); 
+            animation: walk 40s infinite 1.5s;
+            @media (max-width: 1024px) {
+                right: 370px;
+            }
+            @media (max-width: 900px) {
+                right: 270px;
+            }
+        }
+        .paw-print-5 {
+            right: 450px;
+            bottom: 170px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 2s;
+            @media (max-width: 1024px) {
+                right: 350px;
+            }
+            @media (max-width: 900px) {
+                right: 250px;
+            }
+        }
+        .paw-print-6 {
+            right: 520px;
+            bottom: 180px;
+            transform: rotate(-40deg); 
+            animation: walk 40s infinite 2.5s;
+            @media (max-width: 1024px) {
+                right: 420px;
+            }
+            @media (max-width: 900px) {
+                right: 320px;
+            }
+        }
+        .paw-print-7 {
+            right: 500px;
+            bottom: 240px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 3s;
+            @media (max-width: 1024px) {
+                right: 400px;
+            }
+            @media (max-width: 900px) {
+                right: 300px;
+            }
+        }
+        .paw-print-8 {
+            right: 570px;
+            bottom: 250px;
+            transform: rotate(-40deg); 
+            animation: walk 40s infinite 3.5s;
+            @media (max-width: 1024px) {
+                right: 470px;
+            }
+            @media (max-width: 900px) {
+                right: 370px;
+            }
+        }
+        .paw-print-9 {
+            right: 550px;
+            bottom: 310px;
+            transform: rotate(-40deg); 
+            animation: walk 40s infinite 4s;
+            @media (max-width: 1024px) {
+                right: 450px;
+            }
+            @media (max-width: 900px) {
+                right: 350px;
+            }
+        }
+        .paw-print-10 {
+            right: 620px;
+            bottom: 320px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 4.5s;
+            @media (max-width: 1024px) {
+                right: 520px;
+            }
+            @media (max-width: 900px) {
+                right: 420px;
+            }
+        }
+        .paw-print-11 {
+            right: 600px;
+            bottom: 380px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 5s;
+            @media (max-width: 1024px) {
+                right: 500px;
+            }
+            @media (max-width: 900px) {
+                right: 400px;
+            }
+        }
+        .paw-print-12 {
+            right: 670px;
+            bottom: 390px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 5.5s;
+            @media (max-width: 1024px) {
+                right: 570px;
+            }
+            @media (max-width: 900px) {
+                right: 470px;
+            }
+        }
+        .paw-print-13 {
+            right: 650px;
+            bottom: 450px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 6s;
+            @media (max-width: 1024px) {
+                right: 550px;
+            }
+            @media (max-width: 900px) {
+                right: 450px;
+            }
+        }
+        .paw-print-14 {
+            right: 720px;
+            bottom: 460px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 6.5s;
+            @media (max-width: 1024px) {
+                right: 620px;
+            }
+            @media (max-width: 900px) {
+                right: 520px;
+            }
+        }
+        .paw-print-15 {
+            right: 700px;
+            bottom: 520px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 7s;
+            @media (max-width: 1024px) {
+                right: 600px;
+            }
+            @media (max-width: 900px) {
+                right: 500px;
+            }
+        }
+        .paw-print-16 {
+            right: 770px;
+            bottom: 530px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 7.5s;
+            @media (max-width: 1024px) {
+                right: 670px;
+            }
+            @media (max-width: 900px) {
+                right: 570px;
+            }
+        }
+        .paw-print-17 {
+            right: 750px;
+            bottom: 590px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 8s;
+            @media (max-width: 1024px) {
+                right: 650px;
+            }
+            @media (max-width: 900px) {
+                right: 550px;
+            }
+        }
+        .paw-print-18 {
+            right: 820px;
+            bottom: 600px;
+            transform: rotate(-40deg);
+            animation: walk 40s infinite 8.5s;
+            @media (max-width: 1024px) {
+                right: 720px;
+            }
+            @media (max-width: 900px) {
+                right: 620px;
+            }
+        }
+    }
+
     .container {
         .admin-titles {
             color: #d5251e;

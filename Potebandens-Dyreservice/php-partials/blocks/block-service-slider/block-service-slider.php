@@ -6,6 +6,29 @@
 ?>
 
 <div class="block service-slider-block">
+
+    <div class="pawprints">
+        <div class="paw paw-print-1"></div>
+        <div class="paw paw-print-2"></div>
+        <div class="paw paw-print-3"></div>
+        <div class="paw paw-print-4"></div>
+        <div class="paw paw-print-5"></div>
+        <div class="paw paw-print-6"></div>
+        <div class="paw paw-print-7"></div>
+        <div class="paw paw-print-8"></div>
+        <div class="paw paw-print-9"></div>
+        <div class="paw paw-print-10"></div>
+        <div class="paw paw-print-11"></div>
+        <div class="paw paw-print-12"></div>
+        <div class="paw paw-print-13"></div>
+        <div class="paw paw-print-14"></div>
+        <div class="paw paw-print-15"></div>
+        <div class="paw paw-print-16"></div>
+        <div class="paw paw-print-17"></div>
+        <div class="paw paw-print-18"></div>
+    </div> <!-- .pawprints end -->
+
+
     <div class="container">
 
         <h2 class="admin-titles">Hvad tilbyder vi?</h2>

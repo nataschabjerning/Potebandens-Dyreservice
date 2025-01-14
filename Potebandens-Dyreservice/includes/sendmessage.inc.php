@@ -40,6 +40,9 @@
     if ($message_contact == "email" && empty($message_email)) {
         exit;
     }
+    if (strlen($message_msg) > 255) {
+        exit();
+    }
     
     $sql = "INSERT INTO inbox (message_date, message_time, message_name, message_subject, message_msg, message_contact, message_phone, message_email) 
     VALUES ('$message_date', '$message_time', '$message_name', '$message_subject', '$message_msg', '$message_contact', '$message_phone', '$message_email')";

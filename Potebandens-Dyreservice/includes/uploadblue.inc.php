@@ -23,6 +23,19 @@
         // Allow certain file formats
         $allowTypes = array('jpg','png','jpeg','gif');
         
+        // if string in textareas are too long
+        if (strlen($extra_text_one) > 255) {
+            header("location: ../admin-index.php?error=bluetextone");
+            exit();
+        }
+        if (strlen($extra_text_two) > 255) {
+            header("location: ../admin-index.php?error=bluetexttwo");
+            exit();
+        }
+        if (strlen($extra_text_three) > 255) {
+            header("location: ../admin-index.php?error=bluetextthree");
+            exit();
+        }
         // If 'alt' text field is empty
         if (!empty($extra_image) && empty($extra_image_alt)) {
             header("location: ../admin-index.php?error=blue½altempty");

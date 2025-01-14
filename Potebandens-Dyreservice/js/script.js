@@ -95,46 +95,13 @@ $(document).ready(function(){
     });
 
 
+    
 
 // -------------------------------------------------------------------
     // MARK: USER INTERFACE
 
 
 
-
-    // MARK: CONTACT FORM
-
-
-
-
-    // MARK: phone/email
-    // For user when writing a msg to admin by using contact form on 'block-contact.php'
-    // show input field when user selects either phone or email
-    $("#selected").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".box").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            } else{
-                $(".box").hide();
-            }
-        });
-    }).change();
-
-
-    // MARK: textarea chars
-    // For user when writing a msg to admin by using contact form on 'block-contact.php'
-    // ----- show how many characters are left in textarea -----
-    var text_min = 0;
-    $('#message_msg_feedback').html(text_min + ' / 255');
-
-    $('#message_msg').keyup(function() {
-        var text_length = $('#message_msg').val().length;
-        var text_remaining = text_min + text_length;
-
-        $('#message_msg_feedback').html(text_remaining + ' / 255');
-    });
 
     // MARK: send msg
     // ---------- USER SEND MESSAGE TO ADMIN INBOX (block-contact.php) ----------
@@ -204,11 +171,44 @@ $(document).ready(function(){
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i dit navn. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen! <br>");
             }
+            else if ($message_msg.length > 255) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om din besked er for lang. Der kan maks være 255 teng (inkl. mellemrum).");
+            }
             else {
                 // if all checks have cleared
                 successAlert("Din besked blev sendt!");
             }
 		})
+    });
+
+    // MARK: phone/email
+    // For user when writing a msg to admin by using contact form on 'block-contact.php'
+    // show input field when user selects either phone or email
+    $("#selected").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+
+
+    // MARK: textarea chars
+    // For user when writing a msg to admin by using contact form on 'block-contact.php'
+    // ----- show how many characters are left in textarea -----
+    var text_min = 0;
+    $('#message_msg_feedback').html(text_min + ' / 255');
+
+    $('#message_msg').keyup(function() {
+        var text_length = $('#message_msg').val().length;
+        var text_remaining = text_min + text_length;
+
+        $('#message_msg_feedback').html(text_remaining + ' / 255');
     });
 
 
@@ -219,7 +219,7 @@ $(document).ready(function(){
 
     // ----- SHOW FORMS FOR INSERTING IN DB -----
 
-    // MARK: Show/Hide forms
+    // MARK: Show/Hide
 
     // show/hide 'change password' form  on 'admin-profile' page
     $(".change_password").click(function () {

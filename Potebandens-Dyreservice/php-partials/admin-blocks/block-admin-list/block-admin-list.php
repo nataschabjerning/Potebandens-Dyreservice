@@ -47,7 +47,7 @@
                                 </div>
                                 <hr>
                                 <div class="todo">
-                                    <p>Her kan du ændre i tekstbokse der er på forsiden.</p>
+                                    <p>Her kan du ændre i tekstbokse der er på forsiden (Hvid Blok/Blå Blok).</p>
                                 </div>
                             </a>
                         </div>

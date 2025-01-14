@@ -4,10 +4,47 @@
         <div class="upload-extra-messages">
             <?php
                 if (isset($_GET["error"])) {
+                    // string length is too long
+                    if ($_GET["error"] == "whitetextone") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 1 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "whitetexttwo") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 2 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "whitetextthree") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 3 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluetextone") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 1 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluetexttwo") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 2 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluetextthree") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i teksfelt 3 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
                     // no file was selected to upload
                     if ($_GET["error"] == "whitealtempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst til det valgte billede.</p>";
                         echo "</div>";
                     }
@@ -20,7 +57,7 @@
                     // no title input
                     if ($_GET["error"] == "whitetitleempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Husk at skrive en titel.</p>";
                         echo "</div>";
                     }
@@ -33,7 +70,7 @@
                     // no title input
                     if ($_GET["error"] == "whiteselectempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Husk at vælge om blokken skal være synlig på forsiden eller ej.</p>";
                         echo "</div>";
                     }
@@ -46,7 +83,7 @@
                     // not matching the allowed file types
                     if ($_GET["error"] == "whitewrongfiletype") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Du kan kun vælge .jpg, .jpeg, .png eller .gif filer.</p>";
                         echo "</div>";
                     }
@@ -59,7 +96,7 @@
                     // failed to move file to 'uploads' folder
                     if ($_GET["error"] == "whitemovingfilefailed") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Der skete en fejl da filen skulle flyttes til den valgte mappe. Prøv igen</p>";
                         echo "</div>";
                     }
@@ -72,7 +109,7 @@
                     // failed to insert into database
                     if ($_GET["error"] == "whiteinsertfailed") {
                         echo "<div class='error'>";
-                        echo "<p class='blockwhite'>* Blok 1 *</p>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
                         echo "<p class='caption'>- Der skete en fejl da filen skulle indsættes i databasen. Prøv igen</p>";
                         echo "</div>";
                     }
