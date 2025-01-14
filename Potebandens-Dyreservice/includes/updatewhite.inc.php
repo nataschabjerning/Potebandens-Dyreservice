@@ -22,6 +22,25 @@
     if(empty($extra_title)) {
         exit;
     }
+    // if string has too many characters
+    if(strlen($extra_title) > 100) {
+        exit;
+    }
+    if(strlen($extra_subtitle) > 100) {
+        exit;
+    }
+    if(strlen($extra_text_one) > 250) {
+        exit;
+    }
+    if(strlen($extra_text_two) > 250) {
+        exit;
+    }
+    if(strlen($extra_text_three) > 250) {
+        exit;
+    }
+    if(strlen($extra_text_link) > 100) {
+        exit;
+    }
 
     $sql = "UPDATE white 
 	SET 

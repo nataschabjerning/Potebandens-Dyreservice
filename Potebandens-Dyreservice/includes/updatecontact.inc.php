@@ -26,6 +26,13 @@
     if(preg_match("/\d/", $contact_name)) {
         exit;
     }
+    // if string has too many characters
+    if(strlen($contact_name) > 100) {
+        exit;
+    }
+    if(strlen($contact_work_title) > 100) {
+        exit;
+    }
 
     $sql = "UPDATE contact 
 	SET 

@@ -24,6 +24,14 @@
         $allowTypes = array('jpg','png','jpeg','gif');
         
         // if string in textareas are too long
+        if (strlen($extra_title) > 100) {
+            header("location: ../admin-index.php?error=bluetitle");
+            exit();
+        }
+        if (strlen($extra_subtitle) > 100) {
+            header("location: ../admin-index.php?error=bluesubtitle");
+            exit();
+        }
         if (strlen($extra_text_one) > 255) {
             header("location: ../admin-index.php?error=bluetextone");
             exit();
@@ -38,7 +46,11 @@
         }
         // If 'alt' text field is empty
         if (!empty($extra_image) && empty($extra_image_alt)) {
-            header("location: ../admin-index.php?error=blue½altempty");
+            header("location: ../admin-index.php?error=bluealtempty");
+            exit();
+        }
+        if (strlen($extra_text_link) > 100) {
+            header("location: ../admin-index.php?error=bluelinktext");
             exit();
         }
         // If 'alt' text field is empty
@@ -86,7 +98,7 @@
         <p class="span"><span>*</span> SKAL udfyldes</p>
         <p class="position">(<u>Under</u> slideshow af ydelser)</p>
 
-        <form action="includes/uploadblue.inc.php" method="post" enctype="multipart/form-data">
+        <form action="includes/createblue.inc.php" method="post" enctype="multipart/form-data">
             <div class="line extra-image_file">
                 <label>Billede</label>
                 <div class="input">

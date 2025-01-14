@@ -21,6 +21,28 @@
     if(empty($service_name) || empty($service_description_one)) {
         exit;
     }
+    // if string has too many characters
+    if(strlen($service_name) > 100) {
+        exit;
+    }
+    if(strlen($service_description_one) > 250) {
+        exit;
+    }
+    if(strlen($service_description_two) > 250) {
+        exit;
+    }
+    if(strlen($service_description_three) > 250) {
+        exit;
+    }
+    if(strlen($service_description_four) > 250) {
+        exit;
+    }
+    if(strlen($service_short_description) > 250) {
+        exit;
+    }
+    if(strlen($important_note) > 250) {
+        exit;
+    }
     // if there is numbers in service_name
     if(preg_match("/\d/", $service_name)) {
         exit;

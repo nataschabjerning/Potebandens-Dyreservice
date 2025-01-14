@@ -5,6 +5,18 @@
             <?php
                 if (isset($_GET["error"])) {
                     // string length is too long
+                    if ($_GET["error"] == "whitetitle") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i titel er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "whitesubtitle") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i undertitel er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
                     if ($_GET["error"] == "whitetextone") {
                         echo "<div class='error'>";
                         echo "<p class='blockwhite'>* Hvid Blok *</p>";
@@ -23,6 +35,24 @@
                         echo "<p class='caption'>- Teksten i teksfelt 3 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
                         echo "</div>";
                     }
+                    if ($_GET["error"] == "whitelinktext") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockwhite'>* Hvid Blok *</p>";
+                        echo "<p class='caption'>- Teksten i link teksten er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluetitle") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i titel er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluesubtitle") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i undertitel er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
                     if ($_GET["error"] == "bluetextone") {
                         echo "<div class='error'>";
                         echo "<p class='blockblue'>* Blå Blok *</p>";
@@ -39,6 +69,12 @@
                         echo "<div class='error'>";
                         echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Teksten i teksfelt 3 er for lang. Der kan maks være 255 tegn (inkl. mellemrum).</p>";
+                        echo "</div>";
+                    }
+                    if ($_GET["error"] == "bluelinktext") {
+                        echo "<div class='error'>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
+                        echo "<p class='caption'>- Teksten i link teksten er for lang. Der kan maks være 100 tegn (inkl. mellemrum).</p>";
                         echo "</div>";
                     }
                     // no file was selected to upload
@@ -143,7 +179,7 @@
                     <div id="hide_add_white">Skjul formular</div>
                 </div>
                 <?php
-                    include("includes/uploadwhite.inc.php");
+                    include("includes/createwhite.inc.php");
                 ?>
             </div> <!-- .white end -->
 
@@ -153,7 +189,7 @@
                     <div id="hide_add_blue">Skjul formular</div>
                 </div>
                 <?php
-                    include("includes/uploadblue.inc.php");
+                    include("includes/createblue.inc.php");
                 ?>
             </div> <!-- .blue end -->
         </div>

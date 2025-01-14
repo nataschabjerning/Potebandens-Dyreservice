@@ -24,6 +24,13 @@
     if(preg_match("/\d/", $contact_name)) {
         exit;
     }
+    // if string has too many characters
+    if(strlen($contact_name) > 100) {
+        exit;
+    }
+    if(strlen($contact_work_title) > 100) {
+        exit;
+    }
     
     $sql = "INSERT INTO contact (name, work_title, phone, email) 
     VALUES ('$contact_name', '$contact_work_title', '$contact_phone', '$contact_email')";

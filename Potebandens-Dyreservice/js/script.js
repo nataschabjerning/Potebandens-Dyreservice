@@ -394,6 +394,15 @@ $(document).ready(function(){
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om det ikke kun er bogstaver i navnet. Sørg for at navnet ikke inkluderer tal eller andre tegn og prøv igen!");
             }
+            // if text in field has too many characters
+            else if($contact_name.length > 100) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i 'Navn' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+            }
+            else if($contact_work_title.length > 100) {
+                $request.abort();
+                errorAlert("Obs! <br> Teksten i 'Arbejdstitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+            }
             // if 'contact_phone' contains letters
             else if (!isnum) {
                 $request.abort();
@@ -695,6 +704,43 @@ $(document).ready(function(){
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om at der ikke kun er bogstaver i det indtastede navn.");
                 }
+                // if fields contains too many characters
+                else if($about_name.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Navn' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_work_title.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Arbejdstitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_one.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 1' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_two.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 2' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_three.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 3' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_four.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 4' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_five.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 5' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_six.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 6' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($about_text_seven.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 7' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
                 else {
                     // if all checks have cleared
                     // hide confirmation box
@@ -753,6 +799,15 @@ $(document).ready(function(){
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                // if text in field has too many characters
+                else if($contact_name.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Navn' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($contact_work_title.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Arbejdstitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
                 // if 'contact_phone' contains letters
                 else if (!isnum) {
@@ -826,8 +881,33 @@ $(document).ready(function(){
                 // if one or more fields is empty
                 if(!$extra_title) {
                     $request.abort();
-                    $("#confirmation-update").hide();
+                    // $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
+                }
+                // if fields contains too many characters
+                else if($extra_title.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Titel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($extra_subtitle.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Undertitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_one.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 1' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_two.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 2' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_three.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 3' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_link.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst der bliver til link' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
                 else {
                     // if all checks have cleared
@@ -892,6 +972,31 @@ $(document).ready(function(){
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
+                }
+                // if fields contains too many characters
+                else if($extra_title.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Titel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($extra_subtitle.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Undertitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_one.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 1' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_two.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 2' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_three.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst 3' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($extra_text_link.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Tekst der bliver til link' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
                 else {
                     // if all checks have cleared
@@ -1098,6 +1203,41 @@ $(document).ready(function(){
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                // if string length is over 250 characters
+                else if($service_name.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i Ydelsens Navn er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($service_description_one.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i tekstfelt 1 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($service_description_two.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i tekstfelt 2 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($service_description_three.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i tekstfelt 3 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($service_description_four.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($service_short_description.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                // if string length is over 250 characters
+                else if($important_note.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Vigtig Note'-feltet er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 // if 'service_name' contains numbers
                 else if ($service_name.match(".*\\d.*")) {
