@@ -1,31 +1,39 @@
+/* MARK: ALERT BOXES
+*/
 #erroralert, #successalert {
     display: none;
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid green;
-    padding: 2rem;
+    background-color: #b4bb9f;
+    border: 2px solid #565a4d;
+    padding: .5rem;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px;
-    @media (max-width: 768px) {
-        padding: 1.5rem;
-    }
-    @media (max-width: 550px) {
-        padding: 1rem;
-    }
+    /* MARK: .CONTENT
+    */
     .error-content, .success-content {
-        outline: 1px dashed green;
+        background: linear-gradient(
+            to bottom,
+            #f1deb1 0%, 
+            #f1e4c4 10%, 
+            #f8efd6 35%, 
+            #f8f0df 50%, 
+            #f8f5ee 70%, 
+            #ffffff 90%, 
+            #ffffff 100%
+        );
+        border: 1px solid #565a4d;
         padding: 2rem;
-        border-radius: 10px;
         @media (max-width: 768px) {
             padding: 1.5rem;
         }
         @media (max-width: 550px) {
             padding: 1rem;
         }
+        /* MARK: .MESSAGE
+        */
         .errormessage, .successmessage {
             text-align: center;
             font-size: 1.3rem;
@@ -37,6 +45,8 @@
                 margin: 0;
             }
         }
+        /* MARK: .BUTTON
+        */
         .button {
             text-align: center;
             button {
@@ -47,10 +57,10 @@
     }
 }
 
+/* MARK: ERROR ALERT
+*/
 #erroralert {
-    border: 1px solid red;
     .error-content {
-        outline: 1px dashed red;
         .errormessage {
             color: red;
         }

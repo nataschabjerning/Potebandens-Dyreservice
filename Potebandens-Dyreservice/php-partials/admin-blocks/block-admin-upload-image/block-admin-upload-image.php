@@ -73,7 +73,7 @@
             </div>
 
             <?php
-                include("includes/uploadgalleryimage.inc.php");
+                include("includes/creategalleryimage.inc.php");
             ?>
         </div>
 

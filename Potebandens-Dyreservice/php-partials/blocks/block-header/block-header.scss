@@ -1,3 +1,5 @@
+/* MARK: HEADER
+*/
 .header {
     height: fit-content;
     background-color: #d9a800;
@@ -9,6 +11,9 @@
     @media (max-width: 768px) {
         padding: 1.5rem 0 2rem;
     }
+
+    /* MARK: LEAVES IMG
+    */
     .fallleavesbottom {
         background-image: url('../../../../images/borders/fallleavesbottom.png');
         background-size: cover;
@@ -19,6 +24,9 @@
         height: 50%;
         width: 100%;
     }
+
+    /* MARK: .CONTAINER
+    */
     .container {
         display: flex;
         justify-content: space-between;
@@ -26,8 +34,15 @@
         @media (max-width: 1024px) {
             max-width: 900px;
         }
+
+        /* MARK: NAV BAR
+        */
         .site-navigation {
             display: flex;
+
+
+            /* MARK: nav ul
+            */
             .nav-items {
                 display: flex;
                 gap: 1rem;
@@ -35,6 +50,9 @@
                 @media (max-width: 768px) {
                     display: none;
                 }
+
+                /* MARK: log in/out
+                */
                 .login, .logout {
                     position: absolute;
                     top: 0;
@@ -49,6 +67,9 @@
                         border: none;
                     }
                 }
+
+                /* MARK: nav li
+                */
                 li {
                     list-style-type: none;
                     a {
@@ -73,7 +94,14 @@
                     }
                 }
             }
+
+            /* MARK: MOBILE MENU
+            */
             .mobile-menu {
+
+
+                /* MARK: menu closed
+                */
                 #menu-btn {
                     display: none;
                     width: 45px;
@@ -110,6 +138,8 @@
                         }
                     }
                 }
+                /* MARK: menu open
+                */
                 #menu-btn.open {
                     span {
                         &:nth-child(1) {
@@ -130,6 +160,9 @@
                         }
                     }
                 }
+
+                /* MARK: menu content
+                */
                 .menu-content {
                     display: none;
                     position: absolute;
@@ -138,12 +171,17 @@
                     background-color: #d9a800;
                     padding: 4rem 0;
                     width: 100%;
+
+                    /* MARK: nav ul
+                    */
                     .mobile-nav-items {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-end;
                         gap: 1rem;
                         padding: 0 20px;
+                        /* MARK: log in/out
+                        */
                         .login, .logout {
                             position: absolute;
                             top: 50px;
@@ -158,6 +196,8 @@
                                 border: none;
                             }
                         }
+                        /* MARK: nav li
+                        */
                         li {
                             list-style-type: none;
                             a {

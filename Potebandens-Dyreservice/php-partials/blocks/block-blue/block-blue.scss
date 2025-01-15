@@ -3,6 +3,9 @@
     background-color: #b4bb9f;
     border: 2px solid #565a4d;
     padding: 1rem;
+    
+    /* MARK: .BRANCH IMG
+    */
     .branchtop {
         background-image: url('../../../../images/borders/blueflowersbordertop.png');
         background-size: cover;
@@ -19,6 +22,8 @@
             top: -35px;
         }
     }
+    /* MARK: OUTER BORDER
+    */
     .extra-border {
         background: linear-gradient(
             to bottom,
@@ -31,6 +36,9 @@
             #ffffff 100%
         );
         border: 1px solid #565a4d;
+        
+        /* MARK: .CONTAINER
+        */
         .container {
             /* if extra_visibility is set to 'yes' or 'choose' in db table */
             /* - add this class and show div */
@@ -42,6 +50,9 @@
             .displaynone {
                 display: none;
             }
+
+            /* MARK: CONTENT
+            */
             .extra-content {
                 border-top: 2px dotted #8b8167;
                 border-bottom: 2px dotted #8b8167;
@@ -88,6 +99,9 @@
                         text-decoration: underline;
                     }
                 }
+
+                /* MARK: NO GRID
+                */
                 /* if extra_image is not inserted into db table */
                 /* - add this class and display as block */
                 .extra-image-nogrid {
@@ -96,6 +110,9 @@
                         height: 0;
                     }
                 }
+
+                /* MARK: GRID (IMG)
+                */
                 /* if extra_image is inserted into db table */
                 /* - add this class and display in grid */
                 .extra-image-grid {

@@ -1,35 +1,4 @@
 $(document).ready(function(){
-    // MARK: ALERT
-    // errors
-    function errorAlert(message) {
-        $("#erroralert").show();
-        $(".errormessage").append(message);
-        $(".error-ok").click(function () {
-            $(this).parent("#erroralert").hide();
-            window.location.reload();
-        });
-    }
-    // success
-    function successAlert(message) {
-        $("#successalert").show();
-        $(".successmessage").append(message);
-        $(".success-ok").click(function () {
-            $(this).parent("#successalert").hide();
-            window.location.reload();
-        });
-    }
-
-    // MARK: CONFIRMATION
-    // errors
-    function confirmationDelete(message) {
-        $("#confirmation-delete").show();
-        $(".deletemessage").append(message);
-    }
-    // success
-    function confirmationUpdate(message) {
-        $("#confirmation-update").show();
-        $(".updatemessage").append(message);
-    }
 
     // MARK: MOBILE ICON
     // Mobile menu - click on hamburger menu icon to open menu
@@ -215,6 +184,41 @@ $(document).ready(function(){
 
 // ----------------------------------------------------------------
     // MARK: ADMIN
+
+
+    
+
+    // MARK: ALERT
+    // errors
+    function errorAlert(message) {
+        $("#erroralert").show();
+        $(".errormessage").append(message);
+        $(".error-ok").click(function () {
+            $(this).parent("#erroralert").hide();
+            window.location.reload();
+        });
+    }
+    // success
+    function successAlert(message) {
+        $("#successalert").show();
+        $(".successmessage").append(message);
+        $(".success-ok").click(function () {
+            $(this).parent("#successalert").hide();
+            window.location.reload();
+        });
+    }
+
+    // MARK: CONFIRMATION
+    // errors
+    function confirmationDelete(message) {
+        $("#confirmation-delete").show();
+        $(".deletemessage").append(message);
+    }
+    // success
+    function confirmationUpdate(message) {
+        $("#confirmation-update").show();
+        $(".updatemessage").append(message);
+    }
 
 
     // ----- SHOW FORMS FOR INSERTING IN DB -----

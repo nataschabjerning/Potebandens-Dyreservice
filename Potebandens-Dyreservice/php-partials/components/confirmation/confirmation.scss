@@ -1,3 +1,5 @@
+/* MARK: CONFIRM BOXES
+*/
 #confirmation-delete, #confirmation-update {
     display: none;
     position: fixed;
@@ -6,56 +8,72 @@
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    border-radius: 25px;
+    background-color: #b4bb9f;
+    border: 4px solid #565a4d;
+    padding: .5rem;
     height: fit-content;
     width: fit-content;
     z-index: 99;
+    /* MARK: .CONTENT
+    */
     .content {
-        border-radius: 20px;
-        border: 4px solid rgb(255, 0, 0);
-        background-color:rgb(136, 1, 1);
-        padding: 1rem;
+        background: linear-gradient(
+            to bottom,
+            #f1deb1 0%, 
+            #f1e4c4 10%, 
+            #f8efd6 35%, 
+            #f8f0df 50%, 
+            #f8f5ee 70%, 
+            #ffffff 90%, 
+            #ffffff 100%
+        );
+        border: 1px solid #565a4d;
+        padding: 2rem;
         margin: 0;
         font-size: 2rem;
         font-weight: 900;
+        color: red;
         @media (max-width: 768px) {
             font-size: 1.5rem;
         }
         @media (max-width: 400px) {
             font-size: 1.3rem;
         }
+        /* MARK: .BUTTONS
+        */
         .buttons {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             justify-content: center;
             gap: 4rem;
-            width: 100%;
+            width: fit-content;
+            margin: 1rem auto 0;
             @media (max-width: 768px) {
-                flex-direction: column;
+                grid-template-columns: none;
+                grid-template-rows: 1fr 1fr;
                 gap: .5rem;
                 align-items: center;
             }
+            /* MARK: .BUTTON
+            */
             button {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: auto 1fr;
+                gap: .5rem;
                 align-items: center;
-                justify-items: center;
-                color: black;
-                background-color: rgb(241, 241, 241);
+                padding: .5rem;
+                background-color: #d3d3d3;
                 font-size: 1.5rem;
                 font-weight: 600;
-                padding: .5rem 2rem .5rem .5rem;
                 border-radius: 5px;
-                width: 20%;
+                width: 100%;
+                margin: 0;
                 cursor: pointer;
                 @media (max-width: 768px) {
-                    gap: .7rem;
                     font-size: 1.2rem;
-                    width: 50%;
                 }
-                @media (max-width: 400px) {
-                    width: 70%;
-                }
+                /* MARK: IMG
+                */
                 img {
                     object-fit: contain;
                     height: 30px;
@@ -63,18 +81,23 @@
                         height: 25px;
                     }
                 }
+                /* MARK: H4
+                */
+                .btn_yes {
+                    color: #478f54;
+                }
+                .btn_no {
+                    color: #d5251e;
+                }
             }
             button:hover {
-                background-color: lightgray;
+                background-color: #d0d6be;
             }
         }
     }
 }
 #confirmation-update {
     .content {
-        border-radius: 20px;
-        border: 4px solid rgb(255, 136, 0);
-        background-color:rgb(160, 96, 0);
-        padding: 1rem;
+        color: #ff8800;
     }
 }

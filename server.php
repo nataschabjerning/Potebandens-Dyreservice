@@ -119,22 +119,22 @@ border-bottom-left-radius:  71% 68%;
     border:                     #3a7545,
     og-blue-text-color:         #3f48cc,
     hover-bg:                   #3f48cc80,
-- add
+- add buttons
     background:                 #478f54cc,
     og-green-border:            #478f54,
     og-green-hover-bg:          #478f54,
     og-red-outline:             #d5251e,
-- back
+- back button
     background:                 #243a9499,
     border:                     #243a94,
     hover-bg:                   #243a94,
-- default
+- default button settings
     background:                 #008000,
     hover-bg:                   #025f02,
-- delete
+- delete buttons
     background:                 #dd0000,
     hover-bg:                   #c70303,
-- update
+- update buttons
     background:                 #fd9c1d,
     hover-bg:                   #df8a1b,
 
