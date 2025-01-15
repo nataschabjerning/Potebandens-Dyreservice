@@ -19,6 +19,7 @@
                     <?php if (!empty($row['image_link'])) { ?>    
                         <div class="image" style="<?php if (!empty($row['image_link'])) { ?>background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>');<?php } ?>">
                         </div>
+                        <!-- INVISIBLE DIV WITH IMAGE_LINK AS VALUE -->
                     <?php } ?>
                     <?php if (!empty($row['image_text'])) { ?>
                                 <div class="text">

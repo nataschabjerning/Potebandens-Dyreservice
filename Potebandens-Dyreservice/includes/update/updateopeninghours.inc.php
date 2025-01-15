@@ -5,7 +5,7 @@
     echo ini_set('display_startup_errors', 1);
     echo error_reporting(E_ALL);
 
-    include_once("connect.inc.php");
+    include_once("../connect.inc.php");
 
     // get the input values from update openinghours in script.js
     $id             = $_REQUEST['openinghours_id'];
@@ -27,6 +27,27 @@
 
     // if not filled out
     if(empty($mondayfrom) || empty($tuesdayfrom) || empty($wednesdayfrom) || empty($thursdayfrom) || empty($fridayfrom) ||  empty($saturdayfrom) || empty($sundayfrom)) {
+        exit;
+    }
+    if($mondayfrom !== "Lukket" && empty($mondayto)) {
+        exit;
+    }
+    if($tuesdayfrom !== "Lukket" && empty($tuesdayto)) {
+        exit;
+    }
+    if($wednesdayfrom !== "Lukket" && empty($wednesdayto)) {
+        exit;
+    }
+    if($thursdayfrom !== "Lukket" && empty($thursdayto)) {
+        exit;
+    }
+    if($fridayfrom !== "Lukket" && empty($fridayto)) {
+        exit;
+    }
+    if($saturdayfrom !== "Lukket" && empty($saturdayto)) {
+        exit;
+    }
+    if($sundayfrom !== "Lukket" && empty($sundayto)) {
         exit;
     }
 

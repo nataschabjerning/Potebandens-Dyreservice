@@ -3,8 +3,8 @@
     if (isset($_POST["create"])) {
 
         // connect to database and functions
-        require_once "connect.inc.php";
-        require_once "functions.inc.php";
+        require_once "../connect.inc.php";
+        require_once "../functions.inc.php";
 
         // get input values from form
         $name = $_POST["name"];
@@ -16,32 +16,32 @@
         // Go through all checks ->
         // call to emptyInputSignup() in includes/functions.inc.php (line 6)
         if (emptyInputSignup($name, $username, $email, $password, $repeat_password) !== false) {
-            header("Location: ../admin-profile.php?error=emptysignupinput");
+            header("Location: ../../admin-profile.php?error=emptysignupinput");
             exit();
         }
         // call to invalidUid() in includes/functions.inc.php (line 18)
         if (invalidUid($username) !== false) {
-            header("Location: ../admin-profile.php?error=invalidusername");
+            header("Location: ../../admin-profile.php?error=invalidusername");
             exit();
         }
         // call to invalidEmail in includes/functions.inc.php (line 30)
         if (invalidEmail($email) !== false) {
-            header("Location: ../admin-profile.php?error=invalidemail");
+            header("Location: ../../admin-profile.php?error=invalidemail");
             exit();
         }
         // call to passwordMatch() in includes/functions.inc.php (line 42)
         if (passwordMatch($password, $repeat_password) !== false) {
-            header("Location: ../admin-profile.php?error=passwordsdoesntmatch");
+            header("Location: ../../admin-profile.php?error=passwordsdoesntmatch");
             exit();
         }
         // call to uidExists() in includes/functions.inc.php (line 54)
         if (uidExists($conn, $username, $username) !== false) {
-            header("Location: ../admin-profile.php?error=usernametaken");
+            header("Location: ../../admin-profile.php?error=usernametaken");
             exit();
         }
         // call to uidExists() in includes/functions.inc.php (line 54)
         if (uidExists($conn, $email, $email) !== false) {
-            header("Location: ../admin-profile.php?error=emailtaken");
+            header("Location: ../../admin-profile.php?error=emailtaken");
             exit();
         }
 
@@ -51,7 +51,7 @@
 ?>
 
 <div id="create-user">
-    <form action="./includes/signup.inc.php" method="post">
+    <form action="./includes/user/signup.inc.php" method="post">
         
         <p class="span"><span>*</span> SKAL udfyldes</p>
         <h2>Opret Bruger</h2>

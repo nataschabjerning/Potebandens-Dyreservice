@@ -5,7 +5,7 @@
     echo ini_set('display_startup_errors', 1);
     echo error_reporting(E_ALL);
 
-    include_once("connect.inc.php");
+    include_once("../connect.inc.php");
 
     $message_date       = $_POST['message_date'];
     $message_time       = $_POST['message_time'];
@@ -28,16 +28,16 @@
     if(preg_match("/\d/", $message_name)) {
         exit;
     }
-    // if opkald or sms is selected but no phone number is given
-    if ($message_contact == "opkald" && empty($message_phone) || $message_contact == "sms" && empty($message_phone)) {
+    // if Telefonopkald or sms is selected but no phone number is given
+    if ($message_contact == "Telefonopkald" && empty($message_phone) || $message_contact == "sms" && empty($message_phone)) {
         exit;
     }
     // if there is letters in message_phone
-    if($message_contact == "opkald" && !is_numeric( $message_phone) || $message_contact == "sms" && !is_numeric( $message_phone)) {
+    if($message_contact == "Telefonopkald" && !is_numeric( $message_phone) || $message_contact == "SMS" && !is_numeric( $message_phone)) {
         exit;
     }
     // if email is selected but no email is given
-    if ($message_contact == "email" && empty($message_email)) {
+    if ($message_contact == "Email" && empty($message_email)) {
         exit;
     }
     if (strlen($message_msg) > 255) {

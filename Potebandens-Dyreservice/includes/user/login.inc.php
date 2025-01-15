@@ -2,8 +2,8 @@
     if (isset($_POST["login"])) {
 
         // connect to database and functions
-        require_once "connect.inc.php";
-        require_once "functions.inc.php";
+        require_once "../connect.inc.php";
+        require_once "../functions.inc.php";
 
         // get input values from form
         $username = $_POST["username"];
@@ -13,7 +13,7 @@
         // check if inputs are em
         if (emptyInputLogin($username, $password) !== false) {
             // send user back to the login page with an error message that says they forgot to write something in an input field
-            header("location: ../login.php?error=emptylogininput");
+            header("location: ../../login.php?error=emptylogininput");
             exit();
         }
 
@@ -23,7 +23,7 @@
 ?>
 
 <div class="login-user">
-    <form action="./includes/login.inc.php" method="post">
+    <form action="./includes/user/login.inc.php" method="post">
 
         <h2>Log Ind</h2>
 

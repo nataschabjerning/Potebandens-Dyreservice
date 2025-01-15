@@ -7,76 +7,76 @@
     
     if (isset($_POST["add-blue"])) {
 
-        $extra_image = basename($_FILES['blue_image_file_form']['name']);
-        $extra_image_alt = $_POST['blue_image_alt_form'];
-        $extra_visibility = $_POST['blue_visibility_form'];
-        $extra_title = $_POST['blue_title_form'];
-        $extra_subtitle = $_POST['blue_subtitle_form'];
-        $extra_text_one = $_POST['blue_text_one_form'];
-        $extra_text_two = $_POST['blue_text_two_form'];
-        $extra_text_three = $_POST['blue_text_three_form'];
-        $extra_text_link = $_POST['blue_text_link_form'];
-        $extra_link_url = $_POST['blue_link_url_form'];
+        $image = basename($_FILES['blue_image_file_form']['name']);
+        $image_alt = $_POST['blue_image_alt_form'];
+        $visibility = $_POST['blue_visibility_form'];
+        $title = $_POST['blue_title_form'];
+        $subtitle = $_POST['blue_subtitle_form'];
+        $text_one = $_POST['blue_text_one_form'];
+        $text_two = $_POST['blue_text_two_form'];
+        $text_three = $_POST['blue_text_three_form'];
+        $text_link = $_POST['blue_text_link_form'];
+        $link_url = $_POST['blue_link_url_form'];
 
-        $targetFilePath = $targetDir . $extra_image;
+        $targetFilePath = $targetDir . $image;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         // Allow certain file formats
         $allowTypes = array('jpg','png','jpeg','gif');
         
         // if string in textareas are too long
-        if (strlen($extra_title) > 100) {
+        if (strlen($title) > 100) {
             header("location: ../admin-index.php?error=bluetitle");
             exit();
         }
-        if (strlen($extra_subtitle) > 100) {
+        if (strlen($subtitle) > 100) {
             header("location: ../admin-index.php?error=bluesubtitle");
             exit();
         }
-        if (strlen($extra_text_one) > 255) {
+        if (strlen($text_one) > 255) {
             header("location: ../admin-index.php?error=bluetextone");
             exit();
         }
-        if (strlen($extra_text_two) > 255) {
+        if (strlen($text_two) > 255) {
             header("location: ../admin-index.php?error=bluetexttwo");
             exit();
         }
-        if (strlen($extra_text_three) > 255) {
+        if (strlen($text_three) > 255) {
             header("location: ../admin-index.php?error=bluetextthree");
             exit();
         }
         // If 'alt' text field is empty
-        if (!empty($extra_image) && empty($extra_image_alt)) {
+        if (!empty($image) && empty($image_alt)) {
             header("location: ../admin-index.php?error=bluealtempty");
             exit();
         }
-        if (strlen($extra_text_link) > 100) {
+        if (strlen($text_link) > 100) {
             header("location: ../admin-index.php?error=bluelinktext");
             exit();
         }
         // If 'alt' text field is empty
-        if (empty($extra_title)) {
+        if (empty($title)) {
             header("location: ../admin-index.php?error=bluetitleempty");
             exit();
         }
         // If select is empty
-        if (empty($extra_visibility)) {
+        if (empty($visibility)) {
             header("location: ../admin-index.php?error=blueselectempty");
             exit();
         }
         // if image is chosen and allowed file formats is selected
-        if (!empty($extra_image) && !in_array($fileType, $allowTypes)) {
+        if (!empty($image) && !in_array($fileType, $allowTypes)) {
             header("Location: ../admin-index.php?error=bluewrongfiletype");
             exit();
         }
         // if image is chosen but moving file to folder failed
-        if (!empty($extra_image) && !move_uploaded_file($_FILES["blue_image_file_form"]["tmp_name"], $targetFilePath)) {
+        if (!empty($image) && !move_uploaded_file($_FILES["blue_image_file_form"]["tmp_name"], $targetFilePath)) {
             
             header("Location: ../admin-index.php?error=bluemovingfilefailed");
             exit();
         }
 
         // Insert all values into database (even if null)
-        $insert = $conn->query("INSERT INTO blue (extra_image, extra_image_alt, extra_visibility, extra_title, extra_subtitle, extra_text_one, extra_text_two, extra_text_three, extra_text_link, extra_link_url) VALUES ('".$extra_image."', '".$extra_image_alt."', '".$extra_visibility."', '".$extra_title."', '".$extra_subtitle."', '".$extra_text_one."', '".$extra_text_two."', '".$extra_text_three."', '".$extra_text_link."', '".$extra_link_url."')");
+        $insert = $conn->query("INSERT INTO blue (image, image_alt, visibility, title, subtitle, text_one, text_two, text_three, text_link, link_url) VALUES ('".$image."', '".$image_alt."', '".$visibility."', '".$title."', '".$subtitle."', '".$text_one."', '".$text_two."', '".$text_three."', '".$text_link."', '".$link_url."')");
 
         // IF ALL CHECKS CLEAR
         if ($insert) {

@@ -5,7 +5,7 @@
     echo ini_set('display_startup_errors', 1);
     echo error_reporting(E_ALL);
 
-    include_once("connect.inc.php");
+    include_once("../connect.inc.php");
 
     $contact_name       = $_POST['contact_name'];
     $contact_work_title = $_POST['contact_work_title'];

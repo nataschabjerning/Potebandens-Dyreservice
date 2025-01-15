@@ -47,7 +47,7 @@
                         <?php 
                             if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                                 echo "<li><a href='admin.php'>Admin</a></li>";
-                                echo "<li class='logout'><a href='includes/logout.inc.php'>Log out</a></li>";
+                                echo "<li class='logout'><a href='includes/user/logout.inc.php'>Log out</a></li>";
                             }
                             else {
                                 echo "<li class='login'><a href='login.php'>Admin</a></li>";

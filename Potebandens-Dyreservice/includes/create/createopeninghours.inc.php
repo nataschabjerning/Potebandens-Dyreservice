@@ -5,7 +5,7 @@
     echo ini_set('display_startup_errors', 1);
     echo error_reporting(E_ALL);
 
-    include_once("connect.inc.php");
+    include_once("../connect.inc.php");
 
     $vacationform   = $_POST['vacationform'];
     $mondayfromform     = $_POST['mondayfromform'];
@@ -25,6 +25,27 @@
 
     // if not filled out
     if(empty($mondayfromform) || empty($tuesdayfromform) || empty($wednesdayfromform) || empty($thursdayfromform) || empty($fridayfromform) ||  empty($saturdayfromform) || empty($sundayfromform)) {
+        exit;
+    }
+    if($mondayfromform !== "Lukket" && empty($mondaytoform)) {
+        exit;
+    }
+    if($tuesdayfromform !== "Lukket" && empty($tuesdaytoform)) {
+        exit;
+    }
+    if($wednesdayfromform !== "Lukket" && empty($wednesdaytoform)) {
+        exit;
+    }
+    if($thursdayfromform !== "Lukket" && empty($thursdaytoform)) {
+        exit;
+    }
+    if($fridayfromform !== "Lukket" && empty($fridaytoform)) {
+        exit;
+    }
+    if($saturdayfromform !== "Lukket" && empty($saturdaytoform)) {
+        exit;
+    }
+    if($sundayfromform !== "Lukket" && empty($sundaytoform)) {
         exit;
     }
 

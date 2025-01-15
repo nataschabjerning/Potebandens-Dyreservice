@@ -32,10 +32,10 @@
 
                     // set names of visibility options for easy read
                     $blue_visibility;
-                    if ($row["extra_visibility"] == "yes") {
+                    if ($row["visibility"] == "yes") {
                         $blue_visibility = "Ja";
                     }
-                    else if ($row["extra_visibility"] == "no") {
+                    else if ($row["visibility"] == "no") {
                         $blue_visibility = "Nej";
                     }
                     else {
@@ -45,19 +45,19 @@
 
                     // set names of links for easy read
                     $blue_name;
-                    if ($row["extra_link_url"] == "index.php") {
+                    if ($row["link_url"] == "index.php") {
                         $blue_name = "Forside";
                     } 
-                    else if($row["extra_link_url"] == "services.php") {
+                    else if($row["link_url"] == "services.php") {
                         $blue_name = "Ydelser";
                     } 
-                    else if($row["extra_link_url"] == "gallery.php") {
+                    else if($row["link_url"] == "gallery.php") {
                         $blue_name = "Galleri";
                     } 
-                    else if($row["extra_link_url"] == "about.php") {
+                    else if($row["link_url"] == "about.php") {
                         $blue_name = "Om Os";
                     } 
-                    else if ($row["extra_link_url"] == "contact.php") {
+                    else if ($row["link_url"] == "contact.php") {
                         $blue_name = "Kontakt";
                     } 
                     else {
@@ -68,13 +68,13 @@
                         <div class="extra_id">
                             <h4>ID:</h4>
                             <h4><?php echo $row['id']?></h4>
-                        </div> <!-- .extra_id end -->
+                        </div> <!-- .id end -->
                         <div class="admin-blue-content">
                             <div class="extra-visibility">
                                 <label>Skal blokken vises på forsiden?</label>
                                 <div class="input">
-                                    <select class="extra_visibility">
-                                        <option value="<?php echo $row["extra_visibility"]; ?>" selected>--- <?php echo $blue_visibility; ?> ---</option>
+                                    <select class="visibility">
+                                        <option value="<?php echo $row["visibility"]; ?>" selected>--- <?php echo $blue_visibility; ?> ---</option>
                                         <option value="yes">Ja</option>
                                         <option value="no">Nej</option>
                                     </select>
@@ -82,14 +82,14 @@
                             </div> <!-- .extra-visibility end -->
                             <div class="blue-top">
                                 <div class="blue-left">
-                                <div class="extra-image" style="<?php if (!empty($row['extra_image'])) { ?>
-                                        background-image: url('includes/extra-images/<?php echo $row['extra_image']?>');
+                                <div class="extra-image" style="<?php if (!empty($row['image'])) { ?>
+                                        background-image: url('includes/extra-images/<?php echo $row['image']?>');
                                     <?php }
                                     else { ?>
                                         background-image: url('../../../../images/backgrounds/noimg.jpg');
                                     <?php } ?>">
                                         <!-- if no image is set * -->
-                                        <?php if (empty($row['extra_image'])) { ?>
+                                        <?php if (empty($row['image'])) { ?>
                                             <!-- * show label -->
                                             <label class="label-noimg">Intet Billede</label>
                                         <?php }
@@ -101,13 +101,13 @@
                                     <div class="extra-title">
                                         <label>Titel</label>
                                         <div class="input">
-                                            <input type="text" value="<?php echo $row['extra_title']?>" class="extra_title">
+                                            <input type="text" value="<?php echo $row['title']?>" class="title">
                                         </div>
                                     </div> <!-- .extra-title end -->
                                     <div class="extra-subtitle">
                                         <label>Undertitel</label>
                                         <div class="input">
-                                            <input type="text" value="<?php echo $row['extra_subtitle']?>" class="extra_subtitle">
+                                            <input type="text" value="<?php echo $row['subtitle']?>" class="subtitle">
                                         </div>
                                     </div> <!-- .extra-subtitle end -->
                                 </div> <!-- .blue-left end -->
@@ -116,21 +116,21 @@
                                         <label>Tekst 1</label>
                                         <div class="input">
                                             <div class="pull-tab"></div>
-                                            <textarea class="extra_text_one" placeholder="Tekst 1"><?php echo $row['extra_text_one']?></textarea>
+                                            <textarea class="text_one" placeholder="Tekst 1"><?php echo $row['text_one']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_one end -->
                                     <div class="extra-text_two">
                                         <label>Tekst 2</label>
                                         <div class="input">
                                             <div class="pull-tab"></div>
-                                            <textarea class="extra_text_two" placeholder="Tekst 2"><?php echo $row['extra_text_two']?></textarea>
+                                            <textarea class="text_two" placeholder="Tekst 2"><?php echo $row['text_two']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_two end -->
                                     <div class="extra-text_three">
                                         <label>Teskt 3</label>
                                         <div class="input">
                                             <div class="pull-tab"></div>
-                                            <textarea class="extra_text_three" placeholder="Tekst 3"><?php echo $row['extra_text_three']?></textarea>
+                                            <textarea class="text_three" placeholder="Tekst 3"><?php echo $row['text_three']?></textarea>
                                         </div>
                                     </div> <!-- .extra-text_three end -->
                                 </div> <!-- .blue-right end -->
@@ -139,14 +139,14 @@
                                 <div class="extra-text_link">
                                     <label>Tekst der bliver til link</label>
                                     <div class="input">
-                                        <input type="text" value="<?php echo $row['extra_text_link']?>" class="extra_text_link">
+                                        <input type="text" value="<?php echo $row['text_link']?>" class="text_link">
                                     </div>
                                 </div> <!-- .extra-text_link end -->
                                 <div class="extra-link_url">
                                     <label>Hvilken side skal linket føre hen til?</label>
                                     <div class="input">
                                         <select class="blue_link_url">
-                                            <option value="<?php echo $row['extra_link_url']?>" selected>--- <?php echo $blue_name; ?> ---</option>
+                                            <option value="<?php echo $row['link_url']?>" selected>--- <?php echo $blue_name; ?> ---</option>
                                             <option value="index.php">Forside</option>
                                             <option value="services.php">Ydelser</option>
                                             <option value="gallery.php">Galleri</option>

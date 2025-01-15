@@ -5,7 +5,7 @@
     echo ini_set('display_startup_errors', 1);
     echo error_reporting(E_ALL);
 
-    include_once("connect.inc.php");
+    include_once("../connect.inc.php");
 
     $service_name               = $_POST['service_name'];
     $service_short_description  = $_POST['service_short_description'];

@@ -99,7 +99,7 @@
             </div>
 
             <div id="insert-about">
-                <form action="includes/createabout.inc.php" method="post" enctype="multipart/form-data">
+                <form action="includes/create/createabout.inc.php" method="post" enctype="multipart/form-data">
                     <h2>Tilføj 'Om Mig' Boks</h2>
                     <p class="span"><span>*</span> SKAL udfyldes</p>
                     

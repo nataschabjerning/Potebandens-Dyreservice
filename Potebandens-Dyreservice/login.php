@@ -16,7 +16,7 @@
 
                 <div class="login">
                     <?php
-                        include("includes/login.inc.php");
+                        include("includes/user/login.inc.php");
                     ?>
                 </div>
                 

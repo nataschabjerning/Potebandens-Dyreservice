@@ -73,14 +73,14 @@
                 if (isset($_GET["passwordupdated"])) {
                     echo "<script type='text/javascript'>";
                     // show alert box and redirect user to profile when 'ok' is clicked
-                    echo "alert('Kodeord opdateret!');window.location.href = 'profile.php';";
+                    echo "alert('Kodeord opdateret!');window.location.href = 'admin-profile.php';";
                     echo "</script>";
                 }
                 // if user was created successfully
                 if (isset($_GET["usercreated"])) {
                     echo "<script type='text/javascript'>";
                     // show alert box and redirect user to profile when 'ok' is clicked
-                    echo "alert('Bruger oprettet!');window.location.href = 'profile.php';";
+                    echo "alert('Bruger oprettet!');window.location.href = 'admin-profile.php';";
                     echo "</script>";
                 }
             ?>
@@ -94,7 +94,7 @@
                 </div>
                 <?php
                     // open this form when clicking .change_password button
-                    include("includes/changepassword.inc.php");
+                    include("includes/user/changepassword.inc.php");
                 ?>
             </div>
             <div>
@@ -104,7 +104,7 @@
                 </div>
                 <?php
                     // open this form when clicking .new_user button
-                    include("includes/signup.inc.php");
+                    include("includes/user/signup.inc.php");
                 ?>
             </div>
         </div> <!-- .buttons end -->

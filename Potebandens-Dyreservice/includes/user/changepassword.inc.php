@@ -6,8 +6,8 @@
         $userId = $_SESSION["id"];
 
         // connect to database and functions
-        require_once "connect.inc.php";
-        require_once "functions.inc.php";
+        require_once "../connect.inc.php";
+        require_once "../functions.inc.php";
         
         $currentPassword = $_POST['currentPassword'];
         $newPassword = $_POST['newPassword'];
@@ -19,11 +19,11 @@
         
         if (password_verify($currentPassword,$row['password'])) {
             if($repeatNewPassword =='') {
-                header("location: ../admin-profile.php?error=repeatnewpassword");
+                header("location: ../../admin-profile.php?error=repeatnewpassword");
                 exit();
             }
             if($newPassword != $repeatNewPassword) {
-                header("location: ../admin-profile.php?error=newpasswordsdoesntmatch");
+                header("location: ../../admin-profile.php?error=newpasswordsdoesntmatch");
                 exit();
             }
             if(!isset($errors)) {
@@ -33,23 +33,23 @@
                 $result = mysqli_query($conn,"UPDATE users SET password='$newPassword' WHERE id='$userId'");
 
                 if($result) {
-                    header("location: ../admin-profile.php?passwordupdated");
+                    header("location: ../../admin-profile.php?passwordupdated");
                 }
                 else {
-                    header("location: ../admin-profile.php?error=stmtfailed");
+                    header("location: ../../admin-profile.php?error=stmtfailed");
                     exit();
                 }
             }
         }
         else {
-            header("location: ../admin-profile.php?error=currentpassworddoesnotmatch");
+            header("location: ../../admin-profile.php?error=currentpassworddoesnotmatch");
             exit();
         }
     }
 ?>
 
 <div id="change-password">
-    <form action="./includes/changepassword.inc.php" method="post">
+    <form action="./includes/user/changepassword.inc.php" method="post">
 
         <p class="span"><span>*</span> SKAL udfyldes</p>
         <h2>Skift Kodeord</h2>

@@ -57,7 +57,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../profile.php?error=stmtfailed");
+            header("location: ../../admin-profile.php?error=stmtfailed");
             exit();
         }
 
@@ -84,7 +84,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../profile.php?error=stmtfailed");
+            header("location: ../../admin-profile.php?error=stmtfailed");
             exit();
         }
 
@@ -94,7 +94,7 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        header("location: ../profile.php?usercreated");
+        header("location: ../../admin-profile.php?usercreated");
     }
 
 
@@ -118,7 +118,7 @@
         $uidExists = uidExists($conn, $username, $username);
 
         if ($uidExists === false) {
-            header("location: ../login.php?error=wrongusername");
+            header("location: ../../login.php?error=wrongusername");
             exit();
         }
 
@@ -126,14 +126,14 @@
         $checkPassword = password_verify($password, $passwordHashed);
 
         if ($checkPassword === false) {
-            header("location: ../login.php?error=wrongpassword");
+            header("location: ../../login.php?error=wrongpassword");
             exit();
         }
         else if ($checkPassword === true) {
             session_start();
             $_SESSION["id"] = $uidExists["id"];
             $_SESSION["username"] = $uidExists["username"];
-            header("location: ../admin.php");
+            header("location: ../../admin.php");
             exit();
         }
     }

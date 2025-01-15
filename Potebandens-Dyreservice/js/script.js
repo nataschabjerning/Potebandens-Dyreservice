@@ -97,7 +97,7 @@ $(document).ready(function(){
         
         var $request = $.ajax({
             type: 'POST',
-            url: 'includes/sendmessage.inc.php',
+            url: 'includes/messages/sendmessage.inc.php',
             data: {
                 message_date: $message_date,
                 message_time: $message_time,
@@ -116,7 +116,7 @@ $(document).ready(function(){
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen! <br><br>");
             }
             // if no contact method has been chosen
-            if($message_contact === "vælg") {
+            else if($message_contact === "vælg") {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud til, at du har glemt at fortælle os hvordan du vil kontaktes. Vælg hvordan i drop down menuen. <br>");
             }
@@ -186,7 +186,7 @@ $(document).ready(function(){
     // MARK: ADMIN
 
 
-    
+
 
     // MARK: ALERT
     // errors
@@ -297,6 +297,9 @@ $(document).ready(function(){
         $(this).children("#show_admin_blue").toggle();
         $(this).children("#hide_admin_blue").toggle();
     });
+    
+    /* MARK: MESSAGE READ
+    */
     // show/hide 'message' on 'admin-inbox' page and display if message is read or not
     $(".message-from").click(function () {
         $(this).next(".message-msg").slideToggle();
@@ -316,7 +319,7 @@ $(document).ready(function(){
         $.ajax({
             method: "POST",
             // get the url to send to, when btn is clicked
-            url: 'includes/messageread.inc.php',
+            url: 'includes/messages/messageread.inc.php',
             // data to send
             data: {
                 message_id: $messageId,
@@ -350,7 +353,7 @@ $(document).ready(function(){
         
         $.ajax({
             type: 'POST',
-            url: 'includes/createabout.inc.php',
+            url: 'includes/create/createabout.inc.php',
             data: {
                 about_image_link: $$about_image_link,
                 about_name: $about_name,
@@ -379,7 +382,7 @@ $(document).ready(function(){
         
         var $request = $.ajax({
             type: 'POST',
-            url: 'includes/createcontact.inc.php',
+            url: 'includes/create/createcontact.inc.php',
             data: {
                 contact_name: $contact_name,
                 contact_work_title: $contact_work_title,
@@ -440,7 +443,7 @@ $(document).ready(function(){
         
         var $request = $.ajax({
             type: 'POST',
-            url: 'includes/createopeninghours.inc.php',
+            url: 'includes/create/createopeninghours.inc.php',
             data: {
                 vacationform: $vacationform,
                 mondayfromform: $mondayfromform,
@@ -465,6 +468,34 @@ $(document).ready(function(){
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
+            else if($mondayfromform !== "Lukket" && !$mondaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for mandag!");
+            }
+            else if($tuesdayfromform !== "Lukket" && !$tuesdaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for tirsdag!");
+            }
+            else if($wednesdayfromform !== "Lukket" && !$wednesdaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for onsdag!");
+            }
+            else if($thursdayfromform !== "Lukket" && !$thursdaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for torsdag!");
+            }
+            else if($fridayfromform !== "Lukket" && !$fridaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for fredag!");
+            }
+            else if($saturdayfromform !== "Lukket" && !$saturdaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for lørdag!");
+            }
+            else if($sundayfromform !== "Lukket" && !$sundaytoform) {
+                $request.abort();
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for søndag!");
+            }
             else {
                 successAlert("Åbningstider oprettet!");
             }
@@ -488,7 +519,7 @@ $(document).ready(function(){
         
         var $request = $.ajax({
             type: 'POST',
-            url: 'includes/createrules.inc.php',
+            url: 'includes/create/createrules.inc.php',
             data: {
                 rules: $rules,
                 point_one: $point_one,
@@ -574,7 +605,7 @@ $(document).ready(function(){
         
         var $request = $.ajax({
             type: 'POST',
-            url: 'includes/createservice.inc.php',
+            url: 'includes/create/createservice.inc.php',
             data: {
                 service_name: $service_name,
                 service_short_description: $service_short_description,
@@ -680,7 +711,7 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateabout.inc.php',
+                url: 'includes/update/updateabout.inc.php',
                 // data to send
                 data: {
                     about_id: $aboutId,
@@ -787,7 +818,7 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updatecontact.inc.php',
+                url: 'includes/update/updatecontact.inc.php',
                 // data to send
                 data: {
                     contact_id: $contactId,
@@ -843,14 +874,14 @@ $(document).ready(function(){
         var $whiteId   = $section.attr('attr-white_id');
 
         // Get inputs from white
-        let $extra_visibility = $section.find('.extra_visibility').val();
-        let $extra_title = $section.find('.extra_title').val();
-        let $extra_subtitle = $section.find('.extra_subtitle').val();
-        let $extra_text_one = $section.find('.extra_text_one').val();
-        let $extra_text_two = $section.find('.extra_text_two').val();
-        let $extra_text_three = $section.find('.extra_text_three').val();
-        let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_url = $section.find('.white_link_url').val();
+        let $visibility = $section.find('.visibility').val();
+        let $title = $section.find('.title').val();
+        let $subtitle = $section.find('.subtitle').val();
+        let $text_one = $section.find('.text_one').val();
+        let $text_two = $section.find('.text_two').val();
+        let $text_three = $section.find('.text_three').val();
+        let $text_link = $section.find('.text_link').val();
+        let $link_url = $section.find('.white_link_url').val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
@@ -867,49 +898,49 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updatewhite.inc.php',
+                url: 'includes/update/updatewhite.inc.php',
                 // data to send
                 data: {
                     white_id: $whiteId,
-                    extra_visibility: $extra_visibility,
-                    extra_title: $extra_title,
-                    extra_subtitle: $extra_subtitle,
-                    extra_text_one: $extra_text_one,
-                    extra_text_two: $extra_text_two,
-                    extra_text_three: $extra_text_three,
-                    extra_text_link: $extra_text_link,
-                    extra_link_url: $extra_link_url
+                    visibility: $visibility,
+                    title: $title,
+                    subtitle: $subtitle,
+                    text_one: $text_one,
+                    text_two: $text_two,
+                    text_three: $text_three,
+                    text_link: $text_link,
+                    link_url: $link_url
                 },
             })
             .done(function() {
                 // if one or more fields is empty
-                if(!$extra_title) {
+                if(!$title) {
                     $request.abort();
                     // $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
                 }
                 // if fields contains too many characters
-                else if($extra_title.length > 100) {
+                else if($title.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Titel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
-                else if($extra_subtitle.length > 100) {
+                else if($subtitle.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Undertitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_one.length > 250) {
+                else if($text_one.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 1' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_two.length > 250) {
+                else if($text_two.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 2' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_three.length > 250) {
+                else if($text_three.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 3' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_link.length > 100) {
+                else if($text_link.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst der bliver til link' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
@@ -932,14 +963,14 @@ $(document).ready(function(){
         var $blueId   = $section.attr('attr-blue_id');
 
         // Get inputs from blue
-        let $extra_visibility = $section.find('.extra_visibility').val();
-        let $extra_title = $section.find('.extra_title').val();
-        let $extra_subtitle = $section.find('.extra_subtitle').val();
-        let $extra_text_one = $section.find('.extra_text_one').val();
-        let $extra_text_two = $section.find('.extra_text_two').val();
-        let $extra_text_three = $section.find('.extra_text_three').val();
-        let $extra_text_link = $section.find('.extra_text_link').val();
-        let $extra_link_url = $section.find('.blue_link_url').val();
+        let $visibility = $section.find('.visibility').val();
+        let $title = $section.find('.title').val();
+        let $subtitle = $section.find('.subtitle').val();
+        let $text_one = $section.find('.text_one').val();
+        let $text_two = $section.find('.text_two').val();
+        let $text_three = $section.find('.text_three').val();
+        let $text_link = $section.find('.text_link').val();
+        let $link_url = $section.find('.blue_link_url').val();
 
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
@@ -956,49 +987,49 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateblue.inc.php',
+                url: 'includes/update/updateblue.inc.php',
                 // data to send
                 data: {
                     blue_id: $blueId,
-                    extra_visibility: $extra_visibility,
-                    extra_title: $extra_title,
-                    extra_subtitle: $extra_subtitle,
-                    extra_text_one: $extra_text_one,
-                    extra_text_two: $extra_text_two,
-                    extra_text_three: $extra_text_three,
-                    extra_text_link: $extra_text_link,
-                    extra_link_url: $extra_link_url
+                    visibility: $visibility,
+                    title: $title,
+                    subtitle: $subtitle,
+                    text_one: $text_one,
+                    text_two: $text_two,
+                    text_three: $text_three,
+                    text_link: $text_link,
+                    link_url: $link_url
                 },
             })
             .done(function() {
                 // if 'title' field is empty
-                if (!$extra_title) {
+                if (!$title) {
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Titel'. Udfyld dette felt og prøv igen!");
                 }
                 // if fields contains too many characters
-                else if($extra_title.length > 100) {
+                else if($title.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Titel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
-                else if($extra_subtitle.length > 100) {
+                else if($subtitle.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Undertitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_one.length > 250) {
+                else if($text_one.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 1' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_two.length > 250) {
+                else if($text_two.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 2' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_three.length > 250) {
+                else if($text_three.length > 250) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst 3' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
-                else if($extra_text_link.length > 100) {
+                else if($text_link.length > 100) {
                     $request.abort();
                     errorAlert("Obs! <br> Teksten i 'Tekst der bliver til link' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
@@ -1052,7 +1083,7 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateopeninghours.inc.php',
+                url: 'includes/update/updateopeninghours.inc.php',
                 // data to send
                 data: {
                     openinghours_id: $openinghoursId,
@@ -1079,6 +1110,34 @@ $(document).ready(function(){
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                }
+                else if($mondayfrom !== "Lukket" && !$mondayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for mandag!");
+                }
+                else if($tuesdayfrom !== "Lukket" && !$tuesdayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for tirsdag!");
+                }
+                else if($wednesdayfrom !== "Lukket" && !$wednesdayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for onsdag!");
+                }
+                else if($thursdayfrom !== "Lukket" && !$thursdayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for torsdag!");
+                }
+                else if($fridayfrom !== "Lukket" && !$fridayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for fredag!");
+                }
+                else if($saturdayfrom !== "Lukket" && !$saturdayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for lørdag!");
+                }
+                else if($sundayfrom !== "Lukket" && !$sundayto) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for søndag!");
                 }
                 else {
                     $("#confirmation-update").hide();
@@ -1124,7 +1183,7 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updaterules.inc.php',
+                url: 'includes/update/updaterules.inc.php',
                 // data to send
                 data: {
                     rules_id: $rulesId,
@@ -1189,7 +1248,7 @@ $(document).ready(function(){
             var $request = $.ajax({
                 method: "POST",
                 // get the url to send to, when btn is clicked
-                url: 'includes/updateservice.inc.php',
+                url: 'includes/update/updateservice.inc.php',
                 // data to send
                 data: {
                     service_id: $serviceId,
@@ -1294,7 +1353,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteabout.inc.php',
+                url: 'includes/delete/deleteabout.inc.php',
                 // data to send
                 data: {
                     about_id: $aboutId,
@@ -1334,7 +1393,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deletecontact.inc.php',
+                url: 'includes/delete/deletecontact.inc.php',
                 // data to send
                 data: {
                     contact_id: $contactId
@@ -1373,7 +1432,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deletewhite.inc.php',
+                url: 'includes/delete/deletewhite.inc.php',
                 // data to send
                 data: {
                     white_id: $whiteId
@@ -1412,7 +1471,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteblue.inc.php',
+                url: 'includes/delete/deleteblue.inc.php',
                 // data to send
                 data: {
                     blue_id: $blueId
@@ -1435,6 +1494,9 @@ $(document).ready(function(){
         // get the image ID
         var imageId   = $section.attr('attr-image_id');
 
+        // GET IMAGE NAME(LINK) FROM INVISIBLE DIV WITH IMAGE-LINK AS VALUE
+        // var imageName = $section.find(".image").val();
+
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette dette billede?");
 
@@ -1454,10 +1516,11 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deletegalleryimage.inc.php',
+                url: 'includes/delete/deletegalleryimage.inc.php',
                 // data to send
                 data: {
                     image_id: imageId
+                    // image_name: imageName
                 }
             })
             .done(function() {
@@ -1496,7 +1559,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deletemessage.inc.php',
+                url: 'includes/messages/deletemessage.inc.php',
                 // data to send
                 data: {
                     message_id: messageId
@@ -1536,7 +1599,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteopeninghours.inc.php',
+                url: 'includes/delete/deleteopeninghours.inc.php',
                 // data to send
                 data: {
                     openinghours_id: $openinghoursId
@@ -1576,7 +1639,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleterules.inc.php',
+                url: 'includes/delete/deleterules.inc.php',
                 // data to send
                 data: {
                     rules_id: $rulesId
@@ -1615,7 +1678,7 @@ $(document).ready(function(){
                 //we are using GET method to get data from server side
                 type: "GET",
                 // get the url to send to, when btn is clicked
-                url: 'includes/deleteservice.inc.php',
+                url: 'includes/delete/deleteservice.inc.php',
                 // data to send
                 data: {
                     service_id: $serviceId
@@ -1660,7 +1723,7 @@ $(document).ready(function(){
                     //we are using GET method to get data from server side
                     type: "GET",
                     // get the url to send to, when btn is clicked
-                    url: 'includes/deleteuser.inc.php',
+                    url: 'includes/delete/deleteuser.inc.php',
                     // data to send
                     data: {
                         user_id: $userId,
