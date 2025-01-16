@@ -9,7 +9,6 @@
 <div class="page-services">
 
     <div class="subhero">
-        <!-- <div class="flowersbottom"></div> -->
         <div class="overlay"></div>
         <div class="page-title">
             <h1>Ydelser</h1>
@@ -18,6 +17,7 @@
 
     <div class="page-content">
 
+        <!-- img leaves under every subhero -->
         <div class="leavestop"></div>
 
         <?php

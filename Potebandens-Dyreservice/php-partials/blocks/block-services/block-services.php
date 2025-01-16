@@ -16,24 +16,30 @@
                             <a href="contact.php" class="contact">
                                 <p>Kontakt os for mere info</p>
                             </a>
+                            <!-- title -->
                             <?php if (!empty($row['service_name'])) { ?>
                                 <div class="title">
                                     <h2><?php echo $row['service_name']?></h2>
                                 </div>
                             <?php } ?>
                             <div class="description">
+                                <!-- description one -->
                                 <?php if (!empty($row['service_description_one'])) { ?>
                                     <p class="service_description_one"><?php echo $row['service_description_one']?></p>
                                 <?php } ?>
+                                <!-- description two -->
                                 <?php if (!empty($row['service_description_two'])) { ?>
                                     <p class="service_description_two"><?php echo $row['service_description_two']?></p>
                                 <?php } ?>
+                                <!-- description three -->
                                 <?php if (!empty($row['service_description_three'])) { ?>
                                     <p class="service_description_three"><?php echo $row['service_description_three']?></p>
                                 <?php } ?>
+                                <!-- description four -->
                                 <?php if (!empty($row['service_description_four'])) { ?>
                                     <p class="service_description_four"><?php echo $row['service_description_four']?></p>
                                 <?php } ?>
+                                <!-- important note -->
                                 <?php if (!empty($row['important_note'])) { ?>
                                     <p class="important_note"><?php echo $row['important_note']?></p>
                                 <?php } ?>

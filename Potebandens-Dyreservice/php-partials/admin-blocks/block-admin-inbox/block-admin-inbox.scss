@@ -1,5 +1,4 @@
 .admin-inbox {
-    padding: 6rem 0;
     .container {
             .inbox-messages {
                 background-color: #ccd6bc;
@@ -17,6 +16,8 @@
                 .open {
                     background-color: #f0f0f0;
                 }
+                /* MARK: Display Msg
+                */
                 .table {
                     border: 1px solid #565a4d;
                     .thead, .theadmessage {
@@ -49,6 +50,8 @@
                             }
                         }
                     }
+                    /* MARK: Msg Subject
+                    */
                     .theadmessage {
                         cursor: pointer;
                         position: relative;
@@ -97,6 +100,8 @@
                             text-align: center;
                         }
                     }
+                    /* MARK: Msg Content
+                    */
                     .tbody {
                         display: none;
                         .message-content {
@@ -115,6 +120,8 @@
                                     font-size: .7rem;
                                 }
                             }
+                            /* MARK: date, contact
+                            */
                             .message-left {
                                 border-right: 1px solid #478f54;
                                 @media (max-width: 768px) {
@@ -158,6 +165,8 @@
                                     }
                                 }
                             }
+                            /* MARK: message
+                            */
                             .message-right {
                                 padding: 2rem;
                                 @media (max-width: 450px) {

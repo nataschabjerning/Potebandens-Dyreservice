@@ -3,6 +3,8 @@
     background-color: #b4bb9f;
     border: 2px solid #565a4d;
     padding: 1rem;
+    /* MARK: IMG BORDER
+    */
     .flowertop {
         background-image: url('../../../../images/borders/pinkflowersbordertop.png');
         background-size: cover;
@@ -34,6 +36,8 @@
         );
         border: 1px solid #565a4d;
             .container {
+                /* MARK: Content
+                */
                 .end-content {
                     padding: 3rem 0 2rem;
                     text-align: center;

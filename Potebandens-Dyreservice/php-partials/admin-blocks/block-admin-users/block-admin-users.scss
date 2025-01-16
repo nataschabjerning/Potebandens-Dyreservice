@@ -2,6 +2,8 @@
     padding-top: 2rem;
     .all-users {
         .container {
+            /* MARK: DISPLAY USERS
+            */
             .display-users {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -16,6 +18,8 @@
                     padding: 1rem;
                     background-color: #ccd6bc;
                     border: 2px solid #565a4d;
+                    /* MARK: General Styling
+                    */
                     .user {
                         position: relative;
                         background: linear-gradient(
@@ -30,6 +34,8 @@
                         );
                         border: 1px solid #565a4d;
                         padding: 2rem 1rem 1rem;
+                        /* MARK: NAME/USERNAME
+                        */
                         h4 {
                             margin: 0 .3rem .5rem;
                             width: fit-content;
@@ -46,6 +52,8 @@
                                 }
                             }
                         }
+                        /* MARK: ID
+                        */
                         .user_id {
                             display: flex;
                             position: absolute;
@@ -59,12 +67,16 @@
                                 margin: 0;
                             }
                         }
+                        /* MARK: EMAIL
+                        */
                         .user_email {
                             display: block;
                             h4 {
                                 margin: 0 auto .3rem;
                             }
                         }
+                        /* MARK: Delete BTN
+                        */
                         .delete-user {
                             position: absolute;
                             top:0;

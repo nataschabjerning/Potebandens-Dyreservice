@@ -223,7 +223,7 @@
         }
     }
 
-    /* MARK: CONTAINER
+    /* MARK: SLIDER
     */
     .container {
         .admin-titles {
@@ -236,6 +236,8 @@
                 font-size: 1.8rem;
             }
         }
+        /* MARK: title/arrows
+        */
         .top {
             display: flex;
             justify-content: space-between;
@@ -261,6 +263,8 @@
                     text-decoration: underline;
                 }
             }
+            /* MARK: arrows
+            */
             .arrows {
                 display: flex;
                 gap: 10px;
@@ -293,6 +297,8 @@
                 }
             }
         }
+        /* MARK: Slider
+        */
         .gallery-slider {
             margin: auto;
             .slick-dots {
@@ -303,6 +309,8 @@
                     }
                 }
             }
+            /* MARK: slide
+            */
             .slide {
                 background: linear-gradient(
                     to bottom,
@@ -319,6 +327,8 @@
                 @media (max-width: 768px) {
                     min-height: 350px;
                 }
+                /* MARK: Image
+                */
                 .gallery-content {
                     .image {
                         background-position: center;

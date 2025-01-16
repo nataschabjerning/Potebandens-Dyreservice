@@ -13,19 +13,24 @@
         $newPassword = $_POST['newPassword'];
         $repeatNewPassword = $_POST['repeatNewPassword'];
 
+        // get info from db where id = the chosen user id when clicked
         $sql="SELECT password from users where id='$userId'";
         $res = mysqli_query($conn,$sql);
         $row = mysqli_fetch_assoc($res);
         
+        // if current password match password in database
         if (password_verify($currentPassword,$row['password'])) {
+            // if repeat password is empty
             if($repeatNewPassword =='') {
                 header("location: ../../admin-profile.php?error=repeatnewpassword");
                 exit();
             }
+            // if new password does not match repeat password
             if($newPassword != $repeatNewPassword) {
                 header("location: ../../admin-profile.php?error=newpasswordsdoesntmatch");
                 exit();
             }
+            // if no errors
             if(!isset($errors)) {
                 $options = array("cost"=>4);
                 $newPassword = password_hash($newPassword,PASSWORD_BCRYPT,$options);
@@ -41,6 +46,7 @@
                 }
             }
         }
+        // if current password does not match password in database
         else {
             header("location: ../../admin-profile.php?error=currentpassworddoesnotmatch");
             exit();

@@ -24,6 +24,7 @@
                             <div class="day">
                                 <p>Mandag</p>
                                 <h4>
+                                    <!-- monday -->
                                     <?php if (!empty($row['mondayfrom'])) { ?>
                                         <?php echo $row['mondayfrom']; ?>
                                     <?php } ?>
@@ -35,6 +36,7 @@
                             <div class="day">
                                 <p>Tirsdag</p>
                                 <h4>
+                                    <!-- tuesday -->
                                     <?php if (!empty($row['tuesdayfrom'])) { ?>
                                         <?php echo $row['tuesdayfrom']; ?>
                                     <?php } ?>
@@ -46,6 +48,7 @@
                             <div class="day">
                                 <p>Onsdag</p>
                                 <h4>
+                                    <!-- wednesday -->
                                     <?php if (!empty($row['wednesdayfrom'])) { ?>
                                         <?php echo $row['wednesdayfrom']; ?>
                                     <?php } ?>
@@ -57,6 +60,7 @@
                             <div class="day">
                                 <p>Torsdag</p>
                                 <h4>
+                                    <!-- thursday -->
                                     <?php if (!empty($row['thursdayfrom'])) { ?>
                                         <?php echo $row['thursdayfrom']; ?>
                                     <?php } ?>
@@ -68,6 +72,7 @@
                             <div class="day">
                                 <p>Fredag</p>
                                 <h4>
+                                    <!-- friday -->
                                     <?php if (!empty($row['fridayfrom'])) { ?>
                                         <?php echo $row['fridayfrom']; ?>
                                     <?php } ?>
@@ -79,6 +84,7 @@
                             <div class="day">
                                 <p>Lørdag</p>
                                 <h4>
+                                    <!-- saturday -->
                                     <?php if (!empty($row['saturdayfrom'])) { ?>
                                         <?php echo $row['saturdayfrom']; ?>
                                     <?php } ?>
@@ -90,6 +96,7 @@
                             <div class="day">
                                 <p>Søndag</p>
                                 <h4>
+                                    <!-- sunday -->
                                     <?php if (!empty($row['sundayfrom'])) { ?>
                                         <?php echo $row['sundayfrom']; ?>
                                     <?php } ?>

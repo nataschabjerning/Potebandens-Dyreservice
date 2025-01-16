@@ -1,8 +1,13 @@
 <?php
 
-    /* ---------- CREATE USER ---------- */
+    /* MARK: CREATE USER
+    */
     
-    /* ---- Empty inputs when creating new user ---- */
+
+
+
+    /* MARK: empty input
+    ---- Empty inputs when creating new user ---- */
     function emptyInputSignup($name, $username, $email, $password, $passwordrepeat) {
 
         if (empty($name) || empty($username) || empty($email) || empty($password) || empty($passwordrepeat)) {
@@ -14,7 +19,8 @@
         return $result;
     }
 
-    /* ---- Check if username contains other characters than letters and numbers ---- */
+    /* MARK: username numb
+    ---- Check if username contains other characters than letters and numbers ---- */
     function invalidUid($username) {
 
         if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
@@ -26,7 +32,8 @@
         return $result;
     }
 
-    /* ---- Check if email form is valid ---- */
+    /* MARK: email invalid
+    ---- Check if email form is valid ---- */
     function invalidEmail($email) {
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -38,7 +45,8 @@
         return $result;
     }
 
-    /* ---- Check if passwords matches when creating new user ---- */
+    /* MARK: password match
+    ---- Check if passwords matches when creating new user ---- */
     function passwordMatch($password, $passwordrepeat) {
 
         if ($password !== $passwordrepeat) {
@@ -50,7 +58,8 @@
         return $result;
     }
 
-    /* ---- Check if username or email is already attached to a user in the database ---- */
+    /* MARK: name/email taken
+    ---- Check if username or email is already attached to a user in the database ---- */
     function uidExists($conn, $username, $email) {
 
         $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
@@ -77,7 +86,8 @@
         }
     }
 
-    /* ---- Create user and insert into database ---- */
+    /* MARK: create user
+    ---- Create user and insert into database ---- */
     function createUser($conn, $name, $username, $email, $password) {
 
         $sql = "INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?);";
@@ -98,9 +108,18 @@
     }
 
 
-    /* ---------- LOGIN USER ---------- */
+    
+    /*------------------------------------------------------------------------------*/
+    
+    
+    
+    /* MARK: LOGIN USER
+    
 
-    /* ---- If inputs are empty when logging in ---- */
+
+
+    MARK: empty inputs
+    ---- If inputs are empty when logging in ---- */
     function emptyInputLogin($username, $password) {
 
         if (empty($username) || empty($password)) {
@@ -112,7 +131,8 @@
         return $result;
     }
 
-    /* ---- Login user and start $_SESSION ---- */
+    /* MARK: login user
+    ---- Login user and start $_SESSION ---- */
     function loginUser($conn, $username, $password) {
 
         $uidExists = uidExists($conn, $username, $username);

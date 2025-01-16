@@ -23,6 +23,8 @@
             color: black;
             grid-column: 1 / 4;
         }
+        /* MARK: Rules Grid
+        */
         .rules-content {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -36,6 +38,8 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
+            /* MARK: Display Rules
+            */
             .all-rules {
                 background: linear-gradient(
                     to bottom,
@@ -59,6 +63,8 @@
                 h4 {
                     margin-bottom: .5rem;
                 }
+                /* MARK: Bullet Points
+                */
                 .bullet-points {
                     .point {
                         display: flex;

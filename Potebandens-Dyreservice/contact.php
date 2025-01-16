@@ -10,7 +10,6 @@
 <div class="page-contact">
 
     <div class="subhero">
-        <!-- <div class="flowersbottom"></div> -->
         <div class="page-title">
             <h1>Kontakt os</h1>
         </div>
@@ -18,6 +17,7 @@
 
     <div class="page-content">
 
+        <!-- img leaves under every subhero -->
         <div class="leavestop"></div>
 
         <?php

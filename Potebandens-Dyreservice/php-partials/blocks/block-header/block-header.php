@@ -45,10 +45,12 @@
                 <nav class="site-navigation">
                     <ul class="nav-items">
                         <?php 
+                        // if logged in - show admin(page) and log out buttons
                             if (isset($_SESSION["id"])  || isset($_SESSION["username"])) {
                                 echo "<li><a href='admin.php'>Admin</a></li>";
                                 echo "<li class='logout'><a href='includes/user/logout.inc.php'>Log out</a></li>";
                             }
+                            // if not logged in - show admin button
                             else {
                                 echo "<li class='login'><a href='login.php'>Admin</a></li>";
                             }
@@ -59,6 +61,8 @@
                         <li><a href="about.php">Om os</a></li>
                         <li><a href="contact.php">Kontakt</a></li>
                     </ul>
+
+                    <!-- navigation for mobile -->
                     <div class="mobile-menu">
                         <div id="menu-btn">
                             <span></span>
@@ -87,5 +91,7 @@
                     </div>
                 </nav>
             </div>
+
+            <!-- leaves border on bottom of nav bar -->
             <div class="fallleavesbottom"></div>
         </div>

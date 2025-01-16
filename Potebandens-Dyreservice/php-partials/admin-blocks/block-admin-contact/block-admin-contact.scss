@@ -86,6 +86,8 @@
                                     text-decoration: underline;
                                 }
                             }
+                            /* MARK: input
+                            */
                             .input {
                                 display: flex;
                                 height: 100%;
@@ -119,6 +121,8 @@
                         }
 
                     }
+                    /* MARK: buttons
+                    */
                     .update-delete-buttons {
                         display: flex;
                         .update-contact, .delete-contact, .update-openinghours, .delete-openinghours {

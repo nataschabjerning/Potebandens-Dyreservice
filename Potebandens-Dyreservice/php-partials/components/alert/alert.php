@@ -1,5 +1,6 @@
 <div id="erroralert">
    <div class="error-content">
+      <!-- content comes from script.js when a button is clicked -->
       <div class="errormessage"></div>
       <div class="button">
          <button class="error-ok">OK</button>

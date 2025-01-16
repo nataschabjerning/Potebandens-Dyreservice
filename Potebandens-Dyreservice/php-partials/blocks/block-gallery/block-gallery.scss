@@ -3,6 +3,8 @@
         .empty {
             color: black;
         }
+        /* MARK: Image Grid
+        */
         .images {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -15,12 +17,16 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
+            /* MARK: image/text
+            */
             .image-card {
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
                 border-radius: 97% 3% 97% 3% / 3% 97% 3% 97%;
                 height: 100%;
                 overflow: hidden;
+                /* MARK: image
+                */
                 .image {
                     background-repeat: no-repeat;
                     background-position: center;
@@ -31,6 +37,8 @@
                         height: 200px;
                     }
                 }
+                /* MARK: text
+                */
                 .text {
                     background: linear-gradient(
                         to bottom,

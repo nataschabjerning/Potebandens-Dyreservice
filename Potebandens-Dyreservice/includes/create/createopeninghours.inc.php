@@ -27,6 +27,7 @@
     if(empty($mondayfromform) || empty($tuesdayfromform) || empty($wednesdayfromform) || empty($thursdayfromform) || empty($fridayfromform) ||  empty($saturdayfromform) || empty($sundayfromform)) {
         exit;
     }
+    // if (weekday)from is not "closed" and (weekday)to is empty
     if($mondayfromform !== "Lukket" && empty($mondaytoform)) {
         exit;
     }

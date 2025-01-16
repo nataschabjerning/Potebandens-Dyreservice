@@ -2,6 +2,8 @@
     background-color: #d9a800;
     padding: 2rem;
     .container {
+        /* MARK: LOGO
+        */
         .logo {
             margin: 0 auto;
             .company {
@@ -11,6 +13,8 @@
         hr {
             border: 1px solid #243a94;
         }
+        /* MARK: CONTENT
+        */
         .footer-content {
             display: grid;
             grid-template-columns: repeat(4, auto);

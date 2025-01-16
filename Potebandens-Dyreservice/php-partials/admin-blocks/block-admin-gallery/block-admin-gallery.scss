@@ -4,6 +4,8 @@
         .admin-titles {
             margin-top: 2rem;
         }
+        /* MARK: Gallery Grid
+        */
         .images {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -16,11 +18,19 @@
             @media (max-width: 768px) {
                 grid-template-columns: 1fr;
             }
+            /* MARK: image/text
+            */
             .image-card {
                 position: relative;
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
                 height: fit-content;
+                /* id for image name (to delete from folder) */
+                #image_name {
+                    display: none;
+                }
+                /* MARK: image
+                */
                 .image {
                     background-repeat: no-repeat;
                     background-position: center;
@@ -34,9 +44,8 @@
                         height: 200px;
                     }
                 }
-                #image_name {
-                    display: none;
-                }
+                /* MARK: text
+                */
                 .text {
                     background: linear-gradient(
                         to bottom,
@@ -61,6 +70,8 @@
                         }
                     }
                 }
+                /* MARK: Delete BTN
+                */
                 .delete-image {
                     position: absolute;
                     top:0;

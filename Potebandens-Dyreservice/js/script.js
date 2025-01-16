@@ -468,6 +468,7 @@ $(document).ready(function(){
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
             }
+            // if (weekday)from is not "closed" and (weekday)to is empty
             else if($mondayfromform !== "Lukket" && !$mondaytoform) {
                 $request.abort();
                 errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for mandag!");
@@ -1111,6 +1112,7 @@ $(document).ready(function(){
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                 }
+                // if (weekday)from is not "closed" and (weekday)to is empty
                 else if($mondayfrom !== "Lukket" && !$mondayto) {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for mandag!");

@@ -1,6 +1,8 @@
 .create-update_user {
     padding: 6rem 0 0;
     .container {
+        /* MARK: error msg
+        */
         .create-update_user-messages {
             width: 100%;
             .error {
@@ -26,6 +28,8 @@
                 }
             }
         }
+        /* MARK: new pw/user
+        */
         .buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -68,6 +72,8 @@
             .new_user:hover {
                 background-color: rgba(71,143,84, 1);
             }
+            /* MARK: FORMS
+            */
             #change-password, #create-user {
                 display: none;
                 margin: 2rem auto 0;

@@ -1,6 +1,8 @@
 .upload-image {
     padding-bottom: 0;
     .container {
+        /* MARK: error msg
+        */
         .upload-image-messages {
             width: 100%;
             .error {
@@ -23,6 +25,8 @@
                 }
             }
         }
+        /* MARK: new img btn
+        */
         .new_images {
             padding: 2rem 0;
             border-top: 1px solid #3f48cc;
@@ -56,6 +60,8 @@
             .add_image:hover {
                 background-color: rgba(71,143,84, 1);
             }
+            /* MARK: FORM
+            */
             #insert-image {
                 display: none;
                 margin: 2rem auto 0;
@@ -75,12 +81,16 @@
                         label {
                             font-weight: 600;
                         }
+                        /* MARK: input
+                        */
                         input {
                             margin: .5rem 0 1rem;
                             border: 1px solid black;
                             border-radius: 5px;
                             text-align: center;
                         }
+                        /* MARK: input text
+                        */
                         input[type="text"] {
                             font-size: .9rem;
                             height: 40px;
@@ -88,6 +98,8 @@
                                 font-size: .8rem;
                             }
                         }
+                        /* MARK: input file
+                        */
                         input[type="file"] {
                             text-align: center;
                             font-size: 1rem;
@@ -96,6 +108,8 @@
                                 font-size: .8rem;
                             }
                         }
+                        /* MARK: input file selector
+                        */
                         input[type=file]::file-selector-button {
                             background-color: rgba(217, 168, 0, 1);
                             color: #000;
@@ -120,6 +134,8 @@
                             @media (max-width: 1024px) and (max-height: 800px), (max-height: 800px), (max-width: 1024px) {
                                 display: block;
                             }
+                            /* MARK: img alt/text
+                            */
                             .image_alt, .image_text {
                                 width: 100%;
                                 input {

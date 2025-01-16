@@ -9,7 +9,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        // call to emptyInputLogin() in includes/functions.inc.php (line 104)
+        // call to emptyInputLogin() in includes/functions.inc.php (line 123)
         // check if inputs are em
         if (emptyInputLogin($username, $password) !== false) {
             // send user back to the login page with an error message that says they forgot to write something in an input field
@@ -17,7 +17,7 @@
             exit();
         }
 
-        // call to loginUser() function in includes/functions.inc.php (line 116)
+        // call to loginUser() function in includes/functions.inc.php (line 136)
         loginUser($conn, $username, $password);
     } 
 ?>

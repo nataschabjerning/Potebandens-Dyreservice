@@ -10,6 +10,7 @@
                 <div class="private">
                     <div class="li">
                         <div class="list-link">
+                            <!-- profile -->
                             <a href="admin-profile.php">
                                 <div class="title">
                                     <h4>Profil</h4>
@@ -23,6 +24,7 @@
                     </div>
                     <div class="li">
                         <div class="list-link">
+                            <!-- inbox -->
                             <a href="admin-inbox.php">
                                 <div class="title">
                                     <h4>Indbakke</h4>
@@ -34,13 +36,14 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> <!-- .private end -->
 
                 <h2 class="admin-titles">Anvend rettelser på hjemmesiden</h2>
 
                 <div class="website">
                     <div class="li">
                         <div class="list-link">
+                            <!-- index -->
                             <a href="admin-index.php">  
                                 <div class="title">
                                     <h4>Forside</h4>
@@ -54,6 +57,7 @@
                     </div>
                     <div class="li">
                         <div class="list-link">
+                            <!-- services -->
                             <a href="admin-services.php">  
                                 <div class="title">
                                     <h4>Ydelser</h4>
@@ -67,6 +71,7 @@
                     </div>
                     <div class="li">
                         <div class="list-link">
+                            <!-- gallery -->
                             <a href="admin-gallery.php">
                                 <div class="title">
                                     <h4>Galleri</h4>
@@ -80,6 +85,7 @@
                     </div>
                     <div class="li">
                         <div class="list-link">
+                            <!-- about -->
                             <a href="admin-about.php">
                                 <div class="title">
                                     <h4>Om os</h4>
@@ -93,6 +99,7 @@
                     </div>
                     <div class="li">
                         <div class="list-link">
+                            <!-- contact -->
                             <a href="admin-contact.php">
                                 <div class="title">
                                     <h4>Kontakt os</h4>
@@ -104,7 +111,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> <!-- .website end -->
     
             </div> <!-- .ul end -->
         </div> <!-- .list-items end -->

@@ -6,6 +6,8 @@ a {
         display: flex;
         align-items: center;
         gap: 1rem;
+        /* MARK: Logo Image
+        */
         .logo {
             height: 50px;
             @media (max-width: 1024px) {
@@ -15,6 +17,8 @@ a {
                 height: 100%;
             }
         }
+        /* MARK: Logo Text
+        */
         .title {
             h2 {
                 color: #fff;

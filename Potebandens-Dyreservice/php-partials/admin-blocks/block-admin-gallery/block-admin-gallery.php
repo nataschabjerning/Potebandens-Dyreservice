@@ -16,6 +16,7 @@
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
 
                 <section class="image-card" attr-image_id="<?php echo $row['id']; ?>">
+                    <!-- hidden input to get image name (for deleting image from folder) -->
                     <input type="hidden" name="image_name" id="image_name" value="<?php echo $row['image_link']?>">
                     <?php if (!empty($row['image_link'])) { ?>    
                         <div class="image" style="<?php if (!empty($row['image_link'])) { ?>background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>');<?php } ?>"></div>

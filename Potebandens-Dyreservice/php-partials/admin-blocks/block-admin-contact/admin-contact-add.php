@@ -30,7 +30,7 @@
                                     <input type="text" name="contact_work_title">
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- .contact-top end -->
 
                         <div class="contact-bottom">
                             <div class="contact_phone contact-box">
@@ -46,7 +46,7 @@
                                     <input type="text" name="contact_email">
                                 </div>
                             </div>
-                        </div>
+                        </div> <!-- .contact-bottom end -->
                         
                     </form>
 

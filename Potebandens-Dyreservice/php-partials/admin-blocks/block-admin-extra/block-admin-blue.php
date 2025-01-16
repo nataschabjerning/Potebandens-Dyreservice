@@ -65,6 +65,7 @@
                     } ?>
 
                     <section attr-blue_id="<?php echo $row['id']; ?>">
+                        <!-- hidden input to get image name (for deleting image from folder) -->
                         <input type="hidden" name="image_name" id="image_name" value="<?php echo $row['image']?>">
                         <div class="extra_id">
                             <h4>ID:</h4>

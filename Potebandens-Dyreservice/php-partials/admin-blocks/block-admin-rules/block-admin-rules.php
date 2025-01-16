@@ -28,35 +28,40 @@
                             <div class="bullet-points">
                                 <div class="bullet-points-top">
                                     <div class="point">
-                                        <p class="point-numb">1)</p>
+                                        <!-- point one -->
+                                        <p class="point-numb">1:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_one"><?php echo $row['rules_point_one']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">2)</p>
+                                        <!-- point two -->
+                                        <p class="point-numb">2:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_two"><?php echo $row['rules_point_two']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">3)</p>
+                                        <!-- point three -->
+                                        <p class="point-numb">3:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_three"><?php echo $row['rules_point_three']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">4)</p>
+                                        <!-- point four -->
+                                        <p class="point-numb">4:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_four"><?php echo $row['rules_point_four']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">5)</p>
+                                        <!-- point five -->
+                                        <p class="point-numb">5:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_five"><?php echo $row['rules_point_five']?></textarea>
@@ -65,35 +70,40 @@
                                 </div>
                                 <div class="bullet-points-bottom">
                                     <div class="point">
-                                        <p class="point-numb">6)</p>
+                                        <!-- point six -->
+                                        <p class="point-numb">6:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_six"><?php echo $row['rules_point_six']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">7)</p>
+                                        <!-- point seven -->
+                                        <p class="point-numb">7:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_seven"><?php echo $row['rules_point_seven']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">8)</p>
+                                        <!-- point eight -->
+                                        <p class="point-numb">8:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_eight"><?php echo $row['rules_point_eight']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">9)</p>
+                                        <!-- point nine -->
+                                        <p class="point-numb">9:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_nine"><?php echo $row['rules_point_nine']?></textarea>
                                         </div>
                                     </div>
                                     <div class="point">
-                                        <p class="point-numb">10)</p>
+                                        <!-- point ten -->
+                                        <p class="point-numb">10:</p>
                                         <div class="input">
                                             <div class="pull-tab"></div>
                                             <textarea class="point_ten"><?php echo $row['rules_point_ten']?></textarea>

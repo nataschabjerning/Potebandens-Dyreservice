@@ -10,12 +10,16 @@
         }
         .list-items {
             .ul {
+                /* MARK: LIST ITEMS
+                */
                 .li {
                     position: relative;
                     background-color: #ccd6bc;
                     border: 2px solid #565a4d;
                     padding: 1rem;
                     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+                    /* MARK: Link
+                    */
                     .list-link {
                         background: linear-gradient(
                             to bottom,
@@ -63,6 +67,8 @@
                         );
                     }
                 }
+                /* MARK: .private pages
+                */
                 .private {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
@@ -86,6 +92,8 @@
                         }
                     }
                 }
+                /* MARK: .website pages
+                */
                 .website {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);

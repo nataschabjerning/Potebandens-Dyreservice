@@ -18,6 +18,7 @@
 
     <div class="page-content">
 
+        <!-- img leaves under every subhero -->
         <div class="leavestop"></div>
        
        <?php

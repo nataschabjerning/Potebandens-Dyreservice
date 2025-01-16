@@ -29,11 +29,15 @@
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
                 padding: 1rem;
+                /* MARK: VACATION
+                */
                 .vacation {
                     text-align: center;
                     margin: 0 0 1rem;
                     text-transform: uppercase;
                 }
+                /* MARK: TIME
+                */
                 .time {
                     display: grid;
                     grid-template-columns: repeat(7, 1fr);
@@ -41,6 +45,8 @@
                     text-align: center;
                     @media (max-width: 1024px) {
                         grid-template-columns: repeat(4, 1fr);
+                        /* MARK: DAY 1024PX
+                        */
                         .day:nth-of-type(5) {
                             display: flex;
                             gap: 2rem;
@@ -65,6 +71,8 @@
                     }
                     @media (max-width: 550px) {
                         grid-template-columns: repeat(2, 1fr);
+                        /* MARK: DAY 550PX
+                        */
                         .day {
                             padding: 0;
                         }
@@ -97,6 +105,8 @@
                     }
                     @media (max-width: 420px) {
                         grid-template-columns: 1fr;
+                        /* MARK: DAY 420PX
+                        */
                         .day {
                             display: flex;
                             gap: 1rem;
@@ -132,6 +142,8 @@
                             grid-row: 7/8;
                         }
                     }
+                    /* MARK: DAY
+                    */
                     .day {
                         background: linear-gradient(
                             to bottom,

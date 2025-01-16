@@ -29,6 +29,7 @@
     if(empty($mondayfrom) || empty($tuesdayfrom) || empty($wednesdayfrom) || empty($thursdayfrom) || empty($fridayfrom) ||  empty($saturdayfrom) || empty($sundayfrom)) {
         exit;
     }
+    // if (weekday)from is not "closed" and (weekday)to is empty
     if($mondayfrom !== "Lukket" && empty($mondayto)) {
         exit;
     }

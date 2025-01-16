@@ -10,7 +10,14 @@
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
         }
+        /* MARK: contact/opening
+        */
         .c, .o {
+
+
+
+            /* MARK: ADD BUTTONS
+            */
             .add_contact, .add_openinghours {
                 margin: 0 auto;
                 width: fit-content;
@@ -20,6 +27,8 @@
                 border-radius: 10px;
                 border: 1px solid #478f54;
                 cursor: pointer;
+                /* MARK: hide forms
+                */
                 #hide_add_contact, #hide_add_openinghours {
                     display:none;
                     padding: .5rem 1rem;
@@ -28,6 +37,8 @@
                     font-weight: 600;
                     outline: 1px solid #d5251e;
                 }
+                /* MARK: show forms
+                */
                 #show_add_contact, #show_add_openinghours {
                     padding: .5rem 1rem;
                     color: white;
@@ -37,6 +48,9 @@
             .add_contact:hover, .add_openinghours:hover {
                 background-color: #478f54;
             }
+
+            /* MARK: FORMS
+            */
             #new_contact, #new_openinghours  {
                 display: none;
                 margin: 2rem auto 0;
@@ -69,11 +83,15 @@
                             }
                         }
                     }
+                    /* MARK: form
+                    */
                     form {
                         text-align: center;
                         label {
                             font-weight: 600;
                         }
+                        /* MARK: openinghours
+                        */
                         #openinghours {
                             display: grid;
                             grid-template-columns: 30% 1fr;
@@ -100,6 +118,8 @@
                                     text-decoration: underline;
                                 }
                             }
+                            /* MARK: input
+                            */
                             .input {
                                 display: flex;
                                 select {
@@ -112,6 +132,8 @@
                                 }
                             }
                         }
+                        /* MARK: contact top/bot
+                        */
                         .contact-top, .contact-bottom {
                             display: flex;
                             gap: 1rem;
@@ -126,6 +148,8 @@
                                     margin: 0 0 .5rem;
                                 }
                             }
+                            /* MARK: input
+                            */
                             input {
                                 font-size: 1rem;
                                 padding: 1rem;
