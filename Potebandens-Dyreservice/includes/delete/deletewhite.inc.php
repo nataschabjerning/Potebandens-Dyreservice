@@ -9,6 +9,8 @@
 
     // get the white_id from delete white in script.js
     $id = $_REQUEST['white_id'];
+    $image_name = $_REQUEST['image_name'];
+    unlink("../extra-images/" . $image_name);
 
     // Set the DELETE SQL data
 	$sql = "DELETE FROM white WHERE id='".$id."'";

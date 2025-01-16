@@ -65,6 +65,7 @@
                     } ?>
 
                     <section attr-white_id="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="image_name" id="image_name" value="<?php echo $row['image']?>">
                         <div class="extra_id">
                             <h4>ID:</h4>
                             <h4><?php echo $row['id']?></h4>

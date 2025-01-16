@@ -9,6 +9,8 @@
 
     // get the image_id from deleteImage() function in script.js
     $id = $_REQUEST['about_id'];
+    $name = $_REQUEST['image_name'];
+    unlink("../about-images/" . $name);
 
     // Set the DELETE SQL data
 	$sql = "DELETE FROM about WHERE id='".$id."'";

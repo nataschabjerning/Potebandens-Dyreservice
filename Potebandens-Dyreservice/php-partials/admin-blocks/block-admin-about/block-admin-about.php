@@ -26,6 +26,7 @@
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <?php if (!empty($row['id'])) { ?>
                     <section attr-about_id="<?php echo $row['id']; ?>">
+                        <input type="hidden" name="image_name" id="image_name" value="<?php echo $row['about_image_link']?>">
                         <div class="about_id">
                             <h4>ID: <?php echo $row['id']?></h4>
                         </div>

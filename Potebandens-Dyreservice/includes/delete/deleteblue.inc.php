@@ -9,6 +9,8 @@
 
     // get the service_id from delete rules in script.js
     $id = $_REQUEST['blue_id'];
+    $image_name = $_REQUEST['image_name'];
+    unlink("../extra-images/" . $image_name);
 
     // Set the DELETE SQL data
 	$sql = "DELETE FROM blue WHERE id='".$id."'";

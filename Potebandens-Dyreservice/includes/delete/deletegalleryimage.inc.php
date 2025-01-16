@@ -9,10 +9,8 @@
 
     // get the image_id from deleteImage() function in script.js
     $id = $_REQUEST['image_id'];
-
-
-    // $image_name = GET THE IMAGE NAME(LINK) FROM DELETE FUNCTION IN SCRIPT.JS (line 1523)
-    // unlink($_SERVER['DOCUMENT_ROOT'] . "/upload/$image_name");
+    $name = $_REQUEST['image_name'];
+    unlink("../gallery-uploads/" . $name);
 
 
     // Set the DELETE SQL data

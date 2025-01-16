@@ -2,7 +2,7 @@
     include_once("../connect.inc.php");
 
     // File upload directory
-    $targetDir = "about-images/";
+    $targetDir = "../about-images/";
 
     $about_image_link = basename($_FILES["about_file"]["name"]);
     $about_name = $_POST["about_name"];

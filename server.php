@@ -182,37 +182,23 @@ about
 - about_text_six (VARCHAR 255)
 - about_text_seven (VARCHAR 255)
 
+blue
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- visibility (VARCHAR 50)
+- title (VARCHAR 100)------ NOT NULL
+- subtitle (VARCHAR 100)
+- text_one (VARCHAR 255)
+- text_two (VARCHAR 255)
+- text_three (VARCHAR 255)
+- text_link (VARCHAR 100)
+- link_url (VARCHAR 255)
+
 contact
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
 - name (VARCHAR 100)        ------ NOT NULL
 - work_title (VARCHAR 100)
 - phone (INT 100)           ------ NOT NULL
 - email (VARCHAR 255)       ------ NOT NULL
-- adress_street (VARCHAR 255)
-- adress_postal_code (INT 100)
-- adress_city (VARCHAR 255)
-
-extraone
-- id (INT AUTO_INCREMENT)   ------ NOT NULL
-- extra_visibility (VARCHAR 50)
-- extra_title (VARCHAR 100)------ NOT NULL
-- extra_subtitle (VARCHAR 100)
-- extra_text_one (VARCHAR 255)
-- extra_text_two (VARCHAR 255)
-- extra_text_three (VARCHAR 255)
-- extra_text_link (VARCHAR 100)
-- extra_link_url (VARCHAR 255)
-
-extratwo
-- id (INT AUTO_INCREMENT)   ------ NOT NULL
-- extra_visibility (VARCHAR 50)
-- extra_title (VARCHAR 100)------ NOT NULL
-- extra_subtitle (VARCHAR 100)
-- extra_text_one (VARCHAR 255)
-- extra_text_two (VARCHAR 255)
-- extra_text_three (VARCHAR 255)
-- extra_text_link (VARCHAR 100)
-- extra_link_url (VARCHAR 255)
 
 gallery
 - id (INT AUTO_INCREMENT)   ------ NOT NULL
@@ -279,6 +265,17 @@ users
 - username (VARCHAR 50)     ------ NOT NULL
 - email (VARCHAR 100)       ------ NOT NULL
 - password (VARCHAR 255)    ------ NOT NULL
+
+white
+- id (INT AUTO_INCREMENT)   ------ NOT NULL
+- visibility (VARCHAR 50)
+- title (VARCHAR 100)------ NOT NULL
+- subtitle (VARCHAR 100)
+- text_one (VARCHAR 255)
+- text_two (VARCHAR 255)
+- text_three (VARCHAR 255)
+- text_link (VARCHAR 100)
+- link_url (VARCHAR 255)
 
 
 -->

@@ -1333,6 +1333,7 @@ $(document).ready(function(){
         // get the about ID
         var $aboutId   = $section.attr('attr-about_id');
         let $about_name = $section.find(".about_name").val();
+        let $imageName = $section.find("#image_name").val();
 
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
@@ -1357,7 +1358,8 @@ $(document).ready(function(){
                 // data to send
                 data: {
                     about_id: $aboutId,
-                    about_name: $about_name
+                    about_name: $about_name,
+                    image_name: $imageName
                 }
             })
             .done(function() {
@@ -1415,6 +1417,7 @@ $(document).ready(function(){
         let $section  = jQuery(this).closest("section");
         // get the contact ID
         var $whiteId   = $section.attr('attr-white_id');
+        let $imageName = $section.find("#image_name").val();
 
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
@@ -1435,7 +1438,8 @@ $(document).ready(function(){
                 url: 'includes/delete/deletewhite.inc.php',
                 // data to send
                 data: {
-                    white_id: $whiteId
+                    white_id: $whiteId,
+                    image_name: $imageName
                 }
             })
             .done(function() {
@@ -1454,6 +1458,7 @@ $(document).ready(function(){
         let $section  = jQuery(this).closest("section");
         // get the contact ID
         var $blueId   = $section.attr('attr-blue_id');
+        let $imageName = $section.find("#image_name").val();
 
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette denne blok?");
@@ -1474,7 +1479,8 @@ $(document).ready(function(){
                 url: 'includes/delete/deleteblue.inc.php',
                 // data to send
                 data: {
-                    blue_id: $blueId
+                    blue_id: $blueId,
+                    image_name: $imageName
                 }
             })
             .done(function() {
@@ -1492,10 +1498,8 @@ $(document).ready(function(){
 
         let $section  = jQuery(this).closest("section");
         // get the image ID
-        var imageId   = $section.attr('attr-image_id');
-
-        // GET IMAGE NAME(LINK) FROM INVISIBLE DIV WITH IMAGE-LINK AS VALUE
-        // var imageName = $section.find(".image").val();
+        var $imageId   = $section.attr('attr-image_id');
+        let $imageName = $section.find("#image_name").val();
 
         // show confirmaiton box
         confirmationDelete("Er du sikker på, at du gerne vil slette dette billede?");
@@ -1519,8 +1523,8 @@ $(document).ready(function(){
                 url: 'includes/delete/deletegalleryimage.inc.php',
                 // data to send
                 data: {
-                    image_id: imageId
-                    // image_name: imageName
+                    image_id: $imageId,
+                    image_name: $imageName
                 }
             })
             .done(function() {
