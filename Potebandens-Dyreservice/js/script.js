@@ -308,6 +308,7 @@ $(document).ready(function(){
         // toggle these classes to add a little color to messages that are open
         $(this).toggleClass("open");
         $(this).toggleClass("close");
+        // remove this class when msg has been clicked, so it does not show as 'new message'
         $(this).removeClass("newmessage");
         // add this class when msg has been clicked, so it does not show as 'new message'
         $(this).addClass("read");
@@ -355,7 +356,7 @@ $(document).ready(function(){
             type: 'POST',
             url: 'includes/create/createabout.inc.php',
             data: {
-                about_image_link: $$about_image_link,
+                about_image_link: $about_image_link,
                 about_name: $about_name,
                 about_work_title: $about_work_title,
                 about_text_one: $about_text_one,
@@ -376,9 +377,6 @@ $(document).ready(function(){
         $contact_work_title = $('input[name=contact_work_title]').val();
         $contact_phone = $('input[name=contact_phone]').val();
         $contact_email = $('input[name=contact_email]').val();
-
-        // to check if string only contains numbers
-        let isnum = /^\d+$/.test($contact_phone);
         
         var $request = $.ajax({
             type: 'POST',
@@ -411,7 +409,7 @@ $(document).ready(function(){
                 errorAlert("Obs! <br> Teksten i 'Arbejdstitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
             }
             // if 'contact_phone' contains letters
-            else if (!isnum) {
+            else if (!/^\d+$/.test($contact_phone)) {
                 $request.abort();
                 errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
             }
@@ -619,9 +617,9 @@ $(document).ready(function(){
         })
         .done(function() {
             // if one or more fields is empty
-            if(!$service_name || !$service_short_description || !$service_description_one) {
+            if(!$service_name || !$service_description_one) {
                 $request.abort();
-                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
+                errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere påkrævede felter. Udfyld alle og prøv igen!");
             }
             // if string length is over 250 characters
             else if($service_name.length > 100) {
@@ -649,9 +647,9 @@ $(document).ready(function(){
                 errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
-            else if($service_short_description.length > 250) {
+            else if($service_short_description.length > 100) {
                 $request.abort();
-                errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
             }
             // if string length is over 250 characters
             else if($important_note.length > 250) {
@@ -701,12 +699,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne infoboks?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen infoboks blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -751,31 +749,31 @@ $(document).ready(function(){
                 }
                 else if($about_text_one.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 1' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 1' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_two.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 2' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 2' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_three.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 3' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 3' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_four.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 4' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 4' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_five.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 5' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 5' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_six.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 6' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 6' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else if($about_text_seven.length > 250) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 7' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i 'Tekstfelt 7' er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else {
                     // if all checks have cleared
@@ -801,19 +799,16 @@ $(document).ready(function(){
         let $contact_phone = $section.find(".contact_phone").val();
         let $contact_email = $section.find(".contact_email").val();
 
-        // to check if string only contains numbers
-        let isnum = /^\d+$/.test($contact_phone);
-
         // show confirmaiton box
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne kontakt?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen kontakt blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -846,7 +841,7 @@ $(document).ready(function(){
                     errorAlert("Obs! <br> Teksten i 'Arbejdstitel' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
                 // if 'contact_phone' contains letters
-                else if (!isnum) {
+                else if (!/^\d+$/.test($contact_phone)) {
                     $request.abort();
                     errorAlert("Obs! <br> Telefonnummeret kan ikke indeholde bogstaver!");
                 }
@@ -888,12 +883,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen blok blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -977,12 +972,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne blok?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen blok blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -1073,12 +1068,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere disse åbningstider?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen åbningstider blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -1112,32 +1107,32 @@ $(document).ready(function(){
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde et eller flere felter. Udfyld alle og prøv igen!");
                 }
-                // if (weekday)from is not "closed" and (weekday)to is empty
-                else if($mondayfrom !== "Lukket" && !$mondayto) {
+                // if (weekday)from is not "closed" and (weekday)to is "closed"
+                else if($mondayfrom !== "Lukket" && $mondayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for mandag!");
                 }
-                else if($tuesdayfrom !== "Lukket" && !$tuesdayto) {
+                else if($tuesdayfrom !== "Lukket" && $tuesdayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for tirsdag!");
                 }
-                else if($wednesdayfrom !== "Lukket" && !$wednesdayto) {
+                else if($wednesdayfrom !== "Lukket" && $wednesdayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for onsdag!");
                 }
-                else if($thursdayfrom !== "Lukket" && !$thursdayto) {
+                else if($thursdayfrom !== "Lukket" && $thursdayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for torsdag!");
                 }
-                else if($fridayfrom !== "Lukket" && !$fridayto) {
+                else if($fridayfrom !== "Lukket" && $fridayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for fredag!");
                 }
-                else if($saturdayfrom !== "Lukket" && !$saturdayto) {
+                else if($saturdayfrom !== "Lukket" && $saturdayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for lørdag!");
                 }
-                else if($sundayfrom !== "Lukket" && !$sundayto) {
+                else if($sundayfrom !== "Lukket" && !$sundayto === "") {
                     $request.abort();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde 'Til' feltet i åbningstider for søndag!");
                 }
@@ -1174,12 +1169,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere disse regler?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen regler blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -1208,6 +1203,51 @@ $(document).ready(function(){
                     $request.abort();
                     $("#confirmation-update").hide();
                     errorAlert("Obs! <br> Det ser ud som om du har glemt at udfylde begge eller ét af de påkrævede felter!");
+                }
+                // if string length is too long
+                else if($rules.length > 100) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i 'Hvor gælder disse regler' er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
+                }
+                else if($point_one.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 1 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_two.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 2 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_three.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 3 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_four.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_five.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 5 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_six.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 6 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_seven.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 7 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_eight.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 8 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_nine.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 9 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                }
+                else if($point_ten.length > 250) {
+                    $request.abort();
+                    errorAlert("Obs! <br> Teksten i regelfelt 10 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 else {
                     // if all checks have cleared
@@ -1239,12 +1279,12 @@ $(document).ready(function(){
         confirmationUpdate("Er du sikker på, at du gerne vil opdatere denne ydelse?");
 
         // CONFIRMATION
-        // if cancel_delete (no)
+        // if cancel_update (no)
         $('.cancel_update').click(function() {
             $("#confirmation-update").hide();
             errorAlert("Ingen ydelse blev opdateret!");
         });
-        // if confirm_delete (yes)
+        // if confirm_update (yes)
         $('.confirm_update').click(function() {
             // Ajax config
             var $request = $.ajax({
@@ -1295,9 +1335,9 @@ $(document).ready(function(){
                     errorAlert("Obs! <br> Teksten i tekstfelt 4 er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
                 }
                 // if string length is over 250 characters
-                else if($service_short_description.length > 250) {
+                else if($service_short_description.length > 100) {
                     $request.abort();
-                    errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 250 tegn (inkl. mellemrum).");
+                    errorAlert("Obs! <br> Teksten i den korte beskrivelse er for langt. Der kan maks skrives 100 tegn (inkl. mellemrum).");
                 }
                 // if string length is over 250 characters
                 else if($important_note.length > 250) {

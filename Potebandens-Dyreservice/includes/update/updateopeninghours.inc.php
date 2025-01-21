@@ -30,25 +30,25 @@
         exit;
     }
     // if (weekday)from is not "closed" and (weekday)to is empty
-    if($mondayfrom !== "Lukket" && empty($mondayto)) {
+    if($mondayfrom !== "Lukket" && $mondayto == "") {
         exit;
     }
-    if($tuesdayfrom !== "Lukket" && empty($tuesdayto)) {
+    if($tuesdayfrom !== "Lukket" && $tuesdayto == "") {
         exit;
     }
-    if($wednesdayfrom !== "Lukket" && empty($wednesdayto)) {
+    if($wednesdayfrom !== "Lukket" && $wednesdayto == "") {
         exit;
     }
-    if($thursdayfrom !== "Lukket" && empty($thursdayto)) {
+    if($thursdayfrom !== "Lukket" && $thursdayto == "") {
         exit;
     }
-    if($fridayfrom !== "Lukket" && empty($fridayto)) {
+    if($fridayfrom !== "Lukket" && $fridayto == "") {
         exit;
     }
-    if($saturdayfrom !== "Lukket" && empty($saturdayto)) {
+    if($saturdayfrom !== "Lukket" && $saturdayto == "") {
         exit;
     }
-    if($sundayfrom !== "Lukket" && empty($sundayto)) {
+    if($sundayfrom !== "Lukket" && $sundayto == "") {
         exit;
     }
 

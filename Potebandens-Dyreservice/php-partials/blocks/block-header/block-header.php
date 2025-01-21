@@ -8,7 +8,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
+        <!-- SEO () -->
+        <meta name="keywords" content="Dyr, Hunde, Pasning, Dyreservice, Potebanden, Potebandens Dyreservice, Lonni Danielsen, Lonni, Natascha, Natascha Bjerning, Hundepasning, Hundebørnehave, Hundelegestue, Dyrepasning">
+        <meta name="author" content="Natascha Bjerning">
+        <meta name="description" content="Potebandens Dyreservice hjælper dig med at passe din hund. Hos os får din hund sin daglige dosis af kærlighed og bliver samtidig aktiveret ved hvert besøg.">
+
         <!-- favicon -->
         <link rel="icon" type="image/x-icon" href="../../../images/logo/logo-multicolor.png">
         

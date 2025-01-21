@@ -1,6 +1,7 @@
 .service-slider-block {
     position: relative;
     background-color: #478f54cc;
+    padding-bottom: 10rem;
 
     /* MARK: PAW PRINTS
     */
@@ -239,7 +240,7 @@
         }
     }
 
-    /* MARK: CONTENT
+    /* MARK: CONTAINER
     */
     .container {
         .admin-titles {
@@ -333,6 +334,7 @@
         */
         .service-slider {
             margin: auto;
+            // height: fit-content;
             .slick-dots {
                 bottom: -45px;
                 li {
@@ -341,44 +343,46 @@
                     }
                 }
             }
-            /* MARK: Slide
-            */
-            .slide {
-                background: linear-gradient(
-                    to bottom,
-                    #0202024d 0%,
-                    #0000004d 100%
-                );
-                min-height: 200px;
-                padding: 1rem 2rem;
-                text-align: center;
-                margin: 0 .3rem;
-                color: #ffffff;
-                border-radius: 5px;
-                @media (max-width: 768px) {
-                    min-height: 250px;
-                }
-                /* MARK: Content
+            .slick-track
+            {
+                display: flex;
+                /* MARK: Slide
                 */
-                .service-content {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1rem;
-                    .icon {
-                        height: 40px;
-                        padding: .5rem;
-                        border: 1px solid #478f54;
-                        border-radius: 50%;
-                        img {
-                            object-fit: contain;
-                            height: 100%;
+                .slide {
+                    height: inherit;
+                    background: linear-gradient(
+                        to bottom,
+                        #0202024d 0%,
+                        #0000004d 100%
+                    );
+                    padding: 2rem;
+                    text-align: center;
+                    margin: 0 .3rem;
+                    color: #ffffff;
+                    border-radius: 5px;
+                    /* MARK: Content
+                    */
+                    .service-content {
+                        display: grid;
+                        grid-template-rows: auto 1fr;
+                        justify-items: center;
+                        gap: 1rem;
+                        height: 100%;
+                        .icon {
+                            height: 40px;
+                            padding: .5rem;
+                            border: 1px solid #478f54;
+                            border-radius: 50%;
+                            img {
+                                object-fit: contain;
+                                height: 100%;
+                            }
                         }
-                    }
-                    .text {
-                        h2 {
-                            text-transform: capitalize;
-                            margin-bottom: 1rem;
+                        .text {
+                            h2 {
+                                text-transform: capitalize;
+                                margin-bottom: 1rem;
+                            }
                         }
                     }
                 }

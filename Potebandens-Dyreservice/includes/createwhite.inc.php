@@ -33,7 +33,7 @@
             exit();
         }
         if (strlen($text_one) > 255) {
-            header("location: ../../admin-index.php?error=whitetextone");
+            header("location: ../admin-index.php?error=whitetextone");
             exit();
         }
         if (strlen($text_two) > 255) {
@@ -175,7 +175,7 @@
                 </div> <!-- .extra-link_url end -->
             </div> <!-- .flex-link end -->
             <div class="button">
-                <button name="add-white">Tilføj Hvid Blok</button>
+                <button name="add-white">Tilføj Blok</button>
             </div>
         </form>
     </div> <!-- .new_white end -->

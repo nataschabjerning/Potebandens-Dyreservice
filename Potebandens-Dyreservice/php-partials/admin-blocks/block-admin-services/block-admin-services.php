@@ -35,7 +35,7 @@
                                     </div>
                                 </div> <!-- .name end -->
                                 <div class="short_description">
-                                    <label>Kort Beskrivelse <span>*</span></label>
+                                    <label>Kort Beskrivelse</label>
                                     <div class="input">
                                         <textarea name="service_short_description" id="service_short_description" placeholder="En kort tekst til visning på forsiden"></textarea>
                                     </div>

@@ -7,6 +7,7 @@
         padding: 1rem 0;
         border: none;
         border-bottom: 1px solid #3f48cc;
+        position: relative;
 
         /* MARK: HEADER
         ------------------------------------------- */
@@ -46,17 +47,34 @@
             }
         }
 
-        p {
-            text-align: center;
+        /* MARK: Flower IMG
+        ------------------------------------------- */
+        .blue-p {
+            background-image: url('../../../../images/borders/blueflowersbordertop.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 80px;
+            @media (max-width: 768px) {
+                height: 60px;
+            }
+        }
+        .white-p {
+            background-image: url('../../../../images/borders/whiteflowersbordertop.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 80px;
+            @media (max-width: 768px) {
+                height: 60px;
+            }
         }
 
-        /* MARK: FORM START
+        /* MARK: SECTION
         ------------------------------------------- */
         /* display db table content in section */
         .admin-white, .admin-blue {
             section {
                 position: relative;
-                margin: 1rem 0;
+                margin-bottom: 1rem;
                 padding: 1.5rem 1rem 1rem;
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;

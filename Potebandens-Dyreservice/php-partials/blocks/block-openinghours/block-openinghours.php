@@ -28,9 +28,11 @@
                                     <?php if (!empty($row['mondayfrom'])) { ?>
                                         <?php echo $row['mondayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['mondayto'])) { ?>
+                                    <?php if (!empty($row['mondayto']) && $row['mondayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['mondayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -40,9 +42,11 @@
                                     <?php if (!empty($row['tuesdayfrom'])) { ?>
                                         <?php echo $row['tuesdayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['tuesdayto'])) { ?>
+                                    <?php if (!empty($row['tuesdayto']) && $row['tuesdayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['tuesdayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -52,9 +56,11 @@
                                     <?php if (!empty($row['wednesdayfrom'])) { ?>
                                         <?php echo $row['wednesdayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['wednesdayto'])) { ?>
+                                    <?php if (!empty($row['wednesdayto']) && $row['wednesdayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['wednesdayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -64,9 +70,11 @@
                                     <?php if (!empty($row['thursdayfrom'])) { ?>
                                         <?php echo $row['thursdayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['thursdayto'])) { ?>
+                                    <?php if (!empty($row['thursdayto']) && $row['thursdayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['thursdayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -76,9 +84,11 @@
                                     <?php if (!empty($row['fridayfrom'])) { ?>
                                         <?php echo $row['fridayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['fridayto'])) { ?>
+                                    <?php if (!empty($row['fridayto']) && $row['fridayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['fridayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -88,9 +98,11 @@
                                     <?php if (!empty($row['saturdayfrom'])) { ?>
                                         <?php echo $row['saturdayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['saturdayto'])) { ?>
+                                    <?php if (!empty($row['saturdayto']) && $row['saturdayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['saturdayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                             <div class="day">
@@ -100,9 +112,11 @@
                                     <?php if (!empty($row['sundayfrom'])) { ?>
                                         <?php echo $row['sundayfrom']; ?>
                                     <?php } ?>
-                                    <?php if (!empty($row['sundayto'])) { ?>
+                                    <?php if (!empty($row['sundayto']) && $row['sundayfrom'] !== "Lukket") { ?>
                                         - <?php echo $row['sundayto']; ?>
-                                    <?php } ?>
+                                    <?php } else {
+                                        echo "";
+                                    } ?>
                                 </h4>
                             </div> <!-- .day end -->
                         </div> <!-- .time end -->

@@ -19,7 +19,8 @@
                     <!-- hidden input to get image name (for deleting image from folder) -->
                     <input type="hidden" name="image_name" id="image_name" value="<?php echo $row['image_link']?>">
                     <?php if (!empty($row['image_link'])) { ?>    
-                        <div class="image" style="<?php if (!empty($row['image_link'])) { ?>background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>');<?php } ?>"></div>
+                        <!-- IMAGE -->
+                        <img src="includes/gallery-uploads/<?php echo $row['image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
                     <?php } ?>
                     <?php if (!empty($row['image_text'])) { ?>
                         <div class="text">

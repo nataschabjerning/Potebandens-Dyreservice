@@ -16,7 +16,7 @@
     $important_note             = $_POST['important_note'];
 
     // if not filled out
-    if(empty($service_name) || empty($service_short_description) || empty($service_description_one)) {
+    if(empty($service_name) || empty($service_description_one)) {
         exit;
     }
     // if there is numbers in service_name
@@ -42,7 +42,7 @@
     if(strlen($service_description_four) > 250) {
         exit();
     }
-    if(strlen($service_short_description) > 250) {
+    if(strlen($service_short_description) > 100) {
         exit();
     }
     

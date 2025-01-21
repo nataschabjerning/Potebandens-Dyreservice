@@ -252,7 +252,7 @@ rules
 services
 - id (INT AUTO_INCREMENT)                   ------ NOT NULL
 - service_name (VARCHAR 100)                ------ NOT NULL
-- service_short_description (VARCHAR 100)   ------ NOT NULL
+- service_short_description (VARCHAR 100)
 - service_description_one (VARCHAR 255)     ------ NOT NULL
 - service_description_two (VARCHAR 255)
 - service_description_three (VARCHAR 255)

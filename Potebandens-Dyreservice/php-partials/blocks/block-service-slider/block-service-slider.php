@@ -1,7 +1,7 @@
 <?php
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM services ORDER BY id DESC LIMIT 6;";
+    $sql = "SELECT * FROM services ORDER BY id DESC LIMIT 4;";
     $result = mysqli_query($conn, $sql);
 ?>
 

@@ -23,6 +23,10 @@
     if(!$about_name) {
         exit;
     }
+    // if there is numbers in name
+    if(preg_match("/\d/", $about_name)) {
+        exit;
+    }
     // if text in name/work title are over 100 characters
     if (strlen($about_name) > 100) {
         exit();

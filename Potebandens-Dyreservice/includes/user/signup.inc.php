@@ -14,32 +14,32 @@
         $repeat_password = $_POST["repeat_password"];
 
         // Go through all checks ->
-        // call to emptyInputSignup() in includes/functions.inc.php (line 6)
+        // call to emptyInputSignup() in includes/functions.inc.php (line 11)
         if (emptyInputSignup($name, $username, $email, $password, $repeat_password) !== false) {
             header("Location: ../../admin-profile.php?error=emptysignupinput");
             exit();
         }
-        // call to invalidUid() in includes/functions.inc.php (line 18)
+        // call to invalidUid() in includes/functions.inc.php (line 24)
         if (invalidUid($username) !== false) {
             header("Location: ../../admin-profile.php?error=invalidusername");
             exit();
         }
-        // call to invalidEmail in includes/functions.inc.php (line 30)
+        // call to invalidEmail in includes/functions.inc.php (line 37)
         if (invalidEmail($email) !== false) {
             header("Location: ../../admin-profile.php?error=invalidemail");
             exit();
         }
-        // call to passwordMatch() in includes/functions.inc.php (line 42)
+        // call to passwordMatch() in includes/functions.inc.php (line 50)
         if (passwordMatch($password, $repeat_password) !== false) {
             header("Location: ../../admin-profile.php?error=passwordsdoesntmatch");
             exit();
         }
-        // call to uidExists() in includes/functions.inc.php (line 54)
+        // call to uidExists() in includes/functions.inc.php (line 63)
         if (uidExists($conn, $username, $username) !== false) {
             header("Location: ../../admin-profile.php?error=usernametaken");
             exit();
         }
-        // call to uidExists() in includes/functions.inc.php (line 54)
+        // call to uidExists() in includes/functions.inc.php (line 63)
         if (uidExists($conn, $email, $email) !== false) {
             header("Location: ../../admin-profile.php?error=emailtaken");
             exit();

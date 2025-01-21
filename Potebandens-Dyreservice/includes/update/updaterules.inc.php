@@ -25,6 +25,40 @@
     if(empty($rules) || empty($point_one)) {
         exit;
     }
+    // if string length is too long
+    if(strlen($rules) > 100) {
+        exit();
+    }
+    if(strlen($point_one) > 250) {
+        exit();
+    }
+    if(strlen($point_two) > 250) {
+        exit();
+    }
+    if(strlen($point_three) > 250) {
+        exit();
+    }
+    if(strlen($point_four) > 250) {
+        exit();
+    }
+    if(strlen($point_five) > 250) {
+        exit();
+    }
+    if(strlen($point_six) > 250) {
+        exit();
+    }
+    if(strlen($point_seven) > 250) {
+        exit();
+    }
+    if(strlen($point_eight) > 250) {
+        exit();
+    }
+    if(strlen($point_nine) > 250) {
+        exit();
+    }
+    if(strlen($point_ten) > 250) {
+        exit();
+    }
 
     $sql = "UPDATE rules 
 	SET

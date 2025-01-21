@@ -13,11 +13,11 @@
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="image-card">
                         <?php if (!empty($row['image_link'])) { ?>    
-                            <div class="image" style="<?php if (!empty($row['image_link'])) { ?>
-                                background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>');<?php } ?>">
-                            </div> <!-- .image end -->
+                            <!-- IMAGE -->
+                            <img src="includes/gallery-uploads/<?php echo $row['image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
                         <?php } ?>
                         <?php if (!empty($row['image_text'])) { ?>
+                            <!-- TEXT -->
                             <div class="text">
                                 <h3><?php echo $row['image_text']?></h3>
                             </div> <!-- .text end -->

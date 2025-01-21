@@ -24,29 +24,26 @@
                 position: relative;
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
-                height: fit-content;
+                height: 320px;
                 /* id for image name (to delete from folder) */
                 #image_name {
                     display: none;
                 }
                 /* MARK: image
                 */
-                .image {
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: contain;
-                    margin: 1rem;
-                    height: 300px;
-                    @media (max-width: 768px)  and (max-height: 800px), (max-width: 768px) {
-                        height: 250px;
-                    }
-                    @media (max-width: 450px)  and (max-height: 800px), (max-width: 450px) {
-                        height: 200px;
-                    }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                    margin: 0 auto;
                 }
                 /* MARK: text
                 */
                 .text {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
                     background: linear-gradient(
                         to bottom,
                         #f1deb1 0%, 
@@ -57,7 +54,7 @@
                         #ffffff 90%, 
                         #ffffff 100%
                     );
-                    padding: 1rem;
+                    padding: .5rem 0;
                     text-align: center;
                     border-top: 1px solid #565a4d;
                     @media (max-width: 450px) {

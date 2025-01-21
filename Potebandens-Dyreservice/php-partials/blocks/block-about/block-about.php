@@ -16,7 +16,7 @@
             <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                 <section attr-about_id="<?php echo $row['id']; ?>">
                     <div class="me <?php if (!empty($row['about_image_link'])) { ?>me-grid<?php } else { ?>me-nogrid<?php } ?>">
-                        <!-- image -->    
+                        <!-- image -->
                         <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
                         <div class="intro">
                             <!-- name -->

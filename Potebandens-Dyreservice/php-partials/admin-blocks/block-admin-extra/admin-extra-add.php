@@ -86,7 +86,7 @@
                     }
                     if ($_GET["error"] == "bluealtempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Der er ikke skrevet en 'alt' tekst til det valgte billede.</p>";
                         echo "</div>";
                     }
@@ -99,7 +99,7 @@
                     }
                     if ($_GET["error"] == "bluetitleempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Husk at skrive en titel.</p>";
                         echo "</div>";
                     }
@@ -112,7 +112,7 @@
                     }
                     if ($_GET["error"] == "blueselectempty") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Husk at vælge om blokken skal være synlig på forsiden eller ej.</p>";
                         echo "</div>";
                     }
@@ -125,7 +125,7 @@
                     }
                     if ($_GET["error"] == "bluewrongfiletype") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Du kan kun vælge .jpg, .jpeg, .png eller .gif filer.</p>";
                         echo "</div>";
                     }
@@ -138,7 +138,7 @@
                     }
                     if ($_GET["error"] == "bluemovingfilefailed") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Der skete en fejl da filen skulle flyttes til den valgte mappe. Prøv igen</p>";
                         echo "</div>";
                     }
@@ -151,7 +151,7 @@
                     }
                     if ($_GET["error"] == "blueinsertfailed") {
                         echo "<div class='error'>";
-                        echo "<p class='blockblue'>* Blok 2 *</p>";
+                        echo "<p class='blockblue'>* Blå Blok *</p>";
                         echo "<p class='caption'>- Der skete en fejl da filen skulle indsættes i databasen. Prøv igen</p>";
                         echo "</div>";
                     }

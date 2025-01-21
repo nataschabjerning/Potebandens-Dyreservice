@@ -40,6 +40,7 @@
         <div class="paw paw-print-28"></div>
         <div class="paw paw-print-29"></div>
         <div class="paw paw-print-30"></div>
+        <div class="paw paw-print-31"></div>
     </div>
 
 

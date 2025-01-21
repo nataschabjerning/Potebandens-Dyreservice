@@ -31,7 +31,11 @@
                     
                     <?php while($row = mysqli_fetch_assoc($resultData)) { ?>
                         <section id="section" attr-message_id="<?php echo $row['id']; ?>">
+                            <!-- if 'message_read' is empty -->
+                             <!-- add class 'newmessage' (to show new msg color) -->
+                              <!-- if not empty - add class 'read' (to show msg read color) -->
                             <div class="theadmessage message-from close <?php if($row['message_read'] == "") {?>newmessage<?php } else { ?>read<?php } ?>">
+                            <!-- hidden input to show if message is new or read -->
                             <input type="hidden" name="message_read" class="<?php if($row['message_read'] == "") {?>newmessage<?php } else { ?>read<?php } ?>" value="<?php if($row['message_read'] == "") {?>newmessage<?php } else { ?>read<?php } ?>">
 
                                 <!-- VISITOR SUBJECT AND NAME START -->

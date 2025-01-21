@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <p>Alle blokke <u>under</u> slideshow af ydelser</p>
+            <p class="blue-p"></p>
 
             <div class="admin-blue">
                 <?php while($row = mysqli_fetch_assoc($resultData)) {

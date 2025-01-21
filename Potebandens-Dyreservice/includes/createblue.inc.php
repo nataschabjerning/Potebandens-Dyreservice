@@ -175,7 +175,7 @@
                 </div> <!-- .extra-link_url end -->
             </div> <!-- .flex-link end -->
             <div class="button">
-                <button name="add-blue">Tilføj Blå Blok</button>
+                <button name="add-blue">Tilføj Blok</button>
             </div>
         </form>
     </div> <!-- .new_blue end -->
