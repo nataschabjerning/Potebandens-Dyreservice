@@ -14,7 +14,9 @@
                     <div class="image-card">
                         <?php if (!empty($row['image_link'])) { ?>    
                             <!-- IMAGE -->
-                            <img src="includes/gallery-uploads/<?php echo $row['image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
+                            <div class="image">
+                                <img src="includes/gallery-uploads/<?php echo $row['image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
+                            </div>
                         <?php } ?>
                         <?php if (!empty($row['image_text'])) { ?>
                             <!-- TEXT -->

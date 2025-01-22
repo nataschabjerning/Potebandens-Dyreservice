@@ -23,16 +23,18 @@
                 position: relative;
                 background-color: #ccd6bc;
                 border: 2px solid #565a4d;
-                height: 320px;
-                overflow: hidden;
+                height: 300px;
                 /* MARK: image
                 */
-                img {
+                .image {
                     height: 100%;
                     width: 100%;
-                    object-fit: contain;
-                    object-position: center;
-                    margin: 0 auto;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                        // background-position: center;
+                    }
                 }
                 /* MARK: text
                 */

@@ -38,7 +38,7 @@ $(document).ready(function(){
     
     // MARK: Gallery
     $('.gallery-slider').slick({
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
         dots: true,

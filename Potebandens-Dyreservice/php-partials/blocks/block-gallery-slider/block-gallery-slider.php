@@ -1,7 +1,7 @@
 <?php
     include("includes/connect.inc.php");
 
-    $sql = "SELECT * FROM gallery LIMIT 6;";
+    $sql = "SELECT * FROM gallery LIMIT 10;";
     $result = mysqli_query($conn, $sql);
 ?>
 

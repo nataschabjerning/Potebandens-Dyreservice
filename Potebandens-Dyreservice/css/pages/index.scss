@@ -1,10 +1,11 @@
 .page-index {
     .hero {
         background-image: url('../../../images/backgrounds/pdherolight.jpg');
-        background-position: center;
+        background-position-y: 40%;
+        background-position-x: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 60vh;
+        height: 80vh;
         @media (max-width: 1024px) and (max-height: 800px), (max-width: 1024px) {
             height: 60vh;
         }
