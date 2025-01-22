@@ -12,10 +12,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     align-items: center;
-    position: relative;
+    @media (max-width: 1024px) and (max-height: 800px), (max-width: 1024px) {
+        height: 40vh;
+    }
     @media (max-width: 768px) and (max-height: 800px), (max-width: 768px) {
         height: 30vh;
     }
@@ -46,7 +48,7 @@
     }
 }
 
-/* MARK: SUBHERO IMG
+/* MARK: LEAVES TOP IMG
 - leaves img under every subhero */
 .page-content {
     position: relative;
