@@ -126,14 +126,21 @@
                         grid-template-rows: auto 1fr;
                     }
                     .extra-image {
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
+                        position: relative;
                         @media (max-width: 800px) {
                             height: 400px;
                         }
                         @media (max-width: 450px) {
                             height: 300px;
+                        }
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
                         }
                     }
                 }

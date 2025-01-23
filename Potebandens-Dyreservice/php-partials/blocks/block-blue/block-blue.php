@@ -29,7 +29,10 @@
                         <?php } ?>"
                     >
 
-                        <div class="extra-image" style="<?php if (!empty($row['image'])) { ?>background-image: url('includes/extra-images/<?php echo $row['image']?>'); border: 2px solid #565a4d;<?php } ?>">
+                        <div class="extra-image" style="<?php if (!empty($row['image'])) { ?>border: 2px solid #565a4d;<?php } ?>">
+                            <?php if (!empty($row['image'])) { ?>
+                                <img src="includes/extra-images/<?php echo $row['image'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
+                            <?php } ?>
                         </div> <!-- .extra-image end -->
 
                         <div class="extra-text">

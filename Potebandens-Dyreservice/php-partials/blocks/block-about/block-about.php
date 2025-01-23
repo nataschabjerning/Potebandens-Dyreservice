@@ -17,7 +17,11 @@
                 <section attr-about_id="<?php echo $row['id']; ?>">
                     <div class="me <?php if (!empty($row['about_image_link'])) { ?>me-grid<?php } else { ?>me-nogrid<?php } ?>">
                         <!-- image -->
-                        <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');<?php } ?>"></div>
+                        <div class="image">
+                            <?php if (!empty($row['about_image_link'])) { ?>
+                                <img src="includes/about-images/<?php echo $row['about_image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['about_name'] ?>">
+                            <?php } ?>
+                        </div>
                         <div class="intro">
                             <!-- name -->
                             <?php if (!empty($row['about_name'])) { ?>

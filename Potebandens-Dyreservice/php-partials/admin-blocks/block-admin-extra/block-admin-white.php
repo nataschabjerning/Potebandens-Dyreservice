@@ -84,20 +84,17 @@
                             </div> <!-- .extra-visibility end -->
                             <div class="white-top">
                                 <div class="white-left">
-                                    <div class="extra-image" style="<?php if (!empty($row['image'])) { ?>
-                                        background-image: url('includes/extra-images/<?php echo $row['image']?>');
-                                    <?php }
-                                    else { ?>
-                                        background-image: url('../../../../images/backgrounds/noimg.jpg');
-                                    <?php } ?>">
+                                <div class="extra-image">
                                         <!-- if no image is set * -->
                                         <?php if (empty($row['image'])) { ?>
-                                            <!-- * show label -->
+                                            <!-- * show label and display img -->
                                             <label class="label-noimg">Intet Billede</label>
+                                            <img src="../../../../images/backgrounds/noimg.jpg" alt="potebandensdyreservice_noimg">
                                         <?php }
                                         // <!-- if image is set * -->
                                         else { ?>
-                                            <!-- * show no label -->
+                                            <!-- * show no label and display img -->
+                                            <img src="includes/extra-images/<?php echo $row['image'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
                                         <?php } ?>
                                     </div> <!-- .extra-image end -->
                                     <div class="extra-title">

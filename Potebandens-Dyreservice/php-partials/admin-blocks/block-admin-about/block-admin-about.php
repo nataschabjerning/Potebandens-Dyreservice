@@ -33,19 +33,17 @@
                         </div>
                         <div class="me">
                             <div class="me-left">
-                                <div class="image" style="<?php if (!empty($row['about_image_link'])) { ?>
-                                    background-image: url('includes/about-images/<?php echo $row['about_image_link']?>');
-                                <?php } else { ?>
-                                    background-image: url('../../../../images/backgrounds/noimg.jpg');
-                                <?php } ?>">
+                                <div class="image">
                                     <!-- if no image is set * -->
                                     <?php if (empty($row['about_image_link'])) { ?>
-                                        <!-- * show label -->
+                                        <!-- * show label and display img -->
                                         <label class="label-noimg">Intet Billede</label>
+                                        <img src="../../../../images/backgrounds/noimg.jpg" alt="potebandensdyreservice_profilepic">
                                     <?php }
                                     // <!-- if image is set * -->
                                     else { ?>
-                                        <!-- * show no label -->
+                                        <!-- * show no label and display img -->
+                                        <img src="includes/about-images/<?php echo $row['about_image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['about_name'] ?>">
                                     <?php } ?>
                                 </div>
                                 <div class="about-name">
