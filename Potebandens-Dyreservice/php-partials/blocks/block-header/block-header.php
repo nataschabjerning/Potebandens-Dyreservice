@@ -15,7 +15,7 @@
         <meta name="description" content="Potebandens Dyreservice hjælper dig med at passe din hund. Hos os får din hund sin daglige dosis af kærlighed og bliver samtidig aktiveret ved hvert besøg.">
 
         <!-- favicon -->
-        <link rel="icon" type="image/x-icon" href="../../../images/logo/logo-multicolor.png">
+        <link rel="icon" type="image/x-icon" href="../../../images/logo/logo.png">
         
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

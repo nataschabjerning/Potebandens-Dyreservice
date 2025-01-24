@@ -67,7 +67,10 @@
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <div class="slide">
                         <div class="gallery-content">
-                            <div class="image" style="<?php if (!empty($row['image_link'])) { ?> background-image: url('includes/gallery-uploads/<?php echo $row['image_link']?>'); <?php } ?>">
+                            <div class="image">
+                                <?php if (!empty($row['image_link'])) { ?>
+                                    <img src="includes/gallery-uploads/<?php echo $row['image_link'] ?>" alt="potebandensdyreservice_<?php echo $row['image_alt'] ?>">
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

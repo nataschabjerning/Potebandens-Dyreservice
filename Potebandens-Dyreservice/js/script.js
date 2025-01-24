@@ -47,11 +47,16 @@ $(document).ready(function(){
         nextArrow: $('.gallery-next'),
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
                     arrows: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
                 }
             }
         ]

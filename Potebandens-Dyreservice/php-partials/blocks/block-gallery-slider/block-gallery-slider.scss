@@ -334,15 +334,13 @@
                     */
                     .gallery-content {
                         .image {
-                            background-position: center;
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            height: 250px;
-                            @media (max-width: 1024px) {
-                                min-height: 300px;
-                            }
-                            @media (max-width: 768px) {
-                                min-height: 350px;
+                            height: 100%;
+                            width: 100%;
+                            height: 300px;
+                            img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: contain;
                             }
                         }
                     }
